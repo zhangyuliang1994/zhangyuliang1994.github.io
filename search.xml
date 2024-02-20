@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>将nginx设置为开机自启动的配置</title>
+      <link href="/2024/02/20/%E5%B0%86nginx%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
+      <url>/2024/02/20/%E5%B0%86nginx%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、背景描述"><a href="#一、背景描述" class="headerlink" title="一、背景描述"></a>一、背景描述</h3><p>虚拟机上安装了nginx，希望能够开机自启动。</p><h3 id="二、操作步骤"><a href="#二、操作步骤" class="headerlink" title="二、操作步骤"></a>二、操作步骤</h3><h4 id="1-进入-lib-systemd-system-目录下"><a href="#1-进入-lib-systemd-system-目录下" class="headerlink" title="1.进入 &#x2F;lib&#x2F;systemd&#x2F;system&#x2F; 目录下"></a>1.进入 &#x2F;lib&#x2F;systemd&#x2F;system&#x2F; 目录下</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /lib/systemd/system/</span><br></pre></td></tr></table></figure><h4 id="2-创建文件：nginx-service"><a href="#2-创建文件：nginx-service" class="headerlink" title="2.创建文件：nginx.service"></a>2.创建文件：nginx.service</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch nginx.service</span><br><span class="line">vim nginx.service</span><br></pre></td></tr></table></figure><h4 id="3-编辑文件内容"><a href="#3-编辑文件内容" class="headerlink" title="3.编辑文件内容"></a>3.编辑文件内容</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx service</span><br><span class="line">After=network.target </span><br><span class="line">   </span><br><span class="line">[Service] </span><br><span class="line">Type=forking </span><br><span class="line">ExecStart=/usr/local/nginx/sbin/nginx</span><br><span class="line">ExecReload=/usr/local/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/usr/local/nginx/sbin/nginx -s quit</span><br><span class="line">PrivateTmp=true </span><br><span class="line">   </span><br><span class="line">[Install] </span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><h4 id="4-开机自启动"><a href="#4-开机自启动" class="headerlink" title="4.开机自启动"></a>4.开机自启动</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable nginx</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> nginx </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决Nginx的failed 13 Permission denied while connecting to upstream</title>
       <link href="/2024/02/20/%E8%A7%A3%E5%86%B3Nginx%E7%9A%8413-Permission-denied%E9%97%AE%E9%A2%98/"/>
       <url>/2024/02/20/%E8%A7%A3%E5%86%B3Nginx%E7%9A%8413-Permission-denied%E9%97%AE%E9%A2%98/</url>
