@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Postman常用技巧</title>
+      <link href="/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+      <url>/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、全局Token设置"><a href="#一、全局Token设置" class="headerlink" title="一、全局Token设置"></a>一、全局Token设置</h3><h4 id="1-登录时获取token"><a href="#1-登录时获取token" class="headerlink" title="1.登录时获取token"></a>1.登录时获取token</h4><p><img src="/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/get_token.png" alt="本地图片"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取登录接口的返回数据</span></span><br><span class="line"><span class="keyword">var</span> jsondata=pm.<span class="property">response</span>.<span class="title function_">json</span>();</span><br><span class="line"><span class="comment">// 判断登录是否成功</span></span><br><span class="line"><span class="keyword">if</span> (jsondata.<span class="property">code</span> === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取token并设置到环境变量token的值</span></span><br><span class="line">    <span class="keyword">var</span> token=jsondata.<span class="property">data</span>.<span class="property">token</span></span><br><span class="line">    pm.<span class="property">globals</span>.<span class="title function_">set</span>(<span class="string">&quot;token&quot;</span>,token)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(jsondata.<span class="property">msg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="2-Collection设置token"><a href="#2-Collection设置token" class="headerlink" title="2.Collection设置token"></a>2.Collection设置token</h4><p><img src="/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/set_token.png" alt="本地图片"></p><h3 id="二、接口自动执行"><a href="#二、接口自动执行" class="headerlink" title="二、接口自动执行"></a>二、接口自动执行</h3><p><img src="/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/run_collection.png" alt="本地图片"></p><p>右击Collection，选择 “Run Collection”；</p><p>选中要执行的接口，在右侧填入执行次数和间隔时间，然后点击 “Run 测试自动执行”即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> postman </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>spring boot logback日志显示时间差8小时</title>
       <link href="/2024/02/23/spring-boot-logback%E6%97%A5%E5%BF%97%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4%E5%B7%AE8%E5%B0%8F%E6%97%B6/"/>
       <url>/2024/02/23/spring-boot-logback%E6%97%A5%E5%BF%97%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4%E5%B7%AE8%E5%B0%8F%E6%97%B6/</url>
@@ -62,7 +87,7 @@
       <link href="/2024/02/22/BigDecimal%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F/"/>
       <url>/2024/02/22/BigDecimal%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>这个类是Java里精确计算的类，下面说一下BidDecimal大小、相等的判断</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BigDecimal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="number">1.0</span>);</span><br><span class="line"><span class="type">BigDecimal</span> <span class="variable">b</span> <span class="operator">=</span> BigDecimal.valueOf(<span class="number">1.000</span>);</span><br></pre></td></tr></table></figure><h3 id="一、比较方法"><a href="#一、比较方法" class="headerlink" title="一、比较方法"></a>一、比较方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> a.compareTo(b);</span><br></pre></td></tr></table></figure><h3 id="二、比较结果"><a href="#二、比较结果" class="headerlink" title="二、比较结果"></a>二、比较结果</h3><ul><li>-1 小于</li><li>0  等于</li><li>1  大于</li></ul>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>这个类是Java里精确计算的类，下面说一下BidDecimal大小、相等的判断</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">BigDecimal</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BigDecimal</span>(<span class="number">1.0</span>);</span><br><span class="line"><span class="type">BigDecimal</span> <span class="variable">b</span> <span class="operator">=</span> BigDecimal.valueOf(<span class="number">1.000</span>);</span><br></pre></td></tr></table></figure><h3 id="一、比较方法"><a href="#一、比较方法" class="headerlink" title="一、比较方法"></a>一、比较方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> a.compareTo(b);</span><br></pre></td></tr></table></figure><h3 id="二、比较结果"><a href="#二、比较结果" class="headerlink" title="二、比较结果"></a>二、比较结果</h3><ul><li>-1 小于</li><li>0  等于</li><li>1  大于</li></ul><blockquote><p>判断时以大于0、小于0、等于0为条件。</p></blockquote>]]></content>
       
       
       <categories>
