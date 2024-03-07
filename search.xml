@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Jira配置Ldap服务器进行用户认证</title>
+      <link href="/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/"/>
+      <url>/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Jira需要通过公司的域账号来登录，配置过程中踩了点坑，记录一下。</p></blockquote><h3 id="一、配置步骤"><a href="#一、配置步骤" class="headerlink" title="一、配置步骤"></a>一、配置步骤</h3><h4 id="1-1-用管理员账户登录Jira页面，在配置页面，找到“用户管理”-点击“用户目录”-点击“添加目录”-选择“内部LDAP认证”"><a href="#1-1-用管理员账户登录Jira页面，在配置页面，找到“用户管理”-点击“用户目录”-点击“添加目录”-选择“内部LDAP认证”" class="headerlink" title="1.1 用管理员账户登录Jira页面，在配置页面，找到“用户管理” -&gt; 点击“用户目录” -&gt; 点击“添加目录” -&gt; 选择“内部LDAP认证”"></a>1.1 用管理员账户登录Jira页面，在配置页面，找到“用户管理” -&gt; 点击“用户目录” -&gt; 点击“添加目录” -&gt; 选择“内部LDAP认证”</h4><p><img src="/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/add.png" alt="本地图片"></p><h4 id="1-2-目录类型选择“OpenLDAP”，填写主机名、端口、用户名及密码，提前创建组，并在“默认组成员”输入框内填写该组名，防止域账户没有权限登录Jira系统"><a href="#1-2-目录类型选择“OpenLDAP”，填写主机名、端口、用户名及密码，提前创建组，并在“默认组成员”输入框内填写该组名，防止域账户没有权限登录Jira系统" class="headerlink" title="1.2 目录类型选择“OpenLDAP”，填写主机名、端口、用户名及密码，提前创建组，并在“默认组成员”输入框内填写该组名，防止域账户没有权限登录Jira系统"></a>1.2 目录类型选择“OpenLDAP”，填写主机名、端口、用户名及密码，提前创建组，并在“默认组成员”输入框内填写该组名，防止域账户没有权限登录Jira系统</h4><p><img src="/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/server.png" alt="本地图片"></p><h3 id="1-3-设置基本DN和用户名属性"><a href="#1-3-设置基本DN和用户名属性" class="headerlink" title="1.3 设置基本DN和用户名属性"></a>1.3 设置基本DN和用户名属性</h3><p>这里要看ldap服务器的具体值，我这个版本用户名属性的默认值是cn，但ldap服务器的是sAMAccountName<br><img src="/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/ldap.png" alt="本地图片"></p><h3 id="1-4-设置用户模式属性"><a href="#1-4-设置用户模式属性" class="headerlink" title="1.4 设置用户模式属性"></a>1.4 设置用户模式属性</h3><p><img src="/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/user.png" alt="本地图片"><br>虽然这些属性有默认值，但还是要看ldap服务器的具体值，我的ldap服务器的用户对象类是person，用户唯一的ID属性是distinguishedName</p><h3 id="1-5-设置组模式"><a href="#1-5-设置组模式" class="headerlink" title="1.5 设置组模式"></a>1.5 设置组模式</h3><p><img src="/2024/03/07/Jira%E9%85%8D%E7%BD%AELdap%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/group.png" alt="本地图片"><br>这里我改了组对象类。</p><h3 id="二、推荐工具"><a href="#二、推荐工具" class="headerlink" title="二、推荐工具"></a>二、推荐工具</h3><p>我用的是Ldap Browser，还不错。<br>下载地址： <a href="https://ldapbrowserwindows.com/">https://ldapbrowserwindows.com/</a></p><blockquote><p>在Jira配置Ldap过程中遇到的最大问题就是属性对不上，通过这个工具就能很方便的去查看了。<br>另外，添加目录时可以选择“LDAP”，这个模式下报错提示更清晰一些，我在配置过程中也是通过这个模式来发现属性配置错误的。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> ldap </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ldap </tag>
+            
+            <tag> jira </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Postman常用技巧</title>
       <link href="/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
       <url>/2024/02/29/Postman%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
