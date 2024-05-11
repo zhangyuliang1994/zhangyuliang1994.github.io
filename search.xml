@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>nginx常用命令</title>
+      <link href="/2024/05/11/nginx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2024/05/11/nginx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、重启"><a href="#一、重启" class="headerlink" title="一、重启"></a>一、重启</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/usr/nginx/sbin/nginx -s reload</span><br><span class="line">``</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## 二、判断配置文件是否正确</span></span></span><br><span class="line">```shell</span><br><span class="line">nginx -t -c /usr/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> nginx </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>自定义校验注解</title>
       <link href="/2024/05/11/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A3/"/>
       <url>/2024/05/11/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C%E6%B3%A8%E8%A7%A3/</url>
@@ -153,9 +180,9 @@
       
         <tags>
             
-            <tag> websocket </tag>
-            
             <tag> nginx </tag>
+            
+            <tag> websocket </tag>
             
         </tags>
       
@@ -230,9 +257,9 @@
       
         <tags>
             
-            <tag> nginx </tag>
-            
             <tag> linux </tag>
+            
+            <tag> nginx </tag>
             
         </tags>
       
