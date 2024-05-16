@@ -4,11 +4,24 @@
   
     
     <entry>
+      <title>springboot鉴权</title>
+      <link href="/2024/05/16/springboot%E9%89%B4%E6%9D%83/"/>
+      <url>/2024/05/16/springboot%E9%89%B4%E6%9D%83/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>TODO:暂时留个坑，待整理好思路再写</p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nginx常用命令</title>
       <link href="/2024/05/11/nginx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2024/05/11/nginx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<h3 id="一、重启"><a href="#一、重启" class="headerlink" title="一、重启"></a>一、重启</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure><h3 id="二、判断配置文件是否正确"><a href="#二、判断配置文件是否正确" class="headerlink" title="二、判断配置文件是否正确"></a>二、判断配置文件是否正确</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t -c /usr/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="一、重启"><a href="#一、重启" class="headerlink" title="一、重启"></a>一、重启</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure><h3 id="二、判断配置文件是否正确"><a href="#二、判断配置文件是否正确" class="headerlink" title="二、判断配置文件是否正确"></a>二、判断配置文件是否正确</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t -c /usr/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/nginx/sbin/nginx -t</span><br></pre></td></tr></table></figure><h3 id="三、代理配置"><a href="#三、代理配置" class="headerlink" title="三、代理配置"></a>三、代理配置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name yourdomain.com;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://localhost:8080;  # Spring Boot 应用的地址</span><br><span class="line">        proxy_set_header Host $host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>proxy_set_header可以代理访问权限和请求头，如后端加了白名单，此处配置就很必要</p>]]></content>
       
       
       <categories>
