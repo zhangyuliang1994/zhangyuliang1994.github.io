@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>使用liquibase管理数据库变更</title>
+      <link href="/2024/05/30/%E4%BD%BF%E7%94%A8liquibase%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%98%E6%9B%B4/"/>
+      <url>/2024/05/30/%E4%BD%BF%E7%94%A8liquibase%E7%AE%A1%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%98%E6%9B%B4/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>TODO:暂时留个坑，待整理好思路再写</p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git commit 代码提交规范</title>
       <link href="/2024/05/30/git-commit-%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/"/>
       <url>/2024/05/30/git-commit-%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</url>
