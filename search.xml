@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>第一天</title>
-      <link href="/2024-dsa-check-in-plan-2024-dsa-day-1/"/>
-      <url>/2024-dsa-check-in-plan-2024-dsa-day-1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hexo常用语法与命令</title>
       <link href="/hexo%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
       <url>/hexo%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%91%BD%E4%BB%A4/</url>
@@ -34,37 +21,6 @@
         <tags>
             
             <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>数据结构与算法学习计划</title>
-      <link href="/2024-dsa-check-in-plan-2024-dsa-plan/"/>
-      <url>/2024-dsa-check-in-plan-2024-dsa-plan/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>试试效果2</p></blockquote><hr><a href="/2024-dsa-check-in-plan-2024-dsa-day-1/" title="第一天">第一天</a>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习笔记 </category>
-          
-          <category> 数据结构与算法 </category>
-          
-          <category> 60天打卡计划 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 学习笔记 </tag>
-            
-            <tag> 打卡 </tag>
             
         </tags>
       
