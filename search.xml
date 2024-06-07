@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Redis用来统计的集合</title>
+      <link href="/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Redis%E7%94%A8%E6%9D%A5%E7%BB%9F%E8%AE%A1%E7%9A%84%E9%9B%86%E5%90%88/"/>
+      <url>/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Redis%E7%94%A8%E6%9D%A5%E7%BB%9F%E8%AE%A1%E7%9A%84%E9%9B%86%E5%90%88/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、常用的集合统计模式"><a href="#一、常用的集合统计模式" class="headerlink" title="一、常用的集合统计模式"></a>一、常用的集合统计模式</h3><ul><li>聚合统计</li><li>排序统计</li><li>二值状态统计</li><li>基数统计</li></ul><h3 id="二、聚合统计"><a href="#二、聚合统计" class="headerlink" title="二、聚合统计"></a>二、聚合统计</h3><p>聚合统计指统计多个集合元素的聚合结果，包括：</p><ul><li>统计多个集合的共有元素（交集统计）</li><li>把两个集合相比，统计其中一个集合独有的元素（差集统计）</li><li>统计多个集合的所有元素（并集统计）</li></ul><p>当你需要对多个集合进行聚合计算时，Set类型会是一个非常不错的选择。</p><p>但是Set的差集、并集和交集的计算复杂度较高，在数据量较大的情况下，如果直接执行这些计算，会导致Redis实例阻塞。建议从主从集群中选择一个从库，让它专门负责聚合计算，或者是把数据读取到客户端，在客户端来完成聚合统计，这样就可以规避阻塞主库实例和其他从库实例的风险了。</p><p>举例：统计手机App每天的新增用户数和第二天的留存用户数</p><h3 id="三、排序统计"><a href="#三、排序统计" class="headerlink" title="三、排序统计"></a>三、排序统计</h3><p>Redis常用的集合类型有：List、Hash、Set、Sorted Set，其中List和Sorted Set属于有序集合。</p><ul><li>List是按照元素进入List的顺序进行排序的</li><li>Sorted Set可以根据元素的权重来排序，我们可以自己来决定每个元素的权重值</li></ul><p>在面对需要展示最新列表、排行榜等场景时，如果数据更新频繁或者需要分页显示，优先使用Sorted Set。</p><h3 id="四、二值状态统计"><a href="#四、二值状态统计" class="headerlink" title="四、二值状态统计"></a>四、二值状态统计</h3><p>二值状态是指集合元素的取值就只有 0 和 1 两种。比如在签到打卡的场景中，我们只要记录签到（1）或未签到（0）。</p><p>Bitmap适合这种场景，它是Redis提供的扩展数据类型。</p><p>Bitmap本身是用String类型作为底层数据结构实现的一种统计二值状态的数据类型。</p><p>String类型是会保存为二进制的字节数组，所以，Redis就把字节数组的每个 bit 位利用起来，用来表示一个元素的二值状态。可以把 Bitmap 看作是一个 bit 数组。</p><p>在记录海量数据时，Bitmap能够有效地节省内存空间。</p><h3 id="五、基数统计"><a href="#五、基数统计" class="headerlink" title="五、基数统计"></a>五、基数统计</h3><p>基数统计是指统计一个集合中不重复的元素个数。比如统计网页的UV（Unique Visitor，独立访客）。</p><p>HyperLogLog是一种用于统计基数的数据集合类型。它的最大优势在于，当集合元素数量非常多时，它计算基数所需的空间总是固定的，而且还很小。</p><p>HyperLogLog的统计规则是基于概率完成的，所以它给出的统计结果是有一定误差的，标准误差率是 0.81%。</p><p>虽然误差率不大，但是，如果你需要精确统计结果的话，最好用Set或Hash类型。</p><h3 id="六、小结"><a href="#六、小结" class="headerlink" title="六、小结"></a>六、小结</h3><p><img src="https://minio.zhangyl.top/img/2024/redis_study_12_statistics.png"></p><p>Set和Sorted Set都支持多种聚合统计，不过，对于差集计算来说，只有Set支持。Bitmap也能做多个Bitmap间的聚合计算，包括与、或和异或操作。</p><p>当需要进行排序统计时，List中的元素虽然有序，但是一旦有新元素插入，原来的元素在List中的位置就会移动，那么，按位置读取的排序结果可能就不准确了。而Sorted Set本身是按照集合元素的权重排序，可以准确地有序获取结果，所以建议优先使用它。</p><p>如果我们记录的数据只有0和1两个值的状态，Bitmap会是一个很好的选择，这主要归功于Bitmap对于一个数据只用1个bit记录，可以节省内存。</p><p>对于基数统计来说，如果集合元素量达到亿级别而且不需要精确统计时，建议使用HyperLogLog。</p><h3 id="七、每课一问"><a href="#七、每课一问" class="headerlink" title="七、每课一问"></a>七、每课一问</h3><p>其他使用场景？</p><p>使用Sorted Set可以统计一段时间内的在线用户数。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用Obsidian配合Hexo写博客</title>
       <link href="/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3-%E4%BD%BF%E7%94%A8Obsidian%E9%85%8D%E5%90%88Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
       <url>/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3-%E4%BD%BF%E7%94%A8Obsidian%E9%85%8D%E5%90%88Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
