@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>使用Obsidian配合Hexo写博客</title>
+      <link href="/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3-%E4%BD%BF%E7%94%A8Obsidian%E9%85%8D%E5%90%88Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+      <url>/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3-%E4%BD%BF%E7%94%A8Obsidian%E9%85%8D%E5%90%88Hexo%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p>用hexo写了二十篇左右文章的时候，发现有时候挺麻烦的。<br>刚开始写的时候，写个markdown，push一下，然后看着 GitHub Actions在那跑，还是挺兴奋的，但是时间长了，就会觉得麻烦。</p><p>前两天尝试在语雀上写了两篇，感觉在线编辑器挺好用的，但是同步hexo太麻烦了。<br>而且语雀和Notion都没有本地存储，这让我这个保守派很慌。</p><p>最终选了Obsidian，基本没啥学习成本，而且客户端的编辑器也很好用，git设置定时提交，也不用老想着提交代码了，专注于内容本身即可。</p><p>主要参考了这篇博客：<br><a href="https://zahui.fan/posts/ldle4xfe/">https://zahui.fan/posts/ldle4xfe/</a><br>还有这篇：<br><a href="https://uuanqin.top/p/d4bc55f2/index.html">https://uuanqin.top/p/d4bc55f2/index.html</a></p><p>除此之外，还做了两项内容：</p><ul><li>图片由本地改为存放在MinIO里</li><li>手机端和电脑端都装了 <code>RemptelySync</code> 插件，方便同步到手机查看，用的是坚果云的Webdav。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 建站相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo常用语法与命令</title>
       <link href="/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3-hexo%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
       <url>/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3-hexo%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E4%B8%8E%E5%91%BD%E4%BB%A4/</url>
