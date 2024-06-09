@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>GEO类型的使用</title>
+      <link href="/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-GEO%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-GEO%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、应用场景"><a href="#一、应用场景" class="headerlink" title="一、应用场景"></a>一、应用场景</h3><p>基础信息服务（Location- Based Service，LBS）<br>LBS应用访问的数据是和人或物关联的一组经纬度信息，而且要能查询相邻的经纬度范围。<br>例如：搜索“附近的餐馆”、在打车软件上叫车。</p><h3 id="二、GEO的底层结构"><a href="#二、GEO的底层结构" class="headerlink" title="二、GEO的底层结构"></a>二、GEO的底层结构</h3><p>GEO 类型的底层数据结构是用 Sorted Set 来实现的。</p><h4 id="2-1-GeoHash编码方法"><a href="#2-1-GeoHash编码方法" class="headerlink" title="2.1 GeoHash编码方法"></a>2.1 GeoHash编码方法</h4><p>基本原理：“二分区间，区间编码”<br>比如：当我们要对一组经纬度进行GeoHash编码时，我们要先对经度和纬度jin</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Redis用来统计的集合</title>
       <link href="/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Redis%E7%94%A8%E6%9D%A5%E7%BB%9F%E8%AE%A1%E7%9A%84%E9%9B%86%E5%90%88/"/>
       <url>/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Redis%E7%94%A8%E6%9D%A5%E7%BB%9F%E8%AE%A1%E7%9A%84%E9%9B%86%E5%90%88/</url>
