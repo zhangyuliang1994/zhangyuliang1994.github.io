@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-3-数组</title>
+      <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-3-%E6%95%B0%E7%BB%84/"/>
+      <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-3-%E6%95%B0%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、什么是数组"><a href="#一、什么是数组" class="headerlink" title="一、什么是数组"></a>一、什么是数组</h3><blockquote><p>数组是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据。</p></blockquote><p>这个定义里有几个关键词。</p><h4 id="1-1-线性表"><a href="#1-1-线性表" class="headerlink" title="1.1 线性表"></a>1.1 线性表</h4><p>线性表就是数据排成像一条线一样的结构。每个线性表上的数据最多只有前和后两个方向。<br>其实除了数组，链表、队列、栈等也是线性表结构。</p><p>与它对立的概念是非线性表，比如二叉树、堆、图等。之所以叫非线性，是因为，在非线性表中，数据之间并不是简单的前后关系。</p><h4 id="1-2-连续的内存空间和相同类型的数据"><a href="#1-2-连续的内存空间和相同类型的数据" class="headerlink" title="1.2 连续的内存空间和相同类型的数据"></a>1.2 连续的内存空间和相同类型的数据</h4><p><strong>很多时候我们并不是要去死记硬背某个数据结构或者算法，而是要学习它背后的思想和处理技巧，这些东西才是有价值的。</strong></p><h3 id="二、警惕数组的访问越界问题"><a href="#二、警惕数组的访问越界问题" class="headerlink" title="二、警惕数组的访问越界问题"></a>二、警惕数组的访问越界问题</h3><p>访问数组的本质就是访问一段连续内存，只要数组通过偏移计算得到的内存地址是可用的，那么程序可能不会报任何错误。</p><h3 id="三、容器能否完全替代数组？"><a href="#三、容器能否完全替代数组？" class="headerlink" title="三、容器能否完全替代数组？"></a>三、容器能否完全替代数组？</h3><p>使用数组更适合的场景：</p><ul><li>Java ArrayList 无法存储基本类型，如果特别关注性能，</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/%E5%B7%A5%E5%85%B7-Docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/"/>
       <url>/%E5%B7%A5%E5%85%B7-Docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/</url>
