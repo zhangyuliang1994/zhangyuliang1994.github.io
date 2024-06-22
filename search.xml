@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>使用docker-compose 部署MySQL</title>
+      <link href="/%E5%B7%A5%E5%85%B7-%E4%BD%BF%E7%94%A8docker-compose-%E9%83%A8%E7%BD%B2MySQL/"/>
+      <url>/%E5%B7%A5%E5%85%B7-%E4%BD%BF%E7%94%A8docker-compose-%E9%83%A8%E7%BD%B2MySQL/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、拉取MySQL镜像"><a href="#一、拉取MySQL镜像" class="headerlink" title="一、拉取MySQL镜像"></a>一、拉取MySQL镜像</h3><p>我这里使用的是MySQL8.0.18，可以自行选择需要的版本。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull mysql:8.0.18</span><br></pre></td></tr></table></figure><h3 id="二、创建挂载目录"><a href="#二、创建挂载目录" class="headerlink" title="二、创建挂载目录"></a>二、创建挂载目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/docker/mysql8/log</span><br><span class="line">mkdir -p /home/docker/mysql8/data</span><br><span class="line">mkdir -p /home/docker/mysql8/conf.d</span><br></pre></td></tr></table></figure><h3 id="三、添加配置文件my-cnf"><a href="#三、添加配置文件my-cnf" class="headerlink" title="三、添加配置文件my.cnf"></a>三、添加配置文件my.cnf</h3><p>这里需要给MySQL做点自定义的配置，比如时区字符编码等。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /home/docker/mysql8/conf.d/my.cnf</span><br></pre></td></tr></table></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">###### [client]配置模块 ######</span><br><span class="line">[client]</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line"></span><br><span class="line">###### [mysql]配置模块 ######</span><br><span class="line">[mysql]</span><br><span class="line"># 设置MySQL客户端默认字符集</span><br><span class="line">default-character-set=utf8mb4</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line"></span><br><span class="line">###### [mysqld]配置模块 ######</span><br><span class="line">[mysqld]</span><br><span class="line">port=3306</span><br><span class="line">user=mysql</span><br><span class="line"># 设置sql模式 sql_mode模式引起的分组查询出现*this is incompatible with sql_mode=only_full_group_by，这里最好剔除ONLY_FULL_GROUP_BY</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br><span class="line">datadir=/var/lib/mysql</span><br><span class="line">socket=/var/lib/mysql/mysql.sock</span><br><span class="line">server-id = 1</span><br><span class="line"></span><br><span class="line"># MySQL8 的密码认证插件 如果不设置低版本navicat无法连接</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line"></span><br><span class="line"># 禁用符号链接以防止各种安全风险</span><br><span class="line">symbolic-links=0</span><br><span class="line"></span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=1000</span><br><span class="line"></span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8mb4</span><br><span class="line"></span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line"></span><br><span class="line"># 0: 表名将按指定方式存储，并且比较区分大小写;</span><br><span class="line"># 1: 表名以小写形式存储在磁盘上，比较不区分大小写；</span><br><span class="line">lower_case_table_names=0</span><br><span class="line"></span><br><span class="line">max_allowed_packet=16M </span><br><span class="line"></span><br><span class="line"># 设置时区</span><br><span class="line">default-time_zone=&#x27;+8:00&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="四、编写-docker-compose-yml"><a href="#四、编写-docker-compose-yml" class="headerlink" title="四、编写 docker-compose.yml"></a>四、编写 docker-compose.yml</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span> <span class="comment"># 服务名称</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0.18</span> <span class="comment"># 或其它mysql版本</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mysql8</span> <span class="comment"># 容器名称</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span> <span class="comment"># root用户密码</span></span><br><span class="line"><span class="comment">#      - TZ=Asia/Shanghai # 设置容器时区 我这里通过下面挂载方式同步的宿主机时区和时间了,这里忽略</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/docker/mysql8/log:/var/log/mysql</span> <span class="comment"># 映射日志目录，宿主机:容器</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/docker/mysql8/data:/var/lib/mysql</span> <span class="comment"># 映射数据目录，宿主机:容器</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/docker/mysql8/conf.d:/etc/mysql/conf.d</span> <span class="comment"># 映射配置目录，宿主机:容器</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/etc/localtime:/etc/localtime:ro</span> <span class="comment"># 让容器的时钟与宿主机时钟同步，避免时间的问题，ro是read only的意思，就是只读。</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3306</span><span class="string">:3306</span> <span class="comment"># 指定宿主机端口与容器端口映射关系，宿主机:容器</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span> <span class="comment"># 容器随docker启动自启</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="五、启动容器"><a href="#五、启动容器" class="headerlink" title="五、启动容器"></a>五、启动容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose -f docker-compose.yml up -d</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker更换镜像源</title>
+      <link href="/%E5%B7%A5%E5%85%B7-Docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/"/>
+      <url>/%E5%B7%A5%E5%85%B7-Docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a>一、问题</h3><p>在学习Docker的时候遇到pull失败的情况</p><h3 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a>二、解决方法</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://yxzrazem.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-6-栈</title>
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-6-%E6%A0%88/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-6-%E6%A0%88/</url>
@@ -23,19 +73,6 @@
             <tag> 数据结构与算法 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/%E5%B7%A5%E5%85%B7-Docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/"/>
-      <url>/%E5%B7%A5%E5%85%B7-Docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/qq_43681154/article/details/128001031">https://blog.csdn.net/qq_43681154/article/details/128001031</a></p>]]></content>
-      
-      
       
     </entry>
     
