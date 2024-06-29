@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-7-队列</title>
+      <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-7-%E9%98%9F%E5%88%97/"/>
+      <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-7-%E9%98%9F%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、如何理解队列"><a href="#一、如何理解队列" class="headerlink" title="一、如何理解队列"></a>一、如何理解队列</h3><p>队列跟栈一样，也是一种操作受限的线性表数据结构，特点是先进者先出。<br>入队：放一个数据到队列尾部。<br>出队：从队列头部取一个元素。<br><img src="https://minio.zhangyl.top/img/2024/20240629212208.png" alt="image.png"></p><h3 id="二、顺序队列和链式队列"><a href="#二、顺序队列和链式队列" class="headerlink" title="二、顺序队列和链式队列"></a>二、顺序队列和链式队列</h3><p>顺序队列：用数组实现的队列；<br>链式队列：用链表实现的队列。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用docker-compose 部署MySQL</title>
       <link href="/%E5%B7%A5%E5%85%B7-%E4%BD%BF%E7%94%A8docker-compose-%E9%83%A8%E7%BD%B2MySQL/"/>
       <url>/%E5%B7%A5%E5%85%B7-%E4%BD%BF%E7%94%A8docker-compose-%E9%83%A8%E7%BD%B2MySQL/</url>
