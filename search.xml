@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-11-排序（上）</title>
+      <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-11-%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
+      <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-11-%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8A%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、如何分析一个“排序算法”"><a href="#一、如何分析一个“排序算法”" class="headerlink" title="一、如何分析一个“排序算法”"></a>一、如何分析一个“排序算法”</h3><h4 id="1-1-排序算法的执行效率"><a href="#1-1-排序算法的执行效率" class="headerlink" title="1.1 排序算法的执行效率"></a>1.1 排序算法的执行效率</h4><p>对于排序算法执行效率的分析，一般从以下几个方面来衡量：</p><ul><li>最好情况、最坏情况、平均情况时间复杂度</li><li>时间复杂度的系数、常数、低阶</li><li>比较次数和交换（或移动）次数</li></ul><h4 id="1-2-排序算法的内存消耗"><a href="#1-2-排序算法的内存消耗" class="headerlink" title="1.2 排序算法的内存消耗"></a>1.2 排序算法的内存消耗</h4><p>原地排序算法：特指空间复杂度是 O(1) 的排序算法。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-10-递归</title>
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-10-%E9%80%92%E5%BD%92/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-10-%E9%80%92%E5%BD%92/</url>
