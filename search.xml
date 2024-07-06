@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java程序设置为开机自启</title>
+      <link href="/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3-Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/"/>
+      <url>/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3-Java%E7%A8%8B%E5%BA%8F%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、Windows"><a href="#一、Windows" class="headerlink" title="一、Windows"></a>一、Windows</h3><p>使用WinSW工具，下载地址：<a href="https://github.com/winsw/winsw/releases">https://github.com/winsw/winsw/releases</a></p><h4 id="1-1-新建一个文件夹目录，命名随意，这个文件夹下放你的jar包和下载的WinSW-exe-工具"><a href="#1-1-新建一个文件夹目录，命名随意，这个文件夹下放你的jar包和下载的WinSW-exe-工具" class="headerlink" title="1.1 新建一个文件夹目录，命名随意，这个文件夹下放你的jar包和下载的WinSW.exe 工具"></a>1.1 新建一个文件夹目录，命名随意，这个文件夹下放你的jar包和下载的WinSW.exe 工具</h4><p>将WinSW.exe改名为 myJava-service.exe</p><h3 id="1-2-新建一个xml配置文件"><a href="#1-2-新建一个xml配置文件" class="headerlink" title="1.2 新建一个xml配置文件"></a>1.2 新建一个xml配置文件</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">service</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">id</span>&gt;</span>myJava<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>myJava<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">description</span>&gt;</span>This service runs myJava continuous integration system.<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">executable</span>&gt;</span>java<span class="tag">&lt;/<span class="name">executable</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">arguments</span>&gt;</span>-Xrs -Xmx256m -jar &quot;%BASE%\jenkins.jar&quot;<span class="tag">&lt;/<span class="name">arguments</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">service</span>&gt;</span></span><br></pre></td></tr></table></figure><p>保存配置文件，文件名与步骤一的名称一致，myJava-service.xml</p><h3 id="1-3-安装服务"><a href="#1-3-安装服务" class="headerlink" title="1.3 安装服务"></a>1.3 安装服务</h3><p>cmd到当前目录下，执行 <code>myJava-service.exe install</code><br>如果命令行窗口显示提示类似sucessfully 表示安装成功<br>此时打开<code>服务</code>，便能看到名为<code>myJava</code>的后台服务，启动类型为<code>自动</code>，默认开机自启。</p><h3 id="二、Linux"><a href="#二、Linux" class="headerlink" title="二、Linux"></a>二、Linux</h3><h3 id="2-1-创建服务文件"><a href="#2-1-创建服务文件" class="headerlink" title="2.1 创建服务文件"></a>2.1 创建服务文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/systemd/system</span><br><span class="line">touch myapp.service</span><br></pre></td></tr></table></figure><h3 id="2-2-配置服务文件"><a href="#2-2-配置服务文件" class="headerlink" title="2.2 配置服务文件"></a>2.2 配置服务文件</h3><p>vi &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;myapp.service</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=My Spring Boot Application</span><br><span class="line">After=syslog.target</span><br><span class="line">[Service]</span><br><span class="line">User=your-username</span><br><span class="line">ExecStart=/usr/bin/java -jar /path/to/your/application.jar</span><br><span class="line">SuccessExitStatus=143</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><p>保存并关闭文件。确保替换“your-username”和“&#x2F;path&#x2F;to&#x2F;your&#x2F;application.jar”为实际的用户名和应用程序路径。</p><h4 id="2-3-安装服务"><a href="#2-3-安装服务" class="headerlink" title="2.3 安装服务"></a>2.3 安装服务</h4><p>重新加载Systemd配置文件，以便它可以识别新的服务文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br></pre></td></tr></table></figure><p>启动服务并将其设置为自动启动：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start myapp.service</span><br><span class="line">sudo systemctl enable myapp.service</span><br></pre></td></tr></table></figure><p>可以使用以下命令来停止或重启服务：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop myapp.service</span><br><span class="line">sudo systemctl restart myapp.service</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-9-排序（上）</title>
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-9-%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-9-%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8A%EF%BC%89/</url>
