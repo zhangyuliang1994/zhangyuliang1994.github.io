@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-1-MySQL的基础架构</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-1-MySQL%E7%9A%84%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-1-MySQL%E7%9A%84%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、-MySQL的基础架构"><a href="#一、-MySQL的基础架构" class="headerlink" title="一、 MySQL的基础架构"></a>一、 MySQL的基础架构</h3><p><img src="https://minio.zhangyl.top/img/2024/20240716224651.png" alt="image.png"></p><ul><li>Server层：连接器、查询缓存、分析器、优化器、执行器等核心服务功能，以及所有的内置函数和跨存储引擎的功能（存储过程、触发器、视图等）。</li><li>存储引擎层：负责数据的存储和提取。</li></ul><h3 id="二、连接器"><a href="#二、连接器" class="headerlink" title="二、连接器"></a>二、连接器</h3><p><strong>连接器负责跟客户端建立连接、获取权限、维持和管理连接。</strong></p><p>数据库里面，长连接是指连接成功后，如果客户端持续有请求，则一直使用同一个连接。<br>短连接则是指每次执行完很少的几次查询就断开连接，下次查询再重新建立一个。</p><h3 id="三、查询缓存"><a href="#三、查询缓存" class="headerlink" title="三、查询缓存"></a>三、查询缓存</h3><p>MySQL 拿到一个查询请求后，会先到查询缓存看看，之前是不是执行过这条语句。之前执行过的语句及其结果可能会以 key-value 对的形式，被直接缓存在内存中。</p><p>MySQL 8.0 版本直接将查询缓存的整块功能删掉了，也就是说 8.0 开始彻底没有这个功能了。</p><h3 id="四、分析器"><a href="#四、分析器" class="headerlink" title="四、分析器"></a>四、分析器</h3><p>如果没有命中查询缓存，就要开始真正执行语句了。</p><p>分析器先会做“词法分析”。你输入的是由多个字符串和空格组成的一条 SQL 语句，MySQL 需要识别出里面的字符串分别是什么，代表什么。</p><h3 id="五、优化器"><a href="#五、优化器" class="headerlink" title="五、优化器"></a>五、优化器</h3><p>优化器是在表里面有多个索引的时候，决定使用哪个索引；或者在一个语句有多表关联（join）的时候，决定各个表的连接顺序。</p><h3 id="六、执行器"><a href="#六、执行器" class="headerlink" title="六、执行器"></a>六、执行器</h3><p>开始执行的时候，要先判断一下你对这个表 T 有没有执行查询的权限，如果没有，就会返回没有权限的错误。<br>如果有权限，就打开表继续执行。打开表的时候，执行器就会根据表的引擎定义，去使用这个引擎提供的接口。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何在Redis中保存时间序列数据</title>
       <link href="/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E5%9C%A8Redis%E4%B8%AD%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE/"/>
       <url>/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A6%82%E4%BD%95%E5%9C%A8Redis%E4%B8%AD%E4%BF%9D%E5%AD%98%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE/</url>
