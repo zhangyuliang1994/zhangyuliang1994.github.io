@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-3-事务隔离</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-3-%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-3-%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、隔离性与隔离级别"><a href="#一、隔离性与隔离级别" class="headerlink" title="一、隔离性与隔离级别"></a>一、隔离性与隔离级别</h3><p>事务的四大特性：原子性、一致性、隔离性、持久性。</p><p>SQL 标准的事务隔离级别包括：读未提交（read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（serializable ）。</p><ul><li>读未提交：一个事务还没提交时，它做的变更就能被别的事务看到。</li><li>读已提交：一个事务提交之后，它做的变更才会被其他事务看到。</li><li>可重复读：一个事务执行过程中看到的数据，总是跟这个事务在启动时看到的数据是一致的。</li><li>串行化：对于同一行记录，“写”会加“写锁”，“读”会加“读锁”。当出现读写锁冲突的时候，后访问的事务必须等前一个事务执行完成，才能继续执行。</li></ul><h3 id="二、事务隔离的实现"><a href="#二、事务隔离的实现" class="headerlink" title="二、事务隔离的实现"></a>二、事务隔离的实现</h3><p>长事务意味着系统里面会存在很老的事务视图。由于这些事务随时可能访问数据库里面的任何数据，所以这个事务提交之前，数据库里面它可能用到的回滚记录都必须保留，这就会导致大量占用存储空间。</p><h4 id="事务的启动方式："><a href="#事务的启动方式：" class="headerlink" title="事务的启动方式："></a>事务的启动方式：</h4><ul><li>1.显式启动事务语句， begin 或 start transaction。配套的提交语句是 commit，回滚语句是 rollback。</li><li>2.set autocommit&#x3D;0，这个命令会将这个线程的自动提交关掉。意味着如果你只执行一个 select 语句，这个事务就启动了，而且并不会自动提交。这个事务持续存在直到你主动执行 commit 或 rollback 语句，或者断开连接。</li></ul><p>建议总是使用 set autocommit&#x3D;1, 通过显式语句的方式来启动事务。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-2-日志系统</title>
       <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-2-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/"/>
       <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-2-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/</url>
