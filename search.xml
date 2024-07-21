@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-5-索引（下）</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-5-%E7%B4%A2%E5%BC%95%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-5-%E7%B4%A2%E5%BC%95%EF%BC%88%E4%B8%8B%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、覆盖索引"><a href="#一、覆盖索引" class="headerlink" title="一、覆盖索引"></a>一、覆盖索引</h3><p>回表：回到主键索引树搜索的过程。<br>覆盖索引：在查询里面，如果某个索引覆盖了我们的查询需求，我们称这个索引为覆盖索引。</p><p>由于覆盖索引可以减少树的搜索次数，显著提升查询性能，所以使用覆盖索引是一个常用的性能优化手段。</p><h3 id="二、最左前缀原则"><a href="#二、最左前缀原则" class="headerlink" title="二、最左前缀原则"></a>二、最左前缀原则</h3><p>B+ 树这种索引结构，可以利用索引的“最左前缀”，来定位记录。</p><p>最左前缀可以是联合索引的最左 N 个字段，也可以是字符串索引的最左 M 个字符。</p><h4 id="在建立联合索引的时候，如何安排索引内的字段顺序？"><a href="#在建立联合索引的时候，如何安排索引内的字段顺序？" class="headerlink" title="在建立联合索引的时候，如何安排索引内的字段顺序？"></a>在建立联合索引的时候，如何安排索引内的字段顺序？</h4><p>第一原则是，如果通过调整顺序，可以少维护一个索引，那么这个顺序往往就是需要优先考虑采用的。</p><h3 id="三、索引下推"><a href="#三、索引下推" class="headerlink" title="三、索引下推"></a>三、索引下推</h3><p>MySQL 5.6 引入的索引下推优化（index condition pushdown)， 可以在索引遍历过程中，对索引中包含的字段先做判断，直接过滤掉不满足条件的记录，减少回表次数。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-4-索引（上）</title>
       <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-4-%E7%B4%A2%E5%BC%95%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
       <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-4-%E7%B4%A2%E5%BC%95%EF%BC%88%E4%B8%8A%EF%BC%89/</url>
