@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>day-12-排序优化</title>
+      <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-12-%E6%8E%92%E5%BA%8F%E4%BC%98%E5%8C%96/"/>
+      <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-12-%E6%8E%92%E5%BA%8F%E4%BC%98%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、如何选择合适的排序算法"><a href="#一、如何选择合适的排序算法" class="headerlink" title="一、如何选择合适的排序算法"></a>一、如何选择合适的排序算法</h3><p><img src="https://minio.zhangyl.top/img/2024/20240723213636.png" alt="image.png"></p><p>如果对小规模数据进行排序，可以选择时间复杂度是 O(n2) 的算法；如果对大规模数据进行排序，时间复杂度是 O(nlogn) 的算法更加高效。所以，为了兼顾任意规模数据的排序，一般都会首选时间复杂度是 O(nlogn) 的排序算法来实现排序函数。</p><p>O(n2) 时间复杂度出现的主要原因还是因为我们分区点选得不够合理。</p><p>最理想的分区点是：被分区点分开的两个分区中，数据的数量差不多。</p><h4 id="1-1-三数取中法"><a href="#1-1-三数取中法" class="headerlink" title="1.1 三数取中法"></a>1.1 三数取中法</h4><p>我们从区间的首、尾、中间，分别取出一个数，然后对比大小，取这 3 个数的中间值作为分区点。这样每间隔某个固定的长度，取数据出来比较，将中间值作为分区点的分区算法，肯定要比单纯取某一个数据更好。</p><h4 id="1-2-随机法"><a href="#1-2-随机法" class="headerlink" title="1.2 随机法"></a>1.2 随机法</h4><p>随机法就是每次从要排序的区间中，随机选择一个元素作为分区点。这种方法并不能保证每次分区点都选的比较好，但是从概率的角度来看，也不大可能会出现每次分区点都选得很差的情况，所以平均情况下，这样选的分区点是比较好的。</p><h3 id="二、小结"><a href="#二、小结" class="headerlink" title="二、小结"></a>二、小结</h3><p>我们大部分排序函数都是采用 O(nlogn) 排序算法来实现，但是为了尽可能地提高性能，会做很多优化。</p><p>快速排序的一些优化策略，比如合理选择分区点、避免递归太深等等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>day-7-行锁</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-7-%E8%A1%8C%E9%94%81/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-7-%E8%A1%8C%E9%94%81/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>行锁就是针对数据表中行记录的锁。</p></blockquote><h3 id="一、两阶段锁"><a href="#一、两阶段锁" class="headerlink" title="一、两阶段锁"></a>一、两阶段锁</h3><p>在 InnoDB 事务中，行锁是在需要的时候才加上的，但并不是不需要了就立刻释放，而是要等到事务结束时才释放。这个就是两阶段锁协议。</p><p>如果你的事务中需要锁多个行，要把最可能造成锁冲突、最可能影响并发度的锁尽量往后放。</p><h3 id="二、死锁和死锁检测"><a href="#二、死锁和死锁检测" class="headerlink" title="二、死锁和死锁检测"></a>二、死锁和死锁检测</h3><p>当并发系统中不同线程出现循环资源依赖，涉及的线程都在等待别的线程释放资源时，就会导致这几个线程都进入无限等待的状态，称为死锁。</p><p>当出现死锁以后，有两种策略：</p><ul><li>一种策略是，直接进入等待，直到超时。</li><li>另一种策略是，发起死锁检测，发现死锁后，主动回滚死锁链条中的某一个事务，让其他事务得以继续执行。</li></ul><h3 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h3><p>如果你的事务中需要锁多个行，要把最可能造成锁冲突、最可能影响并发度的锁的申请时机尽量往后放。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-6-全局锁和表锁</title>
       <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-6-%E5%85%A8%E5%B1%80%E9%94%81%E5%92%8C%E8%A1%A8%E9%94%81/"/>
       <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-6-%E5%85%A8%E5%B1%80%E9%94%81%E5%92%8C%E8%A1%A8%E9%94%81/</url>
