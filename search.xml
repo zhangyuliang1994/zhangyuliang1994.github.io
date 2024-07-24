@@ -29,9 +29,9 @@
     
     
     <entry>
-      <title>day-8-事物</title>
-      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-8-%E4%BA%8B%E7%89%A9/"/>
-      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-8-%E4%BA%8B%E7%89%A9/</url>
+      <title>day-8-事务</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-8-%E4%BA%8B%E5%8A%A1/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-8-%E4%BA%8B%E5%8A%A1/</url>
       
         <content type="html"><![CDATA[<h3 id="一、视图"><a href="#一、视图" class="headerlink" title="一、视图"></a>一、视图</h3><p>在 MySQL 里，有两个“视图”的概念：</p><ul><li>一个是 view。它是一个用查询语句定义的虚拟表，在调用的时候执行查询语句并生成结果。创建视图的语法是 create view … ，而它的查询方法与表一样。</li><li>另一个是 InnoDB 在实现 MVCC 时用到的一致性读视图，即 consistent read view，用于支持 RC（Read Committed，读提交）和 RR（Repeatable Read，可重复读）隔离级别的实现。</li></ul><p>一个数据版本，对于一个事务视图来说，除了自己的更新总是可见以外，有三种情况：</p><ul><li>版本未提交，不可见；</li><li>版本已提交，但是是在视图创建后提交的，不可见；</li><li>版本已提交，而且是在视图创建前提交的，可见。</li></ul><h3 id="二、更新逻辑"><a href="#二、更新逻辑" class="headerlink" title="二、更新逻辑"></a>二、更新逻辑</h3><p>更新数据都是先读后写的，而这个读，只能读当前的值，称为“当前读”（current read）。</p><h4 id="事务的可重复读的能力是怎么实现的？"><a href="#事务的可重复读的能力是怎么实现的？" class="headerlink" title="事务的可重复读的能力是怎么实现的？"></a>事务的可重复读的能力是怎么实现的？</h4><p>可重复读的核心就是一致性读（consistent read）；而事务更新数据的时候，只能用当前读。如果当前的记录的行锁被其他事务占用的话，就需要进入锁等待。</p><h3 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h3><p>InnoDB 的行数据有多个版本，每个数据版本有自己的 row trx_id，每个事务或者语句有自己的一致性视图。普通查询语句是一致性读，一致性读会根据 row trx_id 和一致性视图确定数据版本的可见性。</p><ul><li>对于可重复读，查询只承认在事务启动前就已经提交完成的数据；</li><li>对于读提交，查询只承认在语句启动前就已经提交完成的数据；</li></ul><p>而当前读，总是读取已经提交完成的最新版本。</p><p>为什么表结构不支持“可重复读”？这是因为表结构没有对应的行数据，也没有 row trx_id，因此只能遵循当前读的逻辑。</p>]]></content>
       
