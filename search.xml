@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-9-普通索引和唯一索引</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-9-%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95%E5%92%8C%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-9-%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95%E5%92%8C%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、查询过程"><a href="#一、查询过程" class="headerlink" title="一、查询过程"></a>一、查询过程</h3><ul><li>对于普通索引来说，查找到满足条件的第一个记录后，需要查找下一个记录，直到碰到第一个不满足条件的记录。</li><li>对于唯一索引来说，由于索引定义了唯一性，查找到第一个满足条件的记录后，就会停止继续检索。</li></ul><h3 id="二、更新过程"><a href="#二、更新过程" class="headerlink" title="二、更新过程"></a>二、更新过程</h3><p>当需要更新一个数据页时，如果数据页在内存中就直接更新，而如果这个数据页还没有在内存中的话，在不影响数据一致性的前提下，InnoDB 会将这些更新操作缓存在 change buffer 中，这样就不需要从磁盘中读入这个数据页了。在下次查询需要访问这个数据页的时候，将数据页读入内存，然后执行 change buffer 中与这个页有关的操作。通过这种方式就能保证这个数据逻辑的正确性。</p><h3 id="三、change-buffer-的使用场景"><a href="#三、change-buffer-的使用场景" class="headerlink" title="三、change buffer 的使用场景"></a>三、change buffer 的使用场景</h3><p>change buffer 只限于用在普通索引的场景下，而不适用于唯一索引。</p><p>对于写多读少的业务来说，页面在写完以后马上被访问到的概率比较小，此时 change buffer 的使用效果最好。这种业务模型常见的就是账单类、日志类的系统。</p><h3 id="四、索引选择与实践"><a href="#四、索引选择与实践" class="headerlink" title="四、索引选择与实践"></a>四、索引选择与实践</h3><p>这两类索引在查询能力上是没差别的，主要考虑的是对更新性能的影响。所以，建议尽量选择普通索引。</p><h3 id="五、change-buffer-和-redo-log"><a href="#五、change-buffer-和-redo-log" class="headerlink" title="五、change buffer 和 redo log"></a>五、change buffer 和 redo log</h3><p>redo log 主要节省的是随机写磁盘的 IO 消耗（转成顺序写），<br>而 change buffer 主要节省的则是随机读磁盘的 IO 消耗。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-13-二分查找（上）</title>
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-13-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-13-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%EF%BC%88%E4%B8%8A%EF%BC%89/</url>
