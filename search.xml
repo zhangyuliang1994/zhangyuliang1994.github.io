@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-11-怎么给字符串字段加索引</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-11-%E6%80%8E%E4%B9%88%E7%BB%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AE%B5%E5%8A%A0%E7%B4%A2%E5%BC%95/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-11-%E6%80%8E%E4%B9%88%E7%BB%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AE%B5%E5%8A%A0%E7%B4%A2%E5%BC%95/</url>
+      
+        <content type="html"><![CDATA[<p>使用前缀索引，定义好长度，就可以做到既节省空间，又不用额外增加太多的查询成本。</p><h3 id="一、前缀索引对覆盖索引的影响"><a href="#一、前缀索引对覆盖索引的影响" class="headerlink" title="一、前缀索引对覆盖索引的影响"></a>一、前缀索引对覆盖索引的影响</h3><p>使用前缀索引可能会增加扫描行数，这会影响到性能。</p><p>使用前缀索引就用不上覆盖索引对查询性能的优化了，这也是你在选择是否使用前缀索引时需要考虑的一个因素。</p><h3 id="二、其他方式"><a href="#二、其他方式" class="headerlink" title="二、其他方式"></a>二、其他方式</h3><p>索引选取的越长，占用的磁盘空间就越大，相同的数据页能放下的索引值就越少，搜索的效率也就会越低。</p><ul><li>使用倒序存储</li><li>使用 hash 字段</li></ul><p>使用倒序存储和使用 hash 字段这两种方法的异同点。<br>相同点：都不支持范围查询。<br>区别：</p><ul><li>1.从占用的额外空间来看，倒序存储方式在主键索引上，不会消耗额外的存储空间，而 hash 字段方法需要增加一个字段。</li><li>2.在 CPU 消耗方面，倒序方式每次写和读的时候，都需要额外调用一次 reverse 函数，而 hash 字段的方式需要额外调用一次 crc32() 函数。</li><li>3.从查询效率上看，使用 hash 字段方式的查询性能相对更稳定一些。</li></ul><h3 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h3><p>字符串字段创建索引的方式：</p><ul><li>1.直接创建完整索引，这样可能比较占用空间；</li><li>2.创建前缀索引，节省空间，但会增加查询扫描次数，并且不能使用覆盖索引；</li><li>3.倒序存储，再创建前缀索引，用于绕过字符串本身前缀的区分度不够的问题；</li><li>4.创建 hash 字段索引，查询性能稳定，有额外的存储和计算消耗，跟第三种方式一样，都不支持范围扫描。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-14-二分查找（下）</title>
       <link href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-14-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
       <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-14-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%EF%BC%88%E4%B8%8B%EF%BC%89/</url>
