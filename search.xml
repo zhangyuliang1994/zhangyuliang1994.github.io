@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>day-13-为什么表数据删掉一半，表文件大小不变</title>
+      <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-13-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A1%A8%E6%95%B0%E6%8D%AE%E5%88%A0%E6%8E%89%E4%B8%80%E5%8D%8A%EF%BC%8C%E8%A1%A8%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%8F%98/"/>
+      <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-13-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A1%A8%E6%95%B0%E6%8D%AE%E5%88%A0%E6%8E%89%E4%B8%80%E5%8D%8A%EF%BC%8C%E8%A1%A8%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%8F%98/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、数据删除流程"><a href="#一、数据删除流程" class="headerlink" title="一、数据删除流程"></a>一、数据删除流程</h3><p>数据页的复用跟记录的复用是不同的。<br>记录的复用，只限于符合范围条件的数据。<br>而当整个页从 B+ 树里面摘掉以后，可以复用到任何位置。</p><p>如果相邻的两个数据页利用率都很小，系统就会把这两个页上的数据合到其中一个页上，另外一个数据页就被标记为可复用。</p><p>delete 命令其实只是把记录的位置，或者数据页标记为了“可复用”，但磁盘文件的大小是不会变的。</p><p>不止是删除数据会造成空洞，插入数据也会。</p><h3 id="二、重建表"><a href="#二、重建表" class="headerlink" title="二、重建表"></a>二、重建表</h3><p>MySQL 5.6 版本开始引入的 Online DDL</p><h4 id="Online-和-inplace"><a href="#Online-和-inplace" class="headerlink" title="Online 和 inplace"></a>Online 和 inplace</h4><p>DDL 过程如果是 Online 的，就一定是 inplace 的；<br>反过来未必，也就是说 inplace 的 DDL，有可能不是 Online 的。</p><h3 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h3><p>如果要收缩一个表，只是 delete 掉表里面不用的数据的话，表文件的大小是不会变的，还要通过 alter table 命令重建表，才能达到表文件变小的目的。重建表有两种实现方式，Online DDL 的方式是可以考虑在业务低峰期使用的，而 MySQL 5.5 及之前的版本，这个命令是会阻塞 DML 的，这个需要特别小心。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>day-12-为什么我的MySQL会“抖”一下？</title>
       <link href="/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-12-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84MySQL%E4%BC%9A%E2%80%9C%E6%8A%96%E2%80%9D%E4%B8%80%E4%B8%8B%EF%BC%9F/"/>
       <url>/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-day-12-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84MySQL%E4%BC%9A%E2%80%9C%E6%8A%96%E2%80%9D%E4%B8%80%E4%B8%8B%EF%BC%9F/</url>
