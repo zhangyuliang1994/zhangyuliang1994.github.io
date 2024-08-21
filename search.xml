@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Spring相关面试题</title>
+      <link href="/%E9%9D%A2%E8%AF%95-Spring%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <url>/%E9%9D%A2%E8%AF%95-Spring%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h4 id="1-什么是-Spring-Bean？作用域有哪些？"><a href="#1-什么是-Spring-Bean？作用域有哪些？" class="headerlink" title="1.什么是 Spring Bean？作用域有哪些？"></a>1.什么是 Spring Bean？作用域有哪些？</h4><div class="spoiler collapsed">    <div class="spoiler-title">        Answer    </div>    <div class="spoiler-content">        <p>Bean 代指的就是那些被 IoC 容器所管理的对象。<br>Bean 的作用域通常有下面几种：</p><table><thead><tr><th>作用域</th><th>描述</th></tr></thead><tbody><tr><td><code>singleton</code></td><td>容器中唯一的 Bean 实例（默认）。</td></tr><tr><td><code>prototype</code></td><td>每次获取都会创建新实例。</td></tr><tr><td><code>request</code></td><td>每次 HTTP 请求创建新实例（仅 Web 应用）。</td></tr><tr><td><code>session</code></td><td>每次 HTTP Session 创建新实例（仅 Web 应用）。</td></tr><tr><td><code>application/global-session</code></td><td>每个 Web 应用启动时创建一个实例（仅 Web 应用）。</td></tr><tr><td><code>websocket</code></td><td>每次 WebSocket 会话创建新实例（仅 Web 应用）。</td></tr></tbody></table><p><code>singleton</code>（最常用，默认的作用域）和<code>prototype</code>这两个作用域是相对用的多点的，其他的基本不会用到。</p>    </div></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vmware下虚拟机linux，用户登录时候提示鉴定故障解决方法</title>
       <link href="/%E5%B7%A5%E5%85%B7-vmware%E4%B8%8B%E8%99%9A%E6%8B%9F%E6%9C%BAlinux%EF%BC%8C%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%97%B6%E5%80%99%E6%8F%90%E7%A4%BA%E9%89%B4%E5%AE%9A%E6%95%85%E9%9A%9C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
       <url>/%E5%B7%A5%E5%85%B7-vmware%E4%B8%8B%E8%99%9A%E6%8B%9F%E6%9C%BAlinux%EF%BC%8C%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%97%B6%E5%80%99%E6%8F%90%E7%A4%BA%E9%89%B4%E5%AE%9A%E6%95%85%E9%9A%9C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
@@ -1239,9 +1264,9 @@
       
         <tags>
             
-            <tag> springboot </tag>
-            
             <tag> ldap </tag>
+            
+            <tag> springboot </tag>
             
         </tags>
       
