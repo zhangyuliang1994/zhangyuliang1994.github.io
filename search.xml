@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java基础面试题</title>
+      <link href="/%E9%9D%A2%E8%AF%95-Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <url>/%E9%9D%A2%E8%AF%95-Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h3><h4 id="Java-中有哪8种基本数据类型？它们的默认值和占用的空间大小是多少？说说这8种基本数据类型对应的包装类型。"><a href="#Java-中有哪8种基本数据类型？它们的默认值和占用的空间大小是多少？说说这8种基本数据类型对应的包装类型。" class="headerlink" title="Java 中有哪8种基本数据类型？它们的默认值和占用的空间大小是多少？说说这8种基本数据类型对应的包装类型。"></a>Java 中有哪8种基本数据类型？它们的默认值和占用的空间大小是多少？说说这8种基本数据类型对应的包装类型。</h4><div class="spoiler collapsed">    <div class="spoiler-title">        Answer    </div>    <div class="spoiler-content">        <p>1️⃣ Java 中有8种基本数据类型，分别为：</p><ul><li>6种数字类型：byte、short、int、long、float、double</li><li>1种字符类型：char</li><li>1种布尔型：boolean</li></ul>    </div></div><h4 id="包装类型的常量池技术是什么？"><a href="#包装类型的常量池技术是什么？" class="headerlink" title="包装类型的常量池技术是什么？"></a>包装类型的常量池技术是什么？</h4><div class="spoiler collapsed">    <div class="spoiler-title">        Answer    </div>    <div class="spoiler-content">        <p>Java 基本类型的包装类型的大部分（Byte，Short，Integer，Long，Character，Boolean）都实现了常量池技术。</p>    </div></div><h4 id="为什么要有包装类型？"><a href="#为什么要有包装类型？" class="headerlink" title="为什么要有包装类型？"></a>为什么要有包装类型？</h4><div class="spoiler collapsed">    <div class="spoiler-title">        Answer    </div>    <div class="spoiler-content">        <p>基本类型有默认值、范型参数不能是基本类型</p>    </div></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring相关面试题</title>
       <link href="/%E9%9D%A2%E8%AF%95-Spring%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
       <url>/%E9%9D%A2%E8%AF%95-Spring%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
