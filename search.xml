@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>RPC基础知识总结</title>
+      <link href="/%E9%9D%A2%E8%AF%95-RPC%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+      <url>/%E9%9D%A2%E8%AF%95-RPC%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、RPC是什么？"><a href="#一、RPC是什么？" class="headerlink" title="一、RPC是什么？"></a>一、RPC是什么？</h3><p>RPC（Remote Procedure Call）即远程过程调用，通过名字我们就能看出 RPC 关注的是远程调用而非本地调用。</p><p><strong>为什么要RPC？</strong><br>因为，两个不同的服务器上的服务提供的方法不在一个内存空间，所以，需要通过网络编程才能传递方法调用所需要的参数。并且，方法调用的结果也需要通过网络编程来接收。但是，如果我们自己手动网络编程来实现这个调用过程的话工作量是非常大的，因为，我们需要考虑底层传输方式（TCP 还是 UDP）、序列化方式等等方面。</p><p><strong>RPC能帮助我们做什么？</strong><br>简单来说，通过 RPC 可以帮助我们调用远程计算机上某个服务的方法，这个过程就像调用本地方法一样简单。并且！我们不需要了解底层网络编程的具体细节。</p><p>举个例子：两个不同的服务 A、B 部署在两台不同的机器上，服务 A 如果想要调用服务 B 中的某个方法的话就可以通过 RPC 来做。</p><p>一言蔽之：<strong>RPC 的出现就是为了让你调用远程方法像调用本地方法一样简单。</strong></p><h3 id="二、RPC-的原理是什么？"><a href="#二、RPC-的原理是什么？" class="headerlink" title="二、RPC 的原理是什么？"></a>二、RPC 的原理是什么？</h3><p><img src="https://minio.zhangyl.top/img/2024/20240904224934.png" alt="image.png"></p><ul><li>1.服务消费端（client）以本地调用的方式调用远程服务；</li><li>2.客户端 Stub（client stub） 接收到调用后负责将方法、参数等组装成能够进行网络传输的消息体（序列化）：<code>RpcRequest</code>；</li><li>3.客户端 Stub（client stub） 找到远程服务的地址，并将消息发送到服务提供端；</li><li>4.服务端 Stub（桩）收到消息将消息反序列化为 Java 对象: <code>RpcRequest</code>；</li><li>5.服务端 Stub（桩）根据<code>RpcRequest</code>中的类、方法、方法参数等信息调用本地的方法；</li><li>6.服务端 Stub（桩）得到方法执行结果并将组装成能够进行网络传输的消息体：<code>RpcResponse</code>（序列化）发送至消费方；</li><li>7.客户端 Stub（client stub）接收到消息并将消息反序列化为 Java 对象:<code>RpcResponse</code> ，这样也就得到了最终结果。over!</li></ul><h3 id="三、有哪些常见的-RPC-框架？"><a href="#三、有哪些常见的-RPC-框架？" class="headerlink" title="三、有哪些常见的 RPC 框架？"></a>三、有哪些常见的 RPC 框架？</h3><p>我们这里说的 RPC 框架指的是可以让客户端直接调用服务端方法，就像调用本地方法一样简单的框架，比如我下面介绍的 Dubbo、Motan、gRPC 这些。 如果需要和 HTTP 协议打交道，解析和封装 HTTP 请求和响应。这类框架并不能算是“RPC 框架”，比如 Feign。</p><h4 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h4><p><img src="https://minio.zhangyl.top/img/2024/20240904225127.png" alt="image.png"></p><p>Apache Dubbo 是一款微服务框架，为大规模微服务实践提供高性能 RPC 通信、流量治理、可观测性等解决方案，<br>涵盖 Java、Golang 等多种语言 SDK 实现。</p><p>Dubbo 提供了从服务定义、服务发现、服务通信到流量管控等几乎所有的服务治理能力，支持 Triple 协议（基于 HTTP&#x2F;2 之上定义的下一代 RPC 通信协议）、应用级服务发现、Dubbo Mesh （Dubbo3 赋予了很多云原生友好的新特性）等特性。</p><p><img src="https://minio.zhangyl.top/img/2024/20240904225144.png" alt="image.png"></p><p>Dubbo 是由阿里开源，后来加入了 Apache 。正是由于 Dubbo 的出现，才使得越来越多的公司开始使用以及接受分布式架构。</p><h4 id="Motan"><a href="#Motan" class="headerlink" title="Motan"></a>Motan</h4><p>Motan 是新浪微博开源的一款 RPC 框架，据说在新浪微博正支撑着千亿次调用。不过笔者倒是很少看到有公司使用，而且网上的资料也比较少。</p><p><strong>Motan 更像是一个精简版的 Dubbo，可能是借鉴了 Dubbo 的思想，Motan 的设计更加精简，功能更加纯粹。</strong></p><h4 id="gRPC"><a href="#gRPC" class="headerlink" title="gRPC"></a>gRPC</h4><p><img src="https://minio.zhangyl.top/img/2024/20240904225239.png" alt="image.png"><br>gRPC 是 Google 开源的一个高性能、通用的开源 RPC 框架。其由主要面向移动应用开发并基于 HTTP&#x2F;2 协议标准而设计（支持双向流、消息头压缩等功能，更加节省带宽），基于 ProtoBuf 序列化协议开发，并且支持众多开发语言。</p><p><strong>何谓 ProtoBuf？</strong> <a href="https://github.com/protocolbuffers/protobuf">ProtoBuf（ Protocol Buffer）open in new window</a> 是一种更加灵活、高效的数据格式，可用于通讯协议、数据存储等领域，基本支持所有主流编程语言且与平台无关。不过，通过 ProtoBuf 定义接口和数据类型还挺繁琐的，这是一个小问题。</p><p><img src="https://minio.zhangyl.top/img/2024/20240904225308.png" alt="image.png"><br>不过，gRPC 的设计导致其几乎没有服务治理能力。如果你想要解决这个问题的话，就需要依赖其他组件比如腾讯的 PolarisMesh（北极星）了。</p><h4 id="Thrift"><a href="#Thrift" class="headerlink" title="Thrift"></a>Thrift</h4><p>Apache Thrift 是 Facebook 开源的跨语言的 RPC 通信框架，目前已经捐献给 Apache 基金会管理，由于其跨语言特性和出色的性能，在很多互联网公司得到应用，有能力的公司甚至会基于 thrift 研发一套分布式服务框架，增加诸如服务注册、服务发现等功能。</p><p><code>Thrift</code>支持多种不同的<strong>编程语言</strong>，包括<code>C++</code>、<code>Java</code>、<code>Python</code>、<code>PHP</code>、<code>Ruby</code>等（相比于 gRPC 支持的语言更多 ）。</p><h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>gRPC 和 Thrift 虽然支持跨语言的 RPC 调用，但是它们只提供了最基本的 RPC 框架功能，缺乏一系列配套的服务化组件和服务治理功能的支撑。</p><p>Dubbo 不论是从功能完善程度、生态系统还是社区活跃度来说都是最优秀的。而且，Dubbo 在国内有很多成功的案例比如当当网、滴滴等等，是一款经得起生产考验的成熟稳定的 RPC 框架。最重要的是你还能找到非常多的 Dubbo 参考资料，学习成本相对也较低。</p><p>但是，Dubbo 和 Motan 主要是给 Java 语言使用。虽然，Dubbo 和 Motan 目前也能兼容部分语言，但是不太推荐。如果需要跨多种语言调用的话，可以考虑使用 gRPC。</p><p>综上，如果是 Java 后端技术栈，并且你在纠结选择哪一种 RPC 框架的话，我推荐你考虑一下 Dubbo。</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java 线程池笔记</title>
       <link href="/java-Java-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/java-Java-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%AC%94%E8%AE%B0/</url>
