@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>软考备考计划</title>
+      <link href="/%E8%BD%AF%E8%80%83-plan/"/>
+      <url>/%E8%BD%AF%E8%80%83-plan/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、总计划"><a href="#一、总计划" class="headerlink" title="一、总计划"></a>一、总计划</h3><table><thead><tr><th align="center">阶段</th><th align="center">学习时间</th><th align="center">学习模块</th></tr></thead><tbody><tr><td align="center">第一阶段</td><td align="center">9月9日-9月29日</td><td align="center">综合知识</td></tr><tr><td align="center">第二阶段</td><td align="center">9月30日-10月20日</td><td align="center">案例分析</td></tr><tr><td align="center">第三阶段</td><td align="center">10月21日-11月10日</td><td align="center">论文</td></tr></tbody></table><h3 id="二、分计划"><a href="#二、分计划" class="headerlink" title="二、分计划"></a>二、分计划</h3><h4 id="2-1-第一阶段"><a href="#2-1-第一阶段" class="headerlink" title="2.1 第一阶段"></a>2.1 第一阶段</h4><p>状态标识： ✅</p><table><thead><tr><th>状态</th><th>专栏章节</th><th>章节名称</th><th>计划完成时间</th><th>实际完成时间</th></tr></thead><tbody><tr><td></td><td>01</td><td>计算机硬件</td><td>7月9日</td><td></td></tr><tr><td></td><td>02</td><td>操作系统知识</td><td>7月10日</td><td></td></tr></tbody></table><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软考 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kafka 常见问题总结</title>
       <link href="/%E9%9D%A2%E8%AF%95-Kafka-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
       <url>/%E9%9D%A2%E8%AF%95-Kafka-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
