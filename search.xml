@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Ubuntu安装翻墙软件</title>
+      <link href="/%E5%B7%A5%E5%85%B7-Ubuntu%E5%AE%89%E8%A3%85%E7%BF%BB%E5%A2%99%E8%BD%AF%E4%BB%B6/"/>
+      <url>/%E5%B7%A5%E5%85%B7-Ubuntu%E5%AE%89%E8%A3%85%E7%BF%BB%E5%A2%99%E8%BD%AF%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、安装背景"><a href="#一、安装背景" class="headerlink" title="一、安装背景"></a>一、安装背景</h3><p>最近在云服务器上安装了Jenkins，需要从Github拉取代码。但是经常会出现超时，于是便有了安装代理的想法。</p><p>上网搜索一通后选择了 <code>v2ray</code> ，毕竟Windows上用过类似产品。</p><h3 id="二、安装步骤"><a href="#二、安装步骤" class="headerlink" title="二、安装步骤"></a>二、安装步骤</h3><h3 id="2-1-安装V2ray内核"><a href="#2-1-安装V2ray内核" class="headerlink" title="2.1 安装V2ray内核"></a>2.1 安装V2ray内核</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -Ls https://mirrors.v2raya.org/go.sh | sudo bash</span><br></pre></td></tr></table></figure><h3 id="2-2-安装V2rayA"><a href="#2-2-安装V2rayA" class="headerlink" title="2.2 安装V2rayA"></a>2.2 安装V2rayA</h3><p>1.添加公钥</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/v2raya.asc   #添加公钥</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb https://apt.v2raya.org/ v2raya main&quot; | sudo tee /etc/apt/sources.list.d/v2raya.list    #添加v2rayA软件源</span><br><span class="line">sudo apt update    #更新软件源</span><br></pre></td></tr></table></figure><p>2.安装v2rayA</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install v2raya</span><br></pre></td></tr></table></figure><p>3.启动v2rayA</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start v2raya.service</span><br></pre></td></tr></table></figure><p>参考文章到这里就安装完成了，但是我的打开页面却报错——检测到 geosite.dat, geoip.dat 文件或 v2ray-core 可能未正确安装，需要下载安装 v2ray &#x2F; xray core，我选择安装 v2ray。</p><p>4.安装v2ray</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip </span><br><span class="line"></span><br><span class="line">unzip v2ray-linux-64.zip -d ./v2ray </span><br><span class="line"></span><br><span class="line">sudo mkdir -p /usr/local/share/v2ray </span><br><span class="line"></span><br><span class="line">sudo cp ./v2ray/*dat /usr/local/share/v2ray </span><br><span class="line"></span><br><span class="line">sudo install -Dm755 ./v2ray/v2ray /usr/local/bin/v2ray</span><br></pre></td></tr></table></figure><h2 id="三、-GUI界面配置"><a href="#三、-GUI界面配置" class="headerlink" title="三、 GUI界面配置"></a>三、 GUI界面配置</h2><p>通过2017端口进入web管理界面<br>    <a href="http://localhost:2017/">http://localhost:2017</a><br>如果无法访问请检查服务是否启动！</p><p><img src="https://minio.xiaofeng.show/blog/2024/20241129162849.png" alt="image.png"><br>第一次进入创建一个管理员账号和密码。后续重置可以通过命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo v2raya --reset-password  #重置密码</span><br></pre></td></tr></table></figure><p>第一次进入之后导入你的订阅链接，或是输入自己部署的节点！</p><p>导入之后点击更新，之后切换标签至你的节点处查看你的全部节点情况<br><img src="https://minio.xiaofeng.show/blog/2024/20241129162939.png" alt="image.png"><br>在未启动服务时，连接的节点呈现柚红色。我们在左上角点击相应按钮启动服务。</p><p>选择一个或多个节点连接。这里不建议选择过多的节点，4 个以内为佳。之后启动服务！启动之后启动的节点呈现蓝色，左上角的图标也显示为蓝色的正在运行。启动成功。<br><img src="https://minio.xiaofeng.show/blog/2024/20241129163011.png" alt="image.png"><br>配置代理</p><p>默认情况下 v2rayA 会通过核心开放 20170(socks5), 20171(http), 20172(带分流规则的http) 端口。<br><img src="https://minio.xiaofeng.show/blog/2024/20241129163035.png" alt="image.png"><br>这种方法是 v2rayA 推荐的方法。它相比于其他方法具有诸多优势，v2rayA 可以一键开启透明代理，为所有程序提供代理服务。</p><p>在设置中选择透明代理的分流方式，以及实现方式，然后保存即可。</p><p>注意，如需选择 GFWList，需要下载对应的规则库，请点击右上角的更新以完成下载。</p><h2 id="四、参考链接"><a href="#四、参考链接" class="headerlink" title="四、参考链接"></a>四、参考链接</h2><p>参考一：<a href="https://github.com/ningmoon/v2ray">https://github.com/ningmoon/v2ray</a><br>参考二：<a href="https://aisikao.ren/22633/">https://aisikao.ren/22633/</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu批量上传及更新</title>
       <link href="/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3-ubuntu%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E5%8F%8A%E6%9B%B4%E6%96%B0-ubuntu%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E5%8F%8A%E6%9B%B4%E6%96%B0/"/>
       <url>/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3-ubuntu%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E5%8F%8A%E6%9B%B4%E6%96%B0-ubuntu%E6%89%B9%E9%87%8F%E4%B8%8A%E4%BC%A0%E5%8F%8A%E6%9B%B4%E6%96%B0/</url>
