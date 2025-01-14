@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>光猫路由改桥接，同时支持IPTV</title>
+      <link href="/%E7%9E%8E%E6%8A%98%E8%85%BE-%E5%85%89%E7%8C%AB%E8%B7%AF%E7%94%B1%E6%94%B9%E6%A1%A5%E6%8E%A5%EF%BC%8C%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81IPTV/"/>
+      <url>/%E7%9E%8E%E6%8A%98%E8%85%BE-%E5%85%89%E7%8C%AB%E8%B7%AF%E7%94%B1%E6%94%B9%E6%A1%A5%E6%8E%A5%EF%BC%8C%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81IPTV/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>最近用Apple TV的时候感觉卡顿严重（无线连接），便想着修改下网络。由于客厅电视机下只有一个网口，要同时给IPTV和Apple TV同时使用，只能考虑将光猫改成桥接模式。</p></blockquote><h3 id="一、路由模式改成桥接模式"><a href="#一、路由模式改成桥接模式" class="headerlink" title="一、路由模式改成桥接模式"></a>一、路由模式改成桥接模式</h3><h4 id="1-1-光猫设置"><a href="#1-1-光猫设置" class="headerlink" title="1.1 光猫设置"></a>1.1 光猫设置</h4><p>家里的宽带是电信的，500MB下行带宽。跟宽带师傅要了超级管理员的密码，在浏览器输入 192.168.1.1，输入帐号和密码， 就能进入如下界面：<br><img src="https://minio.xiaofeng.show/blog/2024/cat_overview.png" alt="cat_overview.png"><br>光猫默认是路由模式，即是由光猫完成拨号上网的。<br>在网络设置里，选择上网的连接，将连接模式改为桥接，同时勾选 iTV 选项，方便下一步进行 iTV 设置。<br><img src="https://minio.xiaofeng.show/blog/2024/cat_bridge.png" alt="cat_bridge.png"></p><p>设置成功后，光猫上可以看到连接方式已改为桥接。<br><img src="https://minio.xiaofeng.show/blog/2024/cat_port_info.png" alt="cat_port_info.png"></p><p>我使用的是网口3，如图所示：<br><img src="https://minio.xiaofeng.show/blog/2024/cat_user_info.png" alt="cat_user_info.png"></p><h4 id="1-2-路由器设置"><a href="#1-2-路由器设置" class="headerlink" title="1.2 路由器设置"></a>1.2 路由器设置</h4><p>我使用的路由器是 Redmi AC2100，同时刷了老毛子固件，在浏览器输入 192.168.123.1，输入帐号和密码，进入如下界面：<br><img src="https://minio.xiaofeng.show/blog/2024/route_plugin.png" alt="route_plugin.png"><br>在 高级设置 -&gt; 外部网络 -&gt; 外部设置里，将外网连接类型改为 PPPoE拨号，在下方输入宽带帐号和密码即可。<br><img src="https://minio.xiaofeng.show/blog/2024/route_bridge.png" alt="route_bridge.png"></p><h3 id="二、IPTV设置"><a href="#二、IPTV设置" class="headerlink" title="二、IPTV设置"></a>二、IPTV设置</h3><h4 id="2-1-光猫设置"><a href="#2-1-光猫设置" class="headerlink" title="2.1 光猫设置"></a>2.1 光猫设置</h4><p>绑定VLAN<br>从网络连接这里可以看到，IPTV的 VlanId是43。<br><img src="https://minio.xiaofeng.show/blog/2024/cat_itv.png" alt="cat_itv.png"><br>由于上一步操作我用的是网口3，所以这里绑定 IPTV 还是网口3。<br><img src="https://minio.xiaofeng.show/blog/2024/cat_itv_vlan.png" alt="cat_itv.png"></p><h4 id="2-2-路由器设置"><a href="#2-2-路由器设置" class="headerlink" title="2.2 路由器设置"></a>2.2 路由器设置</h4><p>外部网络设置，我这里用的是LAN1，即第一个网口，同时在 VLAN CPU 和 VLAN LAN1绑定 VLAN ID 43。<br><img src="https://minio.xiaofeng.show/blog/2024/route_itv_wan.png" alt="route_itv_wan.png"></p><p>内部网络设置，转到IPTV设置，在组播流量中启用 IGMP&#x2F;MLD 侦听，M2U – 以太网交换机选择Multicast to Unicast。<br><img src="https://minio.xiaofeng.show/blog/2024/route_itv_lan.png" alt="route_itv_lan.png"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 瞎折腾 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Centrifugo安装与使用</title>
       <link href="/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3-Centrifugo%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
       <url>/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3-Centrifugo%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
