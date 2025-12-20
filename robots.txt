@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://zhangyuliang1994.github.io/sitemap-index.xml
