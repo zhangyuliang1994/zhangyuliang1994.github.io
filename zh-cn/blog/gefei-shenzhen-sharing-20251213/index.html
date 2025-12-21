@@ -1,0 +1,374 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>哥飞深圳年终分享20251213 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/gefei-shenzhen-sharing-20251213/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-shenzhen-sharing-20251213/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="哥飞深圳年终分享20251213 - Astro i18n Starter"><meta property="og:site_name" content="哥飞深圳年终分享20251213 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-shenzhen-sharing-20251213/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gefei-shenzhen-sharing-20251213/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gefei-shenzhen-sharing-20251213/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.C9MIckAc_Z2dJswz.webp" alt="哥飞深圳年终分享20251213" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>哥飞深圳年终分享20251213</h1> <time datetime="2025-12-13T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/12/13 </time> </header> <blockquote>
+<p>上周去深圳参加了哥飞的线下年终分享，下面是做的一些笔记和感受。</p>
+</blockquote>
+<h2 id="一概述">一、概述</h2>
+<p>哥飞这次分享，搞的场地很大，而且这次群友也很多，有600多人参加。</p>
+<p>我加入哥飞社群半年多了，但更多时候还是在潜水，这次来线下主要是想向拿到成果的人学习，希望自己能够早日实现从0到1的突破。</p>
+<h2 id="二嘉宾分享">二、嘉宾分享</h2>
+<h3 id="21-唐亦安-我是如何走出新手村的">2.1 唐亦安-我是如何走出新手村的</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian.jpg" alt="唐亦安"/></p>
+<p>这个嘉宾在今年下半年哥飞的每月新词比赛中持续霸榜，他做的主要内容是游戏攻略站/工具站。</p>
+<p>他还分享了监控 sitemap 的工具，配置了飞书机器人的webhook之后，可以每天定时发送到飞书里：<br/>
+<a href="https://github.com/taingh/sitemap-monitor">https://github.com/taingh/sitemap-monitor</a></p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian-sitemap-tools.png" alt="监控工具"/></p>
+<h4 id="阶段一游戏站">阶段一：游戏站</h4>
+<p>初入陌生领域，不知如何做起：按照社群内教程、按部就班</p>
+<p>尝试过的找词方法：Google trends词根，大站子域名，监控大站sitemap，刷 hugging face，社媒热点</p>
+<p>游戏站很适合新手：没什么门槛，但竞争愈发激烈，卷找词、卷上站速度、卷外链</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian-part1.png" alt="阶段一"/></p>
+<h4 id="阶段二游戏攻略工具站">阶段二：游戏攻略/工具站</h4>
+<p>游戏攻略站具体操作方法：</p>
+<ul>
+<li>大流量平台：google play、apple store、stream、roblox知名游戏厂商</li>
+<li>避开大体量游戏：有官网（吃掉主词流量）、有专门团队做相关站点（竞争不过）；如任天堂、PS、英雄联盟</li>
+<li>通过 trend/社媒：发现即将发布/刚刚发布的游戏</li>
+<li>根据 youtube、tiktok视频播放量、discords社群人数，判断是否值得做</li>
+<li>根据游戏内容，规划网络结构：
+<ul>
+<li>网站主页-承接游戏名主词流量</li>
+<li>网站内页-承接长尾词流量，如游戏名+人物、游戏名+道具</li>
+<li>只要是有用户搜索的词、有一定流量的词，就要单独做一个页面承接流量</li>
+</ul>
+</li>
+<li>网站内容来源：自己去游戏内体验，YouTube攻略视频、游戏官方发布的数据</li>
+</ul>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian-part2.png" alt="阶段二"/></p>
+<h4 id="阶段三ai工具站">阶段三：AI工具站</h4>
+<p>实用建议：</p>
+<ul>
+<li>模板的重要性：随着每次上站逐步完善模板</li>
+<li>关于网站部署：
+<ul>
+<li>没有技术背景：推荐cloudflare全家桶，省心省事，不需要维护</li>
+<li>有技术背景：推荐 dokploy</li>
+</ul>
+</li>
+<li>确定哪些是上站之前就要做好的：网站结构必须提前规划好，上线后SEO内容尽量不要修改
+<ul>
+<li>网站结构 TDH SEO内容</li>
+<li>绑定 aherf</li>
+<li>上站前做基础的检查</li>
+</ul>
+</li>
+<li>确定哪些是上站之后可以优化的：
+<ul>
+<li>多语言</li>
+<li>增加内页</li>
+<li>UI动画</li>
+</ul>
+</li>
+<li>使用工具：推荐使用NetGlow扫描基础SEO问题</li>
+<li>社群交流：与朋友多交流，能获得额外收获</li>
+</ul>
+<h4 id="总结">总结</h4>
+<ul>
+<li>新手按社群标准教程执行，不要过度思考</li>
+<li>尝试多种找词方法，包括词根、子站域名、监控大站sitemap等</li>
+<li>通过社交媒体关注更多相关博主，利用推荐机制发现新游戏</li>
+<li>建立并使用自己的网站模板，提高效率</li>
+<li>提前规划网站结构，一个搜索词对应一个页面</li>
+<li>使用NetGlow扫描网站基础SEO问题</li>
+</ul>
+<h3 id="22-卡叽哇-我的出海之路">2.2 卡叽哇-我的出海之路</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kajiwa.jpg" alt="咔叽哇"/>
+这老哥在6月的年中上海分享会上已经见过了，当时的分享燃爆全场了，这次是作为开场嘉宾，依然是我的榜样和楷模。</p>
+<h4 id="独立开发的劣势与优势">独立开发的劣势与优势</h4>
+<p>劣势：</p>
+<ul>
+<li>精力有限：
+<ul>
+<li>一天就24小时，你要自己写代码、架构、运维、设计、客服、运营</li>
+<li>解法：将事情变成”模板+流程”，避免重复造轮子</li>
+</ul>
+</li>
+<li>能力有限：
+<ul>
+<li>开发、设计、SEO、SEM等很难同时达到专业水平</li>
+<li>解法：主攻SEO，其他能力靠AI补足或花钱解决。</li>
+</ul>
+</li>
+<li>资源有限：
+<ul>
+<li>既拼不了投放渠道，也撑不起长期试验</li>
+<li>解法：做已经被验证的需求，更小更精准的切入</li>
+</ul>
+</li>
+</ul>
+<p>优势：</p>
+<ul>
+<li>成本低，决策快
+<ul>
+<li>不用开会和排期，今晚想做今晚就能上线</li>
+</ul>
+</li>
+<li>灵活性极强
+<ul>
+<li>新模型、新API出来，可以马上试水，抢前期红利</li>
+</ul>
+</li>
+<li>收益高度归属个人
+<ul>
+<li>所有投入都沉淀在你自己身上，失败也在累积资产</li>
+</ul>
+</li>
+</ul>
+<h4 id="哪些适合做独立开发哪些不适合">哪些适合做独立开发？哪些不适合？</h4>
+<p>不适合：重运营、重内容、要大规模客户/审核、严重侵占精力的产品</p>
+<p>适合：需求刚性、功能单一、技术可控、能靠SEO获取用户的轻量型工具产品</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kajiwa-solodev.png" alt="独立开发"/></p>
+<h4 id="ai带来的变革">AI带来的变革</h4>
+<ul>
+<li>改变了搜索行为，用户会在搜索中加上”AI”关键词</li>
+<li>技术民主化，低成本使用大模型</li>
+<li>思考如何让AI”打工”，为你创造收益</li>
+</ul>
+<h4 id="关于需求挖掘找词">关于需求挖掘/找词</h4>
+<p>什么是好的需求/关键词：</p>
+<ul>
+<li>长期：需求能持续几年，不是一阵风的热点</li>
+<li>稳定：底层服务可靠，API 供应和成本可控</li>
+<li>低风险：合规可持续，不碰灰黑产、不踩红线</li>
+</ul>
+<p>如何寻找需求/关键词：</p>
+<ul>
+<li>数据平台精确挖词：使用SEMrush、SimilarWeb等，从词根出发挖相关站点和长尾需求</li>
+<li>从社媒案例反推需求：使用场景/实际案例 -&gt; 谷歌上找到对应的站 -&gt; 提炼核心关键词</li>
+<li>跟踪行业头部网站动向：新上的功能页-&gt;提炼核心关键词-&gt;判断流量和商业价值</li>
+<li>查看导航站：看看最近新上线的网站解决什么需求</li>
+</ul>
+<h4 id="关于外链">关于外链</h4>
+<p>外链哪里来：</p>
+<ul>
+<li>1.看竞品外链：看竞品的网站都在哪些地方投放、挂链接，列个清单</li>
+<li>2.主动上导航站：向行业头部导航站、工具目录站主动提交自己的网站</li>
+<li>3.深挖现有流量来源：从自己当前的流量来源里，找出已经带来访客的外链站点，想办法深度合作</li>
+<li>4.用搜索结果找新外链位：搜索相关关键词，在 SERP 前几页里寻找可以提交站点、写介绍的博客和社区</li>
+</ul>
+<p>什么是好的外链：</p>
+<ul>
+<li>1.流量：能带来真实流量，只要持续带来相关用户，在我这里就是顶级外链</li>
+<li>2.品牌（有权重）：核心搜索词是品牌</li>
+<li>3.网站是活跃的：site 网站，最近7天有没有收录</li>
+<li>4.网站运营时间久：查看网站的注册时间</li>
+</ul>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kajiwa-backlinks.png" alt="外链"/></p>
+<h4 id="关于网站seo生命周期">关于网站SEO生命周期</h4>
+<ul>
+<li>起步阶段：靠外链和推广点火，第一批用户来自社区发帖、导航站、产品榜、朋友转发、少量广告</li>
+<li>试用阶段：当有人开始使用你的网站时，谷歌会给新站一点试验性的曝光，看点击率和留存时间</li>
+<li>爬升阶段&amp;稳定阶段：表现好就逐渐往前排，最后在一批关键词上形成相对固定的排名和稳定自然流量</li>
+</ul>
+<h4 id="成功后的建议">成功后的建议</h4>
+<ul>
+<li>做好备份方案，预防危机</li>
+<li>在账号、资金、基础设施上隔离高风险项目和稳定收入项目</li>
+<li>当基础稳定后，尝试更有挑战性的项目</li>
+</ul>
+<h4 id="总结-1">总结</h4>
+<ul>
+<li>模块化工作流程，利用AI提高效率</li>
+<li>专注个人专长领域，对其他能力寻求AI辅助或外包</li>
+<li>评估并优化现有外链质量</li>
+<li>为成功项目建立备份和风险隔离机制</li>
+<li>持续更新维护网站以保持竞争力</li>
+</ul>
+<h3 id="23-空弦uni-独立开发者的出海方法论与实践路径">2.3 空弦Uni-独立开发者的出海方法论与实践路径</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian.jpg" alt="空弦"/>
+这哥们的方法论特别厉害，底层逻辑很强。</p>
+<p>比如月入万刀是哥飞社群的一个口号，下面是这哥们的拆解。</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian-million-dollar.png" alt="月入万刀"/></p>
+<h4 id="核心思想与方法论">核心思想与方法论</h4>
+<p>生活中许多事情都类似于徒步，一旦你开始行走，景色就会发生变化。</p>
+<p>—— James Clear</p>
+<ul>
+<li>拥抱不确定性是成功的关键，需要先判断不确定性的来源（是否与自己相关），然后制定应对策略。</li>
+<li>人生是一个长期游戏，不确定性永远存在，需要一步步解决局部的不确定性。</li>
+<li>问题的质量决定答案的质量，好的问题需要足够细化，能够指引下一步行动。</li>
+<li>任何问题都存在”程度”的区别，不是非黑即白，而是有多种可能性和解决方案。</li>
+<li>实验思想：提出精准问题-&gt;设计实验-&gt;确定满意程度-&gt;得出结论。</li>
+<li>多维思考能帮助从不同角度看待问题，发现更多可能性。</li>
+<li>上下文链接的重要性，让用户自然流转到各个功能，提高转化率。</li>
+</ul>
+<p>图论拆解—任何事情都是可以设计的。</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian-graph.png" alt="图论"/></p>
+<h4 id="产品开发策略">产品开发策略</h4>
+<ul>
+<li>市场筛选：选择一个通用且老的赛道，使流量获取更加容易。</li>
+<li>调研方法
+<ul>
+<li>纵向调研：通过拆的方式，不断做减法</li>
+<li>横向调研：解决方案是对某个问题的回答，我们只需要确定问题是什么，就能得到一个解决方案集合，从而实现产品/功能的横向调研</li>
+</ul>
+</li>
+<li>MVP开发：先做加法收集想法，然后问自己”要做到什么程度”来筛选必要功能。</li>
+<li>时间统筹：许多任务可以并行处理，如提交Strip的同时可以投外链。</li>
+<li>素材制作：初期可以简单处理，有流量后再优化；亲自制作素材能更好理解用户需求。</li>
+<li>产品定价：不要过分担心竞争对手的低价，因为用户不会花太多时间比较所有选项。</li>
+</ul>
+<h4 id="用户沟通与客诉处理">用户沟通与客诉处理</h4>
+<ul>
+<li>客诉是建立长期用户关系的机会，不仅是解决问题。</li>
+<li>处理退款请求时，先提供替代方案（如延长使用期限）再提供退款选项。</li>
+<li>与用户建立个人联系，了解他们的背景和需求。</li>
+<li>寻找机会与用户合作，如邀请他们成为种子用户或内容创作者。</li>
+<li>“什么都能聊”的态度，换位思考，多维思考。</li>
+</ul>
+<h4 id="总结-2">总结</h4>
+<ul>
+<li>面对不确定性，先判断它是否与自己相关，然后逐步解决局部问题</li>
+<li>将大问题拆解成具体问题，细化到能指导行动的程度</li>
+<li>进行多维思考，从不同角度看待产品和问题</li>
+<li>开发产品时，关注上下文链接，让用户自然流转到各个功能</li>
+<li>做产品调研时，不仅研究同类竞品，也要看不同领域如何解决类似问题</li>
+<li>处理客诉时，视为建立长期用户关系的机会，提供多种解决方案。</li>
+</ul>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian-liveinthemoment.png" alt="阶段一"/></p>
+<h3 id="24-niko-新人如何从0到1赚到第一个1000美金">2.4 Niko-新人如何从0到1，赚到第一个1000美金</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/niko.jpg" alt="Niko"/>
+这位嘉宾也是大佬，我在朋友圈发了参加哥飞线下后，马上就有生财群友找到我，想要这位大佬分享的内容。</p>
+<h4 id="出海踩过的一些坑">出海踩过的一些坑</h4>
+<h5 id="第一坑批量上站">第一坑：批量上站</h5>
+<p>在所有变量都不变的情况下，上1个站不赚钱，上10个站也不赚钱。</p>
+<p>正确做法：</p>
+<ul>
+<li>高度聚焦，每上一个站都从各个角度归因，踩完所有的坑</li>
+<li>流量归因：
+<ul>
+<li>OnPage SEO、外链、内页</li>
+<li>停留时长、跳出率</li>
+</ul>
+</li>
+<li>转化归因：
+<ul>
+<li>定价设计、用户路径、转化漏斗</li>
+<li>GA4流量分析、用户沟通</li>
+</ul>
+</li>
+</ul>
+<p><strong>产品盈利的两个核心点：流量和转化，搞通这两点就能赚钱。</strong></p>
+<h5 id="第二坑新手打王者局">第二坑：新手打王者局</h5>
+<p>接触的信息太多，把所有的路线都了解了个遍</p>
+<p>新词一波流，老词反馈慢，做产品比较长久</p>
+<p>在没有任何积累的情况下，直接跳过了两个路径选择去做产品</p>
+<p>正确做法：</p>
+<ul>
+<li>新人不用考虑太多，先拿到正反馈</li>
+<li>在过程中收获的经验会帮你进入到下一个阶段</li>
+<li>跳出不赚钱的怪圈</li>
+</ul>
+<h4 id="如何实现从0到月入千刀">如何实现从0到月入千刀</h4>
+<h5 id="1网站迭代">1.网站迭代</h5>
+<p>通过不断迭代优化网站，提升用户体验和转化率。</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-website.png" alt="网站迭代"/></p>
+<h5 id="2发外链">2.发外链</h5>
+<p>积极建设外链，提升网站权重和流量。</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-backlinks.png" alt="外链"/></p>
+<h5 id="3研究用户路径和转化漏斗">3.研究用户路径和转化漏斗</h5>
+<p>深入分析用户行为，优化转化路径。</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-user-path.png" alt="用户路径"/>
+<img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-repair.png" alt="修复产品"/></p>
+<h5 id="4付费外链和投流">4.付费外链和投流</h5>
+<ul>
+<li>首次获得年费订单：600刀收入，开始尝试广告投放，初期亏损</li>
+<li>付费外链初探：投入100刀到Toolify，收回200刀</li>
+<li>持续加大外链投入：直到 ROI 不再理想</li>
+<li>覆盖主流付费外链平台：Toolify，Creati.ai，Topai.tools</li>
+</ul>
+<h4 id="全职出海和大厂上班的区别">全职出海和大厂上班的区别</h4>
+<ul>
+<li>大厂上班：
+<ul>
+<li>短期不焦虑，长期焦虑</li>
+<li>产品赚钱，与我无关</li>
+<li>资源多，限制多，效率低</li>
+<li>反馈来自年终奖和绩效，主观成分重</li>
+</ul>
+</li>
+<li>全职出海：
+<ul>
+<li>长期不焦虑，短期无反馈</li>
+<li>资源少，自由度大，效率高</li>
+<li>反馈来自用户，无法投机取巧</li>
+</ul>
+</li>
+</ul>
+<h5 id="如何在业余时间开启自己的副业">如何在业余时间开启自己的副业</h5>
+<ul>
+<li>唯一建议：做别人看得见的事情</li>
+<li>好处：
+<ul>
+<li>主业自由：第一份工作自己找的，其他都是别人主动找我</li>
+<li>副业自由：接不完的单子，改不完的bug，代码能写到吐</li>
+<li>会有一些意外惊喜</li>
+</ul>
+</li>
+</ul>
+<h3 id="25-其他">2.5 其他</h3>
+<p>由于个人能力有限，理解也有限，所以主要整理对新手友好的内容，其他内容可参考群友笔记。</p>
+<p>Leo-我的挖掘AI新词赚美刀经验</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Leo-note.png" alt="Leo笔记"/></p>
+<p>冉云-关于广告投放的一些实操经验</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/ranyun-note.png" alt="冉云笔记"/></p>
+<p>哥飞-带大家做AI出海两年多，我的所见所闻所思所考</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/gefei-note.png" alt="哥飞笔记"/></p>
+<h2 id="三总结">三、总结</h2>
+<p>做出海网站是需要正反馈的，小游戏站我个人确实没有太大兴趣，游戏攻略站/工具站是现阶段最想去做的。现在就是准备按部就班照抄唐亦安的方法，每月都去参加哥飞的新词大赛，先拿到正反馈再说。</p>
+<p>前几天闲鱼上有人找过来，需求聊完了，一报价就把人吓跑了，关键是我报了个很低的价格。</p>
+<p>有个朋友做了个海归汤解谜游戏网站，上个月突然爆了，注册2000+，日活500+，但是因为都是国内用户，所以付费转化并不高。</p>
+<p>上面两件事情更坚定了我的出海想法，2026年All in 出海网站，其他的都是噪声，需要屏蔽掉。</p>
+<p>最后引用下罗永浩采访MiniMax的片段，国内确实缺少软件付费的意识，海外的付费习惯更好。</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/luoyonghao.png" alt="罗永浩采访MiniMax"/></p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

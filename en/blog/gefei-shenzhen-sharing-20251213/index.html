@@ -1,0 +1,404 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>GeFei Shenzhen Year-End Sharing 20251213 - Astro i18n Starter</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/gefei-shenzhen-sharing-20251213/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-shenzhen-sharing-20251213/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="GeFei Shenzhen Year-End Sharing 20251213 - Astro i18n Starter"><meta property="og:site_name" content="GeFei Shenzhen Year-End Sharing 20251213 - Astro i18n Starter"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/gefei-shenzhen-sharing-20251213/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gefei-shenzhen-sharing-20251213/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gefei-shenzhen-sharing-20251213/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.C9MIckAc_Z2dJswz.webp" alt="GeFei Shenzhen Year-End Sharing 20251213" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="4032" height="3024" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>GeFei Shenzhen Year-End Sharing 20251213</h1> <time datetime="2025-12-13T00:00:00.000Z" data-astro-cid-v3cnrnum> 12/13/2025 </time> </header> <blockquote>
+<p>Last week I attended GeFei’s offline year-end sharing in Shenzhen. Here are some notes and reflections.</p>
+</blockquote>
+<h2 id="1-overview">1. Overview</h2>
+<p>GeFei arranged a large venue for this sharing session, with over 600 community members attending.</p>
+<p>I’ve been in GeFei’s community for over half a year, but mostly lurking. This time I came offline mainly to learn from those who have achieved results, hoping to make my own breakthrough from 0 to 1 soon.</p>
+<h2 id="2-guest-speakers">2. Guest Speakers</h2>
+<h3 id="21-tang-yian---how-i-graduated-from-the-newbie-village">2.1 Tang Yian - How I Graduated from the Newbie Village</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian.jpg" alt="Tang Yian"/></p>
+<p>This speaker has consistently topped GeFei’s monthly new keyword competition in the second half of this year. He mainly works on game guide sites and tool sites.</p>
+<p>He also shared a sitemap monitoring tool. After configuring a Feishu bot webhook, it can send daily updates to Feishu:<br/>
+<a href="https://github.com/taingh/sitemap-monitor">https://github.com/taingh/sitemap-monitor</a></p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian-sitemap-tools.png" alt="Monitoring Tool"/></p>
+<h4 id="phase-1-gaming-sites">Phase 1: Gaming Sites</h4>
+<p>Entering an unfamiliar field without knowing where to start: Follow the community tutorials step by step.</p>
+<p>Keyword finding methods tried: Google Trends root words, subdomains of large sites, monitoring large site sitemaps, browsing Hugging Face, social media trends.</p>
+<p>Gaming sites are great for beginners: Low barrier to entry, but competition is increasingly fierce - competing on keyword discovery, site launch speed, and backlinks.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian-part1.png" alt="Phase 1"/></p>
+<h4 id="phase-2-game-guidetool-sites">Phase 2: Game Guide/Tool Sites</h4>
+<p>Specific methods for game guide sites:</p>
+<ul>
+<li>High-traffic platforms: Google Play, Apple Store, Steam, Roblox, and well-known game publishers</li>
+<li>Avoid large games: Those with official sites (consuming main keyword traffic) or dedicated teams for related sites (can’t compete); e.g., Nintendo, PlayStation, League of Legends</li>
+<li>Through trends/social media: Discover upcoming or newly released games</li>
+<li>Judge worth based on YouTube/TikTok video views and Discord community size</li>
+<li>Plan site structure based on game content:
+<ul>
+<li>Homepage - captures main game name keyword traffic</li>
+<li>Inner pages - capture long-tail traffic, e.g., game name + character, game name + item</li>
+<li>Any keyword with user searches and certain traffic should have a dedicated page</li>
+</ul>
+</li>
+<li>Content sources: In-game experience, YouTube guide videos, official game data</li>
+</ul>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/tangyian-part2.png" alt="Phase 2"/></p>
+<h4 id="phase-3-ai-tool-sites">Phase 3: AI Tool Sites</h4>
+<p>Practical advice:</p>
+<ul>
+<li>Template importance: Gradually improve templates with each site launch</li>
+<li>About site deployment:
+<ul>
+<li>No technical background: Recommend Cloudflare full stack, hassle-free, no maintenance needed</li>
+<li>Technical background: Recommend Dokploy</li>
+</ul>
+</li>
+<li>Determine what to do before launch: Site structure must be planned in advance, SEO content should not be modified after launch
+<ul>
+<li>Site structure, TDH, SEO content</li>
+<li>Connect Ahrefs</li>
+<li>Basic checks before launch</li>
+</ul>
+</li>
+<li>What can be optimized after launch:
+<ul>
+<li>Multi-language support</li>
+<li>Adding inner pages</li>
+<li>UI animations</li>
+</ul>
+</li>
+<li>Tools: Recommend NetGlow for scanning basic SEO issues</li>
+<li>Community exchange: Communicate more with friends for extra gains</li>
+</ul>
+<h4 id="summary">Summary</h4>
+<ul>
+<li>Beginners should follow community standard tutorials, don’t overthink</li>
+<li>Try various keyword finding methods including root words, subdomain names, monitoring large site sitemaps</li>
+<li>Follow more relevant bloggers on social media, use recommendation algorithms to discover new games</li>
+<li>Build and use your own website templates for efficiency</li>
+<li>Plan site structure in advance, one search term equals one page</li>
+<li>Use NetGlow to scan for basic SEO issues</li>
+</ul>
+<h3 id="22-kajiwa---my-journey-going-global">2.2 Kajiwa - My Journey Going Global</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kajiwa.jpg" alt="Kajiwa"/>
+I met this guy at the mid-year Shanghai sharing in June. His talk was explosive back then, and as the opening speaker this time, he remains my role model and inspiration.</p>
+<h4 id="disadvantages-and-advantages-of-indie-development">Disadvantages and Advantages of Indie Development</h4>
+<p>Disadvantages:</p>
+<ul>
+<li>Limited energy:
+<ul>
+<li>Only 24 hours a day, doing coding, architecture, ops, design, customer service, and marketing yourself</li>
+<li>Solution: Turn things into “templates + processes” to avoid reinventing the wheel</li>
+</ul>
+</li>
+<li>Limited skills:
+<ul>
+<li>Hard to reach professional level in development, design, SEO, SEM simultaneously</li>
+<li>Solution: Focus on SEO, supplement other skills with AI or pay for them</li>
+</ul>
+</li>
+<li>Limited resources:
+<ul>
+<li>Can’t compete on advertising channels or sustain long-term experiments</li>
+<li>Solution: Work on validated needs, smaller and more precise entry points</li>
+</ul>
+</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>Low cost, fast decisions
+<ul>
+<li>No meetings or scheduling, can ship tonight if you want to</li>
+</ul>
+</li>
+<li>Extremely flexible
+<ul>
+<li>Can immediately try new models and APIs when released, grab early dividends</li>
+</ul>
+</li>
+<li>High personal attribution of returns
+<ul>
+<li>All investment accumulates on yourself, failures also build assets</li>
+</ul>
+</li>
+</ul>
+<h4 id="whats-suitable-for-indie-development-whats-not">What’s Suitable for Indie Development? What’s Not?</h4>
+<p>Not suitable: Heavy operations, heavy content, requiring large-scale customers/review, products that seriously consume energy</p>
+<p>Suitable: Rigid demand, single function, controllable technology, lightweight tool products that can acquire users through SEO</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kajiwa-solodev.png" alt="Indie Development"/></p>
+<h4 id="changes-brought-by-ai">Changes Brought by AI</h4>
+<ul>
+<li>Changed search behavior, users now add “AI” keywords in searches</li>
+<li>Democratization of technology, low-cost use of large models</li>
+<li>Think about how to make AI “work” for you to create revenue</li>
+</ul>
+<h4 id="about-demand-miningkeyword-finding">About Demand Mining/Keyword Finding</h4>
+<p>What makes a good demand/keyword:</p>
+<ul>
+<li>Long-term: Demand lasts for years, not just a flash trend</li>
+<li>Stable: Reliable underlying services, controllable API supply and cost</li>
+<li>Low risk: Compliant and sustainable, avoid gray/black industries and red lines</li>
+</ul>
+<p>How to find demand/keywords:</p>
+<ul>
+<li>Precise keyword mining on data platforms: Use SEMrush, SimilarWeb, etc., dig related sites and long-tail needs from root words</li>
+<li>Reverse-engineer demand from social media cases: Use scenario/actual case -&gt; find corresponding site on Google -&gt; extract core keywords</li>
+<li>Track industry leader site movements: New feature pages -&gt; extract core keywords -&gt; judge traffic and commercial value</li>
+<li>Check navigation sites: See what needs newly launched sites are solving</li>
+</ul>
+<h4 id="about-backlinks">About Backlinks</h4>
+<p>Where do backlinks come from:</p>
+<ul>
+<li>
+<ol>
+<li>Check competitor backlinks: See where competitors place their sites and links, make a list</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Proactively submit to navigation sites: Submit your site to industry-leading navigation and tool directory sites</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Dig deeper into existing traffic sources: From your current traffic sources, find sites already bringing visitors, seek deeper cooperation</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Find new backlink positions through search results: Search related keywords, find blogs and communities in the first few pages of SERP where you can submit sites and write introductions</li>
+</ol>
+</li>
+</ul>
+<p>What makes a good backlink:</p>
+<ul>
+<li>
+<ol>
+<li>Traffic: Can bring real traffic, as long as it continuously brings relevant users, it’s a top-tier backlink for me</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Brand (authoritative): Core search term is the brand</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Site is active: Site search shows indexing in the last 7 days</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>Long operation time: Check the site’s registration date</li>
+</ol>
+</li>
+</ul>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kajiwa-backlinks.png" alt="Backlinks"/></p>
+<h4 id="about-website-seo-lifecycle">About Website SEO Lifecycle</h4>
+<ul>
+<li>Startup phase: Ignite with backlinks and promotion, first users come from community posts, navigation sites, product lists, friend shares, small ads</li>
+<li>Trial phase: When people start using your site, Google gives new sites some experimental exposure, checking click rates and retention time</li>
+<li>Climbing &amp; stable phase: Good performance leads to gradual ranking improvement, eventually forming relatively fixed rankings and stable organic traffic on a batch of keywords</li>
+</ul>
+<h4 id="advice-after-success">Advice After Success</h4>
+<ul>
+<li>Prepare backup plans, prevent crises</li>
+<li>Isolate high-risk projects from stable income projects in accounts, funds, and infrastructure</li>
+<li>After establishing a stable foundation, try more challenging projects</li>
+</ul>
+<h4 id="summary-1">Summary</h4>
+<ul>
+<li>Modularize workflows, use AI to improve efficiency</li>
+<li>Focus on personal expertise, seek AI assistance or outsourcing for other skills</li>
+<li>Evaluate and optimize existing backlink quality</li>
+<li>Establish backup and risk isolation mechanisms for successful projects</li>
+<li>Continuously update and maintain sites to stay competitive</li>
+</ul>
+<h3 id="23-kongxian-uni---methodology-and-practice-path-for-indie-developers-going-global">2.3 Kongxian Uni - Methodology and Practice Path for Indie Developers Going Global</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian.jpg" alt="Kongxian"/>
+This guy’s methodology is particularly impressive, with strong underlying logic.</p>
+<p>For example, earning $10K monthly is a slogan in GeFei’s community. Here’s this guy’s breakdown.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian-million-dollar.png" alt="Ten Thousand Dollars Monthly"/></p>
+<h4 id="core-ideas-and-methodology">Core Ideas and Methodology</h4>
+<p>Many things in life are like hiking: once you start walking, the scenery changes.</p>
+<p>—— James Clear</p>
+<ul>
+<li>Embracing uncertainty is key to success. First judge the source of uncertainty (whether it’s related to you), then develop coping strategies.</li>
+<li>Life is a long-term game, uncertainty always exists, need to solve local uncertainties step by step.</li>
+<li>The quality of questions determines the quality of answers. Good questions need to be specific enough to guide the next action.</li>
+<li>Every problem has degrees of difference, not black and white, but multiple possibilities and solutions.</li>
+<li>Experimental thinking: Pose precise questions -&gt; Design experiments -&gt; Determine satisfaction level -&gt; Draw conclusions.</li>
+<li>Multi-dimensional thinking helps view problems from different angles and discover more possibilities.</li>
+<li>Importance of contextual links: Let users naturally flow to various functions, improving conversion rates.</li>
+</ul>
+<p>Graph theory breakdown - Everything can be designed.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian-graph.png" alt="Graph Theory"/></p>
+<h4 id="product-development-strategy">Product Development Strategy</h4>
+<ul>
+<li>Market screening: Choose a general and old track to make traffic acquisition easier.</li>
+<li>Research methods
+<ul>
+<li>Vertical research: Through deconstruction, continuously subtract</li>
+<li>Horizontal research: Solutions are answers to certain questions. We just need to determine what the question is to get a solution set, thus achieving horizontal product/feature research</li>
+</ul>
+</li>
+<li>MVP development: First add to collect ideas, then ask yourself “to what extent” to filter essential features.</li>
+<li>Time management: Many tasks can be processed in parallel, e.g., submit to Stripe while building backlinks.</li>
+<li>Material creation: Initially can be simple, optimize after getting traffic; making materials yourself helps better understand user needs.</li>
+<li>Product pricing: Don’t worry too much about competitors’ low prices, users won’t spend too much time comparing all options.</li>
+</ul>
+<h4 id="user-communication-and-complaint-handling">User Communication and Complaint Handling</h4>
+<ul>
+<li>Complaints are opportunities to build long-term user relationships, not just problem-solving.</li>
+<li>When handling refund requests, first offer alternatives (like extending usage period) before offering refund options.</li>
+<li>Build personal connections with users, understand their background and needs.</li>
+<li>Look for opportunities to collaborate with users, like inviting them to be seed users or content creators.</li>
+<li>“Can discuss anything” attitude, put yourself in their shoes, think multi-dimensionally.</li>
+</ul>
+<h4 id="summary-2">Summary</h4>
+<ul>
+<li>When facing uncertainty, first judge if it’s related to you, then gradually solve local problems</li>
+<li>Break big problems into specific ones, detailed enough to guide action</li>
+<li>Conduct multi-dimensional thinking, view products and problems from different angles</li>
+<li>When developing products, focus on contextual links, let users naturally flow to various functions</li>
+<li>When doing product research, not only study similar competitors, but also see how different fields solve similar problems</li>
+<li>When handling complaints, view it as an opportunity to build long-term user relationships, provide multiple solutions.</li>
+</ul>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/kongxian-liveinthemoment.png" alt="Live in the Moment"/></p>
+<h3 id="24-niko---how-beginners-go-from-0-to-1-earning-the-first-1000">2.4 Niko - How Beginners Go from 0 to 1, Earning the First $1000</h3>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/niko.jpg" alt="Niko"/>
+This speaker is also a big shot. After I posted on WeChat Moments about attending GeFei’s offline event, friends from other communities immediately reached out wanting this speaker’s content.</p>
+<h4 id="pitfalls-in-going-global">Pitfalls in Going Global</h4>
+<h5 id="pitfall-1-batch-site-launching">Pitfall 1: Batch Site Launching</h5>
+<p>With all variables unchanged, if 1 site doesn’t make money, 10 sites won’t either.</p>
+<p>Correct approach:</p>
+<ul>
+<li>Highly focused, attribute from every angle with each site launch, step on all the pitfalls</li>
+<li>Traffic attribution:
+<ul>
+<li>OnPage SEO, backlinks, inner pages</li>
+<li>Time on site, bounce rate</li>
+</ul>
+</li>
+<li>Conversion attribution:
+<ul>
+<li>Pricing design, user paths, conversion funnels</li>
+<li>GA4 traffic analysis, user communication</li>
+</ul>
+</li>
+</ul>
+<p><strong>The two core points of product profitability: traffic and conversion. Master these two and you can make money.</strong></p>
+<h5 id="pitfall-2-beginners-playing-at-expert-level">Pitfall 2: Beginners Playing at Expert Level</h5>
+<p>Too much information exposure, learned about all the routes</p>
+<p>New keywords for quick wins, old keywords have slow feedback, products are more long-term</p>
+<p>Without any accumulation, directly skipped two path choices to do products</p>
+<p>Correct approach:</p>
+<ul>
+<li>Beginners don’t need to think too much, get positive feedback first</li>
+<li>Experience gained in the process will help you enter the next stage</li>
+<li>Break out of the not-making-money cycle</li>
+</ul>
+<h4 id="how-to-go-from-0-to-1k-monthly">How to Go from 0 to $1K Monthly</h4>
+<h5 id="1-website-iteration">1. Website Iteration</h5>
+<p>Continuously iterate and optimize the website to improve user experience and conversion rates.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-website.png" alt="Website Iteration"/></p>
+<h5 id="2-building-backlinks">2. Building Backlinks</h5>
+<p>Actively build backlinks to improve website authority and traffic.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-backlinks.png" alt="Backlinks"/></p>
+<h5 id="3-research-user-paths-and-conversion-funnels">3. Research User Paths and Conversion Funnels</h5>
+<p>Deeply analyze user behavior to optimize conversion paths.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-user-path.png" alt="User Path"/>
+<img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Niko-repair.png" alt="Product Repair"/></p>
+<h5 id="4-paid-backlinks-and-advertising">4. Paid Backlinks and Advertising</h5>
+<ul>
+<li>First annual subscription: $600 revenue, started trying ad placement, initial losses</li>
+<li>Initial paid backlinks: Invested $100 on Toolify, recovered $200</li>
+<li>Continued increasing backlink investment: Until ROI was no longer ideal</li>
+<li>Covered mainstream paid backlink platforms: Toolify, Creati.ai, Topai.tools</li>
+</ul>
+<h4 id="difference-between-full-time-going-global-and-big-company-jobs">Difference Between Full-time Going Global and Big Company Jobs</h4>
+<ul>
+<li>Big company job:
+<ul>
+<li>Short-term not anxious, long-term anxious</li>
+<li>Product makes money, nothing to do with me</li>
+<li>Many resources, many restrictions, low efficiency</li>
+<li>Feedback comes from year-end bonus and performance, subjective components heavy</li>
+</ul>
+</li>
+<li>Full-time going global:
+<ul>
+<li>Long-term not anxious, short-term no feedback</li>
+<li>Few resources, high freedom, high efficiency</li>
+<li>Feedback comes from users, no shortcuts possible</li>
+</ul>
+</li>
+</ul>
+<h5 id="how-to-start-a-side-business-in-your-spare-time">How to Start a Side Business in Your Spare Time</h5>
+<ul>
+<li>Only advice: Do things that others can see</li>
+<li>Benefits:
+<ul>
+<li>Career freedom: Found my first job myself, others came to me for the rest</li>
+<li>Side business freedom: Endless orders, endless bugs to fix, can code until you puke</li>
+<li>Some unexpected surprises</li>
+</ul>
+</li>
+</ul>
+<h3 id="25-others">2.5 Others</h3>
+<p>Due to limited personal ability and understanding, I mainly organized beginner-friendly content. For other content, please refer to community members’ notes.</p>
+<p>Leo - My Experience Mining AI New Keywords for Dollars</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/Leo-note.png" alt="Leo Notes"/></p>
+<p>Ranyun - Some Practical Experience on Ad Placement</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/ranyun-note.png" alt="Ranyun Notes"/></p>
+<p>GeFei - Taking Everyone on the AI Going Global Journey for Over Two Years, My Observations and Thoughts</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/gefei-note.png" alt="GeFei Notes"/></p>
+<h2 id="3-conclusion">3. Conclusion</h2>
+<p>Building overseas websites requires positive feedback. I personally don’t have much interest in small game sites; game guide/tool sites are what I want to do most at this stage. Now I’m planning to follow Tang Yian’s method step by step, participate in GeFei’s monthly new keyword competition, and get positive feedback first.</p>
+<p>A few days ago, someone contacted me on Xianyu (Chinese second-hand marketplace). After discussing the requirements, I quoted a price and scared them off - even though I quoted a very low price.</p>
+<p>A friend made a Turtle Soup puzzle game website that suddenly exploded last month - 2000+ registrations, 500+ daily active users, but since they’re all domestic users, paid conversion isn’t high.</p>
+<p>These two things further solidified my going global mindset. In 2026, I’m going all-in on overseas websites. Everything else is noise that needs to be filtered out.</p>
+<p>Finally, quoting a segment from Luo Yonghao’s interview with MiniMax - China really lacks awareness of paying for software, while overseas payment habits are better.</p>
+<p><img src="/images/blog/xianxiahuodong/gefei-shenzhen-share-20251213/luoyonghao.png" alt="Luo Yonghao Interview with MiniMax"/></p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
