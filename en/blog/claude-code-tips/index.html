@@ -66,16 +66,12 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"ç®€ä½
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># MCP help</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#79B8FF"> --help</span></span></code></pre>
-<p>MCP configuration file example (<code>.mcp.json</code>):</p>
-<p><img src="/images/blog/claude-code-tips/cc-11.jpeg" alt="MCP Configuration Example"/></p>
 <h3 id="13-configuration-related">1.3 Configuration Related</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Config help</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> config</span><span style="color:#79B8FF"> --help</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># List configurations</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> config</span><span style="color:#9ECBFF"> list</span></span></code></pre>
-<p>Permissions configuration interface (<code>/permissions</code>):</p>
-<p><img src="/images/blog/claude-code-tips/cc-10.jpeg" alt="Permissions Configuration Interface"/></p>
 <h3 id="14-session-commands">1.4 Session Commands</h3>
 
 
@@ -123,13 +119,10 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"ç®€ä½
 
 
 <table><thead><tr><th>Command</th><th>Description</th><th>Use Case</th></tr></thead><tbody><tr><td><code>/clear</code></td><td>Clear context</td><td>When you need to start fresh, or feel the AI can no longer solve the problem</td></tr><tr><td><code>/compact</code></td><td>Compress conversation</td><td>Restart conversation without losing previous memory</td></tr><tr><td><code>/cost</code></td><td>Show costs</td><td>Max users donâ€™t need this, API users can check their usage</td></tr><tr><td><code>/login</code> <code>/logout</code></td><td>Login/Logout</td><td>Switch accounts etc.</td></tr><tr><td><code>/model</code></td><td>Switch model</td><td>$200 tier can switch to Opus model, $100 tier has no choice</td></tr><tr><td><code>/status</code></td><td>Status</td><td>Check current CC status</td></tr><tr><td><code>/doctor</code></td><td>Diagnose</td><td>Check CC installation status</td></tr></tbody></table>
-<p>Slash command example:</p>
-<p><img src="/images/blog/claude-code-tips/cc-7.jpeg" alt="Slash Command Example"/></p>
 <hr/>
 <h2 id="2-auto-edit-mode">2. Auto-Edit Mode</h2>
 <p><strong>Use Case</strong>: When you donâ€™t want to confirm every file creation</p>
 <p><strong>How to Use</strong>: Press <code>Shift + Tab</code> once to enter this mode</p>
-<p><img src="/images/blog/claude-code-tips/cc-1.jpeg" alt="Auto-Edit Mode"/></p>
 <hr/>
 <h2 id="3-specify-files">3. Specify Files</h2>
 <p><strong>Use Case</strong>: When you need to operate on a specific file</p>
@@ -138,12 +131,10 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"ç®€ä½
 <h2 id="4-deep-thinking">4. Deep Thinking</h2>
 <p><strong>Use Case</strong>: When facing difficult problems, planning solutions, refactoring code, or solving complex bugs</p>
 <p><strong>How to Use</strong>: Use keywords like <code>ultrathink</code> or <code>think deeply</code> in your prompts</p>
-<p><img src="/images/blog/claude-code-tips/cc-12.jpeg" alt="Deep Thinking Mode"/></p>
 <hr/>
 <h2 id="5-plan-mode">5. Plan Mode</h2>
 <p><strong>Use Case</strong>: When planning projects in early stages or solving complex issues</p>
 <p><strong>How to Use</strong>: Press <code>Shift + Tab</code> twice to see this option</p>
-<p><img src="/images/blog/claude-code-tips/cc-6.png" alt="Plan Mode"/></p>
 <p>It will ask if you want to continue:</p>
 <ul>
 <li>If unsatisfied, choose <strong>No</strong> and continue explaining your requirements</li>
@@ -171,18 +162,9 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"ç®€ä½
 <p><strong>Location</strong>: <code>~/.claude/CLAUDE.md</code></p>
 <h3 id="82-project-memory-file">8.2 Project Memory File</h3>
 <p><strong>Location</strong>: <code>CLAUDE.md</code> file in your project directory</p>
-<p><img src="/images/blog/claude-code-tips/cc-4.jpeg" alt="CLAUDE.md Example"/></p>
 <blockquote>
 <p>ðŸ’¡ For existing projects with code, itâ€™s recommended to use the <code>/init</code> command to auto-generate</p>
 </blockquote>
-<p>Claude will automatically adjust its behavior based on the CLAUDE.md content:</p>
-<p><img src="/images/blog/claude-code-tips/cc-5.jpeg" alt="Claude Updating CLAUDE.md"/></p>
-<h3 id="83-agents-configuration">8.3 Agents Configuration</h3>
-<p>You can also configure multiple agents in the <code>.claude/agents</code> directory:</p>
-<p><img src="/images/blog/claude-code-tips/cc-8.png" alt="Agents Directory Structure"/></p>
-<h3 id="84-hooks-configuration">8.4 Hooks Configuration</h3>
-<p>You can configure hooks to automatically execute commands:</p>
-<p><img src="/images/blog/claude-code-tips/cc-9.jpeg" alt="Hooks Configuration Example"/></p>
 <hr/>
 <h2 id="9-use-previous-message-prompts">9. Use Previous Message Prompts</h2>
 <p><strong>Use Case</strong>: When you want to restore a previous conversation</p>
@@ -204,8 +186,6 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"ç®€ä½
 <span class="line"><span style="color:#6A737D"># Or use these flags</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> -c</span><span style="color:#6A737D">  # Continue last conversation</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> -r</span><span style="color:#6A737D">  # Resume conversation</span></span></code></pre>
-<p>You can also view historical sessions in the web interface:</p>
-<p><img src="/images/blog/claude-code-tips/cc-2.jpeg" alt="Sessions List"/></p>
 <hr/>
 <h2 id="12-execute-terminal-commands">12. Execute Terminal Commands</h2>
 <p><strong>Use Case</strong>: Check current directory or execute special commands</p>
