@@ -68,12 +68,16 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># MCP 帮助</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#79B8FF"> --help</span></span></code></pre>
+<p>MCP 配置文件示例（<code>.mcp.json</code>）：</p>
+<p><img src="/images/blog/claude-code-tips/cc-11.jpeg" alt="MCP 配置示例"/></p>
 <h3 id="13-配置相关">1.3 配置相关</h3>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 配置帮助</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> config</span><span style="color:#79B8FF"> --help</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#6A737D"># 列出配置</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> config</span><span style="color:#9ECBFF"> list</span></span></code></pre>
+<p>权限配置界面（<code>/permissions</code>）：</p>
+<p><img src="/images/blog/claude-code-tips/cc-10.jpeg" alt="权限配置界面"/></p>
 <h3 id="14-会话命令">1.4 会话命令</h3>
 
 
@@ -121,10 +125,13 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 
 
 <table><thead><tr><th>命令</th><th>解释</th><th>使用场景</th></tr></thead><tbody><tr><td><code>/clear</code></td><td>清空上下文</td><td>需要重新开始，或者感觉 AI 已经无法解决问题</td></tr><tr><td><code>/compact</code></td><td>压缩对话</td><td>重开对话，但不希望丢掉之前的记忆</td></tr><tr><td><code>/cost</code></td><td>花费</td><td>Max 用户不需要看，API 用户可以查看</td></tr><tr><td><code>/login</code> <code>/logout</code></td><td>登录登出</td><td>切换账号等操作</td></tr><tr><td><code>/model</code></td><td>切换模型</td><td>200刀可以切换使用 Opus 模型，100刀没有选择</td></tr><tr><td><code>/status</code></td><td>状态</td><td>查看当前 CC 的状态</td></tr><tr><td><code>/doctor</code></td><td>检测</td><td>检测 CC 的安装状态</td></tr></tbody></table>
+<p>斜杠命令示例：</p>
+<p><img src="/images/blog/claude-code-tips/cc-7.jpeg" alt="斜杠命令示例"/></p>
 <hr/>
 <h2 id="二自动编辑模式">二、自动编辑模式</h2>
 <p><strong>使用场景</strong>：不需要每次创建文件都需要你的确认</p>
 <p><strong>使用方式</strong>：<code>Shift + Tab</code> 按一次，就可以进入该模式</p>
+<p><img src="/images/blog/claude-code-tips/cc-1.jpeg" alt="自动编辑模式"/></p>
 <hr/>
 <h2 id="三指定文件">三、指定文件</h2>
 <p><strong>使用场景</strong>：具体需要对某个文件操作的时候</p>
@@ -133,10 +140,12 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <h2 id="四深度思考">四、深度思考</h2>
 <p><strong>使用场景</strong>：遇到疑难病症，或者是规划方案的时候，重构代码，解决复杂 bug</p>
 <p><strong>使用方式</strong>：提示词里面使用 <code>ultrathink</code>，或者 <code>深度思考</code> 等关键词</p>
+<p><img src="/images/blog/claude-code-tips/cc-12.jpeg" alt="深度思考模式"/></p>
 <hr/>
 <h2 id="五plan-模式">五、Plan 模式</h2>
 <p><strong>使用场景</strong>：前期需要规划项目的时候，或者是解决疑难杂症的时候</p>
 <p><strong>使用方式</strong>：<code>Shift + Tab</code> 按两次就可以看见</p>
+<p><img src="/images/blog/claude-code-tips/cc-6.png" alt="Plan 模式"/></p>
 <p>它会让你选择是否继续：</p>
 <ul>
 <li>如果你觉得不满意，可以选择 <strong>No</strong>，然后继续跟他说你的需求</li>
@@ -164,9 +173,18 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <p><strong>目录</strong>：<code>~/.claude/CLAUDE.md</code></p>
 <h3 id="82-项目记忆文件">8.2 项目记忆文件</h3>
 <p><strong>目录</strong>：项目目录下的 <code>CLAUDE.md</code> 文件</p>
+<p><img src="/images/blog/claude-code-tips/cc-4.jpeg" alt="CLAUDE.md 示例"/></p>
 <blockquote>
 <p>💡 如果是已经有代码的项目，建议使用 <code>/init</code> 命令自动生成</p>
 </blockquote>
+<p>Claude 会自动根据 CLAUDE.md 的内容来调整行为：</p>
+<p><img src="/images/blog/claude-code-tips/cc-5.jpeg" alt="Claude 更新 CLAUDE.md"/></p>
+<h3 id="83-agents-配置">8.3 Agents 配置</h3>
+<p>你还可以在 <code>.claude/agents</code> 目录下配置多个 Agent：</p>
+<p><img src="/images/blog/claude-code-tips/cc-8.png" alt="Agents 目录结构"/></p>
+<h3 id="84-hooks-配置">8.4 Hooks 配置</h3>
+<p>可以配置 Hooks 来自动执行命令：</p>
+<p><img src="/images/blog/claude-code-tips/cc-9.jpeg" alt="Hooks 配置示例"/></p>
 <hr/>
 <h2 id="九使用前面的消息提示词">九、使用前面的消息提示词</h2>
 <p><strong>使用场景</strong>：想恢复到前面的对话</p>
@@ -188,6 +206,8 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <span class="line"><span style="color:#6A737D"># 或者使用以下参数</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> -c</span><span style="color:#6A737D">  # 继续上次对话</span></span>
 <span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> -r</span><span style="color:#6A737D">  # 恢复对话</span></span></code></pre>
+<p>Web 界面也可以查看历史 Sessions：</p>
+<p><img src="/images/blog/claude-code-tips/cc-2.jpeg" alt="Sessions 列表"/></p>
 <hr/>
 <h2 id="十二执行终端命令">十二、执行终端命令</h2>
 <p><strong>使用场景</strong>：查看当前目录，或者执行一些特殊的命令</p>
