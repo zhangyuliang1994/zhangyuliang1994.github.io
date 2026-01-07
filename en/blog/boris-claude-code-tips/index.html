@@ -1,0 +1,220 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>AI Coding Tips from Boris, Creator of Claude Code - Astro i18n Starter</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/boris-claude-code-tips/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/boris-claude-code-tips/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="AI Coding Tips from Boris, Creator of Claude Code - Astro i18n Starter"><meta property="og:site_name" content="AI Coding Tips from Boris, Creator of Claude Code - Astro i18n Starter"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/boris-claude-code-tips/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/boris-claude-code-tips/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/boris-claude-code-tips/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>AI Coding Tips from Boris, Creator of Claude Code</h1> <time datetime="2026-01-07T00:00:00.000Z" data-astro-cid-v3cnrnum> 1/7/2026 </time> </header> <blockquote>
+<p>I’m Boris and I created Claude Code. Lots of people have asked how I use Claude Code, so I wanted to show off my setup a bit.</p>
+</blockquote>
+<p>My setup might be surprisingly vanilla! Claude Code works great out of the box, so I personally don’t customize it much. There is no one correct way to use Claude Code: we intentionally build it in a way that you can use it, customize it, and hack it however you like. Each person on the Claude Code team uses it very differently.</p>
+<p>So, here goes.</p>
+<hr/>
+<h2 id="1-run-5-claudes-in-parallel">1. Run 5 Claudes in Parallel</h2>
+<p>I run 5 Claudes in parallel in my terminal. I number my tabs 1-5, and use system notifications to know when a Claude needs input.</p>
+<p>📖 <a href="https://code.claude.com/docs/en/terminal-config#iterm-2-system-notifications">iTerm2 System Notifications</a></p>
+<hr/>
+<h2 id="2-local--web-parallel-collaboration">2. Local + Web Parallel Collaboration</h2>
+<p>I also run 5-10 Claudes on <a href="https://claude.ai/code">claude.ai/code</a>, in parallel with my local Claudes.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-2.jpeg" alt="Web Sessions List"/></p>
+<p>As I code in my terminal, I will often:</p>
+<ul>
+<li>Hand off local sessions to web (using <code>&amp;</code>)</li>
+<li>Manually kick off sessions in Chrome</li>
+<li>Sometimes <code>--teleport</code> back and forth</li>
+</ul>
+<p>I also start a few sessions from my phone (from the Claude iOS app) every morning and throughout the day, and check in on them later.</p>
+<hr/>
+<h2 id="3-always-use-opus-45--thinking">3. Always Use Opus 4.5 + Thinking</h2>
+<p>I use <strong>Opus 4.5 with thinking</strong> for everything. It’s the best coding model I’ve ever used, and even though it’s bigger &amp; slower than Sonnet, since you have to steer it less and it’s better at tool use, it is almost always faster than using a smaller model in the end.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-12.jpeg" alt="Deep Thinking Mode"/></p>
+<hr/>
+<h2 id="4-team-shared-claudemd">4. Team-Shared CLAUDE.md</h2>
+<p>Our team shares a single <code>CLAUDE.md</code> for the Claude Code repo. We check it into git, and the whole team contributes multiple times a week.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-4.jpeg" alt="CLAUDE.md Example"/></p>
+<p><strong>Key Practice</strong>: Anytime we see Claude do something incorrectly, we add it to the <code>CLAUDE.md</code>, so Claude knows not to do it next time.</p>
+<p>Other teams maintain their own <code>CLAUDE.md</code>’s. It is each team’s job to keep theirs up to date.</p>
+<hr/>
+<h2 id="5-use-claude-in-code-review">5. Use @claude in Code Review</h2>
+<p>During code review, I will often tag <code>@claude</code> on my coworkers’ PRs to add something to the <code>CLAUDE.md</code> as part of the PR.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-5.jpeg" alt="Claude Updating CLAUDE.md"/></p>
+<p>We use the Claude Code GitHub Action (<code>/install-github-action</code>) for this. It’s our version of <strong>Compounding Engineering</strong>.</p>
+<hr/>
+<h2 id="6-most-sessions-start-in-plan-mode">6. Most Sessions Start in Plan Mode</h2>
+<p>Most sessions start in <strong>Plan mode</strong> (<code>Shift + Tab</code> twice).</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-6.png" alt="Plan Mode"/></p>
+<p>If my goal is to write a Pull Request, I will:</p>
+<ol>
+<li>Use Plan mode</li>
+<li>Go back and forth with Claude until I like its plan</li>
+<li>Switch into auto-accept edits mode</li>
+<li>Claude can usually 1-shot it from there</li>
+</ol>
+<p><img src="/images/blog/boris-claude-code-tips/cc-1.jpeg" alt="Auto-Edit Mode"/></p>
+<p><strong>A good plan is really important!</strong></p>
+<hr/>
+<h2 id="7-use-slash-commands-for-repetitive-workflows">7. Use Slash Commands for Repetitive Workflows</h2>
+<p>I use slash commands for every “inner loop” workflow that I end up doing many times a day. This saves me from repeated prompting, and makes it so Claude can use these workflows, too.</p>
+<p>Commands are checked into git and live in <code>.claude/commands/</code>.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-7.jpeg" alt="Slash Command Example"/></p>
+<p><strong>Example</strong>: Claude and I use a <code>/commit-push-pr</code> slash command dozens of times every day. The command uses inline bash to pre-compute git status and a few other pieces of info to make the command run quickly and avoid back-and-forth with the model.</p>
+<p>📖 <a href="https://code.claude.com/docs/en/slash-commands#bash-command-execution">Bash Command Execution</a></p>
+<hr/>
+<h2 id="8-use-subagents-regularly">8. Use Subagents Regularly</h2>
+<p>I use a few subagents regularly:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Subagent</th><th>Purpose</th></tr></thead><tbody><tr><td><code>code-simplifier</code></td><td>Simplifies the code after Claude is done working</td></tr><tr><td><code>verify-app</code></td><td>Has detailed instructions for testing Claude Code end to end</td></tr></tbody></table>
+<p><img src="/images/blog/boris-claude-code-tips/cc-8.png" alt="Agents Directory Structure"/></p>
+<p>Similar to slash commands, I think of subagents as automating the most common workflows that I do for most PRs.</p>
+<p>📖 <a href="https://code.claude.com/docs/en/sub-agents">Subagents Documentation</a></p>
+<hr/>
+<h2 id="9-use-posttooluse-hook-for-code-formatting">9. Use PostToolUse Hook for Code Formatting</h2>
+<p>We use a <strong>PostToolUse hook</strong> to format Claude’s code.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-9.jpeg" alt="Hooks Configuration Example"/></p>
+<p>Claude usually generates well-formatted code out of the box, and the hook handles the last 10% to avoid formatting errors in CI later.</p>
+<hr/>
+<h2 id="10-pre-allow-commands-instead-of-skipping-permissions">10. Pre-Allow Commands Instead of Skipping Permissions</h2>
+<p>I don’t use <code>--dangerously-skip-permissions</code>. Instead, I use <code>/permissions</code> to pre-allow common bash commands that I know are safe in my environment, to avoid unnecessary permission prompts.</p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-10.jpeg" alt="Permissions Configuration Interface"/></p>
+<p>Most of these are checked into <code>.claude/settings.json</code> and shared with the team.</p>
+<hr/>
+<h2 id="11-claude-code-uses-all-my-tools">11. Claude Code Uses All My Tools</h2>
+<p>Claude Code uses all my tools for me:</p>
+<ul>
+<li>Searches and posts to <strong>Slack</strong> (via the MCP server)</li>
+<li>Runs <strong>BigQuery</strong> queries to answer analytics questions (using bq CLI)</li>
+<li>Grabs error logs from <strong>Sentry</strong></li>
+<li>And more…</li>
+</ul>
+<p><img src="/images/blog/boris-claude-code-tips/cc-11.jpeg" alt="MCP Configuration Example"/></p>
+<p>The Slack MCP configuration is checked into our <code>.mcp.json</code> and shared with the team.</p>
+<hr/>
+<h2 id="12-handle-long-running-tasks">12. Handle Long-Running Tasks</h2>
+<p>For very long-running tasks, I will either:</p>
+<ol>
+<li>Prompt Claude to verify its work with a background agent when it’s done</li>
+<li>Use an <strong>Agent Stop Hook</strong> to do that more deterministically</li>
+<li>Use the <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ralph-wiggum">ralph-wiggum plugin</a></li>
+</ol>
+<p>I will also use either <code>--permission-mode=dontAsk</code> or <code>--dangerously-skip-permissions</code> in a sandbox to avoid permission prompts for the session, so Claude can cook without being blocked on me.</p>
+<p>📖 <a href="https://code.claude.com/docs/en/hooks-guide">Hooks Guide</a></p>
+<hr/>
+<h2 id="13-most-important-tip-give-claude-a-way-to-verify-its-work">13. Most Important Tip: Give Claude a Way to Verify Its Work</h2>
+<p>Probably the most important thing to get great results out of Claude Code — <strong>give Claude a way to verify its work</strong>.</p>
+<p>If Claude has that feedback loop, it will <strong>2-3x the quality</strong> of the final result.</p>
+<p>Claude tests every single change I land to claude.ai/code using the Claude Chrome extension. It opens a browser, tests the UI, and iterates until the code works and the UX feels good.</p>
+<p><strong>Verification looks different for each domain</strong>:</p>
+<ul>
+<li>It might be as simple as running a bash command</li>
+<li>Or running a test suite</li>
+<li>Or testing the app in a browser or phone simulator</li>
+</ul>
+<p>Make sure to invest in making this rock-solid.</p>
+<p>📖 <a href="https://code.claude.com/docs/en/chrome">Chrome Extension</a></p>
+<hr/>
+<h2 id="summary">Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tip</th><th>Description</th></tr></thead><tbody><tr><td>Parallel Sessions</td><td>5 in terminal + 5-10 on web</td></tr><tr><td>Use Best Model</td><td>Opus 4.5 with thinking</td></tr><tr><td>Team Collaboration</td><td>Shared CLAUDE.md, continuously updated</td></tr><tr><td>Plan Mode</td><td>Plan first, then execute</td></tr><tr><td>Slash Commands</td><td>Automate repetitive workflows</td></tr><tr><td>Subagents</td><td>Automate common tasks</td></tr><tr><td>Hooks</td><td>Auto-format code</td></tr><tr><td>Verification</td><td>Give Claude a feedback loop</td></tr></tbody></table>
+<p>I hope this was helpful! What are your tips for using Claude Code?</p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
