@@ -1,0 +1,248 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>ClaudeCode 常用技巧 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/claude-code-tips/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-tips/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="ClaudeCode 常用技巧 - Astro i18n Starter"><meta property="og:site_name" content="ClaudeCode 常用技巧 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-tips/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/claude-code-tips/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/claude-code-tips/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>ClaudeCode 常用技巧</h1> <time datetime="2026-01-07T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/1/7 </time> </header> <blockquote>
+<p>本文整理了 Claude Code 的常用命令、快捷键和高级技巧，帮助你更高效地使用这款 AI 编程助手。</p>
+</blockquote>
+<h2 id="一常用命令">一、常用命令</h2>
+<h3 id="11-基础命令">1.1 基础命令</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 帮助命令</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> --help</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 查看版本</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> --version</span></span></code></pre>
+<h3 id="12-mcp-相关">1.2 MCP 相关</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 列出 MCP</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> list</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># MCP 帮助</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#79B8FF"> --help</span></span></code></pre>
+<h3 id="13-配置相关">1.3 配置相关</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 配置帮助</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> config</span><span style="color:#79B8FF"> --help</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 列出配置</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> config</span><span style="color:#9ECBFF"> list</span></span></code></pre>
+<h3 id="14-会话命令">1.4 会话命令</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>命令</th><th>解释</th><th>使用场景</th></tr></thead><tbody><tr><td><code>/clear</code></td><td>清空上下文</td><td>需要重新开始，或者感觉 AI 已经无法解决问题</td></tr><tr><td><code>/compact</code></td><td>压缩对话</td><td>重开对话，但不希望丢掉之前的记忆</td></tr><tr><td><code>/cost</code></td><td>花费</td><td>Max 用户不需要看，API 用户可以查看</td></tr><tr><td><code>/login</code> <code>/logout</code></td><td>登录登出</td><td>切换账号等操作</td></tr><tr><td><code>/model</code></td><td>切换模型</td><td>200刀可以切换使用 Opus 模型，100刀没有选择</td></tr><tr><td><code>/status</code></td><td>状态</td><td>查看当前 CC 的状态</td></tr><tr><td><code>/doctor</code></td><td>检测</td><td>检测 CC 的安装状态</td></tr></tbody></table>
+<hr/>
+<h2 id="二自动编辑模式">二、自动编辑模式</h2>
+<p><strong>使用场景</strong>：不需要每次创建文件都需要你的确认</p>
+<p><strong>使用方式</strong>：<code>Shift + Tab</code> 按一次，就可以进入该模式</p>
+<hr/>
+<h2 id="三指定文件">三、指定文件</h2>
+<p><strong>使用场景</strong>：具体需要对某个文件操作的时候</p>
+<p><strong>使用方式</strong>：直接使用 <code>@</code> 符号就可以指定文件</p>
+<hr/>
+<h2 id="四深度思考">四、深度思考</h2>
+<p><strong>使用场景</strong>：遇到疑难病症，或者是规划方案的时候，重构代码，解决复杂 bug</p>
+<p><strong>使用方式</strong>：提示词里面使用 <code>ultrathink</code>，或者 <code>深度思考</code> 等关键词</p>
+<hr/>
+<h2 id="五plan-模式">五、Plan 模式</h2>
+<p><strong>使用场景</strong>：前期需要规划项目的时候，或者是解决疑难杂症的时候</p>
+<p><strong>使用方式</strong>：<code>Shift + Tab</code> 按两次就可以看见</p>
+<p>它会让你选择是否继续：</p>
+<ul>
+<li>如果你觉得不满意，可以选择 <strong>No</strong>，然后继续跟他说你的需求</li>
+<li>如果你觉得还行就可以选择 <strong>Yes</strong>，它就开始猛猛干活了</li>
+</ul>
+<hr/>
+<h2 id="六粘贴图片">六、粘贴图片</h2>
+<p><strong>使用场景</strong>：需要调整页面结构，或者是排查错误</p>
+<p><strong>使用方式</strong>：</p>
+<ul>
+<li>Mac 上直接使用 <code>Command + V</code> 就可以粘贴图片</li>
+<li>也可以直接拖拽图片文件到终端</li>
+</ul>
+<hr/>
+<h2 id="七yolo-模式">七、YOLO 模式</h2>
+<p><strong>使用场景</strong>：重构代码，或者是新项目，或者是修复 bug 等场景</p>
+<p><strong>使用方式</strong>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> --dangerously-skip-permissions</span></span></code></pre>
+<blockquote>
+<p>💡 进入这个模式后，还是可以调整的，快捷键 <code>Shift + Tab</code> 就可以调整</p>
+</blockquote>
+<hr/>
+<h2 id="八记忆文件">八、记忆文件</h2>
+<h3 id="81-全局记忆文件">8.1 全局记忆文件</h3>
+<p><strong>目录</strong>：<code>~/.claude/CLAUDE.md</code></p>
+<h3 id="82-项目记忆文件">8.2 项目记忆文件</h3>
+<p><strong>目录</strong>：项目目录下的 <code>CLAUDE.md</code> 文件</p>
+<blockquote>
+<p>💡 如果是已经有代码的项目，建议使用 <code>/init</code> 命令自动生成</p>
+</blockquote>
+<hr/>
+<h2 id="九使用前面的消息提示词">九、使用前面的消息提示词</h2>
+<p><strong>使用场景</strong>：想恢复到前面的对话</p>
+<p><strong>使用方式</strong>：两次 <code>Esc</code> 按键</p>
+<hr/>
+<h2 id="十如何恢复代码">十、如何恢复代码</h2>
+<p><strong>使用场景</strong>：后悔他写的代码了，想恢复到前面的</p>
+<p><strong>使用方式</strong>：</p>
+<ul>
+<li>直接使用提示词告诉 Claude Code 回滚到上次的代码</li>
+<li>或者使用 Git 方式进行版本回退</li>
+</ul>
+<hr/>
+<h2 id="十一恢复对话查看聊天记录">十一、恢复对话/查看聊天记录</h2>
+<p><strong>使用方式</strong>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 使用 /resume 命令</span></span>
+<span class="line"><span style="color:#B392F0">/resume</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 或者使用以下参数</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> -c</span><span style="color:#6A737D">  # 继续上次对话</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#79B8FF"> -r</span><span style="color:#6A737D">  # 恢复对话</span></span></code></pre>
+<hr/>
+<h2 id="十二执行终端命令">十二、执行终端命令</h2>
+<p><strong>使用场景</strong>：查看当前目录，或者执行一些特殊的命令</p>
+<p><strong>使用方式</strong>：使用 <code>!</code> 英文感叹号，就会进入命令行模式</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 查看当前目录</span></span>
+<span class="line"><span style="color:#F97583">!</span><span style="color:#79B8FF"> pwd</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 查看文件列表</span></span>
+<span class="line"><span style="color:#F97583">!</span><span style="color:#B392F0"> ll</span></span></code></pre>
+<hr/>
+<h2 id="十三监控使用量">十三、监控使用量</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 查看使用量</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> ccusage@latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 实时监控使用量</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> ccusage@latest</span><span style="color:#9ECBFF"> blocks</span><span style="color:#79B8FF"> --live</span></span></code></pre>
+<hr/>
+<h2 id="十四后台运行服务">十四、后台运行服务</h2>
+<p><strong>使用场景</strong>：完成功能的时候，Claude Code 一般会启动服务，然后访问接口或者界面功能。如果没有后台运行服务的功能，Claude Code 会一直工作在启动服务的界面，其他的对话需求也无法开展。</p>
+<p><strong>使用方式</strong>：<code>Ctrl + B</code></p>
+<hr/>
+<h2 id="十五其他快捷键">十五、其他快捷键</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>快捷键</th><th>功能</th></tr></thead><tbody><tr><td><code>Ctrl + J</code></td><td>换行</td></tr><tr><td><code>Ctrl + B</code></td><td>后台运行服务</td></tr><tr><td><code>Shift + Tab</code></td><td>切换模式（按一次自动编辑，按两次 Plan 模式）</td></tr><tr><td><code>Esc</code> × 2</td><td>使用前面的消息提示词</td></tr></tbody></table>
+<hr/>
+<h2 id="总结">总结</h2>
+<p>掌握这些 Claude Code 的技巧，可以大幅提升你的 AI 编程效率：</p>
+<ul>
+<li><strong>基础命令</strong>：熟悉 <code>/clear</code>、<code>/compact</code>、<code>/status</code> 等命令</li>
+<li><strong>快捷键</strong>：善用 <code>Shift + Tab</code>、<code>Ctrl + B</code> 等快捷键</li>
+<li><strong>高级功能</strong>：活用 YOLO 模式、深度思考、Plan 模式</li>
+<li><strong>记忆文件</strong>：合理配置全局和项目级别的 <code>CLAUDE.md</code></li>
+</ul>
+<p>希望这篇文章能帮助你更好地使用 Claude Code！</p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
