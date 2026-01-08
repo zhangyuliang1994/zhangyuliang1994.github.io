@@ -1,0 +1,443 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>使用 zlmediakit 录像 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/zlmediakit-video-recording/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/zlmediakit-video-recording/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="使用 zlmediakit 录像 - Astro i18n Starter"><meta property="og:site_name" content="使用 zlmediakit 录像 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/zlmediakit-video-recording/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/zlmediakit-video-recording/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/zlmediakit-video-recording/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>使用 zlmediakit 录像</h1> <time datetime="2025-06-26T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/6/26 </time> </header> <blockquote>
+<p>最近有项目需要后端录制视频，在朋友推荐下使用了 zlmediakit 服务，解决了录像录制的问题。</p>
+</blockquote>
+<h2 id="一zlmediakit-安装与配置">一、zlmediakit 安装与配置</h2>
+<p>使用 docker-compose 部署，将 conf 和 media 目录映射出来，方便配置文件的修改和录像等文件的持久化。</p>
+<p>docker-compose.yml 配置如下，我已经打开了推流录制，方便后面流程使用：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">version</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;3.9&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  zlmediakit</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">registry.cn-beijing.aliyuncs.com/wuhm/zlmediakit:master</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">zlmediakit</span></span>
+<span class="line"><span style="color:#85E89D">    privileged</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#6A737D">    # 指定加载配置</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/opt/media/bin/MediaServer -c /opt/media/conf/config.ini</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;11935:1935&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;180:80&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;1554:554&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;9009:9000/udp&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;10000:10000/tcp&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;10000:10000/udp&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;30000-30500:30000-30500/tcp&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;30000-30500:30000-30500/udp&quot;</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">      #  自定义MediaServer</span></span>
+<span class="line"><span style="color:#6A737D"> #     - ./bin:/opt/media/bin</span></span>
+<span class="line"><span style="color:#6A737D">      #  自定义config.ini</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./conf/config.ini:/opt/media/conf/config.ini</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./media:/opt/media/bin/www</span></span>
+<span class="line"><span style="color:#6A737D">      #  自定义ffmpeg</span></span>
+<span class="line"><span style="color:#6A737D">      # - ./ffmpeg/bin:/home/bin</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      TZ</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;Asia/Shanghai&quot;</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;on-failure:3&quot;</span></span>
+<span class="line"><span style="color:#85E89D">    logging</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;json-file&quot;</span></span>
+<span class="line"><span style="color:#85E89D">      options</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        max-size</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;10m&quot;</span></span>
+<span class="line"><span style="color:#85E89D">        max-file</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;3&quot;</span></span></code></pre>
+<p>conf 目录下只有一个 config.ini 配置文件，比较重要的配置是 secret，API 调用需要。内容如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#B392F0">[api]</span></span>
+<span class="line"><span style="color:#6A737D">#是否调试http api,启用调试后，会打印每次http请求的内容和回复</span></span>
+<span class="line"><span style="color:#F97583">apiDebug</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#一些比较敏感的http api在访问时需要提供secret，否则无权限调用</span></span>
+<span class="line"><span style="color:#6A737D">#如果是通过127.0.0.1访问,那么可以不提供secret</span></span>
+<span class="line"><span style="color:#F97583">secret</span><span style="color:#E1E4E8">=abcd123456qwerty</span></span>
+<span class="line"><span style="color:#6A737D">#截图保存路径根目录，截图通过http api(/index/api/getSnap)生成和获取</span></span>
+<span class="line"><span style="color:#F97583">snapRoot</span><span style="color:#E1E4E8">=./www/snap/</span></span>
+<span class="line"><span style="color:#6A737D">#默认截图图片，在启动FFmpeg截图后但是截图还未生成时，可以返回默认的预设图片</span></span>
+<span class="line"><span style="color:#F97583">defaultSnap</span><span style="color:#E1E4E8">=./www/logo.png</span></span>
+<span class="line"><span style="color:#6A737D">#downloadFile http接口可访问文件的根目录，支持多个目录，不同目录通过分号(;)分隔</span></span>
+<span class="line"><span style="color:#F97583">downloadRoot</span><span style="color:#E1E4E8">=./www</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">[ffmpeg]</span></span>
+<span class="line"><span style="color:#6A737D">#FFmpeg可执行程序路径,支持相对路径/绝对路径</span></span>
+<span class="line"><span style="color:#F97583">bin</span><span style="color:#E1E4E8">=/usr/bin/ffmpeg</span></span>
+<span class="line"><span style="color:#6A737D">#FFmpeg拉流再推流的命令模板，通过该模板可以设置再编码的一些参数</span></span>
+<span class="line"><span style="color:#F97583">cmd</span><span style="color:#E1E4E8">=%s -re -i %s -c:a aac -strict -2 -ar 44100 -ab 48k -c:v libx264 -f flv %s</span></span>
+<span class="line"><span style="color:#6A737D">#FFmpeg生成截图的命令，可以通过修改该配置改变截图分辨率或质量</span></span>
+<span class="line"><span style="color:#F97583">snap</span><span style="color:#E1E4E8">=%s -i %s -y -f mjpeg -frames:v 1 -an %s</span></span>
+<span class="line"><span style="color:#6A737D">#FFmpeg日志的路径，如果置空则不生成FFmpeg日志</span></span>
+<span class="line"><span style="color:#6A737D">#可以为相对(相对于本可执行程序目录)或绝对路径</span></span>
+<span class="line"><span style="color:#F97583">log</span><span style="color:#E1E4E8">=./ffmpeg/ffmpeg.log</span></span>
+<span class="line"><span style="color:#6A737D"># 自动重启的时间(秒), 默认为0, 也就是不自动重启. 主要是为了避免长时间ffmpeg拉流导致的不同步现象</span></span>
+<span class="line"><span style="color:#F97583">restart_sec</span><span style="color:#E1E4E8">=0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#转协议相关开关；如果addStreamProxy api和on_publish hook回复未指定转协议参数，则采用这些配置项</span></span>
+<span class="line"><span style="color:#B392F0">[protocol]</span></span>
+<span class="line"><span style="color:#6A737D">#转协议时，是否开启帧级时间戳覆盖</span></span>
+<span class="line"><span style="color:#6A737D"># 0:采用源视频流绝对时间戳，不做任何改变</span></span>
+<span class="line"><span style="color:#6A737D"># 1:采用zlmediakit接收数据时的系统时间戳(有平滑处理)</span></span>
+<span class="line"><span style="color:#6A737D"># 2:采用源视频流时间戳相对时间戳(增长量)，有做时间戳跳跃和回退矫正</span></span>
+<span class="line"><span style="color:#F97583">modify_stamp</span><span style="color:#E1E4E8">=2</span></span>
+<span class="line"><span style="color:#6A737D">#转协议是否开启音频</span></span>
+<span class="line"><span style="color:#F97583">enable_audio</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#添加acc静音音频，在关闭音频时，此开关无效</span></span>
+<span class="line"><span style="color:#F97583">add_mute_audio</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#无人观看时，是否直接关闭(而不是通过on_none_reader hook返回close)</span></span>
+<span class="line"><span style="color:#6A737D">#此配置置1时，此流如果无人观看，将不触发on_none_reader hook回调，</span></span>
+<span class="line"><span style="color:#6A737D">#而是将直接关闭流</span></span>
+<span class="line"><span style="color:#F97583">auto_close</span><span style="color:#E1E4E8">=0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#推流断开后可以在超时时间内重新连接上继续推流，这样播放器会接着播放。</span></span>
+<span class="line"><span style="color:#6A737D">#置0关闭此特性(推流断开会导致立即断开播放器)</span></span>
+<span class="line"><span style="color:#6A737D">#此参数不应大于播放器超时时间;单位毫秒</span></span>
+<span class="line"><span style="color:#F97583">continue_push_ms</span><span style="color:#E1E4E8">=15000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#平滑发送定时器间隔，单位毫秒，置0则关闭；开启后影响cpu性能同时增加内存</span></span>
+<span class="line"><span style="color:#6A737D">#该配置开启后可以解决一些流发送不平滑导致zlmediakit转发也不平滑的问题</span></span>
+<span class="line"><span style="color:#F97583">paced_sender_ms</span><span style="color:#E1E4E8">=0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#是否开启转换为hls(mpegts)</span></span>
+<span class="line"><span style="color:#F97583">enable_hls</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#是否开启转换为hls(fmp4)</span></span>
+<span class="line"><span style="color:#F97583">enable_hls_fmp4</span><span style="color:#E1E4E8">=0</span></span>
+<span class="line"><span style="color:#6A737D">#是否开启MP4录制</span></span>
+<span class="line"><span style="color:#F97583">enable_mp4</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#是否开启转换为rtsp/webrtc</span></span>
+<span class="line"><span style="color:#F97583">enable_rtsp</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#是否开启转换为rtmp/flv</span></span>
+<span class="line"><span style="color:#F97583">enable_rtmp</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#是否开启转换为http-ts/ws-ts</span></span>
+<span class="line"><span style="color:#F97583">enable_ts</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"><span style="color:#6A737D">#是否开启转换为http-fmp4/ws-fmp4</span></span>
+<span class="line"><span style="color:#F97583">enable_fmp4</span><span style="color:#E1E4E8">=1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#是否将mp4录制当做观看者</span></span>
+<span class="line"><span style="color:#F97583">mp4_as_player</span><span style="color:#E1E4E8">=0</span></span>
+<span class="line"><span style="color:#6A737D">#mp4切片大小，单位秒</span></span>
+<span class="line"><span style="color:#F97583">mp4_max_second</span><span style="color:#E1E4E8">=3600</span></span>
+<span class="line"><span style="color:#6A737D">#mp4录制保存路径</span></span>
+<span class="line"><span style="color:#F97583">mp4_save_path</span><span style="color:#E1E4E8">=./www</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#hls录制保存路径</span></span>
+<span class="line"><span style="color:#F97583">hls_save_path</span><span style="color:#E1E4E8">=./www</span></span></code></pre>
+<p>media 目录就是将一些录像等文件挂在出来，启动前建个空目录即可，如图所示：</p>
+<p><img src="/images/blog/zlmediakit-video-recording/media-directory.png" alt="media 目录结构"/></p>
+<p>浏览器也可以直接访问这个文件，如图所示：</p>
+<p><img src="/images/blog/zlmediakit-video-recording/browser-access.png" alt="浏览器访问文件"/></p>
+<h2 id="二客户端推流">二、客户端推流</h2>
+<h3 id="21-依赖引入">2.1 依赖引入</h3>
+<p>可以直接用 FFmpeg，但我的开发语言是 Java，我发现有现成的包可用：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#6A737D">&lt;!-- FFmpeg Java 包装器 --&gt;</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.bytedeco&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;javacv-platform&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;1.5.8&lt;/</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<h3 id="22-开始推流">2.2 开始推流</h3>
+<p>这里推流拿到是一个未加密的 flv 地址。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">// ZLMediaKit配置  </span></span>
+<span class="line"><span style="color:#E1E4E8">String zlmHost </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;10.64.5.85&quot;</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">String zlmApiPort </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;180&quot;</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">String zlmRtmpPort </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;11935&quot;</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">String zlmSecret </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;abcd123456qwerty&quot;</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">String appName </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;live&quot;</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">// 生成流ID  </span></span>
+<span class="line"><span style="color:#E1E4E8">String streamId </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;device_&quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> deviceCode </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> &quot;_&quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> recordTask.</span><span style="color:#B392F0">getStartTime</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">// 构建RTMP推流地址  </span></span>
+<span class="line"><span style="color:#E1E4E8">String rtmpPushUrl </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> String.</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;rtmp://%s:%s/%s/%s&quot;</span><span style="color:#E1E4E8">, zlmHost, zlmRtmpPort, appName, streamId);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**  </span></span>
+<span class="line"><span style="color:#6A737D"> * 启动RTMP推流任务 (FLV -&gt; RTMP -&gt; ZLM) - 使用JavaCV  </span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583"> private</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> startRtmpPushTask</span><span style="color:#E1E4E8">(String flvUrl, String rtmpPushUrl, String deviceCode, RecordTask recordTask) {  </span></span>
+<span class="line"><span style="color:#6A737D">    // 创建后台推流任务  </span></span>
+<span class="line"><span style="color:#F97583">    new</span><span style="color:#B392F0"> Thread</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">        FFmpegFrameGrabber grabber </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">        FFmpegFrameRecorder recorder </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">          </span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;开始RTMP推流: {} -&gt; {}&quot;</span><span style="color:#E1E4E8">, flvUrl, rtmpPushUrl);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 1. 创建和配置输入抓取器  </span></span>
+<span class="line"><span style="color:#E1E4E8">            grabber </span><span style="color:#F97583">=</span><span style="color:#B392F0"> createConfiguredGrabber</span><span style="color:#E1E4E8">(flvUrl);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;FFmpegFrameGrabber配置完成，开始启动...&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            grabber.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;FFmpegFrameGrabber启动成功&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 2. 获取流属性  </span></span>
+<span class="line"><span style="color:#F97583">            int</span><span style="color:#E1E4E8"> width </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> grabber.</span><span style="color:#B392F0">getImageWidth</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#F97583">            int</span><span style="color:#E1E4E8"> height </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> grabber.</span><span style="color:#B392F0">getImageHeight</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#F97583">            double</span><span style="color:#E1E4E8"> frameRate </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> grabber.</span><span style="color:#B392F0">getVideoFrameRate</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (frameRate </span><span style="color:#F97583">&lt;=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) frameRate </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 25</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;流属性: 宽度={}, 高度={}, 帧率={}&quot;</span><span style="color:#E1E4E8">, width, height, frameRate);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 3. 创建和配置输出录制器  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FFmpegFrameRecorder</span><span style="color:#E1E4E8">(rtmpPushUrl, width, height);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setVideoCodec</span><span style="color:#E1E4E8">(avcodec.AV_CODEC_ID_H264);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setFormat</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;flv&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setFrameRate</span><span style="color:#E1E4E8">(frameRate);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setVideoBitrate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2000000</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setPixelFormat</span><span style="color:#E1E4E8">(org.bytedeco.ffmpeg.global.avutil.AV_PIX_FMT_YUV420P);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // H264编码设置  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setOption</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;preset&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;fast&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setOption</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;profile&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;baseline&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setOption</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;level&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;3.1&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // RTMP特定设置  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setOption</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;rtmp_live&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;live&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">setOption</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;rtmp_buffer&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;1000&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 音频配置  </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (grabber.</span><span style="color:#B392F0">getAudioChannels</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&gt;</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                recorder.</span><span style="color:#B392F0">setAudioChannels</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                recorder.</span><span style="color:#B392F0">setAudioCodec</span><span style="color:#E1E4E8">(avcodec.AV_CODEC_ID_AAC);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                recorder.</span><span style="color:#B392F0">setSampleRate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">44100</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                recorder.</span><span style="color:#B392F0">setAudioBitrate</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64000</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;音频配置: 通道=1, 采样率=44100, 比特率=64000&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#E1E4E8">            recorder.</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 4. 保存到RecordTask以便生命周期管理  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recordTask.</span><span style="color:#B392F0">setPushRecorder</span><span style="color:#E1E4E8">(recorder);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recordTask.</span><span style="color:#B392F0">setPushGrabber</span><span style="color:#E1E4E8">(grabber);  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 5. 发送第一帧以建立流  </span></span>
+<span class="line"><span style="color:#E1E4E8">            Frame firstFrame </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> grabber.</span><span style="color:#B392F0">grabFrame</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (firstFrame </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                firstFrame.timestamp </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">                recorder.</span><span style="color:#B392F0">record</span><span style="color:#E1E4E8">(firstFrame);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                recordTask.</span><span style="color:#B392F0">setFirstFrameSent</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;第一帧已发送，推流建立&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#6A737D">            // 6. 持续推流循环，帧率控制  </span></span>
+<span class="line"><span style="color:#F97583">            long</span><span style="color:#E1E4E8"> startTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#F97583">            int</span><span style="color:#E1E4E8"> frameCount </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#F97583">            long</span><span style="color:#E1E4E8"> frameIntervalMs </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">long</span><span style="color:#E1E4E8">) (</span><span style="color:#79B8FF">1000.0</span><span style="color:#F97583"> /</span><span style="color:#E1E4E8"> frameRate);  </span></span>
+<span class="line"><span style="color:#F97583">            long</span><span style="color:#E1E4E8"> expectedNextFrameTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> startTime </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> frameIntervalMs;  </span></span>
+<span class="line"><span style="color:#F97583">            long</span><span style="color:#E1E4E8"> lastLogTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> startTime;  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#F97583">            while</span><span style="color:#E1E4E8"> (</span><span style="color:#9ECBFF">&quot;RECORDING&quot;</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">equals</span><span style="color:#E1E4E8">(recordTask.</span><span style="color:#B392F0">getStatus</span><span style="color:#E1E4E8">())) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                Frame frame </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> grabber.</span><span style="color:#B392F0">grabFrame</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> (frame </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    log.</span><span style="color:#B392F0">warn</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;抓取到空帧，可能输入流结束&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#F97583">                    break</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">                }  </span></span>
+<span class="line"><span style="color:#E1E4E8">                  </span></span>
+<span class="line"><span style="color:#F97583">                long</span><span style="color:#E1E4E8"> currentTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">                  </span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> (currentTime </span><span style="color:#F97583">&gt;=</span><span style="color:#E1E4E8"> expectedNextFrameTime) {  </span></span>
+<span class="line"><span style="color:#6A737D">                    // 设置连续时间戳  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    frame.timestamp </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> frameCount </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 1000000L</span><span style="color:#F97583"> /</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">long</span><span style="color:#E1E4E8">) frameRate;  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    recorder.</span><span style="color:#B392F0">record</span><span style="color:#E1E4E8">(frame);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    frameCount</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    expectedNextFrameTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> startTime </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> (frameCount </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> frameIntervalMs);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                      </span></span>
+<span class="line"><span style="color:#6A737D">                    // 每30秒记录一次推流状态  </span></span>
+<span class="line"><span style="color:#F97583">                    if</span><span style="color:#E1E4E8"> (currentTime </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> lastLogTime </span><span style="color:#F97583">&gt;</span><span style="color:#79B8FF"> 30000</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#F97583">                        long</span><span style="color:#E1E4E8"> duration </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (currentTime </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> startTime) </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 1000</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#F97583">                        double</span><span style="color:#E1E4E8"> actualFps </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> frameCount </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> (duration </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.001</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                        log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;推流进行中: 设备={}, 时长={}秒, 帧数={}, 实际帧率={:.2f}fps&quot;</span><span style="color:#E1E4E8">,   </span></span>
+<span class="line"><span style="color:#E1E4E8">                                deviceCode, duration, frameCount, actualFps);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                        lastLogTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> currentTime;  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">                } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#6A737D">                    // 等待到下一帧时间  </span></span>
+<span class="line"><span style="color:#F97583">                    long</span><span style="color:#E1E4E8"> sleepTime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Math.</span><span style="color:#B392F0">min</span><span style="color:#E1E4E8">(expectedNextFrameTime </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> currentTime, </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#F97583">                    if</span><span style="color:#E1E4E8"> (sleepTime </span><span style="color:#F97583">&gt;</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                        Thread.</span><span style="color:#B392F0">sleep</span><span style="color:#E1E4E8">(sleepTime);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">                }  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#F97583">            long</span><span style="color:#E1E4E8"> totalDuration </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> startTime) </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 1000</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;推流完成: 设备={}, 总时长={}秒, 总帧数={}, 平均帧率={:.2f}fps&quot;</span><span style="color:#E1E4E8">,   </span></span>
+<span class="line"><span style="color:#E1E4E8">                    deviceCode, totalDuration, frameCount, frameCount </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> (totalDuration </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.001</span><span style="color:#E1E4E8">));  </span></span>
+<span class="line"><span style="color:#E1E4E8">              </span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;RTMP推流异常: 设备={}, 错误={}&quot;</span><span style="color:#E1E4E8">, deviceCode, e.</span><span style="color:#B392F0">getMessage</span><span style="color:#E1E4E8">(), e);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#6A737D">            // 清理资源  </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (recorder </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#F97583">                try</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    recorder.</span><span style="color:#B392F0">recordSamples</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 发送结束信号  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    recorder.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    recorder.</span><span style="color:#B392F0">release</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">                } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;释放录制器失败&quot;</span><span style="color:#E1E4E8">, e);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                }  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (grabber </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#F97583">                try</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    grabber.</span><span style="color:#B392F0">stop</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    grabber.</span><span style="color:#B392F0">release</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">                } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;释放抓取器失败&quot;</span><span style="color:#E1E4E8">, e);  </span></span>
+<span class="line"><span style="color:#E1E4E8">                }  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#6A737D">            // 从RecordTask中清除引用  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recordTask.</span><span style="color:#B392F0">setPushRecorder</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">            recordTask.</span><span style="color:#B392F0">setPushGrabber</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        }  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }, </span><span style="color:#9ECBFF">&quot;rtmp-push-&quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> deviceCode).</span><span style="color:#B392F0">start</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">    log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;RTMP推流任务已启动: 设备={}&quot;</span><span style="color:#E1E4E8">, deviceCode);  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="三录像保存">三、录像保存</h2>
+<h3 id="31-启动-zlm-录制">3.1 启动 ZLM 录制</h3>
+<p>这里 zlm 的配置与推流相同，streamId 也是推流后拿到的。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">/**  </span></span>
+<span class="line"><span style="color:#6A737D"> * 通过API启动ZLM录制  </span></span>
+<span class="line"><span style="color:#6A737D"> */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> startZLMRecordingViaAPI</span><span style="color:#E1E4E8">(String zlmHost, String zlmApiPort, String secret,  </span></span>
+<span class="line"><span style="color:#E1E4E8">                                   String appName, String streamId) {  </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#6A737D">        // 构建ZLM录制API请求  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String apiUrl </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> String.</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;http://%s:%s/index/api/startRecord&quot;</span><span style="color:#E1E4E8">, zlmHost, zlmApiPort);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">        // 录制参数 - 优化为1分钟分片  </span></span>
+<span class="line"><span style="color:#E1E4E8">        Map&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; params </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> HashMap&lt;&gt;();  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;secret&quot;</span><span style="color:#E1E4E8">, secret);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;type&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 0=hls,1=mp4  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;vhost&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;__defaultVhost__&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;app&quot;</span><span style="color:#E1E4E8">, appName);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;stream&quot;</span><span style="color:#E1E4E8">, streamId);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;customized_path&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;/opt/media/record/&quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> streamId); </span><span style="color:#6A737D">// 自定义录制路径  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;max_second&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 30秒分片  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;continue_push_ms&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2000</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 断流后继续录制2秒  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;enable_fmp4&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 禁用fmp4，使用标准mp4  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">        // 发送HTTP请求启动录制  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String response </span><span style="color:#F97583">=</span><span style="color:#B392F0"> sendHttpRequest</span><span style="color:#E1E4E8">(apiUrl, params);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;ZLM启动录制响应: {}&quot;</span><span style="color:#E1E4E8">, response);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">        // 检查响应结果  </span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.</span><span style="color:#B392F0">contains</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;</span><span style="color:#79B8FF">\&quot;</span><span style="color:#9ECBFF">code</span><span style="color:#79B8FF">\&quot;</span><span style="color:#9ECBFF">:0&quot;</span><span style="color:#E1E4E8">)) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">warn</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;ZLM启动录制可能失败，但继续尝试录制: {}&quot;</span><span style="color:#E1E4E8">, response);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;ZLM录制启动成功，分片时长: 30秒&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        }  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;调用ZLM录制API失败&quot;</span><span style="color:#E1E4E8">, e);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="32-停止-zlm-录制">3.2 停止 ZLM 录制</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">/**  </span></span>
+<span class="line"><span style="color:#6A737D"> * 通过API停止ZLM录制  </span></span>
+<span class="line"><span style="color:#6A737D"> */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> stopZLMRecordingViaAPI</span><span style="color:#E1E4E8">(String zlmHost, String zlmApiPort, String secret,  </span></span>
+<span class="line"><span style="color:#E1E4E8">                                  String appName, String streamId) {  </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String apiUrl </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> String.</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;http://%s:%s/index/api/stopRecord&quot;</span><span style="color:#E1E4E8">, zlmHost, zlmApiPort);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">        Map&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; params </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> HashMap&lt;&gt;();  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;secret&quot;</span><span style="color:#E1E4E8">, secret);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;type&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// 与启动时保持一致  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;vhost&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;__defaultVhost__&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;app&quot;</span><span style="color:#E1E4E8">, appName);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        params.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;stream&quot;</span><span style="color:#E1E4E8">, streamId);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String response </span><span style="color:#F97583">=</span><span style="color:#B392F0"> sendHttpRequest</span><span style="color:#E1E4E8">(apiUrl, params);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;ZLM停止录制响应: {}&quot;</span><span style="color:#E1E4E8">, response);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;调用ZLM停止录制API失败&quot;</span><span style="color:#E1E4E8">, e);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="33-获取录制文件">3.3 获取录制文件</h3>
+<p>获取录制文件需要一定时间，比如我录制 5 分钟的视频，可能要等上一两分钟才能在目录里找到文件。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">/**  </span></span>
+<span class="line"><span style="color:#6A737D"> * 获取ZLM录制文件列表 - 只扫描实际目录  </span></span>
+<span class="line"><span style="color:#6A737D"> */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#E1E4E8"> List</span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8">String</span><span style="color:#F97583">&gt;</span><span style="color:#B392F0"> getZLMRecordFiles</span><span style="color:#E1E4E8">(String zlmHost, String zlmApiPort, String streamId) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">    List&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt; recordFiles </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> ArrayList&lt;&gt;();  </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#6A737D">        // 构建录制文件URL模式: http://zlmHost:zlmApiPort/record/live/streamId/  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String baseUrl </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> String.</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;http://%s:%s/record/live/%s&quot;</span><span style="color:#E1E4E8">, zlmHost, zlmApiPort, streamId);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">        // 获取当前日期，ZLM按日期创建录制目录  </span></span>
+<span class="line"><span style="color:#E1E4E8">        LocalDateTime now </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> LocalDateTime.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String dateStr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> now.</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(DateTimeFormatter.</span><span style="color:#B392F0">ofPattern</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;yyyy-MM-dd&quot;</span><span style="color:#E1E4E8">));  </span></span>
+<span class="line"><span style="color:#E1E4E8">        String recordDirUrl </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> baseUrl </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> &quot;/&quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> dateStr </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> &quot;/&quot;</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;只通过目录扫描查找mp4文件: {}&quot;</span><span style="color:#E1E4E8">, recordDirUrl);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">        // 只使用目录扫描方法，不再尝试其他方法  </span></span>
+<span class="line"><span style="color:#E1E4E8">        recordFiles </span><span style="color:#F97583">=</span><span style="color:#B392F0"> scanDirectoryForMp4Files</span><span style="color:#E1E4E8">(recordDirUrl);  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (recordFiles.</span><span style="color:#B392F0">size</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&gt;</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;目录扫描发现 {} 个mp4文件&quot;</span><span style="color:#E1E4E8">, recordFiles.</span><span style="color:#B392F0">size</span><span style="color:#E1E4E8">());  </span></span>
+<span class="line"><span style="color:#6A737D">            // 输出文件列表用于调试  </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (recordFiles.</span><span style="color:#B392F0">size</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&lt;=</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                log.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;发现的文件列表: {}&quot;</span><span style="color:#E1E4E8">, String.</span><span style="color:#B392F0">join</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;, &quot;</span><span style="color:#E1E4E8">,   </span></span>
+<span class="line"><span style="color:#E1E4E8">                    recordFiles.</span><span style="color:#B392F0">stream</span><span style="color:#E1E4E8">()  </span></span>
+<span class="line"><span style="color:#E1E4E8">                        .</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(url </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> url.</span><span style="color:#B392F0">substring</span><span style="color:#E1E4E8">(url.</span><span style="color:#B392F0">lastIndexOf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/&quot;</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">))  </span></span>
+<span class="line"><span style="color:#E1E4E8">                        .</span><span style="color:#B392F0">collect</span><span style="color:#E1E4E8">(Collectors.</span><span style="color:#B392F0">toList</span><span style="color:#E1E4E8">())));  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">warn</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;目录扫描未发现任何mp4文件，检查目录: {}&quot;</span><span style="color:#E1E4E8">, recordDirUrl);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        }  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;获取ZLM录制文件列表失败&quot;</span><span style="color:#E1E4E8">, e);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> recordFiles;  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>正常录制成功后，可以在 zlmediakit 上查询到录制好的文件：</p>
+<p><img src="/images/blog/zlmediakit-video-recording/record-files.png" alt="录制文件列表"/></p>
+<p>有了视频文件，我们就可以做存储的工作了，我的做法是存放到 MinIO 上。</p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

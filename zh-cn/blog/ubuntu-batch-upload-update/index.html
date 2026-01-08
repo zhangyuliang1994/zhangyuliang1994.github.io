@@ -1,0 +1,178 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>ubuntu 批量上传及更新 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/ubuntu-batch-upload-update/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/ubuntu-batch-upload-update/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="ubuntu 批量上传及更新 - Astro i18n Starter"><meta property="og:site_name" content="ubuntu 批量上传及更新 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/ubuntu-batch-upload-update/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/ubuntu-batch-upload-update/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/ubuntu-batch-upload-update/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>ubuntu 批量上传及更新</h1> <time datetime="2024-10-25T00:00:00.000Z" data-astro-cid-v3cnrnum> 2024/10/25 </time> </header> <h3 id="一背景">一、背景</h3>
+<p>项目中需要批量上传 .deb 包并更新，但是需要上传的服务器并未开放 root 用户，只能登录普通用户再进行切换，我查阅资料后，决定借助 expect 来解决这一问题。</p>
+<h3 id="二依赖安装">二、依赖安装</h3>
+<p>因为项目服务器无法连接外网，所以只能手动下载 deb 包并安装。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">dpkg</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> libtcl8.6_8.6.10+dfsg-1_amd64.deb</span></span>
+<span class="line"><span style="color:#B392F0">dpkg</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> tcl8.6_8.6.10+dfsg-1_amd64.deb</span></span>
+<span class="line"><span style="color:#B392F0">dpkg</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> tcl-expect_5.45.4-2build1_amd64.deb</span></span>
+<span class="line"><span style="color:#B392F0">dpkg</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> expect_5.45.4-2build1_amd64.deb</span></span></code></pre>
+<h3 id="三expect-脚本">三、expect 脚本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/usr/bin/expect -f</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 设置超时时间</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> timeout</span><span style="color:#79B8FF"> -1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 从命令行参数中获取远程服务器信息、SSH 密码、root 密码和要执行的脚本路径</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> host</span><span style="color:#E1E4E8"> [lindex $argv </span><span style="color:#9ECBFF">0]</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> user</span><span style="color:#E1E4E8"> [lindex $argv </span><span style="color:#9ECBFF">1]</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> ssh_password</span><span style="color:#E1E4E8"> [lindex $argv </span><span style="color:#9ECBFF">2]</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> root_password</span><span style="color:#E1E4E8"> [lindex $argv </span><span style="color:#9ECBFF">3]</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> script_path</span><span style="color:#E1E4E8"> [lindex $argv </span><span style="color:#9ECBFF">4]</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#9ECBFF"> package_version</span><span style="color:#E1E4E8"> [lindex $argv </span><span style="color:#9ECBFF">5]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># SSH 登录到远程服务器</span></span>
+<span class="line"><span style="color:#B392F0">spawn</span><span style="color:#9ECBFF"> ssh</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$user</span><span style="color:#9ECBFF">@</span><span style="color:#E1E4E8">$host</span><span style="color:#9ECBFF">&quot;</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> {</span></span>
+<span class="line"><span style="color:#6A737D">    # 如果是首次连接，需要确认主机指纹</span></span>
+<span class="line"><span style="color:#B392F0">    &quot;yes/no&quot;</span><span style="color:#9ECBFF"> {</span><span style="color:#9ECBFF"> send</span><span style="color:#9ECBFF"> &quot;yes\r&quot;</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">exp_continue</span><span style="color:#9ECBFF"> }</span></span>
+<span class="line"><span style="color:#B392F0">    &quot;password:&quot;</span><span style="color:#9ECBFF"> {</span><span style="color:#9ECBFF"> send</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$ssh_password</span><span style="color:#9ECBFF">\r&quot;</span><span style="color:#9ECBFF"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 成功登录后，切换到 root 用户</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> &quot;$ &quot;</span></span>
+<span class="line"><span style="color:#B392F0">send</span><span style="color:#9ECBFF"> &quot;su -\r&quot;</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> &quot;Password:&quot;</span></span>
+<span class="line"><span style="color:#B392F0">send</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$root_password</span><span style="color:#9ECBFF">\r&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 切换成功后执行远程脚本</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> &quot;# &quot;</span></span>
+<span class="line"><span style="color:#B392F0">send</span><span style="color:#9ECBFF"> &quot;bash </span><span style="color:#E1E4E8">$script_path</span><span style="color:#E1E4E8"> $package_version</span><span style="color:#9ECBFF"> \r&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 等待脚本执行完成</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> &quot;# &quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 退出 root 用户</span></span>
+<span class="line"><span style="color:#B392F0">send</span><span style="color:#9ECBFF"> &quot;exit\r&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 退出 SSH 会话</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> &quot;$ &quot;</span></span>
+<span class="line"><span style="color:#B392F0">send</span><span style="color:#9ECBFF"> &quot;exit\r&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 结束 expect 会话</span></span>
+<span class="line"><span style="color:#B392F0">expect</span><span style="color:#9ECBFF"> eof</span></span></code></pre>
+<h3 id="四批量上传及更新脚本">四、批量上传及更新脚本</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D">#!/bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">PACKAGE_VERSION</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$1</span></span>
+<span class="line"><span style="color:#6A737D"># 主机列表文件</span></span>
+<span class="line"><span style="color:#E1E4E8">HOSTS_FILE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;hosts.txt&quot;</span></span>
+<span class="line"><span style="color:#6A737D"># 要上传的本地文件路径</span></span>
+<span class="line"><span style="color:#E1E4E8">LOCAL_FILE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;back_install_dir&quot;</span></span>
+<span class="line"><span style="color:#6A737D"># 远程路径</span></span>
+<span class="line"><span style="color:#E1E4E8">REMOTE_PATH</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;/home/a123&quot;</span></span>
+<span class="line"><span style="color:#6A737D"># SSH 用户名</span></span>
+<span class="line"><span style="color:#E1E4E8">USER</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;a123&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">PASSWORD</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;a123&quot;</span></span>
+<span class="line"><span style="color:#6A737D"># root 用户密码</span></span>
+<span class="line"><span style="color:#E1E4E8">ROOT_PASSWORD</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;1&quot;</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#E1E4E8">REMOTE_SCRIPT</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;/home/a123/back_install_dir/install_back_end.sh&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">THREADS</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">14</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">update_host</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">    HOST</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$1</span></span>
+<span class="line"><span style="color:#E1E4E8">    LOCAL_FILE</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$2</span></span>
+<span class="line"><span style="color:#E1E4E8">    REMOTE_PATH</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$3</span></span>
+<span class="line"><span style="color:#E1E4E8">    USER</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$4</span></span>
+<span class="line"><span style="color:#E1E4E8">    PASSWORD</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$5</span></span>
+<span class="line"><span style="color:#E1E4E8">    ROOT_PASSWORD</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$6</span></span>
+<span class="line"><span style="color:#E1E4E8">    REMOTE_SCRIPT</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$7</span></span>
+<span class="line"><span style="color:#E1E4E8">    PACKAGE_VERSION</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$8</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> &quot;Connecting to </span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">...&quot;</span></span>
+<span class="line"><span style="color:#79B8FF">    echo</span><span style="color:#9ECBFF"> &quot;upload </span><span style="color:#E1E4E8">$LOCAL_FILE</span><span style="color:#9ECBFF"> to </span><span style="color:#E1E4E8">$USER</span><span style="color:#9ECBFF"> @ </span><span style="color:#E1E4E8">$PASSWORD</span><span style="color:#9ECBFF"> : </span><span style="color:#E1E4E8">$REMOTE_PATH</span><span style="color:#9ECBFF">&quot;</span></span>
+<span class="line"><span style="color:#6A737D">    # 使用 scp 上传文件到远程主机</span></span>
+<span class="line"><span style="color:#B392F0">    sshpass</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$PASSWORD</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> scp</span><span style="color:#79B8FF"> -r</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> StrictHostKeyChecking=no</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> UserKnownHostsFile=/dev/null</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$LOCAL_FILE</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$USER</span><span style="color:#9ECBFF">@</span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">:</span><span style="color:#E1E4E8">$REMOTE_PATH</span><span style="color:#9ECBFF">&quot;</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">$?</span><span style="color:#F97583"> -eq</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8"> ]; </span><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">        echo</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">: Upload successful&quot;</span></span>
+<span class="line"><span style="color:#F97583">    else</span></span>
+<span class="line"><span style="color:#79B8FF">        echo</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">: Upload failed&quot;</span></span>
+<span class="line"><span style="color:#F97583">	return</span></span>
+<span class="line"><span style="color:#F97583">    fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # 在本地使用 expect 登录远程服务器并执行脚本</span></span>
+<span class="line"><span style="color:#B392F0">    ./local_expect_script.exp</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$USER</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$PASSWORD</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$ROOT_PASSWORD</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$REMOTE_SCRIPT</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$PACKAGE_VERSION</span><span style="color:#9ECBFF">&quot;</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">$?</span><span style="color:#F97583"> -eq</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8"> ]; </span><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#79B8FF">	echo</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">: script executed successful&quot;</span></span>
+<span class="line"><span style="color:#F97583">    else</span></span>
+<span class="line"><span style="color:#79B8FF">        echo</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$HOST</span><span style="color:#9ECBFF">: script executed failed&quot;</span></span>
+<span class="line"><span style="color:#F97583">        return</span></span>
+<span class="line"><span style="color:#F97583">    fi</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#79B8FF"> -f</span><span style="color:#E1E4E8"> update_host</span></span>
+<span class="line"><span style="color:#B392F0">cat</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$HOSTS_FILE</span><span style="color:#9ECBFF">&quot;</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> xargs</span><span style="color:#79B8FF"> -n</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> -P</span><span style="color:#E1E4E8"> $THREADS </span><span style="color:#79B8FF">-I</span><span style="color:#9ECBFF"> {}</span><span style="color:#9ECBFF"> bash</span><span style="color:#79B8FF"> -c</span><span style="color:#9ECBFF"> &#39;update_host &quot;$@&quot;&#39;</span><span style="color:#9ECBFF"> _</span><span style="color:#9ECBFF"> {}</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$LOCAL_FILE</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$REMOTE_PATH</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$USER</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$PASSWORD</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$ROOT_PASSWORD</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$REMOTE_SCRIPT</span><span style="color:#9ECBFF">&quot;</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$PACKAGE_VERSION</span><span style="color:#9ECBFF">&quot;</span></span></code></pre>
+<p>考虑到逐一对每台设备更新太耗时，这里加入了多线程。hosts.txt 里存放的是需要更新的服务器 IP 地址，如下所示。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>10.64.200.167</span></span>
+<span class="line"><span>10.64.200.170</span></span>
+<span class="line"><span>10.64.200.177</span></span>
+<span class="line"><span>10.64.200.175</span></span>
+<span class="line"><span>10.64.200.176</span></span>
+<span class="line"><span>10.64.200.172</span></span>
+<span class="line"><span>10.64.200.168</span></span>
+<span class="line"><span>10.64.200.166</span></span>
+<span class="line"><span>10.64.200.169</span></span>
+<span class="line"><span>10.64.200.174</span></span>
+<span class="line"><span>10.64.200.171</span></span>
+<span class="line"><span>10.64.200.152</span></span>
+<span class="line"><span>10.64.200.102</span></span>
+<span class="line"><span>10.64.200.173</span></span></code></pre>
+<p>最后是 install_back_end.sh 更新脚本：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">PACKAGE_VERSION</span><span style="color:#F97583">=</span><span style="color:#FFAB70">$1</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">dpkg</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> /home/a123/back_install_dir/box-station_</span><span style="color:#E1E4E8">${PACKAGE_VERSION}</span><span style="color:#9ECBFF">.deb</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> daemon-reload</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> restart</span><span style="color:#9ECBFF"> box-station.service</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> enable</span><span style="color:#9ECBFF"> box-station.service</span></span></code></pre>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

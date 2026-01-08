@@ -1,0 +1,249 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>Centrifugo 安装与使用 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/centrifugo-installation-usage/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/centrifugo-installation-usage/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Centrifugo 安装与使用 - Astro i18n Starter"><meta property="og:site_name" content="Centrifugo 安装与使用 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/centrifugo-installation-usage/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/centrifugo-installation-usage/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/centrifugo-installation-usage/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Centrifugo 安装与使用</h1> <time datetime="2025-01-09T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/1/9 </time> </header> <h3 id="一安装">一、安装</h3>
+<p>使用 docker-compose 安装，指定 config.json 配置文件。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#85E89D">version</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;3.9&quot;</span></span>
+<span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  centrifugo</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">centrifugo</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">centrifugo/centrifugo:v5</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./config.json:/centrifugo/config.json</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">centrifugo -c config.json</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">8000:8000</span></span>
+<span class="line"><span style="color:#85E89D">    ulimits</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      nofile</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        soft</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">65535</span></span>
+<span class="line"><span style="color:#85E89D">        hard</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">65535</span></span></code></pre>
+<p>docker-compose.yml 如上所示，使用 v5 版本。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;token_hmac_secret_key&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;kkc_secret&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;api_key&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;kkc_api_key&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;admin_password&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;password&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;admin_secret&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;secret&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;admin&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;allowed_origins&quot;</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">&quot;*&quot;</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;anonymous&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;publish&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;subscribe_to_publish&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;presence&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;debug&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;client_anonymous&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;join_leave&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;allow_subscribe_for_client&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>config.json 配置如上所示，我最初写配置时，参考的是官网的 quick start，只有前 5 行，导致 channel 订阅失败，后面才加了下面的，当然还不全，具体参数可去官网查看。</p>
+<p>执行启动命令</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">docker-compose</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span></code></pre>
+<p>在浏览器输入 IP + 8000 端口，并输入配置文件中的 admin_password，即可进入主页面，如图所示：</p>
+<p><img src="/images/blog/centrifugo-installation-usage/admin-interface.png" alt="Centrifugo 主页面"/></p>
+<h3 id="二服务端推送及客户端-token-获取">二、服务端推送及客户端 token 获取</h3>
+<h4 id="21-maven-依赖">2.1 maven 依赖</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;com.auth0&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;java-jwt&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;3.19.2&lt;/</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.springframework.cloud&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;spring-cloud-starter-openfeign&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;3.1.1&lt;/</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;  </span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<p>引入 java-jwt 依赖，用于生成 token。</p>
+<p>引入 spring-cloud-starter-openfeign 依赖，用于 Centrifugo API 调用。</p>
+<h4 id="22-客户端-token-生成">2.2 客户端 token 生成</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> static</span><span style="color:#E1E4E8"> String </span><span style="color:#B392F0">generateToken</span><span style="color:#E1E4E8">(String user) {  </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> JWT.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">()  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">withExpiresAt</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 86400</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> 100000</span><span style="color:#E1E4E8">))  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">withClaim</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;sub&quot;</span><span style="color:#E1E4E8">, user)  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">withSubject</span><span style="color:#E1E4E8">(user)  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">sign</span><span style="color:#E1E4E8">(Algorithm.</span><span style="color:#B392F0">HMAC256</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;kkc-secret&quot;</span><span style="color:#E1E4E8">));  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>上述代码用来生成客户端 token，可自定义过期时间，密钥为 config.json 配置的 token_hmac_secret_key。</p>
+<h4 id="23-服务端推送">2.3 服务端推送</h4>
+<h5 id="231-结构体定义">2.3.1 结构体定义</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Data</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">AllArgsConstructor</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">NoArgsConstructor</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Builder</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> InstantStructDTO</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 方法  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String method;  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 参数  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> InstantMsgDTO params;  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Data</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">AllArgsConstructor</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">NoArgsConstructor</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Builder</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> InstantMsgDTO</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 通道  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String channel;  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 通道列表  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> List&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt; channels;  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 用户  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String user;  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 数据  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> JSONObject data;  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 信息  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> JSONObject info;  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="232-open-feign-调用">2.3.2 open-feign 调用</h5>
+<p>统一配置 Header，在 header 中加入 X-API-Key，值为 config.json 中配置的 api_key。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> InstantMsgConfiguration</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Bean</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> RequestInterceptor </span><span style="color:#B392F0">MyBasicAuthRequestInterceptor</span><span style="color:#E1E4E8">() {  </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> MyBasicAuthRequestInterceptor</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    static</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> MyBasicAuthRequestInterceptor</span><span style="color:#F97583"> implements</span><span style="color:#B392F0"> RequestInterceptor</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">        @</span><span style="color:#F97583">Override</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">        public</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> apply</span><span style="color:#E1E4E8">(RequestTemplate </span><span style="color:#FFAB70">requestTemplate</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            requestTemplate.</span><span style="color:#B392F0">header</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;X-API-Key&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;kkc_api_key&quot;</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">        }  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>FallbackFactory 定义。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Component</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> InstantMsgServiceFallbackFactory</span><span style="color:#F97583"> implements</span><span style="color:#B392F0"> FallbackFactory</span><span style="color:#E1E4E8">&lt;</span><span style="color:#F97583">InstantMsgService</span><span style="color:#E1E4E8">&gt; {  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Override</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> InstantMsgService </span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(Throwable </span><span style="color:#FFAB70">cause</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> InstantMsgService</span><span style="color:#E1E4E8">() {  </span></span>
+<span class="line"><span style="color:#E1E4E8">            @</span><span style="color:#F97583">Override</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">            public</span><span style="color:#E1E4E8"> ResponseEntity&lt;</span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; </span><span style="color:#B392F0">sendMsg</span><span style="color:#E1E4E8">(InstantStructDTO </span><span style="color:#FFAB70">body</span><span style="color:#E1E4E8">) {  </span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> (cause </span><span style="color:#F97583">instanceof</span><span style="color:#E1E4E8"> FeignException) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">                    FeignException feignException </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (FeignException) cause;  </span></span>
+<span class="line"><span style="color:#F97583">                    return</span><span style="color:#E1E4E8"> ResponseEntity.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(feignException.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">()).</span><span style="color:#B392F0">body</span><span style="color:#E1E4E8">(feignException.</span><span style="color:#B392F0">contentUTF8</span><span style="color:#E1E4E8">());  </span></span>
+<span class="line"><span style="color:#E1E4E8">                } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#F97583">                    return</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;  </span></span>
+<span class="line"><span style="color:#E1E4E8">                }  </span></span>
+<span class="line"><span style="color:#E1E4E8">            }  </span></span>
+<span class="line"><span style="color:#E1E4E8">        };  </span></span>
+<span class="line"><span style="color:#E1E4E8">    }  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>service 定义。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">FeignClient</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;instantMsg-server&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">url</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;http://10.64.4.78:8000&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">configuration</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> InstantMsgConfiguration.class, </span><span style="color:#79B8FF">fallbackFactory</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> InstantMsgServiceFallbackFactory.class)  </span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> InstantMsgService</span><span style="color:#E1E4E8"> {  </span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#6A737D">    /**  </span></span>
+<span class="line"><span style="color:#6A737D">     * 即时通讯API  </span></span>
+<span class="line"><span style="color:#6A737D">     *     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> body</span><span style="color:#6A737D">  </span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span><span style="color:#6A737D">  </span></span>
+<span class="line"><span style="color:#6A737D">     */</span><span style="color:#E1E4E8">    @</span><span style="color:#F97583">RequestMapping</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">value</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;/api&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">method</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> RequestMethod.POST)  </span></span>
+<span class="line"><span style="color:#E1E4E8">    ResponseEntity&lt;</span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; </span><span style="color:#B392F0">sendMsg</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">RequestBody</span><span style="color:#E1E4E8"> InstantStructDTO </span><span style="color:#FFAB70">body</span><span style="color:#E1E4E8">);  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>当然，别忘了在启动类上加 <code>@EnableFeignClients</code> 注解。</p>
+<h5 id="233-服务端推送">2.3.3 服务端推送</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Resource</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">private</span><span style="color:#E1E4E8"> InstantMsgService instantMsgService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">private</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> sendStatus</span><span style="color:#E1E4E8">(String serviceCode, Boolean healthStatus) {  </span></span>
+<span class="line"><span style="color:#E1E4E8">    JSONObject data </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> JSONObject</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">    data.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;serviceCode&quot;</span><span style="color:#E1E4E8">, serviceCode);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    data.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;healthStatus&quot;</span><span style="color:#E1E4E8">, healthStatus);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    InstantMsgDTO instantMsgDTO </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> InstantMsgDTO.</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">()  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">channel</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;service-register-health&quot;</span><span style="color:#E1E4E8">)  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">data</span><span style="color:#E1E4E8">(data)  </span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">();  </span></span>
+<span class="line"><span style="color:#E1E4E8">    InstantStructDTO instantStructDTO </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> InstantStructDTO</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;publish&quot;</span><span style="color:#E1E4E8">, instantMsgDTO);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    ResponseEntity&lt;</span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; response </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> instantMsgService.</span><span style="color:#B392F0">sendMsg</span><span style="color:#E1E4E8">(instantStructDTO);  </span></span>
+<span class="line"><span style="color:#E1E4E8">    log.</span><span style="color:#B392F0">debug</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;instant msg service response:{}&quot;</span><span style="color:#E1E4E8">, response);  </span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>上述代码就是将服务的健康状态使用 Centrifugo 推送给前端。这里 feign 调用的过程就是执行下面的 HTTP 请求。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> --location</span><span style="color:#79B8FF"> --request</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> &#39;10.64.4.78:8000/api&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">--header </span><span style="color:#9ECBFF">&#39;X-API-Key: kkc_api_key&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">--header </span><span style="color:#9ECBFF">&#39;Content-Type: application/json&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">--data-raw </span><span style="color:#9ECBFF">&#39;{</span></span>
+<span class="line"><span style="color:#9ECBFF">    &quot;method&quot;: &quot;publish&quot;,</span></span>
+<span class="line"><span style="color:#9ECBFF">    &quot;params&quot;: {</span></span>
+<span class="line"><span style="color:#9ECBFF">        &quot;channel&quot;: &quot;service-register-health&quot;,</span></span>
+<span class="line"><span style="color:#9ECBFF">        &quot;data&quot;: {</span></span>
+<span class="line"><span style="color:#9ECBFF">            &quot;serviceCode&quot;: &quot;kkc-whale&quot;,</span></span>
+<span class="line"><span style="color:#9ECBFF">            &quot;healthStatus&quot;: true</span></span>
+<span class="line"><span style="color:#9ECBFF">        }</span></span>
+<span class="line"><span style="color:#9ECBFF">    }</span></span>
+<span class="line"><span style="color:#9ECBFF">}&#39;</span></span></code></pre>
+<p>前端建立连接，订阅 channel 后会收到如下消息：</p>
+<p><img src="/images/blog/centrifugo-installation-usage/frontend-connection.png" alt="前端连接消息"/></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">&quot;connect&quot;</span><span style="color:#E1E4E8">:{</span><span style="color:#79B8FF">&quot;token&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc0NTA2MTE0MH0.POlYmjLFv2xJOjIzNkuJiy5tkpRNz5xynimcxyXufn4&quot;</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;name&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;js&quot;</span><span style="color:#E1E4E8">},</span><span style="color:#79B8FF">&quot;id&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">&quot;subscribe&quot;</span><span style="color:#E1E4E8">:{</span><span style="color:#79B8FF">&quot;channel&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;service-register-health&quot;</span><span style="color:#E1E4E8">},</span><span style="color:#79B8FF">&quot;id&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">&quot;id&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;connect&quot;</span><span style="color:#E1E4E8">:{</span><span style="color:#79B8FF">&quot;client&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;3c950d00-fcc8-4e89-aae6-34066c582791&quot;</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;version&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;5.4.9&quot;</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;expires&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;ttl&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">8639947</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;ping&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">25</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;pong&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">}}</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">&quot;id&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;subscribe&quot;</span><span style="color:#E1E4E8">:{}}</span></span></code></pre>
+<p>收到推送消息时，如下：</p>
+<p><img src="/images/blog/centrifugo-installation-usage/push-message.png" alt="推送消息"/></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">&quot;push&quot;</span><span style="color:#E1E4E8">:{</span><span style="color:#79B8FF">&quot;channel&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;service-register-health&quot;</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;pub&quot;</span><span style="color:#E1E4E8">:{</span><span style="color:#79B8FF">&quot;data&quot;</span><span style="color:#E1E4E8">:{</span><span style="color:#79B8FF">&quot;serviceCode&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">&quot;kkc-whale&quot;</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">&quot;healthStatus&quot;</span><span style="color:#E1E4E8">:</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">}}}}</span></span></code></pre>
+<h3 id="三参考">三、参考</h3>
+<p>官网：<a href="https://centrifugal.dev/">https://centrifugal.dev/</a></p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
