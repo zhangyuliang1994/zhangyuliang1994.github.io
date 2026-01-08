@@ -1,0 +1,153 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>AI编程几个月的深度体验与思考 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/ai-programming-deep-experience/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/ai-programming-deep-experience/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="AI编程几个月的深度体验与思考 - Astro i18n Starter"><meta property="og:site_name" content="AI编程几个月的深度体验与思考 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/ai-programming-deep-experience/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/ai-programming-deep-experience/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/ai-programming-deep-experience/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>AI编程几个月的深度体验与思考</h1> <time datetime="2025-06-15T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/6/15 </time> </header> <p>最近读到两篇很有启发性的文章，分别是刘润老师的《AI时代，还要不要学编程？》和宝玉老师的《学好基本功，AI才能真正助你一臂之力》。作为一个深度使用AI编程工具几个月的开发者，我想分享一些真实的使用体验和思考。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/AIandProgrammers.jpg" alt="AI与程序员"/></p>
+<h2 id="ai编程工具的现状">AI编程工具的现状</h2>
+<p>在众多AI编程产品中，<strong>Cursor</strong> 至今仍是地表最强的存在，也是我使用频率最高的工具。前两个月基本上在截止日期前10天就把额度用完了，可见使用强度之高。</p>
+<p>我也体验过其他产品，如 v0、same.new、Gemini等，功能虽然大同小异，但Cursor的综合体验确实最好。从代码编写、bug分析、方案设计，到数据分析、流程图生成，基本上能用AI处理的任务，我都交给它了。</p>
+<h2 id="ai编程的显著优势">AI编程的显著优势</h2>
+<h3 id="简单任务的高效处理">简单任务的高效处理</h3>
+<p>对于基础的编程任务，AI表现相当出色：</p>
+<ul>
+<li><strong>函数编写</strong>：快速生成标准的工具函数</li>
+<li><strong>类封装</strong>：自动创建符合规范的工具类</li>
+<li><strong>单页应用</strong>：快速搭建简单的web页面</li>
+</ul>
+<p>这些任务甚至不需要Cursor，使用ChatGPT、Claude、Gemini、Deepseek、豆包等在线AI工具就能很好地完成。</p>
+<h3 id="增删改查的自动化">增删改查的自动化</h3>
+<p>这类重复性、技术含量相对较低的工作最适合交给AI处理。就像传统的代码生成器一样，AI在这方面表现稳定可靠，大大提高了开发效率。</p>
+<h3 id="跨语言数据分析">跨语言数据分析</h3>
+<p>这是我印象最深的应用场景。有一次需要对数据库和MinIO的数据进行分析处理，但我不熟悉Go语言。让Cursor来处理，几分钟就搞定了完整的解决方案，包括：</p>
+<ul>
+<li>数据分析逻辑</li>
+<li>跨平台打包</li>
+<li>自动化测试</li>
+<li>编译验证</li>
+</ul>
+<p>如果我自己来做，可能需要两个小时，而且还不一定能保证结果的正确性。</p>
+<h2 id="ai编程的明显劣势">AI编程的明显劣势</h2>
+<h3 id="知识盲区导致的频繁错误">知识盲区导致的频繁错误</h3>
+<p>最典型的例子是微信小程序开发。当我需要实现页面转发到朋友圈或微信聊天的功能时，AI反复修改了几十次都无法达到预期效果。</p>
+<p><strong>原因分析：</strong></p>
+<ul>
+<li>微信小程序相对小众，国外用户少</li>
+<li>AI训练数据中相关内容不足</li>
+<li>即使提供官方文档，理解仍然有偏差</li>
+</ul>
+<p>这次经历让我一度对AI的能力产生怀疑，也深刻认识到AI在处理非主流技术栈时的局限性。</p>
+<h3 id="迎合需求vs提供正确答案">迎合需求vs提供正确答案</h3>
+<p>在开发一个简单的页面游戏时，我遇到了AI”讨好用户”的问题。我需要加载模拟器的js文件和游戏ROM，AI应该正确实现游戏加载逻辑。</p>
+<p><strong>但AI的表现是：</strong></p>
+<ul>
+<li>生成了看似正常的游戏界面</li>
+<li>实现了键盘响应功能</li>
+<li>创建了假的游戏元素</li>
+<li><strong>但并没有真正加载ROM文件</strong></li>
+</ul>
+<p>这种”伪实现”比直接报错更危险，因为它会让开发者产生错误的判断。这次经历也促使我更认真地学习Next.js基础知识。</p>
+<h3 id="代码质量能用但不好用">代码质量：能用但不好用</h3>
+<p>AI生成的代码往往能够运行，但在可维护性方面存在问题：</p>
+<p><strong>Java项目问题：</strong></p>
+<ul>
+<li>功能实现了，但维护困难</li>
+<li>缺乏合理的封装设计</li>
+<li>需要明确提醒才会做代码优化</li>
+</ul>
+<p><strong>Go项目的结构问题：</strong></p>
+<ul>
+<li>目录层级混乱</li>
+<li>每次添加功能就创建新目录</li>
+<li>整体架构缺乏规划</li>
+</ul>
+<p>这说明了两个问题：</p>
+<ol>
+<li><strong>自然语言的局限性</strong>：仅靠描述很难让AI理解复杂的架构需求</li>
+<li><strong>提示词工程的重要性</strong>：需要学习如何更好地与AI沟通</li>
+</ol>
+<h2 id="深度思考与总结">深度思考与总结</h2>
+<h3 id="ai编程的成瘾性">AI编程的”成瘾性”</h3>
+<p>使用AI编程确实有一定的”成瘾性”——一旦习惯了AI的高效输出，就会产生强烈的依赖。没有AI的时候，甚至不想动手写代码。但这种依赖需要警惕，因为它可能削弱我们的基础能力。</p>
+<h3 id="人工介入的必要性">人工介入的必要性</h3>
+<p>AI生成代码后，必须要停下来进行人工整理：</p>
+<ul>
+<li><strong>项目结构优化</strong>：确保代码组织合理</li>
+<li><strong>重复代码消除</strong>：AI容易产生功能重复实现</li>
+<li><strong>文档完善</strong>：保证项目的可维护性</li>
+<li><strong>全局掌控</strong>：确保对系统架构有清晰认知</li>
+</ul>
+<h3 id="ai的局限性根源">AI的局限性根源</h3>
+<p>AI的判断基于其掌握的部分信息，而非对整个系统的全局理解。这导致：</p>
+<ul>
+<li>同一功能的重复实现</li>
+<li>缺乏统一的架构思维</li>
+<li>思路变化时的大幅代码重构</li>
+</ul>
+<h3 id="对程序员能力的新要求">对程序员能力的新要求</h3>
+<p>在AI时代，程序员需要强化以下能力：</p>
+<ol>
+<li><strong>架构设计思维</strong>：AI无法替代系统性的架构思考</li>
+<li><strong>提示词工程</strong>：学会如何更好地与AI协作</li>
+<li><strong>代码审查能力</strong>：能够识别和优化AI生成的代码</li>
+<li><strong>全局把控能力</strong>：确保项目的整体质量和方向</li>
+</ol>
+<h2 id="写在最后">写在最后</h2>
+<p>AI编程工具确实带来了巨大的效率提升，但它更像是一个强大的助手，而不是替代品。在享受AI带来便利的同时，我们不能忽视基础能力的培养和系统性思维的训练。</p>
+<p>正如宝玉老师所说，学好基本功，AI才能真正助你一臂之力。AI可以帮我们快速实现想法，但想法的质量、架构的合理性、代码的可维护性，仍然需要人来把控。</p>
+<p>未来的编程可能不是”人vs AI”，而是”人+AI”的协作模式。关键是要找到合适的平衡点，既充分利用AI的能力，又保持自己的核心竞争力。</p>
+<h2 id="参考链接">参考链接</h2>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/E561llToYXGcEU4nv3pzXQ">AI时代，还要不要学编程？</a></li>
+<li><a href="https://mp.weixin.qq.com/s/C5vC7l2ncCVp_umsQUmngg">学好基本功，AI才能真正助你一臂之力</a></li>
+</ul>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

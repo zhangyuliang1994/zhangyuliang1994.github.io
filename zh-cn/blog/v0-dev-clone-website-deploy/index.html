@@ -1,0 +1,124 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>用v0.dev仿写一个网站并部署 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/v0-dev-clone-website-deploy/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/v0-dev-clone-website-deploy/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="用v0.dev仿写一个网站并部署 - Astro i18n Starter"><meta property="og:site_name" content="用v0.dev仿写一个网站并部署 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/v0-dev-clone-website-deploy/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/v0-dev-clone-website-deploy/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/v0-dev-clone-website-deploy/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>用v0.dev仿写一个网站并部署</h1> <time datetime="2025-06-03T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/6/3 </time> </header> <h2 id="使用v0dev仿写网站并部署">使用v0.dev仿写网站并部署</h2>
+<p>这篇文章记录了我使用v0.dev仿写一个哈利波特主题网站的完整过程，从发现目标网站到最终部署上线的全部细节。</p>
+<h3 id="工具的选择">工具的选择</h3>
+<p>4月份的时候，我以教育优惠订阅了 Lenny’s Newsletter，这么多产品最火的是 Cursor，其次就是 Lovable 和 v0。Cursor 我当时已经用了一个月了，帮我写了不少工作上的代码，Lovable 虽然名字好听，但我更相信 Vercel 的产品，毕竟还可以一键部署，所以把 Lovable 挂小黄鱼出掉了，留下了 v0 慢慢体验，这也是我用 v0 开发的第一个项目。</p>
+<h3 id="发现目标网站">发现目标网站</h3>
+<p>我是一个哈迷，在亚马逊没退出中国前，在 kindle 商城买了全套正版的电子书。我在 Github 闲逛时，偶然发现了这个项目：<a href="https://harrypotterhousequiz.pro/">https://harrypotterhousequiz.pro/</a> ，一下子就被它吸引住了，无论是魔法棒的光标，还是整个主题及功能，都让我有了用 v0 仿写的冲动。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-origin.png" alt="原始网站截图"/></p>
+<h3 id="什么是v0dev">什么是v0.dev</h3>
+<p>v0.dev 是 Vercel 推出的基于AI的前端开发工具，能够根据描述或截图快速生成React组件和页面。它最大的优势是与 Vercel 部署平台的无缝集成，可以实现从开发到部署的一站式体验。</p>
+<h3 id="详细实现过程">详细实现过程</h3>
+<h4 id="第一步让ai分析目标网站">第一步：让AI分析目标网站</h4>
+<p>我让 v0 先不急着写代码，先根据我的要求来分析一下，v0 根据我的要求写了一大堆分析。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-1.png" alt="第一步分析"/></p>
+<h4 id="第二步构建基础代码并部署">第二步：构建基础代码并部署</h4>
+<p>我看分析的差不多了，便让它根据分析构建代码。构建完成后，我点击 Deploy 按钮，它便会给我部署到 vercel 上，地址是：<a href="https://harrypotter-test.vercel.app/">https://harrypotter-test.vercel.app/</a> ，这样我便能实时查看部署后的网站。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-2.png" alt="第二步构建部署"/></p>
+<h4 id="第三步参考目标网站继续优化">第三步：参考目标网站继续优化</h4>
+<p>基本雏形有了，我便让它参考目标网站，继续调整。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-3.png" alt="第三步优化"/></p>
+<h4 id="第四步绑定github进行版本管理">第四步：绑定Github进行版本管理</h4>
+<p>当时，为了方便回滚，我还是绑定了 Github。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-4.png" alt="第四步Github绑定"/></p>
+<h3 id="遇到的问题和解决方案">遇到的问题和解决方案</h3>
+<p>当然，v0 有时候也会达不到你想要的效果。比如光标的魔法棒效果，刚开始只是给我一个小圆点，我让 v0 调试很多次后才是现在这个效果（中间也进行了多次回滚），当然和目标网站还是有些许差距的。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-5.png" alt="调试过程"/></p>
+<p>如果需要借鉴子页面，需要把子页面的链接发给 v0。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-6.png" alt="子页面分析"/></p>
+<h3 id="集成ai功能">集成AI功能</h3>
+<p>分院帽问答需要接入 AI 相关的 API，我这里选择了 Google 的 Gemini（因为免费），这样回答会更智能一些。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-step-7.png" alt="AI集成"/></p>
+<h3 id="自定义域名配置">自定义域名配置</h3>
+<p>部署成功后，是可以用 vercel.app 的二级域名进行访问的，但是我想试试绑定域名。我在 Namesilo 上买了域名 <a href="https://www.harrypotter.cc/">https://www.harrypotter.cc/</a> （也纠结好久，买了这个相对便宜又好记的）。</p>
+<h4 id="在vercel中添加域名">在Vercel中添加域名</h4>
+<p>在 vercel 管理页面，找到这个项目，点击 添加域名，输入自己的域名，会生成两条 NameServer。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-potter-vercel-set.png" alt="Vercel域名设置"/></p>
+<h4 id="在域名提供商配置dns">在域名提供商配置DNS</h4>
+<p>将这两条记录拷贝到 Namesilo 里这个域名的配置页面即可。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/harry-botter-namesilo.png" alt="Namesilo DNS配置"/></p>
+<h3 id="项目特色功能">项目特色功能</h3>
+<ol>
+<li><strong>魔法棒光标效果</strong>：鼠标移动时会有魔法棒的视觉效果</li>
+<li><strong>分院帽测试</strong>：集成了AI问答功能，可以根据用户回答分配学院</li>
+<li><strong>响应式设计</strong>：适配不同设备屏幕</li>
+<li><strong>主题一致性</strong>：完整还原了哈利波特的视觉风格</li>
+</ol>
+<h3 id="技术栈">技术栈</h3>
+<ul>
+<li><strong>前端框架</strong>：React + Next.js</li>
+<li><strong>样式方案</strong>：Tailwind CSS</li>
+<li><strong>AI服务</strong>：Google Gemini API</li>
+<li><strong>部署平台</strong>：Vercel</li>
+<li><strong>版本控制</strong>：Github</li>
+</ul>
+<h3 id="总结与思考">总结与思考</h3>
+<p>总结一下，虽然 v0 复刻没有达到100%，但是基本上也很像了，而且对于我这个不会前端的人来说，也已经很满意了，而且总共也就用了我半个下午的时间，后面熟悉后，做网站会更快的。</p>
+<h4 id="优势">优势</h4>
+<ul>
+<li><strong>上手简单</strong>：无需深入的前端知识</li>
+<li><strong>效率极高</strong>：半天时间完成从开发到部署</li>
+<li><strong>一站式体验</strong>：从代码生成到部署无缝衔接</li>
+<li><strong>版本管理</strong>：支持回滚和版本控制</li>
+</ul>
+<h4 id="不足">不足</h4>
+<ul>
+<li><strong>细节控制有限</strong>：某些特效实现不够精确</li>
+<li><strong>依赖AI理解</strong>：需要多次调试才能达到预期效果</li>
+<li><strong>定制化程度</strong>：复杂交互可能需要人工干预</li>
+</ul>
+<p>通过这次实践，我深深感受到了AI工具在前端开发中的巨大潜力。对于非专业开发者来说，v0.dev确实是一个非常好的选择，让想法能够快速变成现实。</p>
+<p><strong>最终项目地址</strong>：<a href="https://www.harrypotter.cc/">https://www.harrypotter.cc/</a></p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

@@ -1,0 +1,252 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>使用 FRP 实现内网穿透：实践指南 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/frp-internal-network-penetration/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/frp-internal-network-penetration/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="使用 FRP 实现内网穿透：实践指南 - Astro i18n Starter"><meta property="og:site_name" content="使用 FRP 实现内网穿透：实践指南 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/frp-internal-network-penetration/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/frp-internal-network-penetration/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/frp-internal-network-penetration/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>使用 FRP 实现内网穿透：实践指南</h1> <time datetime="2025-11-12T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/11/12 </time> </header> <h2 id="引言">引言</h2>
+<ul>
+<li>去年抢购的高性能服务器到期了，续费又太贵。今年只能搞了个2C2G的小玩意，然后让家里的服务器当主力，用这个廉价的服务器当中转。</li>
+</ul>
+<h2 id="frp-概述">FRP 概述</h2>
+<p><strong>FRP</strong>（Fast Reverse Proxy）是一款可以用于<strong>内网穿透</strong>的开源工具，<br/>
+支持 <strong>TCP/UDP/HTTP/HTTPS 协议</strong>，可以将 <strong>内网服务</strong> 暴露到 <strong>公网</strong><br/>
+<strong>实现</strong>从任意网络环境访问到你的服务器或电脑。</p>
+<p>🔗 <strong>Frp官网</strong>：<a href="https://github.com/fatedier/frp">https://github.com/fatedier/frp</a></p>
+<h2 id="环境准备">环境准备</h2>
+<ul>
+<li>一个有公网IP的服务器，建议阿里云/腾讯云。</li>
+<li>需要实现内网穿透的服务器或电脑，我这里就是家里的Mac mini。</li>
+</ul>
+<h2 id="下载与安装">下载与安装</h2>
+<p>前往 <a href="https://github.com/fatedier/frp/releases">GitHub FRP Releases</a> 下载适合你系统的版本：
+你看到的文件格式是 frp_0.61.1_xxx(适用系统) _ yyy(系统架构).tar.gz
+Mac Arm：<a href="https://github.com/fatedier/frp/releases/download/v0.65.0/frp_0.65.0_linux_amd64.tar.gz">frp_0.65.0_linux_amd64.tar.gz</a>
+Linux x86：<a href="https://github.com/fatedier/frp/releases/download/v0.65.0/frp_0.65.0_linux_amd64.tar.gz">frp_0.65.0_linux_amd64.tar.gz</a></p>
+<p>解压后，可以看到以下几个文件：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#6A737D"># Linux指令 </span></span>
+<span class="line"><span style="color:#B392F0">ls</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">frpc</span><span style="color:#9ECBFF"> frpc.toml</span><span style="color:#9ECBFF"> frps</span><span style="color:#9ECBFF"> frps.toml</span><span style="color:#9ECBFF"> LICENSE</span></span></code></pre>
+<h2 id="frp-服务端部署">FRP 服务端部署</h2>
+<h4 id="配置文件修改frpstoml">配置文件修改（frps.toml）</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#6A737D"># ==============================</span></span>
+<span class="line"><span style="color:#6A737D"># FRP 服务器端（frps.ini）配置</span></span>
+<span class="line"><span style="color:#6A737D"># ==============================</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 绑定监听地址（默认 `0.0.0.0` 代表监听所有 IP）</span></span>
+<span class="line"><span style="color:#E1E4E8">bindAddr = </span><span style="color:#9ECBFF">&quot;0.0.0.0&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#  服务器监听端口（客户端需要通过该端口连接 FRP 服务器）</span></span>
+<span class="line"><span style="color:#E1E4E8">bindPort = </span><span style="color:#79B8FF">7000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># HTTP 端口（用于内网 HTTP 代理穿透）(我的80端口被占用了)</span></span>
+<span class="line"><span style="color:#E1E4E8">vhostHTTPPort = </span><span style="color:#79B8FF">8230</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># HTTPS 端口（用于内网 HTTPS 代理穿透）（我的443端口被占用了）</span></span>
+<span class="line"><span style="color:#E1E4E8">vhostHTTPSPort = </span><span style="color:#79B8FF">8443</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 子域名支持</span></span>
+<span class="line"><span style="color:#6A737D"># 可以通过 `subDomainHost` 解析动态子域名</span></span>
+<span class="line"><span style="color:#6A737D"># 例如：如果 `subDomainHost` 配置为 &quot;example.com&quot;</span></span>
+<span class="line"><span style="color:#6A737D"># 那么客户端可以使用 `test.example.com` 访问内网服务</span></span>
+<span class="line"><span style="color:#6A737D"># 如果你没有域名或不使用此功能，请删除此行！</span></span>
+<span class="line"><span style="color:#6A737D"># 如果你要用IP直连例如:168.0.0.1:8848，就把这行删掉，不要配置！</span></span>
+<span class="line"><span style="color:#6A737D"># subDomainHost = &quot;xxxx.com&quot;  # 请替换为你的真实域名</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># =============================================</span></span>
+<span class="line"><span style="color:#6A737D"># Web 控制台（Dashboard）配置</span></span>
+<span class="line"><span style="color:#6A737D"># =============================================</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 监控界面监听地址（`0.0.0.0` 代表所有 IP 可访问）</span></span>
+<span class="line"><span style="color:#E1E4E8">webServer.addr = </span><span style="color:#9ECBFF">&quot;0.0.0.0&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Web 管理面板端口（可在浏览器访问，默认 7500）</span></span>
+<span class="line"><span style="color:#6A737D"># 你可以通过 `http://你的公网IP:7500` 访问 FRP 管理面板</span></span>
+<span class="line"><span style="color:#E1E4E8">webServer.port = </span><span style="color:#79B8FF">7500</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Web 控制台管理账号（可自定义）</span></span>
+<span class="line"><span style="color:#E1E4E8">webServer.user = </span><span style="color:#9ECBFF">&quot;admin&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Web 控制台密码（请自行修改）</span></span>
+<span class="line"><span style="color:#E1E4E8">webServer.password = </span><span style="color:#9ECBFF">&quot;your_password&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># =============================================</span></span>
+<span class="line"><span style="color:#6A737D"># 身份验证（Authentication）配置</span></span>
+<span class="line"><span style="color:#6A737D"># =============================================</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#  认证方式（防止未经授权的客户端连接）</span></span>
+<span class="line"><span style="color:#6A737D"># 目前 FRP 支持 `token` 和 `oidc` 方式，我们选用token</span></span>
+<span class="line"><span style="color:#E1E4E8">auth.method = </span><span style="color:#9ECBFF">&quot;token&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">#  Token 认证（客户端需要匹配相同 token 才能连接）</span></span>
+<span class="line"><span style="color:#6A737D"># 通俗来说就是密码，写一个你能记住的，尽量长一点</span></span>
+<span class="line"><span style="color:#6A737D"># 示例: 123-abc-123abc </span></span>
+<span class="line"><span style="color:#E1E4E8">auth.token = </span><span style="color:#9ECBFF">&quot;your_token&quot;</span><span style="color:#6A737D">   # 请自行修改，不要用我的</span></span></code></pre>
+<h4 id="启动">启动</h4>
+<p>在 frp 目录下执行如下指令：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">screen</span><span style="color:#79B8FF"> -S</span><span style="color:#9ECBFF"> frps</span><span style="color:#9ECBFF"> ./frps</span><span style="color:#79B8FF"> -c</span><span style="color:#9ECBFF"> frps.toml</span><span style="color:#E1E4E8">   </span></span></code></pre>
+<p>启动成功后会出现：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">[frps/root.go:105] frps uses config file: frps.toml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[server/service.go:237] frps tcp listen on 0.0.0.0:7000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[server/service.go:305] http service listen on 0.0.0.0:8230</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[server/service.go:319] https service listen on 0.0.0.0:8443</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[frps/root.go:114] frps started successfully</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[server/service.go:351] dashboard listen on 0.0.0.0:7500</span></span></code></pre>
+<ul>
+<li><strong>Linux退出程序窗口</strong><br/>
+按下<code>Ctrl+A</code>松开，再按一下<code>D</code>就可以退出程序窗口<br/>
+要回到程序窗口输入指令<code>screen -r frps</code>即可<br/>
+如果想结束程序进程输入指令<code>pkill frps</code>即可</li>
+</ul>
+<h2 id="frp-客户端配置">FRP 客户端配置</h2>
+<ul>
+<li>描述 frpc 的安装与配置参数。</li>
+<li>预留连接测试与验证方法。</li>
+</ul>
+<h4 id="配置文件修改frpctoml">配置文件修改（frpc.toml）</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#6A737D"># 服务端地址（这里要填你有公网IP的服务器的IP或者是服务器的域名）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">serverAddr = </span><span style="color:#9ECBFF">&quot;xx.xx.xx.xx&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 服务器端口（Frp 服务端监听的端口）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">serverPort = </span><span style="color:#79B8FF">7000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 连接协议</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">transport.protocol = </span><span style="color:#9ECBFF">&quot;tcp&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 认证方式</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">auth.method = </span><span style="color:#9ECBFF">&quot;token&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 认证所使用的 Token（要和你刚才配置的服务端token完全一样！）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">auth.token = </span><span style="color:#9ECBFF">&quot;your_token&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 代理配置</span></span>
+<span class="line"><span style="color:#E1E4E8">[[</span><span style="color:#B392F0">proxies</span><span style="color:#E1E4E8">]]</span></span>
+<span class="line"><span style="color:#6A737D"># 代理名称(标识该代理的名称，根据你的喜好填写）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">name = </span><span style="color:#9ECBFF">&quot;xiaofeng&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 代理类型（http、https、tcp等）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 这里要根据你的需求来填写，如果你有域名，就用http</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 如果你没有域名，那就用IP直连，例如:165.0.0.1:8848,此时这里应该写tcp协议</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 如果你用tcp协议就必须把刚才服务端上subDomainHost = &quot;xxxx.com&quot;的配置删除！</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># type = &quot;tcp&quot;   # IP+端口直连用这个</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">type = </span><span style="color:#9ECBFF">&quot;tcp&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 本地 IP（Frp 客户端需要将流量转发到的本地地址）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">localIP = </span><span style="color:#9ECBFF">&quot;127.0.0.1&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 本地端口（Frp 客户端需要将流量转发到的本地端口，根据你要穿透的端口来填写）</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">localPort = </span><span style="color:#79B8FF">5678</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 访问此代理的子域名</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 如果你没有域名要用IP直连，请把这句删除掉，否则会导致无法连接！</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># subdomain = &quot;rocket&quot; # 子域名请根据你拥有的域名配置，配置后通过rocket.xxx.com格式访问</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 如果你不用域名，要用ip+端口直连，请必须加上这句！</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 并且删除 subdomain = &quot;rocket&quot; </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">remotePort = </span><span style="color:#79B8FF">5678</span><span style="color:#6A737D">    # 这个端口和localPort 配置的一模一样，这样才能正常访问！</span></span></code></pre>
+<h4 id="启动-1">启动</h4>
+<p>在 frp 目录下执行如下指令：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">screen</span><span style="color:#79B8FF"> -S</span><span style="color:#9ECBFF"> frpc</span><span style="color:#9ECBFF"> ./frpc</span><span style="color:#79B8FF"> -c</span><span style="color:#9ECBFF"> frpc.toml</span><span style="color:#E1E4E8">   </span></span></code></pre>
+<p>启动成功后会出现：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#E1E4E8">[I] [sub/root.go:142] start frpc service </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> config file [frpc.toml] </span></span>
+<span class="line"><span style="color:#E1E4E8">[I] [client/service.go:295] try to connect to server... </span></span>
+<span class="line"><span style="color:#E1E4E8">[I] [client/service.go:287] [7c9de41e30e15c46] login to server success, get run id [7c9de41e30e15c46] </span></span>
+<span class="line"><span style="color:#E1E4E8">[I] [proxy/proxy_manager.go:173] [7c9de41e30e15c46] proxy added: [rocketcat] </span></span>
+<span class="line"><span style="color:#E1E4E8">[I] [client/control.go:168] [7c9de41e30e15c46] [rocketcat] start proxy success</span></span></code></pre>
+<ul>
+<li><strong>Linux退出程序窗口</strong><br/>
+按下<code>Ctrl+A</code>松开，再按一下<code>D</code>就可以退出程序窗口<br/>
+要回到程序窗口输入指令<code>screen -r frpc</code>即可<br/>
+如果想结束程序进程输入指令<code>pkill frpc</code>即可</li>
+</ul>
+<h2 id="测试与验证">测试与验证</h2>
+<p>可以登陆公网IP的页面查看代理情况(<a href="http://xx.xx.xx.xx:7500)%EF%BC%8C%E5%A6%82%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%9A">http://xx.xx.xx.xx:7500)，如图所示：</a></p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/frp-watch.png" alt="FRP监控页面"/></p>
+<p>也可查看具体的协议，比如我在配置里设置的是TCP的5678端口：</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/frp-detail.png" alt="FRP详情"/></p>
+<h2 id="总结">总结</h2>
+<ul>
+<li>配置/启动时要注意是服务器还是客户端，因为文件名太相近了。另外，配置过程难免会有疑问，甚至报错，建议直接问AI，效果非常好。</li>
+</ul>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/geek233/p/18791892">https://www.cnblogs.com/geek233/p/18791892</a></li>
+</ul>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

@@ -1,0 +1,178 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>哥飞上海线下分享会：从新手到实战的出海启蒙 - Astro i18n Starter</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/gefei-shanghai-sharing/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-shanghai-sharing/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="哥飞上海线下分享会：从新手到实战的出海启蒙 - Astro i18n Starter"><meta property="og:site_name" content="哥飞上海线下分享会：从新手到实战的出海启蒙 - Astro i18n Starter"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-shanghai-sharing/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gefei-shanghai-sharing/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gefei-shanghai-sharing/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>哥飞上海线下分享会：从新手到实战的出海启蒙</h1> <time datetime="2025-06-26T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/6/26 </time> </header> <h1 id="哥飞上海线下分享会从新手到实战的出海启蒙">哥飞上海线下分享会：从新手到实战的出海启蒙</h1>
+<p>上次参加完同城的生财线下后，最大的收获就是”线上聊千遍，不如线下见一面”。线下交流与线上完全不同，作为新手，我肯定需要多参加线下活动。正好哥飞年中分享有上海场，我从南京坐高铁只要一个多小时，心动不如行动，周五下了班便直奔高铁站了。</p>
+<h2 id="一概述">一、概述</h2>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_start_1.jpeg" alt="活动现场开始前"/></p>
+<p>哥飞是做出海网站的，这次的活动当然也是围绕这一主题展开的。上海场场地不算大，只能容纳150人，哥飞也限制了名额，且本次线下只允许社群成员参加。当天上海下了很大的雨，但是挡不住群友的热情，很多人提前两小时就到了，其中不乏像我这种从外地赶过来的群友，尤其是杭州的比较多。现场的效果太好了，完全超出我的预料，尤其是嘉宾咔叽哇，用讲脱口秀的方式分享了适合新手上站的经验，直接炸翻全场。因为是新手，我能听懂的不多，像一些产品分析、SEO和投流的分享我基本听不懂。但也有几位嘉宾分享了大量基础知识，给我这种小白指明了学习方向。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_start_2.jpeg" alt="现场氛围"/></p>
+<h2 id="二分享主题">二、分享主题</h2>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_middle_time.jpeg" alt="中场休息，群友围着哥飞"/></p>
+<p>这次的分享嘉宾，除了哥飞外，一共有7位。现场效果超出预期，也超出哥飞的预期，导致原定的时间表一拖再拖，所以哥飞虽然压轴，但没讲太多，而是把更多的时间交给了嘉宾们。</p>
+<h3 id="新手教学">新手教学</h3>
+<p>有两位嘉宾的分享对新手友好，分别是咔叽哇和BingNi。</p>
+<h4 id="咔叽哇-聊聊上站那些事儿">咔叽哇-聊聊上站那些事儿</h4>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_kajiwa.jpeg" alt="咔叽哇出场"/></p>
+<p>咔叽哇绝对是本场的MVP，不仅现场氛围最好，而且现场群友就其分享做的脑图被群友广泛传播，甚至哥飞也在即刻上发文说咔叽哇的分享让人耳目一新且预定其文章要分享到公众号上。</p>
+<h5 id="基本要求">基本要求</h5>
+<ul>
+<li>开发基础：会CRUD，调用API</li>
+<li>一定的金钱投入
+<ul>
+<li>选主流域名：com,ai,org,net</li>
+<li>外链：买能给自己带来流量的外链</li>
+<li>API：主流平台，replicate，fal</li>
+<li>服务器：dokploy</li>
+</ul>
+</li>
+<li>耐心！！！</li>
+</ul>
+<h5 id="网站类型的选择">网站类型的选择</h5>
+<ul>
+<li>AI工具站</li>
+<li>重运营维护的不做：目标是躺赚</li>
+<li>品牌词不做：1、网站被关闭；2、影响支付</li>
+<li>功能太复杂的不做：简单垂直</li>
+</ul>
+<h5 id="关键词与域名">关键词与域名</h5>
+<ul>
+<li>信息源要是一手信息源，才能早注册域名</li>
+<li>关键词被抢注，可以看派生的长尾词。</li>
+<li>长尾词的优势：精准、转化率高、竞争少（适合新手）（宁做鸡头，不做凤尾）</li>
+<li>云上站：学习已经注册域名的排名情况和外链情况</li>
+<li>不放过任何一让自己变强的机会！！！</li>
+</ul>
+<h5 id="如何快速上线">如何快速上线</h5>
+<ul>
+<li>买模板，然后改，慢慢变成自己的模板</li>
+<li>拒绝从头开始写代码（尤其是不会前端的）</li>
+<li>先上线，有了用户才有迭代的动力</li>
+</ul>
+<h5 id="如何养站">如何养站</h5>
+<ul>
+<li>拓展功能</li>
+<li>围绕主词做长尾词：主打一个功能，将这个词吃透，覆盖各个国家</li>
+<li>观察付费用户生成的内容：发现新机会</li>
+</ul>
+<h5 id="独立开发的风险与忌讳">独立开发的风险与忌讳</h5>
+<ul>
+<li>网站没了：域名侵权，避免蹭品牌词</li>
+<li>支付被封：无法控制，上线多个支付</li>
+<li>API不可用：找到替代API兜底，防止网站功能直接不可用、影响排名</li>
+<li>买了域名没上站：会打击积极性，容易放弃</li>
+<li>只写代码不做市场：功能 ≠ 价值，曝光才 = 现金流</li>
+</ul>
+<h5 id="搜索引擎">搜索引擎</h5>
+<ul>
+<li>Bing 更容易获得排名：域名关键词会提升排名，会给 chatgpt 带来流量，会拉动谷歌的排名</li>
+<li>谷歌：排名很综合，用户使用时长影响大，相关性外链会有很大的促进作用。</li>
+</ul>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_kajiwa_xmind.jpeg" alt="咔叽哇分享脑图"/></p>
+<h4 id="bingni-出海赚到第一桶金我觉得一些重要的事情">BingNi-出海赚到第一桶金，我觉得一些重要的事情</h4>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_bingni.jpeg" alt="BingNi分享"/></p>
+<p>这哥们也是牛人，21年毕业就去腾讯做后台开发了，23年就离职了，现在练习时长一年半就做出了很好的成绩。</p>
+<h5 id="找需求">找需求</h5>
+<p>新手追新词<a href="https://g31btelecl.feishu.cn/docx/Z7eGdGTbkoDYndx71qccjqQbnZg">https://g31btelecl.feishu.cn/docx/Z7eGdGTbkoDYndx71qccjqQbnZg</a></p>
+<ul>
+<li>看谷歌趋势</li>
+<li>看Twitter</li>
+<li>replicate和hugging face</li>
+</ul>
+<p>当然他还分享了其他找需求的方法，但作为新手不贪多，先掌握上面的就好。</p>
+<h5 id="做网站">做网站</h5>
+<p>快速开始最重要，搞个模板，怎么简单怎么来。改文案、图片和logo，都可以用AI来辅助完成。刚开始上线的时候，有个落地页就行了，有流量了再加登录、支付等功能。</p>
+<p>做好用户体验</p>
+<ul>
+<li>交互简单方便</li>
+<li>功能稳定性</li>
+<li>功能丰富性</li>
+<li>免费试用</li>
+<li>每日免费积分</li>
+<li>邀请送积分</li>
+</ul>
+<h5 id="搞流量">搞流量</h5>
+<p><strong>SEO</strong></p>
+<p><strong>发外链</strong></p>
+<p>1、<a href="https://toolify.ai/"><strong>https://toolify.ai/</strong></a></p>
+<p>2、<a href="https://theresanaiforthat.com/"><strong>https://theresanaiforthat.com/</strong></a></p>
+<p>3、<a href="https://www.yeschat.ai/post-insertion"><strong>https://www.yeschat.ai/post-insertion</strong></a></p>
+<p>4、<a href="https://topai.tools/submit"><strong>https://topai.tools/submit</strong></a></p>
+<h5 id="一些感受">一些感受</h5>
+<ul>
+<li>国外付费习惯好</li>
+<li>投入成本低</li>
+<li>美元香</li>
+<li>现在还是非常早期，有很多机会</li>
+<li>找到优秀的小伙伴一起走下去</li>
+<li>不要放弃！</li>
+</ul>
+<p>5年、10年后回过头来看，你一定会感谢今天入这行并坚持走下去的自己！</p>
+<h3 id="产品经验">产品经验</h3>
+<p>有三位嘉宾介绍了他们的产品经验分别是：</p>
+<p>杨鉴昂- <a href="http://Million.dev">Million.dev</a> 和 <a href="http://Same.new">Same.new</a> 的创业经历</p>
+<p>Kostjia-我的增长从业经历和产品选品经验</p>
+<p>越峰-老站长出海</p>
+<p>大佬们的产品收益非常可观，可惜我这个菜鸟没能吸收太多有用经验。但是 嘉宾杨鉴昂实在是牛人中的牛人，讲了一个多小时他们的创业经历和产品，有一半以上的内容在讲英文（非常考验我的听力）。这种人我以前只在书上和网上见过，今天算是见着真人了，真的让人望尘莫及。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_samenew.png" alt="Same.new产品演示"/></p>
+<p>不过，大佬也很慷慨，给了我等平民 <a href="http://Same.new">Same.new</a> 一个月的免费会员，产品还不错，我用它复刻网站，效果与 v0 差不多。</p>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_samenew_code.jpeg" alt="优惠兑换码"/></p>
+<h3 id="seo与投放">SEO与投放</h3>
+<p>最后两位嘉宾讲的内容当然也很精彩，分别是：</p>
+<p>Maisie-重构SEO内容体系：从AIGC内容堆叠到系统化增长</p>
+<p>山禾-小预算团队如何做kol投放</p>
+<p>只是我实在听不太懂，希望以后能进阶到这一步。</p>
+<h2 id="三总结">三、总结</h2>
+<p><img src="https://minio.xiaofeng.show/blog/2025/gefei_shanghai_fengjing.jpeg" alt="上海风景"/></p>
+<p>这次大会给我印象最深刻的就是咔叽哇，他不像其他嘉宾履历那么出色。他没有名校和大厂的背景，甚至跟我有点像，练习时长五六年的Java开发工程师，是个CRUD Boy，只会调API。他让我这种普通人看到了希望，用了一年半的时间就做出了很好的成绩（已加入万刀俱乐部）。我可能不能像他那样每天投入那么多时间和精力，但是日拱一卒，坚持下去，我也会拿到属于我的结果，加油！</p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
