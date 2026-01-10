@@ -1,0 +1,243 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Using Easy-Es for Multiple Data Aggregations - Astro i18n Starter</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/easy-es-multiple-aggregation/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/easy-es-multiple-aggregation/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Using Easy-Es for Multiple Data Aggregations - Astro i18n Starter"><meta property="og:site_name" content="Using Easy-Es for Multiple Data Aggregations - Astro i18n Starter"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/easy-es-multiple-aggregation/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/easy-es-multiple-aggregation/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/easy-es-multiple-aggregation/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Using Easy-Es for Multiple Data Aggregations</h1> <time datetime="2025-01-02T00:00:00.000Z" data-astro-cid-v3cnrnum> 1/2/2025 </time> </header> <h3 id="1-adding-dependencies-and-configuration">1. Adding Dependencies and Configuration</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;cn.easysheet&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;easy-es-boot-starter&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;2.0.0&lt;/</span><span style="color:#85E89D">version</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#85E89D">easy-es</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  address</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">127.0.0.1:9200</span></span>
+<span class="line"><span style="color:#85E89D">  username</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">elastic</span></span>
+<span class="line"><span style="color:#85E89D">  password</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">elastic</span></span>
+<span class="line"><span style="color:#85E89D">  enable</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">  global-config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    print-dsl</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#85E89D">    db-config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      map-underscore-to-camel-case</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#85E89D">      smartAddKeywordSuffix</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#85E89D">  async</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    concurrent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span></code></pre>
+<h3 id="2-class-construction-pojo-mapper-dao">2. Class Construction (POJO, Mapper, DAO)</h3>
+<h4 id="21-entity-class">2.1 Entity Class</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">IndexName</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">value</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;my_stats&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">refreshPolicy</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> RefreshPolicy.IMMEDIATE)</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> MyStatistics</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">IndexId</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">type</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> IdType.TIME_ID)</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">IndexField</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;id&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String id;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Communication duration in seconds</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">IndexField</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;communication_duration&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Integer communicationDuration;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Count time</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">IndexField</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;count_time&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Long countTime;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Record time</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">IndexField</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;record_time&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">JsonFormat</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">pattern</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> DatePattern.NORM_DATETIME_PATTERN, </span><span style="color:#79B8FF">timezone</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;GMT+8&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Date recordTime;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Device number</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">IndexField</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;device_no&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Integer deviceNo;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Entity class annotations are similar to Mybatis-plus.</p>
+<h4 id="22-mapper-layer">2.2 Mapper Layer</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> MyStatisticsMapper</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> BaseEsMapper</span><span style="color:#E1E4E8">&lt;</span><span style="color:#F97583">MyStatistics</span><span style="color:#E1E4E8">&gt; {</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>The Mapper layer implementation is also similar to Mybatis-plus.</p>
+<h4 id="23-dao-layer">2.3 DAO Layer</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Service</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RequiredArgsConstructor</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> MyStatisticsDao</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> MyStatisticsMapper myStatisticsMapper;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> save</span><span style="color:#E1E4E8">(MyStatistics </span><span style="color:#FFAB70">myStatistics</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        myStatisticsMapper.</span><span style="color:#B392F0">insert</span><span style="color:#E1E4E8">(myStatistics);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> List&lt;</span><span style="color:#F97583">MyStatistics</span><span style="color:#E1E4E8">&gt; </span><span style="color:#B392F0">list</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> EsWrappers.</span><span style="color:#B392F0">lambdaChainQuery</span><span style="color:#E1E4E8">(myStatisticsMapper)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">list</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> Boolean </span><span style="color:#B392F0">recordExist</span><span style="color:#E1E4E8">(Long </span><span style="color:#FFAB70">countTime</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">deviceNo</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> EsWrappers.</span><span style="color:#B392F0">lambdaChainQuery</span><span style="color:#E1E4E8">(myStatisticsMapper)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">eq</span><span style="color:#E1E4E8">(MyStatistics</span><span style="color:#F97583">::</span><span style="color:#E1E4E8">getCountTime, countTime)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">eq</span><span style="color:#E1E4E8">(MyStatistics</span><span style="color:#F97583">::</span><span style="color:#E1E4E8">getDeviceNo, deviceNo)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">exists</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>The basic CRUD operations in the DAO layer are also similar to Mybatis-plus.</p>
+<h4 id="24-add-esmapper-scan-to-application-startup">2.4 Add EsMapper Scan to Application Startup</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">EsMapperScan</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;xxx.**.esmapper.**&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">SpringBootApplication</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> static</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">[] </span><span style="color:#FFAB70">args</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        SpringApplication.</span><span style="color:#B392F0">run</span><span style="color:#E1E4E8">(Application.class, args);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="3-aggregation-functions">3. Aggregation Functions</h3>
+<p>Although Easy-Es provides some encapsulation for simple aggregations, complex aggregations still require custom implementation. Fortunately, Easy-Es also provides native queries.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">// Semi-native query (can also be classified as hybrid query, typically used when customizing Aggregation)</span></span>
+<span class="line"><span style="color:#E1E4E8">SearchResponse </span><span style="color:#B392F0">search</span><span style="color:#E1E4E8">(LambdaEsQueryWrapper</span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8">T</span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> wrapper) throws IOException;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Standard native query with optional RequestOptions</span></span>
+<span class="line"><span style="color:#E1E4E8">SearchResponse </span><span style="color:#B392F0">search</span><span style="color:#E1E4E8">(SearchRequest searchRequest, RequestOptions requestOptions) throws IOException;</span></span></code></pre>
+<p>I used the standard native query approach. The following code aggregates communication duration by time (daily if over one day, hourly if less than one day).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#E1E4E8"> AccessUseTimeStatsVO </span><span style="color:#B392F0">getStats</span><span style="color:#E1E4E8">(String deviceNo, Long beginTime, Long endTime) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    Boolean sortByHour </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (endTime </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> beginTime) </span><span style="color:#F97583">&lt;=</span><span style="color:#79B8FF"> 86400000L</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    SearchRequest request </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> SearchRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;my_stats&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">    // Query by device number and time range</span></span>
+<span class="line"><span style="color:#E1E4E8">    QueryBuilder queryBuilder </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> QueryBuilders.</span><span style="color:#B392F0">boolQuery</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">must</span><span style="color:#E1E4E8">(QueryBuilders.</span><span style="color:#B392F0">matchQuery</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;device_no&quot;</span><span style="color:#E1E4E8">, deviceNo))</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">must</span><span style="color:#E1E4E8">(QueryBuilders.</span><span style="color:#B392F0">rangeQuery</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;count_time&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">                    .</span><span style="color:#B392F0">gte</span><span style="color:#E1E4E8">(beginTime)</span></span>
+<span class="line"><span style="color:#E1E4E8">                    .</span><span style="color:#B392F0">lte</span><span style="color:#E1E4E8">(endTime));</span></span>
+<span class="line"><span style="color:#6A737D">    // Communication duration</span></span>
+<span class="line"><span style="color:#E1E4E8">    String durationMaxAggrName </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;durationMax&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    AggregationBuilder durationMaxAggr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> AggregationBuilders.</span><span style="color:#B392F0">max</span><span style="color:#E1E4E8">(durationMaxAggrName)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">field</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;communication_duration&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    String durationMinAggrName </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;durationMin&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    AggregationBuilder durationMinAggr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> AggregationBuilders.</span><span style="color:#B392F0">min</span><span style="color:#E1E4E8">(durationMinAggrName)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">field</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;communication_duration&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">    // Aggregate by time</span></span>
+<span class="line"><span style="color:#E1E4E8">    String dateHistogramAggName </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;groupDate&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    DateHistogramAggregationBuilder dateHistogramAgg </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> AggregationBuilders.</span><span style="color:#B392F0">dateHistogram</span><span style="color:#E1E4E8">(dateHistogramAggName)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">field</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;record_time&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">timeZone</span><span style="color:#E1E4E8">(ZoneId.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Asia/Shanghai&quot;</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">subAggregation</span><span style="color:#E1E4E8">(durationMaxAggr)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">subAggregation</span><span style="color:#E1E4E8">(durationMinAggr);</span></span>
+<span class="line"><span style="color:#6A737D">    // By hour or by day</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (sortByHour) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        dateHistogramAgg.</span><span style="color:#B392F0">calendarInterval</span><span style="color:#E1E4E8">(DateHistogramInterval.HOUR)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;HH&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        dateHistogramAgg.</span><span style="color:#B392F0">calendarInterval</span><span style="color:#E1E4E8">(DateHistogramInterval.DAY)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">format</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;MM-dd&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    request.</span><span style="color:#B392F0">source</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">query</span><span style="color:#E1E4E8">(queryBuilder).</span><span style="color:#B392F0">aggregation</span><span style="color:#E1E4E8">(dateHistogramAgg);</span></span>
+<span class="line"><span style="color:#E1E4E8">    SearchResponse response </span><span style="color:#F97583">=</span><span style="color:#B392F0"> search</span><span style="color:#E1E4E8">(request);</span></span>
+<span class="line"><span style="color:#E1E4E8">    Aggregations aggregations </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">getAggregations</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    Histogram groupDateAggr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> aggregations.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(dateHistogramAggName);</span></span>
+<span class="line"><span style="color:#6A737D">    // Time period</span></span>
+<span class="line"><span style="color:#E1E4E8">    List&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt; dateTimeArray </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> ArrayList&lt;&gt;();</span></span>
+<span class="line"><span style="color:#6A737D">    // Access duration</span></span>
+<span class="line"><span style="color:#E1E4E8">    List&lt;</span><span style="color:#F97583">Integer</span><span style="color:#E1E4E8">&gt; accessDurationArray </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> ArrayList&lt;&gt;();</span></span>
+<span class="line"><span style="color:#E1E4E8">    List&lt;</span><span style="color:#F97583">?</span><span style="color:#F97583"> extends</span><span style="color:#F97583"> Histogram</span><span style="color:#E1E4E8">.</span><span style="color:#F97583">Bucket</span><span style="color:#E1E4E8">&gt; buckets </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> groupDateAggr.</span><span style="color:#B392F0">getBuckets</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">int</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; i </span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8"> buckets.</span><span style="color:#B392F0">size</span><span style="color:#E1E4E8">(); i</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        Histogram.Bucket bucket </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> buckets.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(i);</span></span>
+<span class="line"><span style="color:#6A737D">        // Time</span></span>
+<span class="line"><span style="color:#E1E4E8">        dateTimeArray.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(bucket.</span><span style="color:#B392F0">getKeyAsString</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#6A737D">        // Access duration</span></span>
+<span class="line"><span style="color:#E1E4E8">        Aggregation durationMax </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> bucket.</span><span style="color:#B392F0">getAggregations</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(durationMaxAggrName);</span></span>
+<span class="line"><span style="color:#F97583">        double</span><span style="color:#E1E4E8"> maxValue </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ((ParsedMax) durationMax).</span><span style="color:#B392F0">getValue</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        Aggregation durationMin </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> bucket.</span><span style="color:#B392F0">getAggregations</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(durationMinAggrName);</span></span>
+<span class="line"><span style="color:#F97583">        double</span><span style="color:#E1E4E8"> minValue </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ((ParsedMin) durationMin).</span><span style="color:#B392F0">getValue</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        int</span><span style="color:#E1E4E8"> durationValue;</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (Double.</span><span style="color:#B392F0">isInfinite</span><span style="color:#E1E4E8">(maxValue) </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> Double.</span><span style="color:#B392F0">isInfinite</span><span style="color:#E1E4E8">(minValue)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            durationValue </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            durationValue </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BigDecimal</span><span style="color:#E1E4E8">(maxValue </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> minValue)</span></span>
+<span class="line"><span style="color:#E1E4E8">                    .</span><span style="color:#B392F0">divide</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#B392F0"> BigDecimal</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">), </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, BigDecimal.ROUND_HALF_UP).</span><span style="color:#B392F0">intValue</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessDurationArray.</span><span style="color:#B392F0">add</span><span style="color:#E1E4E8">(durationValue);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> AccessUseTimeStatsVO.</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">dateTimeArray</span><span style="color:#E1E4E8">(dateTimeArray)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">accessDurationArray</span><span style="color:#E1E4E8">(accessDurationArray)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">private</span><span style="color:#E1E4E8"> SearchResponse </span><span style="color:#B392F0">search</span><span style="color:#E1E4E8">(SearchRequest request) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    SearchResponse response </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        response </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> myStatisticsMapper.</span><span style="color:#B392F0">search</span><span style="color:#E1E4E8">(request, RequestOptions.DEFAULT);</span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">debug</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;response:{}&quot;</span><span style="color:#E1E4E8">, response);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">ex</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;search error&quot;</span><span style="color:#E1E4E8">, ex);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> response;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Data</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">AllArgsConstructor</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">NoArgsConstructor</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Builder</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> AccessUseTimeStatsVO</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Hour or Day</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> List&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt; dateTimeArray;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Access duration in minutes</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> List&lt;</span><span style="color:#F97583">Integer</span><span style="color:#E1E4E8">&gt; accessDurationArray;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="4-references">4. References</h3>
+<ul>
+<li>Easy-Es Official Website: <a href="https://www.easy-es.cn/">https://www.easy-es.cn/</a></li>
+<li>Elasticsearch Official Website: <a href="https://www.elastic.co/docs">https://www.elastic.co/docs</a></li>
+</ul>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

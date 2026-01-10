@@ -1,0 +1,100 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Claude Code First Experience: From Hesitation to Attraction as an AI Programming Assistant - Astro i18n Starter</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/claude-code-first-experience/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-first-experience/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Claude Code First Experience: From Hesitation to Attraction as an AI Programming Assistant - Astro i18n Starter"><meta property="og:site_name" content="Claude Code First Experience: From Hesitation to Attraction as an AI Programming Assistant - Astro i18n Starter"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/claude-code-first-experience/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/claude-code-first-experience/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/claude-code-first-experience/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Claude Code First Experience: From Hesitation to Attraction as an AI Programming Assistant</h1> <time datetime="2025-06-23T00:00:00.000Z" data-astro-cid-v3cnrnum> 6/23/2025 </time> </header> <h2 id="claude-code-first-experience-from-hesitation-to-attraction-as-an-ai-programming-assistant">Claude Code First Experience: From Hesitation to Attraction as an AI Programming Assistant</h2>
+<p>Claude Code has been out for several months, but previously it was either pay-as-you-go or only available to Max users, making the barrier high for regular users. Recently Pro users can also use it, plus all the buzz inside and outside the wall about its excellent performance, it’s really tempting. Although the $20 price made me hesitate, especially since I already got a year of Cursor Pro free with an education discount.</p>
+<p>But what prompted me to make up my mind was Cursor’s recent disappointing performance—from last week it became slow and dumb, seemingly only able to handle simple problems. Helplessly, I still gritted my teeth and decided to experience Claude Code.</p>
+<h3 id="1-registration-and-installation-journey">1. Registration and Installation Journey</h3>
+<h4 id="11-cautious-registration">1.1 Cautious Registration</h4>
+<p>In the past week I’ve seen quite a few users getting their accounts banned. To be safe, I decided to register a completely new Google account, using a new Gmail to register Claude. For payment method, I didn’t choose Alipay (worried about rejection or account ban), but used WildCard to complete payment.</p>
+<h4 id="12-installation-process-bumps">1.2 Installation Process Bumps</h4>
+<p><strong>Windows 11 Failed Attempt</strong></p>
+<p>Yesterday I first tried installing on Windows 11. When executing the npm command, it directly said Windows system isn’t supported. Helplessly, I could only follow the tutorial to install WSL, then install Ubuntu in WSL, but after installation there were still problems, so I had to temporarily give up.</p>
+<p><strong>Mac Installation Success</strong></p>
+<p>Today at the company I eagerly installed it on Mac, the process was also not smooth. Finally I found the solution in GitHub Issues:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> list</span><span style="color:#79B8FF"> -g</span><span style="color:#79B8FF"> --depth=0</span><span style="color:#F97583"> &gt;</span><span style="color:#9ECBFF"> ~/npm-global-packages.txt</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> ~/.npm-global</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> config</span><span style="color:#9ECBFF"> set</span><span style="color:#9ECBFF"> prefix</span><span style="color:#9ECBFF"> ~/.npm-global</span></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> &#39;export PATH=~/.npm-global/bin:$PATH&#39;</span><span style="color:#F97583"> &gt;&gt;</span><span style="color:#9ECBFF"> ~/.zshrc</span></span>
+<span class="line"><span style="color:#79B8FF">source</span><span style="color:#9ECBFF"> ~/.zshrc</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -g</span><span style="color:#9ECBFF"> @anthropic-ai/claude-code</span></span></code></pre>
+<p>After installation, it kept erroring at startup:</p>
+<p><img src="http://minio.xiaofeng.show/blog/2025/claude_code_fail.png" alt="Claude Code Startup Failed"/></p>
+<p>After messing around for a long time, I found it was a proxy configuration issue. Solved with the following commands:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> HTTP_PROXY</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;http://127.0.0.1:7890&quot;</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> HTTPS_PROXY</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;http://127.0.0.1:7890&quot;</span></span>
+<span class="line"><span style="color:#6A737D"># 7890 is my local proxy service port</span></span></code></pre>
+<p>After re-executing the claude command, I finally saw the long-awaited interface!</p>
+<p><img src="http://minio.xiaofeng.show/blog/2025/claude_code_success.jpeg" alt="Claude Code Successfully Started"/></p>
+<p>After logging into the account, I could finally start the happy programming journey.</p>
+<h3 id="2-actual-usage-experience">2. Actual Usage Experience</h3>
+<p>Today I mainly had it assist in writing Java code for work, using SpringBoot framework. Overall experience, it indeed feels better than Cursor. Although Cursor performs well in writing frontend code and Golang, its experience in Java development hasn’t been ideal for me.</p>
+<p><img src="http://minio.xiaofeng.show/blog/2025/claude_code_work.png" alt="Claude Code Work Scene"/></p>
+<h4 id="21-handling-complex-tasks-slow-and-careful-never-making-things-up">2.1 Handling Complex Tasks: Slow and Careful, Never Making Things Up</h4>
+<p>When I gave it a complex task, it would first comprehensively scan all related files, and only start coding after fully understanding the existing code structure. Although this process might be a bit slow, the results were satisfying—no making things up, no variable boundary issues, and no missing import statements (these are errors Cursor often makes).</p>
+<h4 id="22-rigorous-and-professional-insisting-on-code-quality-not-catering-to-wrong-requirements">2.2 Rigorous and Professional: Insisting on Code Quality, Not Catering to Wrong Requirements</h4>
+<p>Once, a certain requirement it had already perfectly implemented, but what was running online was old code, and I mistakenly thought it wrote it wrong. Claude Code didn’t blindly cater to my thinking, but carefully checked the code again, confirmed the existing code was correct, and provided methods to check historical data. This attitude of insisting on professional judgment and not casually modifying code impressed me deeply.</p>
+<h4 id="23-minor-flaws-dont-affect-overall-excellence">2.3 Minor Flaws Don’t Affect Overall Excellence</h4>
+<p>Of course, Claude Code isn’t perfect either. After multiple requests, occasionally some small problems appear, like class property reference issues, but these can be discovered at compile time and won’t affect overall development progress. Also, sometimes file format modifications might have issues, but since the number of modified files is limited, it’s easy to manually locate and solve.</p>
+<h3 id="3-summary-claude-code-is-worth-having">3. Summary: Claude Code Is Worth Having</h3>
+<p>After a day of deep experience, I can confidently say: <strong>Claude Code is absolutely worth it!</strong></p>
+<p>It uses the current best AI model, provides the best AI programming experience, and is worth every programmer’s try. I’m willing to recommend it to all colleagues. As Teacher Baoyu said: “If you’re going to use it, use the best, this is where you need to be generous.”</p>
+<p><img src="http://minio.xiaofeng.show/blog/2025/claude_code_baoyu.png" alt="Teacher Baoyu's Advice"/></p>
+<p>In today’s rapid development of AI programming tools, choosing an excellent assistant can not only improve development efficiency, but also let us go further in code quality. Claude Code’s performance in this regard is indeed impressive.</p>
+<h4 id="usage-suggestions">Usage Suggestions</h4>
+<ol>
+<li><strong>Patient Installation</strong>: Although the installation process may encounter some bumps, persevering will definitely succeed</li>
+<li><strong>Reasonable Expectations</strong>: It’s powerful, but not omnipotent, works better with human judgment</li>
+<li><strong>Full Utilization</strong>: For complex projects, let it fully understand the code structure before starting work</li>
+<li><strong>Continuous Feedback</strong>: Promptly provide feedback when encountering problems, its learning ability is strong</li>
+</ol>
+<p>Overall, Claude Code is the most impressive AI programming assistant I’ve used, worth the investment and long-term use.</p>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

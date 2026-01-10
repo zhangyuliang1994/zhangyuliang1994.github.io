@@ -1,0 +1,327 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Implementing User Authentication with LDAP in Spring Boot - Astro i18n Starter</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/springboot-ldap-authentication/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/springboot-ldap-authentication/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Implementing User Authentication with LDAP in Spring Boot - Astro i18n Starter"><meta property="og:site_name" content="Implementing User Authentication with LDAP in Spring Boot - Astro i18n Starter"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/springboot-ldap-authentication/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><style>article[data-astro-cid-uwv4mmhs]{>*{margin-block:1.2em 0;margin-inline:0}p{font-weight:400}h2{margin-block:3em 0;padding-block-end:.2em;border-inline-start:4px solid var(--color-accent);padding-inline-start:var(--sp-s);line-height:1.4;font-size:1.6rem}h3{margin-block:2em 0;padding-block-end:.2em;line-height:1.4;font-size:1.4rem;border-block-end:1px solid color-mix(in srgb,var(--color-main) 10%,transparent)}h4{margin-block:2em -.4em;line-height:1.4;font-size:1.1rem}ul{list-style:disc;padding-inline-start:1.5em}ol{list-style:decimal;padding-inline-start:1.5em}li{margin-block:0 .5em;line-height:1.4;ul,ol{margin-block:.5em 0}ul{list-style:circle}ol{list-style:decimal}}dl{dt{margin-block-start:1em;font-weight:700;font-size:1.1rem;&:after{content:" :";opacity:.4}}}table{width:100%;th,td{border:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);padding-block:.4em;padding-inline:.8em}th{background:color-mix(in srgb,var(--color-main) 20%,transparent)}tr:nth-child(2n) td{background:color-mix(in srgb,var(--color-main) 2%,transparent)}}b{font-weight:700}strong{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--color-theme) 20%,transparent) 40%)}:not(pre) code{font-family:Consolas,Courier New,Courier,Monaco,monospace;color:var(--color-theme);background-color:color-mix(in srgb,var(--color-main) 8%,transparent);padding-block:.2em;padding-inline:.4em;margin-block:auto;margin-inline:.2em;border-radius:2px;font-size:.9rem;vertical-align:.2em}blockquote{font-style:italic;color:color-mix(in srgb,var(--color-main) 80%,transparent);background:color-mix(in srgb,var(--color-main) 5%,transparent);padding:1em;border-inline-start:2px solid color-mix(in srgb,var(--color-main) 10%,transparent);p{margin:0}}small{font-size:.9rem;opacity:.8;&.reference{width:100%;text-align:right;display:block;margin-block-start:.4em;a{color:color-mix(in srgb,var(--color-main) 40%,transparent);text-decoration:underline}}}hr{border:0;margin-block:6em 4em;border-block-start:1px dashed color-mix(in srgb,var(--color-main) 40%,transparent)}a{text-decoration:underline;color:var(--color-theme);font-weight:500;&:visited{filter:brightness(80%)}}img{border-radius:4px;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}video{max-width:100%;background-color:color-mix(in srgb,var(--color-main) 10%,transparent)}iframe{max-width:100%}iframe[src*=youtube],iframe[src*=vimeo]{max-width:100%;aspect-ratio:16 / 9;overflow:hidden;border-radius:6px;height:auto}pre{direction:ltr;padding:1em;border-radius:4px;border:2px solid color-mix(in srgb,var(--color-main) 20%,transparent);code{counter-reset:step;counter-increment:step 0;span:empty{display:none}.line:before{content:counter(step);counter-increment:step;width:1em;margin-right:1em;display:inline-block;text-align:right;color:#fff6}}}details{background-color:color-mix(in srgb,var(--color-main) 8%,transparent);border:.12em solid color-mix(in srgb,var(--color-main) 10%,transparent);padding:var(--sp-s);border-radius:10px;overflow:hidden;p:empty{display:none}& summary{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;position:relative;margin:calc(-1 * var(--sp-s));padding:var(--sp-s);padding-inline-start:calc(var(--sp-s) + 1.8em);cursor:pointer;background-color:var(--color-base);line-height:1.2;&::-webkit-details-marker{display:none}&:before{content:"";display:block;position:absolute;inset:var(--sp-s);width:1.2em;aspect-ratio:1;background:color-mix(in srgb,var(--color-main) 20%,transparent);clip-path:polygon(10% 35%,50% 75%,90% 35%,80% 25%,50% 55%,20% 25%);transition:.2s linear;transform-origin:center}}&[open] summary{text-overflow:unset;white-space:unset;margin-block-end:var(--sp-s);&:before{rotate:x 180deg}}}.footnotes{margin-block-start:8em;padding-block-start:2em;border-block-start:1px solid color-mix(in srgb,var(--color-main) 20%,transparent);h2{display:none}a{&:before{content:" ["}&:after{content:"]"}text-decoration:none;opacity:.8}}}
+header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.BPbDHCoF.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/springboot-ldap-authentication/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/springboot-ldap-authentication/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Implementing User Authentication with LDAP in Spring Boot</h1> <time datetime="2024-03-07T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/7/2024 </time> </header> <h3 id="1-add-spring-boot-starter-data-ldap-dependency">1. Add <code>spring-boot-starter-data-ldap</code> Dependency</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.springframework.boot&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;spring-boot-starter-data-ldap&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<h3 id="2-configuration-file">2. Configuration File</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#85E89D">spring</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  ldap</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    urls</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ldap://xx.xx.xx.xx:389</span></span>
+<span class="line"><span style="color:#85E89D">    base</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">OU=xxx,DC=xxx,DC=com</span></span>
+<span class="line"><span style="color:#85E89D">    username</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">xxx@xx.com</span></span>
+<span class="line"><span style="color:#85E89D">    password</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">xxx</span></span></code></pre>
+<p>Fill in the URL, baseDN, username, and password information in the configuration file</p>
+<h3 id="3-create-user-object-class">3. Create User Object Class</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.alibaba.fastjson.annotation.JSONField;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> lombok.Data;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.odm.annotations.Attribute;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.odm.annotations.Entry;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.odm.annotations.Id;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> javax.naming.Name;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * LDAP protocol person class</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Data</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Entry</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">objectClasses</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;person&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> Person</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Unique identifier</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Id</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">JSONField</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">serialize</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Name distinguishedName;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Login account</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Attribute</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;sAMAccountName&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String loginName;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * User name</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Attribute</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;cn&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String name;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Permission code</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Attribute</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;userAccountControl&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Integer userAccountControl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Is deleted</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Boolean isDelete;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="4-user-login">4. User Login</h3>
+<h4 id="41-example-code">4.1 Example Code</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.core.LdapTemplate;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.filter.EqualsFilter;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> LdapTemplate ldapTemplate;</span></span>
+<span class="line"><span style="color:#F97583">private</span><span style="color:#F97583"> static</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> String LDAP_USERNAME_ATTR </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;sAMAccountName&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> login</span><span style="color:#E1E4E8">(String userName, String password) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    EqualsFilter filter </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> EqualsFilter</span><span style="color:#E1E4E8">(LDAP_USERNAME_ATTR, userName);</span></span>
+<span class="line"><span style="color:#F97583">    boolean</span><span style="color:#E1E4E8"> result </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ldapTemplate.</span><span style="color:#B392F0">authenticate</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;&quot;</span><span style="color:#E1E4E8">, filter.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(), password);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>The basic logic is to call the ldapTemplate’s authenticate method for authentication.</p>
+<h4 id="42-complete-code">4.2 Complete Code</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">package</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.service.impl;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> cn.hutool.core.util.IdUtil;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.commons.framework.access.Access;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.commons.framework.filter.security.AccessToken;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.commons.framework.filter.security.TokenService;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.commons.framework.support.mybatis.page.PageDO;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.commons.framework.util.Asserts;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.commons.framework.util.AssertsException;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.dao.SysDeptDao;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.dao.SysRoleDao;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.dao.SysUserDao;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.pojo.Person;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.pojo.SysDept;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.pojo.SysRole;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.pojo.SysUser;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.service.LdapService;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> com.cowave.meter.admin.user.service.SysUserService;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> lombok.RequiredArgsConstructor;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> lombok.extern.slf4j.Slf4j;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.core.LdapTemplate;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.filter.EqualsFilter;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.ldap.query.LdapQueryBuilder;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.stereotype.Service;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> org.springframework.util.ObjectUtils;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> java.util.List;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Slf4j</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Service</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RequiredArgsConstructor</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> LdapServiceImpl</span><span style="color:#F97583"> implements</span><span style="color:#B392F0"> LdapService</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> LdapTemplate ldapTemplate;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> TokenService tokenService;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> SysUserDao sysUserDao;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> SysUserService userService;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> SysDeptDao sysDeptDao;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> SysRoleDao sysRoleDao;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> BCryptPasswordEncoder bcryptPasswordEncoder </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> BCryptPasswordEncoder</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> static</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> String LDAP_USERNAME_ATTR </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &quot;sAMAccountName&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /**</span></span>
+<span class="line"><span style="color:#6A737D">     * Domain account login</span></span>
+<span class="line"><span style="color:#6A737D">     *</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> userName</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> password</span></span>
+<span class="line"><span style="color:#6A737D">     * </span><span style="color:#F97583">@return</span></span>
+<span class="line"><span style="color:#6A737D">     */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Override</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> AccessToken </span><span style="color:#B392F0">domainLogin</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userName</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">password</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        EqualsFilter filter </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> EqualsFilter</span><span style="color:#E1E4E8">(LDAP_USERNAME_ATTR, userName);</span></span>
+<span class="line"><span style="color:#F97583">        boolean</span><span style="color:#E1E4E8"> authenticate </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ldapTemplate.</span><span style="color:#B392F0">authenticate</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;&quot;</span><span style="color:#E1E4E8">, filter.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(), password);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">authenticate) {</span></span>
+<span class="line"><span style="color:#F97583">            throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AssertsException</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;auth.failed&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        Boolean domainUserAccountExist </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sysUserDao.</span><span style="color:#B392F0">domainUserAccountExist</span><span style="color:#E1E4E8">(userName);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (Boolean.FALSE.</span><span style="color:#B392F0">equals</span><span style="color:#E1E4E8">(domainUserAccountExist)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            LdapQueryBuilder ldapQuery </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> LdapQueryBuilder.</span><span style="color:#B392F0">query</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">            ldapQuery.</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">(filter);</span></span>
+<span class="line"><span style="color:#E1E4E8">            Person person </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ldapTemplate.</span><span style="color:#B392F0">findOne</span><span style="color:#E1E4E8">(ldapQuery, Person.class);</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (ObjectUtils.</span><span style="color:#B392F0">isEmpty</span><span style="color:#E1E4E8">(person)) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AssertsException</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;user.notexist&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            SysUser sysUser </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> SysUser</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">            sysUser.</span><span style="color:#B392F0">setUserAccount</span><span style="color:#E1E4E8">(userName);</span></span>
+<span class="line"><span style="color:#E1E4E8">            Asserts.</span><span style="color:#B392F0">isFalse</span><span style="color:#E1E4E8">(userService.</span><span style="color:#B392F0">userAccountExist</span><span style="color:#E1E4E8">(sysUser), </span><span style="color:#9ECBFF">&quot;Account name already exists&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            sysUser.</span><span style="color:#B392F0">setUserName</span><span style="color:#E1E4E8">(person.</span><span style="color:#B392F0">getName</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">            sysUser.</span><span style="color:#B392F0">setUserPasswd</span><span style="color:#E1E4E8">(bcryptPasswordEncoder.</span><span style="color:#B392F0">encode</span><span style="color:#E1E4E8">(password));</span></span>
+<span class="line"><span style="color:#E1E4E8">            sysUser.</span><span style="color:#B392F0">setDomainUserAccount</span><span style="color:#E1E4E8">(userName);</span></span>
+<span class="line"><span style="color:#6A737D">            // Set department</span></span>
+<span class="line"><span style="color:#E1E4E8">            SysDept sysDept </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sysDeptDao.</span><span style="color:#B392F0">queryRootDept</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">ObjectUtils.</span><span style="color:#B392F0">isEmpty</span><span style="color:#E1E4E8">(sysDept)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">                sysUser.</span><span style="color:#B392F0">setDeptId</span><span style="color:#E1E4E8">(sysDept.</span><span style="color:#B392F0">getDeptId</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#6A737D">            // Set role</span></span>
+<span class="line"><span style="color:#E1E4E8">            PageDO&lt;</span><span style="color:#F97583">SysRole</span><span style="color:#E1E4E8">&gt; sysRolePageDO </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sysRoleDao.</span><span style="color:#B392F0">queryPage</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;2&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (sysRolePageDO.</span><span style="color:#B392F0">getPages</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&gt;</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">                SysRole sysRole </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sysRolePageDO.</span><span style="color:#B392F0">getList</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">                sysUser.</span><span style="color:#B392F0">setRoleId</span><span style="color:#E1E4E8">(sysRole.</span><span style="color:#B392F0">getRoleId</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">            userService.</span><span style="color:#B392F0">saveOrUpdate</span><span style="color:#E1E4E8">(sysUser);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        SysUser sysUser </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sysUserDao.</span><span style="color:#B392F0">getByDomainUserAccount</span><span style="color:#E1E4E8">(userName);</span></span>
+<span class="line"><span style="color:#E1E4E8">        String userId </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sysUser.</span><span style="color:#B392F0">getUserId</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        AccessToken accessToken </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AccessToken</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setType</span><span style="color:#E1E4E8">(AccessToken.TYPE_USER);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setUserCode</span><span style="color:#E1E4E8">(userId);</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setUsername</span><span style="color:#E1E4E8">(sysUser.</span><span style="color:#B392F0">getUserAccount</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setUserNick</span><span style="color:#E1E4E8">(sysUser.</span><span style="color:#B392F0">getUserName</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setDeptCode</span><span style="color:#E1E4E8">(sysUser.</span><span style="color:#B392F0">getDeptId</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setRoles</span><span style="color:#E1E4E8">(List.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(sysUser.</span><span style="color:#B392F0">getRoleId</span><span style="color:#E1E4E8">()));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setLoginIp</span><span style="color:#E1E4E8">(Access.</span><span style="color:#B392F0">ip</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setLoginTime</span><span style="color:#E1E4E8">(Access.</span><span style="color:#B392F0">time</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setAccessIp</span><span style="color:#E1E4E8">(Access.</span><span style="color:#B392F0">ip</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setAccessTime</span><span style="color:#E1E4E8">(Access.</span><span style="color:#B392F0">time</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setId</span><span style="color:#E1E4E8">(IdUtil.</span><span style="color:#B392F0">fastSimpleUUID</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        String token </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> tokenService.</span><span style="color:#B392F0">newToken</span><span style="color:#E1E4E8">(accessToken);</span></span>
+<span class="line"><span style="color:#E1E4E8">        accessToken.</span><span style="color:#B392F0">setToken</span><span style="color:#E1E4E8">(token);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> accessToken;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="43-check-if-user-is-disabled">4.3 Check if User is Disabled</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D">* Determine whether the user is disabled based on AD domain&#39;s userAccountControl attribute</span></span>
+<span class="line"><span style="color:#6A737D">*</span></span>
+<span class="line"><span style="color:#6A737D">* </span><span style="color:#F97583">@param</span><span style="color:#FFAB70"> userAccContr</span></span>
+<span class="line"><span style="color:#6A737D">* </span><span style="color:#F97583">@return</span></span>
+<span class="line"><span style="color:#6A737D">*/</span></span>
+<span class="line"><span style="color:#F97583">private</span><span style="color:#E1E4E8"> Boolean </span><span style="color:#B392F0">getUserDelete</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">int</span><span style="color:#E1E4E8"> userAccContr) {</span></span>
+<span class="line"><span style="color:#6A737D">    //TRUSTED_TO_AUTH_FOR_DELEGATION - Allow this account to be delegated</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 16777216</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 16777216</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //PASSWORD_EXPIRED - (Windows 2000/Windows Server 2003) User&#39;s password has expired</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 8388608</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 8388608</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //DONT_REQ_PREAUTH</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 4194304</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 4194304</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //USE_DES_KEY_ONLY - (Windows 2000/Windows Server 2003) Restrict this user to use only Data Encryption Standard (DES) encryption type keys</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 2097152</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2097152</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //NOT_DELEGATED - When this flag is set, the user&#39;s security context will not be delegated to the service even if the service account is trusted for Kerberos delegation</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 1048576</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 1048576</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //TRUSTED_FOR_DELEGATION - When this flag is set, the service account (user or computer account) running the service is trusted for Kerberos delegation.</span></span>
+<span class="line"><span style="color:#6A737D">    // Any such service can impersonate the client requesting the service. To allow a service for Kerberos delegation, this flag must be set on the service account&#39;s userAccountControl attribute</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 524288</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 524288</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //SMARTCARD_REQUIRED - When this flag is set, the user will be forced to use a smart card to log in</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 262144</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 262144</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //MNS_LOGON_ACCOUNT - This is an MNS logon account</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 131072</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 131072</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //DONT_EXPIRE_PASSWORD - Password never expires</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 65536</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 65536</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //MNS_LOGON_ACCOUNT - This is an MNS logon account</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 2097152</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2097152</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //SERVER_TRUST_ACCOUNT - This is a computer account for a domain controller that belongs to this domain</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 8192</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 8192</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //WORKSTATION_TRUST_ACCOUNT - This is a computer account for a computer running Microsoft Windows NT 4.0 Workstation, Microsoft Windows NT 4.0 Server,</span></span>
+<span class="line"><span style="color:#6A737D">    // Microsoft Windows 2000 Professional, or Windows 2000 Server that belongs to this domain</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 4096</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 4096</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //INTERDOMAIN_TRUST_ACCOUNT - For system domains that trust other domains, this attribute allows accounts that trust this system domain</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 2048</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 2048</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //NORMAL_ACCOUNT - This is the default account type representing a typical user</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 512</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 512</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //TEMP_DUPLICATE_ACCOUNT - This account belongs to a user whose primary account is in another domain. This account provides the user with access to this domain,</span></span>
+<span class="line"><span style="color:#6A737D">    // but not access to any domains that trust this domain. Sometimes this account is called a &quot;local user account&quot;</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 256</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 256</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //ENCRYPTED_TEXT_PASSWORD_ALLOWED - User can send encrypted passwords</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 128</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 128</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //PASSWD_CANT_CHANGE - User cannot change password. This flag can be read but cannot be set directly</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 64</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 64</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //PASSWD_NOTREQD - Password not required</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 32</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 32</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //LOCKOUT</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 16</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 16</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#6A737D">    //HOMEDIR_REQUIRED - Home folder required</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 8</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        userAccContr </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userAccContr </span><span style="color:#F97583">-</span><span style="color:#79B8FF"> 8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (userAccContr </span><span style="color:#F97583">&gt;=</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>  </article>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
