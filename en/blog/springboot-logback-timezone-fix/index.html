@@ -50,7 +50,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
       location.href = event.target?.value;
     });
   });
-</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Spring Boot logback Log Time Showing 8 Hours Difference</h1> <time datetime="2024-02-23T00:00:00.000Z" data-astro-cid-v3cnrnum> 2/23/2024 </time> </header> <h3 id="1-problem">1. Problem</h3>
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.BESYaW5A_1bKIKO.webp" alt="Spring Boot logback Log Time Showing 8 Hours Difference" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Spring Boot logback Log Time Showing 8 Hours Difference</h1> <time datetime="2024-02-23T00:00:00.000Z" data-astro-cid-v3cnrnum> 2/23/2024 </time> </header> <h3 id="1-problem">1. Problem</h3>
 <p>The logback log time doesn’t match the system time, always differing by several hours. Setting the project timezone didn’t help, and <code>new Date()</code> in the project shows the correct time.</p>
 <h3 id="2-cause">2. Cause</h3>
 <p>The same project is deployed on two machines. The time was normal on the previous machine, but not on this one. The specific cause hasn’t been found yet.</p>

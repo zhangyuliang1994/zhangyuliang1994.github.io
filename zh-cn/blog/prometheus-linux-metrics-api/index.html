@@ -52,7 +52,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
       location.href = event.target?.value;
     });
   });
-</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>基于 Prometheus 的 API 查询 Linux 系统指标</h1> <time datetime="2025-01-06T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/1/6 </time> </header> <h3 id="一写在前面">一、写在前面</h3>
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.DXET-ki1_2gUDip.webp" alt="基于 Prometheus 的 API 查询 Linux 系统指标" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>基于 Prometheus 的 API 查询 Linux 系统指标</h1> <time datetime="2025-01-06T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/1/6 </time> </header> <h3 id="一写在前面">一、写在前面</h3>
 <p>最近项目上需要统计显示 Linux 系统指标，如 CPU、内存、磁盘使用情况等指标。虽然 Grafana 可以展示这些指标，但是将其内嵌至系统中展示可能并不友好，所以需要定制开发。</p>
 <h3 id="二环境安装">二、环境安装</h3>
 <p>目标服务器的 node_exporter 是直接装在系统上的。Prometheus 是通过 docker-compose 安装的。</p>
