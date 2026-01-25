@@ -1,0 +1,874 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>产品词根与商业机会词库 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/product-word-roots/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/product-word-roots/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="产品词根与商业机会词库 - xiaofeng.show"><meta property="og:site_name" content="产品词根与商业机会词库 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/product-word-roots/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/product-word-roots/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/product-word-roots/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.Cj8XIQ4z_OPGi3.webp" alt="产品词根与商业机会词库" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1376" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>产品词根与商业机会词库</h1> <time datetime="2026-01-25T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/1/25 </time> </header> <blockquote>
+<p>本文整理了常见的产品/工具类英文词根，帮助理解用户搜索意图，发现潜在的商业机会。</p>
+</blockquote>
+<h2 id="一产品工具类词根">一、产品/工具类词根</h2>
+<p>这类词根通常用于描述能够帮助用户完成特定任务的产品或工具。</p>
+<h3 id="11-generator生成器">1.1 Generator（生成器）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>random number generator, ai image generator, qr code generator, font generator, citation generator</td></tr><tr><td><strong>用户意图</strong></td><td>功能性/重复性内容生成</td></tr><tr><td><strong>商业机会</strong></td><td>AI 生成器（针对特定领域的测试数据、特定艺术风格等）</td></tr></tbody></table>
+<hr/>
+<h3 id="12-creator创作者">1.2 Creator（创作者）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>bing image creator, logo creator, meme creator, floor plan creator</td></tr><tr><td><strong>用户意图</strong></td><td>面向个人的创意活动（视频、写作、艺术）</td></tr><tr><td><strong>商业机会</strong></td><td>自助创作工具；头脑风暴和创意辅助工具</td></tr></tbody></table>
+<hr/>
+<h3 id="13-maker制作器">1.3 Maker（制作器）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>logo maker, gif maker, meme maker, coffee maker, song maker</td></tr><tr><td><strong>用户意图</strong></td><td>制作特定成品的工具</td></tr><tr><td><strong>商业机会</strong></td><td>快速网站/落地页构建器；教育资源平台</td></tr></tbody></table>
+<hr/>
+<h3 id="14-builder构建器">1.4 Builder（构建器）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>resume builder, website builder, schedule builder, career builder</td></tr><tr><td><strong>用户意图</strong></td><td>从预设组件构建系统/产品</td></tr><tr><td><strong>商业机会</strong></td><td>自动化工具站；可视化 AI 工作流构建器</td></tr></tbody></table>
+<hr/>
+<h3 id="15-constructor构造器">1.5 Constructor（构造器）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>f1 constructor, java constructor</td></tr><tr><td><strong>用户意图</strong></td><td>技术/编程相关的构造器；面向对象编程函数</td></tr><tr><td><strong>商业机会</strong></td><td>AI 代码编程相关工具</td></tr></tbody></table>
+<hr/>
+<h3 id="16-composer编排器">1.6 Composer（编排器）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>cursor composer, premiere composer, pixel composer</td></tr><tr><td><strong>用户意图</strong></td><td>音乐创作或模块化系统（如 Cursor Composer）</td></tr><tr><td><strong>商业机会</strong></td><td>AI 音乐生成；编曲和配器辅助工具</td></tr></tbody></table>
+<hr/>
+<h2 id="二辅助服务类词根">二、辅助/服务类词根</h2>
+<p>这类词根描述的是能够协助用户完成任务的产品或服务。</p>
+<h3 id="21-helper帮手">2.1 Helper（帮手）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>wordle helper, scrabble helper, homework helper, math helper</td></tr><tr><td><strong>用户意图</strong></td><td>简单、专注的特定任务辅助</td></tr><tr><td><strong>商业机会</strong></td><td>AI 作业助手；简单实用工具集合</td></tr></tbody></table>
+<hr/>
+<h3 id="22-assistant助手">2.2 Assistant（助手）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>google assistant, medical assistant, administrative assistant, writing assistant</td></tr><tr><td><strong>用户意图</strong></td><td>比 Helper 更强的能力和更紧密的协作</td></tr><tr><td><strong>商业机会</strong></td><td>垂直领域 AI 助手（研究人员、销售、项目管理）</td></tr></tbody></table>
+<hr/>
+<h3 id="23-agent代理智能体">2.3 Agent（代理/智能体）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>night agent, insurance agent, real estate agent</td></tr><tr><td><strong>用户意图</strong></td><td>从”中介”演变为”自主行动者”</td></tr><tr><td><strong>商业机会</strong></td><td>AI Agent 平台；特定行业的 AI 代理角色</td></tr></tbody></table>
+<hr/>
+<h3 id="24-advisor顾问">2.4 Advisor（顾问）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>trip advisor, financial advisor, resident advisor, dog food advisor</td></tr><tr><td><strong>用户意图</strong></td><td>提供专业判断的完整服务代理</td></tr><tr><td><strong>商业机会</strong></td><td>AI 财务顾问；赋能人类咨询师的工具</td></tr></tbody></table>
+<hr/>
+<h2 id="三资源导航类词根">三、资源导航类词根</h2>
+<p>这类词根通常用于帮助用户发现和筛选信息资源。</p>
+<h3 id="31-tool工具">3.1 Tool（工具）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>paraphrase tool, harbor freight tool, seo tool</td></tr><tr><td><strong>用户意图</strong></td><td>极其广泛；特定任务的实用程序</td></tr><tr><td><strong>商业机会</strong></td><td>工具导航站点或单一功能实用程序站点</td></tr></tbody></table>
+<hr/>
+<h3 id="32-directory目录">3.2 Directory（目录）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>test directory, active directory, staff directory, tool directory</td></tr><tr><td><strong>用户意图</strong></td><td>实体或资源的分类列表</td></tr><tr><td><strong>商业机会</strong></td><td>AI 驱动的行业目录发现/验证</td></tr></tbody></table>
+<hr/>
+<h3 id="33-top最佳排行">3.3 Top（最佳/排行）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>ap top 25, top news, top 100 songs</td></tr><tr><td><strong>用户意图</strong></td><td>搜索某一类别中的”最佳”或”顶级”项目</td></tr><tr><td><strong>商业机会</strong></td><td>实时 AI 趋势排名；自动化”榜单”生成器</td></tr></tbody></table>
+<hr/>
+<h3 id="34-best最好的">3.4 Best（最好的）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>best movies, best xx app, best xx game</td></tr><tr><td><strong>用户意图</strong></td><td>强烈的决策意图；寻求品质</td></tr><tr><td><strong>商业机会</strong></td><td>AI 驱动的产品对比和匹配工具</td></tr></tbody></table>
+<hr/>
+<h3 id="35-list列表">3.5 List（列表）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>card list, tv listings, tier list</td></tr><tr><td><strong>用户意图</strong></td><td>策划的列表或清单</td></tr><tr><td><strong>商业机会</strong></td><td>AI 列表生成工具（购物清单、食谱、旅行打包单）</td></tr></tbody></table>
+<hr/>
+<h2 id="四多媒体内容类词根">四、多媒体/内容类词根</h2>
+<p>这类词根围绕各种媒体格式和内容类型，是 AI 工具的热门赛道。</p>
+<h3 id="41-image图像">4.1 Image（图像）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>image to text, image compressor, image resizer, reverse image search, ai image generator</td></tr><tr><td><strong>用户意图</strong></td><td>图像处理、格式转换、AI生成</td></tr><tr><td><strong>商业机会</strong></td><td>AI 图像生成器、智能裁剪工具、批量压缩器、背景移除器</td></tr></tbody></table>
+<hr/>
+<h3 id="42-video视频">4.2 Video（视频）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>video downloader, video editor, video to gif, video compressor, ai video generator</td></tr><tr><td><strong>用户意图</strong></td><td>视频下载、编辑、格式转换</td></tr><tr><td><strong>商业机会</strong></td><td>AI 视频生成、智能剪辑、视频字幕提取、多平台下载器</td></tr></tbody></table>
+<hr/>
+<h3 id="43-audio音频">4.3 Audio（音频）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>audio converter, audio cutter, text to audio, audio transcription</td></tr><tr><td><strong>用户意图</strong></td><td>音频处理、格式转换、语音合成</td></tr><tr><td><strong>商业机会</strong></td><td>AI 语音合成 (TTS)、音频转文字、降噪工具、音频分离</td></tr></tbody></table>
+<hr/>
+<h3 id="44-music音乐">4.4 Music（音乐）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>music streaming, download music free, music radio, music generator</td></tr><tr><td><strong>用户意图</strong></td><td>获取与消费、学习、特定流派、创作</td></tr><tr><td><strong>商业机会</strong></td><td>AI 音乐生成 (AIGC Music)、智能音乐制作工具、音频源分离、音乐风格迁移</td></tr></tbody></table>
+<hr/>
+<h3 id="45-pdf文档">4.5 PDF（文档）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>pdf to word, pdf editor, merge pdf, compress pdf, pdf converter</td></tr><tr><td><strong>用户意图</strong></td><td>文档格式转换、编辑、合并拆分</td></tr><tr><td><strong>商业机会</strong></td><td>AI PDF 摘要、智能表格提取、PDF 问答机器人、批量处理工具</td></tr></tbody></table>
+<hr/>
+<h3 id="46-text文本">4.6 Text（文本）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>text to speech, image to text, text generator, text editor</td></tr><tr><td><strong>用户意图</strong></td><td>文本处理、格式转换、内容生成</td></tr><tr><td><strong>商业机会</strong></td><td>AI 写作助手、语法检查、文本改写、多语言翻译</td></tr></tbody></table>
+<hr/>
+<h2 id="五视觉设计类词根">五、视觉设计类词根</h2>
+<p>这类词根专注于视觉内容的生成和处理，是设计工具的核心赛道。</p>
+<h3 id="51-logo标志">5.1 Logo（标志）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>logo maker, logo generator, logo design, ai logo creator</td></tr><tr><td><strong>用户意图</strong></td><td>品牌标识设计、快速生成</td></tr><tr><td><strong>商业机会</strong></td><td>AI Logo 生成器、品牌识别系统工具、矢量化工具</td></tr></tbody></table>
+<hr/>
+<h3 id="52-icon图标">5.2 Icon（图标）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>icon generator, icon pack, app icon, favicon generator</td></tr><tr><td><strong>用户意图</strong></td><td>UI 图标设计、应用图标生成</td></tr><tr><td><strong>商业机会</strong></td><td>AI 图标生成器、图标库平台、自定义图标设计工具</td></tr></tbody></table>
+<hr/>
+<h3 id="53-avatar头像">5.3 Avatar（头像）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>avatar maker, ai avatar, avatar generator, profile picture maker</td></tr><tr><td><strong>用户意图</strong></td><td>个人头像生成、虚拟形象创建</td></tr><tr><td><strong>商业机会</strong></td><td>AI 头像生成器、动漫头像转换、虚拟形象定制</td></tr></tbody></table>
+<hr/>
+<h3 id="54-font字体">5.4 Font（字体）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>font generator, font identifier, font pairing, custom font</td></tr><tr><td><strong>用户意图</strong></td><td>字体识别、生成、配对建议</td></tr><tr><td><strong>商业机会</strong></td><td>AI 字体识别、字体配对推荐、手写字体生成器</td></tr></tbody></table>
+<hr/>
+<h3 id="55-portrait肖像">5.5 Portrait（肖像）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>portrait generator, ai portrait, portrait photo editor</td></tr><tr><td><strong>用户意图</strong></td><td>人像照片处理、艺术风格转换</td></tr><tr><td><strong>商业机会</strong></td><td>AI 肖像生成、风格迁移、专业级人像修饰</td></tr></tbody></table>
+<hr/>
+<h3 id="56-animecartoon动漫卡通">5.6 Anime/Cartoon（动漫/卡通）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>anime avatar, cartoon yourself, anime generator, cartoon maker</td></tr><tr><td><strong>用户意图</strong></td><td>照片转动漫、卡通风格生成</td></tr><tr><td><strong>商业机会</strong></td><td>AI 动漫头像生成、漫画风格转换、角色定制工具</td></tr></tbody></table>
+<hr/>
+<h2 id="六问答指南类词根">六、问答/指南类词根</h2>
+<p>这类词根直接反映用户学习和解决问题的需求，是工具产品的巨大流量入口。</p>
+<h3 id="61-how-to如何">6.1 How to（如何）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td><strong>常见组合</strong></td><td>How to get…, How to make, How to use, How to change, How to find, How to remove</td></tr><tr><td><strong>用户意图</strong></td><td>学习新知识、掌握新技能、解决实际问题</td></tr><tr><td><strong>商业机会</strong></td><td>每一个 How to 长尾词背后都有工具站机会，如 “how to remove people from pictures” 可以对应图片背景移除工具</td></tr></tbody></table>
+<blockquote>
+<p>💡 <strong>提示</strong>：How to 类搜索是挖掘工具需求的金矿。找到高搜索量的 How to 问题，然后构建一个能直接解决该问题的工具，是非常有效的产品策略。</p>
+</blockquote>
+<hr/>
+<h2 id="七词根选择建议">七、词根选择建议</h2>
+<p>选择正确的词根对于产品命名和 SEO 至关重要：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>词根</th><th>适用场景</th><th>示例产品</th></tr></thead><tbody><tr><td><strong>Generator</strong></td><td>自动化、批量生成</td><td>AI 文案生成器</td></tr><tr><td><strong>Creator</strong></td><td>创意类、个性化输出</td><td>视频创作工具</td></tr><tr><td><strong>Maker</strong></td><td>简单、快速制作</td><td>Logo 制作器</td></tr><tr><td><strong>Builder</strong></td><td>复杂、模块化构建</td><td>网站构建器</td></tr><tr><td><strong>Helper</strong></td><td>轻量级辅助</td><td>数学解题帮手</td></tr><tr><td><strong>Assistant</strong></td><td>深度协作</td><td>写作助手</td></tr><tr><td><strong>Agent</strong></td><td>自主执行任务</td><td>AI 售后代理</td></tr><tr><td><strong>Advisor</strong></td><td>专业建议</td><td>理财顾问</td></tr></tbody></table>
+<hr/>
+<h2 id="八实战应用">八、实战应用</h2>
+<h3 id="81-seo-关键词研究">8.1 SEO 关键词研究</h3>
+<p>在进行关键词研究时，可以将这些词根与你的垂直领域组合：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>[垂直领域] + [词根]</span></span>
+<span class="line"><span>例如：</span></span>
+<span class="line"><span>- resume builder</span></span>
+<span class="line"><span>- code generator</span></span>
+<span class="line"><span>- writing assistant</span></span>
+<span class="line"><span>- recipe maker</span></span></code></pre>
+<h3 id="82-产品命名">8.2 产品命名</h3>
+<p>选择一个能准确传达产品价值的词根：</p>
+<ul>
+<li>如果产品<strong>自动生成</strong>内容 → Generator</li>
+<li>如果产品<strong>辅助创作</strong> → Creator / Maker</li>
+<li>如果产品<strong>提供帮助</strong> → Helper / Assistant</li>
+<li>如果产品<strong>自主执行</strong> → Agent</li>
+<li>如果产品<strong>提供建议</strong> → Advisor</li>
+</ul>
+<hr/>
+<h2 id="总结">总结</h2>
+<p>本文整理了 <strong>7 大类、30+ 个核心词根</strong>，涵盖：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类别</th><th>词根数量</th><th>代表词根</th></tr></thead><tbody><tr><td>产品/工具类</td><td>6 个</td><td>Generator, Creator, Maker, Builder, Composer, Constructor</td></tr><tr><td>辅助/服务类</td><td>4 个</td><td>Helper, Assistant, Agent, Advisor</td></tr><tr><td>资源导航类</td><td>5 个</td><td>Tool, Directory, Top, Best, List</td></tr><tr><td>多媒体/内容类</td><td>6 个</td><td>Image, Video, Audio, Music, PDF, Text</td></tr><tr><td>视觉设计类</td><td>6 个</td><td>Logo, Icon, Avatar, Font, Portrait, Anime/Cartoon</td></tr><tr><td>问答/指南类</td><td>1 个</td><td>How to</td></tr></tbody></table>
+<p>理解这些词根的含义和用户意图，可以帮助你：</p>
+<ol>
+<li><strong>更精准的产品定位</strong> - 选择最贴切的词根来命名产品</li>
+<li><strong>更有效的 SEO 策略</strong> - 根据用户搜索意图优化关键词</li>
+<li><strong>发现商业机会</strong> - 在特定词根领域找到未被满足的需求</li>
+<li><strong>理解竞争格局</strong> - 分析竞品使用的词根和定位</li>
+<li><strong>挖掘长尾流量</strong> - 通过 How to 等问答类词根找到工具需求</li>
+</ol>
+<p>希望这份词根词库能为你的产品开发和营销提供灵感！</p>
+<hr/>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://swmedbueei.feishu.cn/sheets/UZpGshLvKhq7MdtQOFycstuUn4e">新手找新词词根 - 飞书表格</a></li>
+</ul>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
