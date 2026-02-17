@@ -58,18 +58,18 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <h3 id="一配置步骤">一、配置步骤</h3>
 <h4 id="11-添加-ldap-认证">1.1 添加 LDAP 认证</h4>
 <p>用管理员账户登录 Jira 页面，在配置页面，找到”用户管理” -&gt; 点击”用户目录” -&gt; 点击”添加目录” -&gt; 选择”内部 LDAP 认证”</p>
-<p><img src="/images/blog/jira-ldap-authentication/jira-ldap-add.png" alt="添加 LDAP 目录"/></p>
+<p><img src="/_astro/jira-ldap-add.D9QXLIzL_Z2pDfkQ.webp" alt="添加 LDAP 目录" loading="lazy" decoding="async" fetchpriority="auto" width="640" height="640"></p>
 <h4 id="12-配置服务器">1.2 配置服务器</h4>
 <p>目录类型选择”OpenLDAP”，填写主机名、端口、用户名及密码，提前创建组，并在”默认组成员”输入框内填写该组名，防止域账户没有权限登录 Jira 系统</p>
-<p><img src="/images/blog/jira-ldap-authentication/jira-ldap-server.png" alt="配置服务器"/></p>
+<p><img src="/_astro/jira-ldap-server.CLGKY3tY_ZPd161.webp" alt="配置服务器" loading="lazy" decoding="async" fetchpriority="auto" width="640" height="640"></p>
 <h4 id="13-设置基本-dn-和用户名属性">1.3 设置基本 DN 和用户名属性</h4>
 <p>这里要看 ldap 服务器的具体值，我这个版本用户名属性的默认值是 cn，但 ldap 服务器的是 sAMAccountName</p>
-<p><img src="/images/blog/jira-ldap-authentication/jira-ldap-ldap.png" alt="设置基本 DN"/></p>
+<p><img src="/_astro/jira-ldap-ldap.XyC55gKR_2hOM03.webp" alt="设置基本 DN" loading="lazy" decoding="async" fetchpriority="auto" width="640" height="640"></p>
 <h4 id="14-设置用户模式属性">1.4 设置用户模式属性</h4>
-<p><img src="/images/blog/jira-ldap-authentication/jira-ldap-user.png" alt="设置用户模式"/></p>
+<p><img src="/_astro/jira-ldap-user.B8f1oKBm_ZKjveS.webp" alt="设置用户模式" loading="lazy" decoding="async" fetchpriority="auto" width="640" height="640"></p>
 <p>虽然这些属性有默认值，但还是要看 ldap 服务器的具体值，我的 ldap 服务器的用户对象类是 person，用户唯一的 ID 属性是 distinguishedName</p>
 <h4 id="15-设置组模式">1.5 设置组模式</h4>
-<p><img src="/images/blog/jira-ldap-authentication/jira-ldap-group.png" alt="设置组模式"/></p>
+<p><img src="/_astro/jira-ldap-group.DMOjYpmp_Q5edy.webp" alt="设置组模式" loading="lazy" decoding="async" fetchpriority="auto" width="640" height="640"></p>
 <p>这里我改了组对象类。</p>
 <h3 id="二推荐工具">二、推荐工具</h3>
 <p>我用的是 Ldap Browser，还不错。</p>
