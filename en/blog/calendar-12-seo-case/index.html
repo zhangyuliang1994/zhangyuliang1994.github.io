@@ -1,0 +1,158 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>What a 15-Year-Old Site Taught Me About SEO: Why Calendar Pages Must Be Built 2 Years Early - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/calendar-12-seo-case/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/calendar-12-seo-case/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="What a 15-Year-Old Site Taught Me About SEO: Why Calendar Pages Must Be Built 2 Years Early - frency.me"><meta property="og:site_name" content="What a 15-Year-Old Site Taught Me About SEO: Why Calendar Pages Must Be Built 2 Years Early - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/calendar-12-seo-case/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/calendar-12-seo-case/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/calendar-12-seo-case/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/01.DUiG8H7K_ZN362e.webp" alt="What a 15-Year-Old Site Taught Me About SEO: Why Calendar Pages Must Be Built 2 Years Early" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="824" height="1164" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>What a 15-Year-Old Site Taught Me About SEO: Why Calendar Pages Must Be Built 2 Years Early</h1> <time datetime="2026-02-27T00:00:00.000Z" data-astro-cid-v3cnrnum> 2/27/2026 </time> </header> <p>Today I reviewed a case shared by GeFei, and it’s one of the clearest long-term SEO playbooks I’ve seen.</p>
+<p>The site is <code>calendar-12.com</code>:</p>
+<ul>
+<li>Launched in 2011</li>
+<li>Still alive after ~15 years</li>
+<li>Around <strong>1.32M monthly visits</strong>, mostly from search</li>
+</ul>
+<p><img src="/_astro/01.DUiG8H7K_ZN362e.webp" alt="Site snapshot: ~1.32M monthly visits and long domain history" loading="lazy" decoding="async" fetchpriority="auto" width="824" height="1164"></p>
+<hr/>
+<h2 id="1-what-traffic-does-this-site-capture">1) What traffic does this site capture?</h2>
+<p>Mainly predictable yearly keyword clusters, for example in 2026:</p>
+<ul>
+<li><code>2026 calendar printable</code></li>
+<li><code>calendar 2026</code></li>
+<li><code>2026 calendar</code></li>
+<li><code>printable calendar 2026</code></li>
+<li><code>2026 printable calendar</code></li>
+</ul>
+<p>These terms are powerful because:</p>
+<ol>
+<li>demand repeats every year,</li>
+<li>demand starts growing <strong>before</strong> the target year arrives.</li>
+</ol>
+<hr/>
+<h2 id="2-homepage-strategy-dynamic-year-not-static-copy">2) Homepage strategy: dynamic year, not static copy</h2>
+<p>A natural question: if the title is “2026” now, was it “2025” last year?</p>
+<p>Current homepage metadata uses 2026:</p>
+<p><img src="/_astro/02.6nW7u1H8_Z1r7kAv.webp" alt="Current SEO meta shows 2026 in title/description" loading="lazy" decoding="async" fetchpriority="auto" width="824" height="894"></p>
+<p>Archive.org snapshots show 2025 on 2025-12-13:</p>
+<p><img src="/_astro/03.CfxArXxH_ZqcYhu.webp" alt="Archive snapshot confirms previous year title (2025)" loading="lazy" decoding="async" fetchpriority="auto" width="824" height="972"></p>
+<p>So the homepage year is dynamically updated by code.<br/>
+This keeps the homepage aligned with current-year intent.</p>
+<p>And the first screen instantly shows the current year calendar:</p>
+<p><img src="/_astro/04.Dda1NxA9_qhgcH.webp" alt="Above-the-fold displays the full current-year calendar" loading="lazy" decoding="async" fetchpriority="auto" width="1914" height="2480"></p>
+<hr/>
+<h2 id="3-the-real-moat-yearly-landing-page-matrix">3) The real moat: yearly landing page matrix</h2>
+<p>This site is not “homepage-only SEO.” It builds dedicated pages for each year.</p>
+<p>You can see future-year entries in navigation:</p>
+<p><img src="/_astro/05.DzXj4w60_Z1gYC4f.webp" alt="Navigation already includes 2026/2027/2028 pages" loading="lazy" decoding="async" fetchpriority="auto" width="502" height="544"></p>
+<p>SERP behavior confirms this:</p>
+<ul>
+<li>
+<p><code>2026 calendar printable</code> → 2026 landing page
+<img src="/_astro/06.DHmiIpr2_HfE3O.webp" alt="2026 query maps to 2026 page" loading="lazy" decoding="async" fetchpriority="auto" width="1714" height="656"></p>
+</li>
+<li>
+<p><code>2025 calendar printable</code> → 2025 landing page
+<img src="/_astro/07.YDS2dz6B_KfaCc.webp" alt="2025 query maps to 2025 page" loading="lazy" decoding="async" fetchpriority="auto" width="1730" height="664"></p>
+</li>
+<li>
+<p><code>2027 calendar printable</code> → 2027 page already competing
+<img src="/_astro/08.DZAXv1rg_Z1o5Qu5.webp" alt="2027 page is already indexed and ranking" loading="lazy" decoding="async" fetchpriority="auto" width="1698" height="898"></p>
+</li>
+<li>
+<p><code>2028 calendar printable</code> → 2028 page also present
+<img src="/_astro/09.MBg1SGFN_TSnqq.webp" alt="2028 page is pre-positioned too" loading="lazy" decoding="async" fetchpriority="auto" width="1768" height="936"></p>
+</li>
+</ul>
+<hr/>
+<h2 id="4-why-20272028-pages-must-be-built-early">4) Why 2027/2028 pages must be built early</h2>
+<p>This is the key lesson.</p>
+<p>Many teams wait until 2027 to publish a 2027 page. That’s late.
+Search demand usually appears earlier than expected.</p>
+<p>Trend evidence:</p>
+<ul>
+<li>
+<p><code>2026 calendar printable</code> started rising during 2025
+<img src="/_astro/10._9S19H_r_Z2ghxl2.webp" alt="2026 intent grows before 2026 starts" loading="lazy" decoding="async" fetchpriority="auto" width="1980" height="498"></p>
+</li>
+<li>
+<p><code>2027 calendar printable</code> already had demand in late 2025
+<img src="/_astro/11.0BP-7U1W_1DMkSX.webp" alt="2027 demand appears early; 2028 starts showing signals too" loading="lazy" decoding="async" fetchpriority="auto" width="1956" height="544"></p>
+</li>
+</ul>
+<p>Early publishing gives pages time to accumulate:</p>
+<ul>
+<li>crawl/index history,</li>
+<li>user behavior signals (CTR, dwell, return),</li>
+<li>internal/external link equity,</li>
+<li>trust through stable updates.</li>
+</ul>
+<hr/>
+<h2 id="5-practical-takeaway-for-predictable-keywords-timing-is-the-edge">5) Practical takeaway: for predictable keywords, timing is the edge</h2>
+<p>This is not a trick. It’s execution discipline:</p>
+<ol>
+<li>dynamic homepage year for current intent,</li>
+<li>yearly page matrix for long-tail and future intent,</li>
+<li>launch 1–2 years early,</li>
+<li>let user signals accumulate,</li>
+<li>benefit from compounding domain/page authority.</li>
+</ol>
+<blockquote>
+<p>If demand is predictable, publish before demand peaks — not after.</p>
+</blockquote>
+<hr/>
+<h2 id="6-reusable-checklist-beyond-calendars">6) Reusable checklist (beyond calendars)</h2>
+<p>For any predictable, cyclical keyword space:</p>
+<ul>
+<li>Build yearly keyword clusters (head + variants)</li>
+<li>Keep homepage dynamic and yearly pages persistent</li>
+<li>Publish at least 1 year early (ideally 1.5–2 years)</li>
+<li>Refresh content quarterly and strengthen internal links</li>
+<li>Track indexation, rankings, CTR, and engagement</li>
+</ul>
+<p>Long-term SEO winners often don’t win by “hacking.”<br/>
+They win by <strong>early positioning + compounding data + consistency</strong>.</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
