@@ -1,0 +1,246 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Blog Comment Backlinks: The Right Way to Automate - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/backlink-automation-tips/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/backlink-automation-tips/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Blog Comment Backlinks: The Right Way to Automate - frency.me"><meta property="og:site_name" content="Blog Comment Backlinks: The Right Way to Automate - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/backlink-automation-tips/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/backlink-automation-tips/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/backlink-automation-tips/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.Ck3B4OPu_QJWQP.webp" alt="Blog Comment Backlinks: The Right Way to Automate" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1376" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Blog Comment Backlinks: The Right Way to Automate</h1> <time datetime="2026-03-02T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/2/2026 </time> </header> <blockquote>
+<p>This article is based on insights shared by <a href="https://x.com/gefei55">Gefei</a> in his community group. Credit and thanks to Gefei for sharing this knowledge.</p>
+</blockquote>
+<h2 id="semi-automated-blog-comment-posting--how-does-it-work">Semi-Automated Blog Comment Posting — How Does It Work?</h2>
+<p>Here’s a demo of the semi-automated posting workflow. The tool generates the comment content and fills in all the form fields automatically. All I need to do is click the Submit button.</p>
+<p>If you switch to fully automatic mode, you don’t even need to review — it posts directly.</p>
+<p><img src="/_astro/comment-form.BQSZYH4Q_Z12sInG.webp" alt="The tool auto-fills the comment form and shows a &#34;Comment Ready&#34; prompt — just click Submit to post" loading="lazy" decoding="async" fetchpriority="auto" width="1464" height="1120"></p>
+<hr/>
+<h2 id="gemini-20-flash-is-incredibly-cheap">Gemini 2.0 Flash Is Incredibly Cheap</h2>
+<p>Claude recommended Gemini 2.0 Flash for this task. After analyzing pages and testing comments — 143 requests total — it cost only 6 cents. Essentially free.</p>
+<p><img src="/_astro/openrouter-usage.DyX0MTtb_1AWtlA.webp" alt="OpenRouter usage panel: Spend $0.0628 / Requests 143 / Tokens 591K" loading="lazy" decoding="async" fetchpriority="auto" width="2608" height="964"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Value</th><th>Model</th></tr></thead><tbody><tr><td>Spend</td><td>$0.0628</td><td>Gemini 2.0 Flash</td></tr><tr><td>Requests</td><td>143</td><td>Gemini 2.0 Flash</td></tr><tr><td>Tokens</td><td>591K</td><td>Gemini 2.0 Flash</td></tr></tbody></table>
+<hr/>
+<h2 id="beginners-dont-rush-into-automation">Beginners: Don’t Rush Into Automation</h2>
+<p>Some people, especially beginners, fall into a mental trap — thinking they’re not making money because they haven’t automated everything yet.</p>
+<p>But I’d argue the opposite: <strong>it’s precisely because you’re trying to automate everything as a beginner, instead of getting your hands dirty first, that you’re not getting positive feedback.</strong></p>
+<p>Take Goldfish Evan for example — he built a side business by doing things manually, step by step:</p>
+<p><img src="/_astro/jike-post.Bh7UMRg6_Utz0d.webp" alt="Goldfish Evan shares his revenue milestone on Jike: $4,688.51 (+62.31%), plus a conversation with another user about backlink automation" loading="lazy" decoding="async" fetchpriority="auto" width="2160" height="7264"></p>
+<p>When asked whether he submits to directories and tool sites manually or has an automated solution, Goldfish Evan replied: <strong>“I’m still doing it manually.”</strong></p>
+<p>Another user mentioned building a browser auto-fill tool and looking for developers who actively build backlinks to try it out.</p>
+<p>The takeaway? <strong>Even someone earning $4,000+/month is still submitting backlinks manually.</strong> Get the feel for it first, then think about automation.</p>
+<hr/>
+<h2 id="the-6-prerequisites-for-automation">The 6 Prerequisites for Automation</h2>
+<p>The prerequisite for automation is that you clearly understand why something needs to be done a certain way, know how to do it well, and can break it down into steps — only then can you have a program do it for you.</p>
+<p>Taking the automated blog comment backlink scraping and posting plugin as an example, you need to know and have done all of these:</p>
+<ol>
+<li><strong>Use Semrush and Ahrefs to check backlinks</strong> — You can view any domain’s backlink list and know how to filter out SPAM links.</li>
+<li><strong>Use browser extensions to simulate actions</strong> — Semrush and Ahrefs APIs are hard to work with, but browser extensions can simulate human actions: open pages, intercept API requests, handle pagination, etc.</li>
+<li><strong>Identify blog comment backlinks</strong> — What they are, how to spot them, how to post them, and how to collect them.</li>
+<li><strong>Scrape comments to find more resources</strong> — By scraping all comments on a blog post, you can discover other webmasters who also post blog comment backlinks, revealing more target sites.</li>
+<li><strong>Expand your resource library in a loop</strong> — Take those sites back to Semrush or Ahrefs to check their backlinks, returning to step 1 to find even more postable blog comment backlink resources.</li>
+<li><strong>Semi-automate comment posting</strong> — Understand the nuances: different sites have different ways to leave links, and you need AI to recognize each format.</li>
+</ol>
+<p><strong>If you haven’t personally posted blog comment backlinks — and posted enough of them — you won’t know any of this. And you won’t be able to get AI to help you build a plugin that scrapes and posts backlinks automatically.</strong></p>
+<p>If you don’t understand the process at all and just tell your AI Agent “help me post blog comment backlinks,” it simply won’t know how to do it efficiently and with quality.</p>
+<hr/>
+<h2 id="backlink-resource-results">Backlink Resource Results</h2>
+<p>After running for one morning, analyzing <strong>841 backlinks</strong> across several websites, the tool found <strong>226 resources</strong> that can be posted to without login or registration. Most are blog comment backlinks, with a few being profile page backlinks.</p>
+<p><img src="/_astro/backlink-tool.mwhr3LgA_jPPOu.webp" alt="Backlink resource tool interface: 226 total resources, filterable by type, with CSV export" loading="lazy" decoding="async" fetchpriority="auto" width="788" height="1184"></p>
+<p>A quick note: don’t fixate on the 841 number — we only need the 226 usable resources. And if we keep crawling, we’ll find even more.</p>
+<p>Some community members have said they don’t know how to find postable backlink resources. My answer has always been: the methods are right here in our community — you just haven’t put them into practice.</p>
+<p><strong>With just one morning’s work, without me even watching, the program filtered out 226 usable resources on its own.</strong></p>
+<h3 id="resource-type-breakdown">Resource Type Breakdown</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Type</th><th>Count</th></tr></thead><tbody><tr><td>Blog Comment (blog_comment)</td><td>159</td></tr><tr><td>Profile (profile)</td><td>67</td></tr><tr><td><strong>Total</strong></td><td><strong>226</strong></td></tr></tbody></table>
+<h3 id="top-10-source-websites">Top 10 Source Websites</h3>
+<p>These are the competitor websites analyzed via Ahrefs, ranked by the number of usable backlink resources discovered:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Source Website</th><th>Resources Found</th></tr></thead><tbody><tr><td>loklokhd.app</td><td>24</td></tr><tr><td>level-devil.net</td><td>18</td></tr><tr><td>purbleplaceonline.com</td><td>18</td></tr><tr><td>ageofwargame.io</td><td>16</td></tr><tr><td>leveldevilgame.com</td><td>15</td></tr><tr><td>quordle-wordle.com</td><td>15</td></tr><tr><td>geometrydash-subzero.io</td><td>15</td></tr><tr><td>thenarcissisttest.com</td><td>14</td></tr><tr><td>crazy-cattle-3d.com</td><td>13</td></tr><tr><td>thwordle.app</td><td>12</td></tr></tbody></table>
+<h3 id="sample-resources">Sample Resources</h3>
+<p>Here are some of the filtered backlink resources, so you can get a feel for the data quality:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Type</th><th>URL</th></tr></thead><tbody><tr><td>blog_comment</td><td><a href="https://joaniesimon.com/grilled-lemon-garlic-potato-kabobs/grilled-potato-kabobs-with-lemon-and-garlic/">https://joaniesimon.com/grilled-lemon-garlic-potato-kabobs/grilled-potato-kabobs-with-lemon-and-garlic/</a></td></tr><tr><td>blog_comment</td><td><a href="https://syncedreview.com/2024/09/09/microsofts-fully-pipelined-distributed-transformer-processes-16x-sequence-length-with-extreme-hardware-efficiency/">https://syncedreview.com/2024/09/09/microsofts-fully-pipelined-distributed-transformer-processes-16x-sequence-length-with-extreme-hardware-efficiency/</a></td></tr><tr><td>blog_comment</td><td><a href="https://www.madrimasd.org/blogs/matematicas/2024/02/11/150483">https://www.madrimasd.org/blogs/matematicas/2024/02/11/150483</a></td></tr><tr><td>blog_comment</td><td><a href="https://pixel77.com/typography-rules-technique/">https://pixel77.com/typography-rules-technique/</a></td></tr><tr><td>blog_comment</td><td><a href="https://www.bakerella.com/sweets-for-the-season/">https://www.bakerella.com/sweets-for-the-season/</a></td></tr><tr><td>profile</td><td><a href="https://www.mycomics.de/profil/tedcrane.html">https://www.mycomics.de/profil/tedcrane.html</a></td></tr><tr><td>profile</td><td><a href="https://wallhaven.cc/user/lauralehman">https://wallhaven.cc/user/lauralehman</a></td></tr><tr><td>profile</td><td><a href="https://bordeaux.onvasortir.com/profil_msg_inexistant.php">https://bordeaux.onvasortir.com/profil_msg_inexistant.php</a></td></tr><tr><td>profile</td><td><a href="https://jobs.hyperisland.com/company/georgiana-al-usa">https://jobs.hyperisland.com/company/georgiana-al-usa</a></td></tr><tr><td>profile</td><td><a href="https://snipplr.com/users/mcleanross?language=all">https://snipplr.com/users/mcleanross?language=all</a></td></tr></tbody></table>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
