@@ -1,0 +1,130 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>SEO学习笔记-Ahrefs公开课（六）：链接建设 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/seo-ahrefs-course-6-link-building/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/seo-ahrefs-course-6-link-building/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="SEO学习笔记-Ahrefs公开课（六）：链接建设 - xiaofeng.show"><meta property="og:site_name" content="SEO学习笔记-Ahrefs公开课（六）：链接建设 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/seo-ahrefs-course-6-link-building/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/seo-ahrefs-course-6-link-building/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/seo-ahrefs-course-6-link-building/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.uxLteIZz_ZGCTXs.webp" alt="SEO学习笔记-Ahrefs公开课（六）：链接建设" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1376" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>SEO学习笔记-Ahrefs公开课（六）：链接建设</h1> <time datetime="2025-01-13T00:00:00.000Z" data-astro-cid-v3cnrnum> 2025/1/13 </time> </header> <h2 id="一链接建设基础知识">一、链接建设基础知识</h2>
+<p>作为一般规则，有更多反向链接的网页往往在搜索结果中排名更高。
+如果你建立了很多链接到你的页面，但它的排名仍然很差。那么请研究一下其他可能阻碍你获得排名的因素。</p>
+<h2 id="二如何建立链接">二、如何建立链接</h2>
+<h3 id="添加链接">添加链接</h3>
+<ul>
+<li>商业目录提交</li>
+<li>社交类的资料页面</li>
+<li>博客评论</li>
+<li>在论坛、社区和问答网站上发帖</li>
+<li>创建工作搜索列表</li>
+</ul>
+<h3 id="请求提供链接">请求提供链接</h3>
+<ul>
+<li>客座博客 — 为他们的网站创造有用的内容。</li>
+<li>摩天楼技术 — 向他们展示一个比他们所链接的资源更好的来源。</li>
+<li>链接植入 — 向他们展示一个资源，提供更多关于他们提到的东西的信息。</li>
+<li>自我诱导 — 在你自己的内容中以积极的方式提到他们或他们的工作。</li>
+<li>推荐和案例研究 — 对他们的产品或服务给予积极的反馈。</li>
+<li>链接交换 — 如果他们同意链接到你，你就提供链接给他们。</li>
+<li>资源页链接建设 — 向他们展示适合他们现有内容的资源页面。</li>
+<li>失效链接建设 — 通过提供一个替代链接，帮助他们修复他们页面上的已失效链接。</li>
+<li>图片链接建设 — 要求在使用你的图片时添加图片来源。</li>
+<li>无链接的提及 — 要求使提及你的品牌地方实现 “可点击”。</li>
+<li>链接更改 — 要求对指向你网站的现有链接进行修改。</li>
+<li>HARO和记者请求 — 为他们的文章提供一个 “专家引言”。</li>
+<li>公关 — 给他们一个出众的故事。</li>
+</ul>
+<h3 id="购买链接">购买链接</h3>
+<h3 id="赚取链接">赚取链接</h3>
+<h3 id="维护链接">维护链接</h3>
+<ol>
+<li>修复有高质量反向链接的 404 页面</li>
+<li>监测你丢失的反向链接，并在一个重要链接丢失时联系网站所有者（也称为 “链接回收”）。</li>
+</ol>
+<h2 id="三怎样才是好的链接">三、怎样才是好的链接</h2>
+<h3 id="权威性">权威性</h3>
+<h3 id="相关性">相关性</h3>
+<p>来自与你相同主题的网站的链接被认为比来自不相关网站的链接带来更多价值。</p>
+<h3 id="锚文本">锚文本</h3>
+<p>“锚文本” 是链接到另一个页面的可点击文本片段。在许多情况下，它简洁地描述了链接页面的内容。</p>
+<h3 id="nofollow-vs-follow">Nofollow vs follow</h3>
+<p>一般来说，你希望获得 “follow” 链接（即不具有上述任何属性的链接），因为这些链接投票相比其他应该是最为有力的。
+然而，如果你看到有机会从一个相关的高权重页面获得一个 “nofollow” 链接，你也绝对应该抓住它。</p>
+<h3 id="位置">位置</h3>
+<h3 id="目标地址">目标地址</h3>
+<p>当建立链接到你的网站时，有三种目的地：</p>
+<ol>
+<li>你的首页</li>
+<li>可链接资源</li>
+<li>你需要在谷歌中获得良好排名的实际页面。</li>
+</ol>
+<h2 id="四最佳链接建设策略">四、最佳链接建设策略</h2>
+<h3 id="追求竞争对手的链接">追求竞争对手的链接</h3>
+<h3 id="创建可链接的资产">创建可链接的资产</h3>
+<p>研究你的竞争对手的网站，看看他们是否有任何可链接的资产，你可以从中获得灵感。</p>
+<h3 id="内容推广">内容推广</h3>
+<ol>
+<li>大V和社区</li>
+<li>广告</li>
+<li>培养受众</li>
+</ol>
+<ul>
+<li>要求他们订阅你的电子邮件</li>
+<li>要求他们在 Twitter/LinkedIn/Instagram/TikTok 上关注你</li>
+<li>邀请他们加入你在 Slack/Discord/Facebook 上的私人社区</li>
+<li>用 Facebook/Twitter/Google 广告重新定位他们</li>
+</ul>
+<h3 id="做客博客">做客博客</h3>
+<h2 id="五链接建设工具">五、链接建设工具</h2>
+<ul>
+<li>Ahrefs Webmaster Tools（Ahrefs 站长工具） – 显示所有已经指向你自己网站的链接，并让你按许多重要的 SEO 指标进行分类和过滤。</li>
+<li>Ahrefs Free Backlink Checker（外链检查） – 显示指向任何网站或URL的前100个链接。</li>
+<li>Google Alerts – 每当一个特定的词或短语在新发布的页面上被提及时，就会通知你。这是寻找优质链接机会的一个好方法。</li>
+</ul>
+<p>原文链接：<a href="https://ahrefs.com/blog/zh/link-building/">https://ahrefs.com/blog/zh/link-building/</a></p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

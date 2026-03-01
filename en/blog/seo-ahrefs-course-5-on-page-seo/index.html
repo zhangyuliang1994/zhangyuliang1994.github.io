@@ -1,0 +1,154 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>SEO Study Notes - Ahrefs Course (5): On-Page SEO - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/seo-ahrefs-course-5-on-page-seo/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/seo-ahrefs-course-5-on-page-seo/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="SEO Study Notes - Ahrefs Course (5): On-Page SEO - frency.me"><meta property="og:site_name" content="SEO Study Notes - Ahrefs Course (5): On-Page SEO - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/seo-ahrefs-course-5-on-page-seo/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/seo-ahrefs-course-5-on-page-seo/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/seo-ahrefs-course-5-on-page-seo/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.CrHdg8xB_2seBLb.webp" alt="SEO Study Notes - Ahrefs Course (5): On-Page SEO" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1376" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>SEO Study Notes - Ahrefs Course (5): On-Page SEO</h1> <time datetime="2025-01-10T00:00:00.000Z" data-astro-cid-v3cnrnum> 1/10/2025 </time> </header> <h2 id="on-page-seo-fundamentals">On-Page SEO Fundamentals</h2>
+<h3 id="what-is-on-page-optimization">What Is On-Page Optimization</h3>
+<p>On-page optimization (or on-site optimization) refers to everything you do on a page to improve its rankings. The focus is on helping Google and searchers better understand and digest your content.</p>
+<h3 id="why-on-page-optimization-matters">Why On-Page Optimization Matters</h3>
+<p>Google examines the content of a page to determine whether it is a relevant search result. If Google considers your content less relevant than your competitors’, it will rank you lower.</p>
+<h2 id="how-to-do-on-page-optimization">How to Do On-Page Optimization</h2>
+<h3 id="on-page-seo-checklist-overview">On-Page SEO Checklist Overview</h3>
+<p><img src="/_astro/seo-checklist.CZy322kU_1SQ3to.webp" alt="On-Page SEO Checklist" loading="lazy" decoding="async" fetchpriority="auto" width="1080" height="484"></p>
+<h3 id="align-with-search-intent">Align with Search Intent</h3>
+<p>Search intent is the reason behind a user’s search. Understanding search intent helps you figure out what users are looking for and what you need to provide in your content.</p>
+<h3 id="cover-your-topic-thoroughly">Cover Your Topic Thoroughly</h3>
+<p>If your content covers relevant subtopics, it is more likely to meet searcher expectations. On top of that, it can rank for more related keywords and drive additional traffic.
+A great place to find clues is by looking at top-ranking pages. You can manually identify commonalities among them, such as headings, frequently asked questions, visual aids, and the depth of coverage on the topic.</p>
+<h3 id="make-your-content-unique">Make Your Content Unique</h3>
+<p>If you want to succeed in rankings, you cannot simply rehash what other pages are saying — you need to bring something new to the search engine results page.
+This increases your chances of attracting links, which in turn helps your page rank higher.
+To achieve this, you need to get creative, because “uniqueness” depends on what already exists on the SERP. Here are some angles to consider:</p>
+<ul>
+<li>Original research — new knowledge, insights, or findings. For example, an industry survey conducted with your company’s clients.</li>
+<li>A unique perspective or opinion on a topic — a fresh viewpoint that challenges conventional thinking or takes a strong stance. For example, SEO tips from a seasoned industry expert.</li>
+<li>A faster or simpler way to solve a specific problem or achieve something — for example, tips on becoming wealthy before 30.</li>
+<li>A useful, free resource — for example, templates, cheat sheets, and so on.</li>
+</ul>
+<h3 id="create-a-visual-hierarchy-with-h1-h6-tags">Create a Visual Hierarchy with H1-H6 Tags</h3>
+<p>Heading tags (H1, H2, etc.) not only help Google understand the content on your page, but also help readers comprehend and improve readability.
+The best practice for H1 tags is to use only one per page and make it match the page title.
+As for H2 through H6 tags, simply use them for subheadings within your content.</p>
+<h3 id="write-a-compelling-title-tag">Write a Compelling Title Tag</h3>
+<p>Title tags are often the primary piece of information that determines which result gets clicked, so you need to make them appealing. Here are some tips:</p>
+<ul>
+<li>Keep it short — ideally under 70 characters to avoid truncation.</li>
+<li>Match search intent — tell searchers that you have what they are looking for.</li>
+<li>Be descriptive — avoid being vague or generic.</li>
+<li>Avoid clickbait — make sure title tags align with your actual content.</li>
+<li>Include your keyword — use a close variant if it makes more sense.</li>
+<li>Include the year — useful for topics that require freshness.</li>
+</ul>
+<p>Make sure to set title tags on every indexable page.</p>
+<h3 id="write-a-compelling-meta-description">Write a Compelling Meta Description</h3>
+<p>Meta descriptions are not a Google ranking factor, but they can drive more clicks and traffic. This is because Google often uses them as descriptive snippets in search results. Here are some tips for writing meta descriptions:</p>
+<ul>
+<li>Keep it short — ideally under 160 characters to avoid truncation.</li>
+<li>Expand on the title tag — include unique selling points that you could not fit in the title.</li>
+<li>Match search intent — double down on what searchers want.</li>
+<li>Use active voice — speak directly to the searcher.</li>
+<li>Include your keyword — Google often bolds matching keywords in search results.</li>
+</ul>
+<h3 id="set-user-friendly-urls">Set User-Friendly URLs</h3>
+<p>Google recommends using words relevant to your content in the page URL. The simplest approach is usually to set your target keyword as the URL slug.
+If the URL structure already contains some words from your target keyword, you can shorten the slug.</p>
+<h3 id="optimize-your-images">Optimize Your Images</h3>
+<p>Images on your page can rank in Google Image Search and drive additional traffic.
+Image optimization essentially involves the following three tasks:</p>
+<ul>
+<li>Use descriptive file names: Google states that file names can provide clues about the image’s subject. Naming tips: be detailed, keep it concise, avoid keyword stuffing, and use hyphens to separate words.</li>
+<li>Use descriptive alt text: Google also uses alt text (alternative text) to understand the subject of an image. This is an HTML attribute used to describe the image. The primary purpose of alt text is to improve accessibility for visitors using screen readers. Best practices: be detailed, keep it concise, avoid keyword stuffing, and do not say “it is an image.”</li>
+<li>Compress images: Compressing images reduces file size, which improves loading speed. Many tools can accomplish this — ShortPixel is an excellent option.</li>
+</ul>
+<h3 id="add-internal-links">Add Internal Links</h3>
+<p>Internal links are links from other pages on your website. They help Google understand what a page is about and boost its authority, which can lead to higher rankings.
+Given that adding an internal link takes only a second, it is a simple and quick on-page optimization technique.</p>
+<h3 id="use-external-links">Use External Links</h3>
+<p>Google states that linking to other websites is a great way to provide value to users. So when appropriate, do not be afraid to do so. Just be careful not to link to low-quality or spammy sites.
+When linking to external websites, keep the following in mind:</p>
+<ul>
+<li>Cite and link to their sources</li>
+<li>Link to resources that readers may find useful</li>
+<li>Use nofollow or sponsored tags for any sponsored or paid links</li>
+</ul>
+<h2 id="demonstrate-experience-or-expertise-on-the-topic">Demonstrate Experience or Expertise on the Topic</h2>
+<p>Google places greater emphasis on content from experts or people with first-hand or lived experience. Which factor matters more to Google depends on the topic.
+Here are several ways Google recommends demonstrating expertise. You should:</p>
+<ul>
+<li>Show that you understand the topic. Based on your expertise, demonstrate how to solve a problem or achieve a goal.</li>
+<li>Provide clear sources of information (and link to them).</li>
+<li>Cite expert opinions to add credibility to your content.</li>
+<li>Provide background information about the author, such as linking to an “About the Author” page. Do not hide your credentials.</li>
+<li>Make sure the content does not contain easily verifiable factual errors.</li>
+</ul>
+<p>When it comes to topics that may require first-hand or lived experience, Google recommends that you:</p>
+<ul>
+<li>Explain how you created the content. For example, provide some behind-the-scenes insights into a product review process.</li>
+<li>Provide evidence of relevant work, including images or videos.</li>
+<li>Provide background information about the author — just like with expertise.</li>
+</ul>
+<h2 id="advanced-on-page-optimization-tips">Advanced On-Page Optimization Tips</h2>
+<h3 id="optimize-for-featured-snippets">Optimize for Featured Snippets</h3>
+<h3 id="use-schema-markup-to-get-rich-snippets">Use Schema Markup to Get Rich Snippets</h3>
+<h3 id="optimize-page-experience">Optimize Page Experience</h3>
+<p>To rank pages, Google also considers a set of “page experience signals,” which include but are not limited to:</p>
+<ul>
+<li>Core Web Vitals (CWV) — in other words, whether the page is fast and stable enough.</li>
+<li>Security — whether the page uses an HTTPS connection.</li>
+<li>Mobile-friendliness — Google uses the mobile version of your page for indexing and ranking.</li>
+<li>Avoiding intrusive interstitials and dialogs.</li>
+</ul>
+<p><img src="/_astro/page-experience.lQ6-jd03_Zzd9v3.webp" alt="Page Experience Signals" loading="lazy" decoding="async" fetchpriority="auto" width="1080" height="908"></p>
+<p>Page experience signals are typically improved at the site-wide level rather than page by page. However, you also need to ensure that all new page designs are optimized.
+Security issues and interstitials are the easiest to fix: get an SSL/TLS certificate and disable pop-ups that may annoy users. CWV and mobile-friendliness may take more time to address.</p>
+<h3 id="monitor-and-update-your-content">Monitor and Update Your Content</h3>
+<p>On-page optimization is an ongoing process. If you are not satisfied with your Google rankings, you can improve and republish your content to boost your position.</p>
+<p>Original source: <a href="https://ahrefs.com/blog/zh/on-page-seo/">https://ahrefs.com/blog/zh/on-page-seo/</a></p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
