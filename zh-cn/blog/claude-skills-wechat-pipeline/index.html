@@ -1,0 +1,129 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>Claude Skills 实战：从20分钟手工到自动化发公众号 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/claude-skills-wechat-pipeline/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/claude-skills-wechat-pipeline/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Claude Skills 实战：从20分钟手工到自动化发公众号 - xiaofeng.show"><meta property="og:site_name" content="Claude Skills 实战：从20分钟手工到自动化发公众号 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/claude-skills-wechat-pipeline/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/claude-skills-wechat-pipeline/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/claude-skills-wechat-pipeline/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Claude Skills 实战：从20分钟手工到自动化发公众号</h1> <time datetime="2026-03-03T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/3/3 </time> </header> <blockquote>
+<p>最近一个月，在X上被claude skills刷爆了。我也手痒了，收藏了一堆skills，今天终于用上了。</p>
+</blockquote>
+<h2 id="一概述">一、概述</h2>
+<p>我之前一直是手动整理收集好内容再发布。大致流程如下：</p>
+<p>1.将 Youtube 链接或者音频文件导入到 NotebookLLM，提取出文字内容或者直接复制其他 blog 的文字内容；</p>
+<p>2.粘贴到 Gemini 网页对话框里，使用提示词来整理成一篇文章；</p>
+<p>3.将文章复制到 markdown 转微信公众号网页里来实现格式转换；</p>
+<p>4.封面提取或生成：使用工具提取 Youtube 封面或者让 Gemini 网页生成文生图提示词封面；</p>
+<p>5.使用 Gemini 网页生成内容配图的文生图提示词封面；</p>
+<p>6.使用 Nanobanana Pro来生成封面和内容配图并保存；</p>
+<p>7.将封面和内容配图导入微信公众号，并将配图插入到合适位置。</p>
+<p>这么一通操作下来，最快也要20分钟，毕竟文生图需要时间。而我居然这样发了100多篇了，想想确实不应该。</p>
+<p>虽然之前尝试过用 N8N，但是没有成功（打磨工作流比较耗时）。</p>
+<p>现在有人直接把 Claude Skills 写好了，只要几个指令就能完成上述操作。</p>
+<p>Skills地址：<a href="https://github.com/JimLiu/baoyu-skills">https://github.com/JimLiu/baoyu-skills</a></p>
+<h2 id="二使用方法">二、使用方法</h2>
+<h3 id="21-安装-skills">2.1 安装 skills</h3>
+<p>默认先安装好了 Claude Code，然后执行如下命令</p>
+<p><code>npx add-skill jimliu/baoyu-skills</code></p>
+<p>在Claude Code里执行如下命令</p>
+<p><code>/plugin marketplace add jimliu/baoyu-skills</code></p>
+<p><code>/plugin install content-skills@baoyu-skills</code></p>
+<h3 id="22-创建目录">2.2 创建目录</h3>
+<p>目录结构大致如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plain"><code><span class="line"><span>wechat-content-pipeline/</span></span>
+<span class="line"><span>├── .env                  # 存放公众号 AppID 和 Secret (非常重要)</span></span>
+<span class="line"><span>├── CLAUDE.md             # 给 Claude 看的项目说明书 (让它更懂你的发布规范)</span></span>
+<span class="line"><span>├── drafts/               # 存放待处理的 Markdown 草稿</span></span>
+<span class="line"><span>├── published/            # 存放已发布归档的文章</span></span>
+<span class="line"><span>└── assets/               # 存放生成的封面图或插图</span></span></code></pre>
+<p>.env 文件内容</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plain"><code><span class="line"><span># 微信公众号凭证</span></span>
+<span class="line"><span>WECHAT_APP_ID=你的AppID</span></span>
+<span class="line"><span>WECHAT_APP_SECRET=你的AppSecret</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 如果需要图床配置（如阿里云OSS/AWS S3），也放在这里</span></span>
+<span class="line"><span>OSS_ACCESS_KEY=...</span></span></code></pre>
+<p>CLAUDE.md 文件内容：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plain"><code><span class="line"><span># 项目指南</span></span>
+<span class="line"><span>这是一个微信公众号文章批量处理工作流。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 命令</span></span>
+<span class="line"><span>- build: 使用 /baoyu-cover-image 为 drafts/ 目录下的文章生成封面</span></span>
+<span class="line"><span>- publish: 使用 /post-to-wechat 将文章发布到微信草稿箱</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 风格规范</span></span>
+<span class="line"><span>- 封面图：必须是 16:9 的比例，风格为 &quot;极简、科技感&quot;。</span></span>
+<span class="line"><span>- 排版：发布前请检查 Markdown 的二级标题是否加粗。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 工作流</span></span>
+<span class="line"><span>1. 读取 drafts/ 中的 .md 文件。</span></span>
+<span class="line"><span>2. 检查是否有封面图，没有则生成。</span></span>
+<span class="line"><span>3. 发布后将文件移动到 published/ 目录。</span></span></code></pre>
+<h3 id="23-主要步骤">2.3 主要步骤</h3>
+<h4 id="生成原始文章">生成原始文章：</h4>
+<p><code>你是一名微信公众号专家，阅读 https：//www.xxx.com/xxx，并生成一篇3500字左右的文章，直接输出到 @drafts 目录里</code></p>
+<p>执行完成后，即可在 drafts 目录看到 xxx.md 文件</p>
+<h4 id="生成封面">生成封面：</h4>
+<p><code>build</code></p>
+<p>执行后会在 xxx.md 目录生成 cover.png，原理是 skills 先根据文章生成文生图提示词，调用 gemini web 生成图片并保存到本地。</p>
+<h4 id="生成插图">生成插图：</h4>
+<p><code>illustrate drafts/xxx.md</code></p>
+<p>执行后会在 xxx.md 目录生成几张配图，原理同封面。</p>
+<h4 id="发布到微信公众号草稿">发布到微信公众号草稿</h4>
+<p><code>publish</code></p>
+<p>执行后，claude code 会将 markdown 转成微信公众号格式，并复制到新建文章里。</p>
+<p>文章里预留了配图的占位符，claude code会将配图插入到指定位置，并保存草稿。</p>
+<h4 id="风格修改">风格修改</h4>
+<p>默认的风格比较朴素，但是 claude skills 是可以进化的，我让他参考了 <a href="https://md.doocs.org/">https://md.doocs.org/</a> 的风格，以保证和我之前的文章风格一致。</p>
+<p>最终效果如下：</p>
+<p><a href="https://mp.weixin.qq.com/s/NNc7DlDz6x7ySfCUdS17Lw">https://mp.weixin.qq.com/s/NNc7DlDz6x7ySfCUdS17Lw</a></p>
+<h2 id="三总结">三、总结</h2>
+<p>虽然这个Claude Skills 还没有完全自动化，但是已经比之前好很多了，可以把我从重复的手动操作抽离出来。后续再用上定时任务和狂飙模式，基本可以实现90%的自动化了。</p>
+<p>有一个问题就是，Token消耗还是蛮严重的，好在Claude Code有五小时重置机制，后续可以放到睡觉时间来执行。</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
