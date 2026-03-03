@@ -1,0 +1,143 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Claude Skills in Practice: From 20-Minute Manual Work to Automated WeChat Publishing - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/claude-skills-wechat-pipeline/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/claude-skills-wechat-pipeline/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Claude Skills in Practice: From 20-Minute Manual Work to Automated WeChat Publishing - frency.me"><meta property="og:site_name" content="Claude Skills in Practice: From 20-Minute Manual Work to Automated WeChat Publishing - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/claude-skills-wechat-pipeline/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/claude-skills-wechat-pipeline/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/claude-skills-wechat-pipeline/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.CWbUyJnU_1tdFyE.webp" alt="Claude Skills in Practice: From 20-Minute Manual Work to Automated WeChat Publishing" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1376" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Claude Skills in Practice: From 20-Minute Manual Work to Automated WeChat Publishing</h1> <time datetime="2026-03-03T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/3/2026 </time> </header> <blockquote>
+<p>Over the past month, my X feed has been flooded with Claude Skills. I couldn’t resist — I bookmarked a bunch of them, and today I finally put them to use.</p>
+</blockquote>
+<h2 id="1-overview">1. Overview</h2>
+<p>I used to manually curate and publish all my content. The typical workflow looked like this:</p>
+<ol>
+<li>
+<p>Import a YouTube link or audio file into NotebookLLM to extract the text, or directly copy text content from other blogs.</p>
+</li>
+<li>
+<p>Paste the text into the Gemini web chat and use a prompt to shape it into a polished article.</p>
+</li>
+<li>
+<p>Copy the article into a Markdown-to-WeChat converter web tool to handle formatting.</p>
+</li>
+<li>
+<p>Extract or generate the cover image: use a tool to grab the YouTube thumbnail, or have Gemini generate a text-to-image prompt for the cover.</p>
+</li>
+<li>
+<p>Use Gemini to generate text-to-image prompts for inline illustrations.</p>
+</li>
+<li>
+<p>Use Nanobanana Pro to generate and save the cover and illustrations.</p>
+</li>
+<li>
+<p>Upload the cover and illustrations to the WeChat Official Account editor, and insert them at the right positions.</p>
+</li>
+</ol>
+<p>Even at my fastest, this whole process took at least 20 minutes — image generation alone eats up a good chunk of time. And I had already published over 100 articles this way. Looking back, I really should have automated this sooner.</p>
+<p>I had tried using N8N before, but couldn’t get it working (polishing the workflow was too time-consuming).</p>
+<p>Now someone has built ready-made Claude Skills that can handle all of the above with just a few commands.</p>
+<p>Skills repository: <a href="https://github.com/JimLiu/baoyu-skills">https://github.com/JimLiu/baoyu-skills</a></p>
+<h2 id="2-how-to-use">2. How to Use</h2>
+<h3 id="21-install-the-skills">2.1 Install the Skills</h3>
+<p>Make sure you have Claude Code installed first, then run the following command:</p>
+<p><code>npx add-skill jimliu/baoyu-skills</code></p>
+<p>Inside Claude Code, run:</p>
+<p><code>/plugin marketplace add jimliu/baoyu-skills</code></p>
+<p><code>/plugin install content-skills@baoyu-skills</code></p>
+<h3 id="22-set-up-the-directory">2.2 Set Up the Directory</h3>
+<p>The directory structure looks roughly like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plain"><code><span class="line"><span>wechat-content-pipeline/</span></span>
+<span class="line"><span>├── .env                  # Stores your Official Account AppID and Secret (critical)</span></span>
+<span class="line"><span>├── CLAUDE.md             # Project instructions for Claude (helps it understand your publishing standards)</span></span>
+<span class="line"><span>├── drafts/               # Stores Markdown drafts to be processed</span></span>
+<span class="line"><span>├── published/            # Stores archived published articles</span></span>
+<span class="line"><span>└── assets/               # Stores generated covers and illustrations</span></span></code></pre>
+<p><code>.env</code> file contents:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plain"><code><span class="line"><span># WeChat Official Account credentials</span></span>
+<span class="line"><span>WECHAT_APP_ID=your_AppID</span></span>
+<span class="line"><span>WECHAT_APP_SECRET=your_AppSecret</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># If you need image hosting (e.g., Alibaba Cloud OSS / AWS S3), add it here</span></span>
+<span class="line"><span>OSS_ACCESS_KEY=...</span></span></code></pre>
+<p><code>CLAUDE.md</code> file contents:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plain"><code><span class="line"><span># Project Guide</span></span>
+<span class="line"><span>This is a batch processing workflow for WeChat Official Account articles.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Commands</span></span>
+<span class="line"><span>- build: Use /baoyu-cover-image to generate covers for articles in the drafts/ directory</span></span>
+<span class="line"><span>- publish: Use /post-to-wechat to publish articles to the WeChat drafts box</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Style Guidelines</span></span>
+<span class="line"><span>- Cover images: Must be 16:9 aspect ratio, styled as &quot;minimalist, tech-inspired.&quot;</span></span>
+<span class="line"><span>- Layout: Before publishing, verify that Markdown H2 headings are bold.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Workflow</span></span>
+<span class="line"><span>1. Read .md files from drafts/.</span></span>
+<span class="line"><span>2. Check if a cover image exists; if not, generate one.</span></span>
+<span class="line"><span>3. After publishing, move the file to the published/ directory.</span></span></code></pre>
+<h3 id="23-key-steps">2.3 Key Steps</h3>
+<h4 id="generate-the-initial-article">Generate the initial article:</h4>
+<p><code>You are a WeChat Official Account expert. Read https://www.xxx.com/xxx and generate an article of approximately 3,500 words. Output it directly to the @drafts directory.</code></p>
+<p>Once complete, you’ll find an <code>xxx.md</code> file in the <code>drafts</code> directory.</p>
+<h4 id="generate-the-cover">Generate the cover:</h4>
+<p><code>build</code></p>
+<p>This generates a <code>cover.png</code> in the <code>xxx.md</code> directory. Under the hood, the skill analyzes the article to create a text-to-image prompt, calls Gemini Web to generate the image, and saves it locally.</p>
+<h4 id="generate-illustrations">Generate illustrations:</h4>
+<p><code>illustrate drafts/xxx.md</code></p>
+<p>This generates several inline images in the <code>xxx.md</code> directory, using the same approach as the cover.</p>
+<h4 id="publish-to-wechat-official-account-drafts">Publish to WeChat Official Account drafts:</h4>
+<p><code>publish</code></p>
+<p>Claude Code converts the Markdown into WeChat Official Account format and pastes it into a new article.</p>
+<p>The article contains placeholders for illustrations. Claude Code inserts the images at the designated positions and saves the draft.</p>
+<h4 id="customizing-the-style">Customizing the style</h4>
+<p>The default style is fairly plain, but Claude Skills can evolve. I had it reference the styling from <a href="https://md.doocs.org/">https://md.doocs.org/</a> to keep things consistent with my previous articles.</p>
+<p>Here’s the final result:</p>
+<p><a href="https://mp.weixin.qq.com/s/NNc7DlDz6x7ySfCUdS17Lw">https://mp.weixin.qq.com/s/NNc7DlDz6x7ySfCUdS17Lw</a></p>
+<h2 id="3-takeaways">3. Takeaways</h2>
+<p>While this Claude Skills setup isn’t fully automated yet, it’s already a massive improvement — it frees me from the repetitive manual grind. Once I add scheduled tasks and enable burst mode, it should get me to about 90% automation.</p>
+<p>One caveat: token consumption is still pretty heavy. Fortunately, Claude Code has a five-hour reset mechanism, so I can schedule runs during off-hours to make the most of it.</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
