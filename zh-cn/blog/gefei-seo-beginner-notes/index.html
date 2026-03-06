@@ -1,0 +1,251 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>哥飞SEO学习笔记：新手入门 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/gefei-seo-beginner-notes/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-seo-beginner-notes/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="哥飞SEO学习笔记：新手入门 - xiaofeng.show"><meta property="og:site_name" content="哥飞SEO学习笔记：新手入门 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-seo-beginner-notes/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gefei-seo-beginner-notes/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gefei-seo-beginner-notes/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.yUjlh0wV_ZP57Ud.webp" alt="哥飞SEO学习笔记：新手入门" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1536" height="1024" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>哥飞SEO学习笔记：新手入门</h1> <time datetime="2026-03-06T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/3/6 </time> </header> <p>最近在系统学习哥飞的新手入门课程，我把关键观点、方法论和能立刻上手的 SOP 做一次集中整理。核心就一句话：</p>
+<p><strong>种一棵树最好的时间是十年前，其次是现在。</strong><br/>
+做网站是长期积累，别等“准备好了”，先开始，边做边迭代。</p>
+<hr/>
+<h2 id="一海外工具站的发展前景先短期练手再长期布局">一、海外工具站的发展前景：先短期练手，再长期布局</h2>
+<p>对大多数新手来说，最容易卡在“想做大项目，但能力/资源/耐心跟不上”。哥飞给的路径很清晰：</p>
+<h3 id="1先做短期for-fun-的小需求练手">1）先做短期、for fun 的小需求练手</h3>
+<p>目的不是一上来就赚钱，而是快速跑通这条链路：</p>
+<ul>
+<li>怎么挖需求（关键词、场景、痛点）</li>
+<li>怎么做 SEO（站内结构、TDK、内容）</li>
+<li>怎么获取流量（搜索引擎为主）</li>
+<li>怎么推广（社媒/社区/外链）</li>
+<li>怎么变现（Adsense/联盟/订阅/询盘）</li>
+</ul>
+<p>只要这条链路你跑通一次，后面会越来越快。</p>
+<h3 id="2再做长期的工作生活需要的工具站">2）再做长期的、工作生活需要的工具站</h3>
+<p>长期项目要做“能持续更新、能持续扩展”的站：</p>
+<ul>
+<li>参考竞争对手</li>
+<li>在某些维度超过对手：<strong>更好用 / 更漂亮 / 更快 / 更全 / 更专注</strong></li>
+<li>逐步把站做成“专业度更强”的内容与工具组合（后面会讲枢纽-辐射式结构）</li>
+</ul>
+<hr/>
+<h2 id="二怎么挖掘需求从看网站到拆关键词再到验证难度">二、怎么挖掘需求：从“看网站”到“拆关键词”再到“验证难度”</h2>
+<p>哥飞这套挖需求的方法，本质是用工具把“直觉”变成“数据”。</p>
+<h3 id="1similarweb先看站值不值得研究">1）Similarweb：先看站值不值得研究</h3>
+<p>用它快速判断一个网站：</p>
+<ul>
+<li>流量大不大、趋势怎么样</li>
+<li>流量主要来自哪些国家</li>
+<li>流量渠道结构（搜索/社媒/直接/外链等）</li>
+<li>还能顺带发现相似站点（继续拓展选题）</li>
+</ul>
+<h3 id="2semrush拆关键词看分布找机会">2）Semrush：拆关键词、看分布、找机会</h3>
+<p>Semrush 的价值在于“拆解”：</p>
+<ul>
+<li>自然搜索流量、付费流量、反链</li>
+<li>关键词分布（哪些词带来流量、各自体量）</li>
+<li>关键词难度 KD、国家分布等</li>
+</ul>
+<p><strong>关键点：</strong><br/>
+当你发现一个站的大量流量来自某个“明确工具词”，而且这个词的竞争不强——你就能反推：</p>
+<p><strong>我注册一个更贴词的域名 + 举全站之力做这个词，很可能更容易上首页。</strong></p>
+<h3 id="3google-trends看趋势避免做下降通道">3）Google Trends：看趋势，避免做“下降通道”</h3>
+<p>用途很简单但很关键：</p>
+<ul>
+<li>判断这个需求是上升/稳定/下降</li>
+<li>多个关键词的相对热度对比（选更值得投入的）</li>
+</ul>
+<h3 id="4ahrefs最终验证关键词难度kd">4）Ahrefs：最终验证关键词难度（KD）</h3>
+<p>在 <code>https://ahrefs.com/keyword-difficulty</code> 做最后确认：</p>
+<ul>
+<li>KD 很低（比如 9）且给出参考：只需要少量外链就可能进首页</li>
+<li>这类词更适合新站拿“快速正反馈”</li>
+</ul>
+<p>课程里强调的思路是：<strong>先用 Similarweb/Semrush 找机会，再用 Ahrefs 验证值不值得做。</strong></p>
+<hr/>
+<h2 id="三实战挖需求一个判断是否能抢首页的小技巧">三、实战挖需求：一个判断“是否能抢首页”的小技巧</h2>
+<p>哥飞提到一个非常实用的经验：</p>
+<p><strong>同一个关键词竞争：域名 &gt; 子域名 &gt; 子目录 &gt; 内页</strong></p>
+<p>所以当你在 Google 搜某个词时，如果前排结果很多是“内页”，往往意味着：</p>
+<ul>
+<li>这个词竞争可能没那么强</li>
+<li>你用“专门域名 + 首页/核心页”去打，反而更容易进第一页</li>
+</ul>
+<p>再结合 Ahrefs 看 KD 和外链需求，就能快速决定要不要做。</p>
+<p>另外还有一个细节很有启发：</p>
+<ul>
+<li>域名带 <strong>AI</strong> 在传播上可能更“省力”（更贴热点、更容易解释）</li>
+<li>举例：<code>ai-coloring-pages.com</code> 这种域名，关键词和 AI 叠加，天然更贴搜索意图</li>
+</ul>
+<hr/>
+<h2 id="四怎么制作工具站ai--模板但数据准备是关键">四、怎么制作工具站：AI + 模板，但“数据准备”是关键</h2>
+<p>这里是我认为最值得照抄的 SOP。</p>
+<h3 id="1先做数据准备不要让-ai-瞎编关键词">1）先做数据准备：不要让 AI 瞎编关键词</h3>
+<p>哥飞强调：<strong>不能直接让 GPT/Claude“拍脑袋写 Title/Description”。</strong></p>
+<p>正确顺序是：</p>
+<ol>
+<li>用 Similarweb / Semrush 的关键词生成器</li>
+<li>输入核心关键词，拿到真实搜索词列表</li>
+<li>下载“语句匹配 + 相关关键词”两份表</li>
+<li>合并、去重、按搜索量排序</li>
+<li>取前 100 个关键词（只保留关键词本身，一行一个）</li>
+</ol>
+<h3 id="2再让-ai-生成-seo-友好的-titledescription">2）再让 AI 生成 SEO 友好的 Title/Description</h3>
+<p>把“网站定位 + 站名 + 核心词 + 100 个关键词”喂给 AI，让它：</p>
+<ul>
+<li>首页 Title 覆盖站名 + 核心词，符合长度规范</li>
+<li>Description 用自然语言表达价值，不堆砌</li>
+</ul>
+<p>这一步做完，你的首页 TDK 质量就会显著高于大多数新手站。</p>
+<h3 id="3站内-seo--速度--变现布局">3）站内 SEO + 速度 + 变现布局</h3>
+<p>哥飞的实践方向很明确：</p>
+<ul>
+<li>重写/优化前后端，提升速度</li>
+<li>站内 SEO 做扎实（后面有详细清单）</li>
+<li>Adsense 广告位布局：<strong>建议最多 3 个广告位</strong>（符合 Adsense 文档建议）</li>
+</ul>
+<hr/>
+<h2 id="五seo-改造的大原则旧-url-不要动">五、SEO 改造的大原则：旧 URL 不要动</h2>
+<p>这是非常重要的一条：</p>
+<p><strong>已经存在的 URL 不要改动。</strong></p>
+<p>原因很现实：</p>
+<ul>
+<li>已经被收录了</li>
+<li>外部可能已有外链指向</li>
+<li>改 URL 等于把积累清零（甚至引发大量 404）</li>
+</ul>
+<p>在这个前提下，SEO 改造主要做两类事：</p>
+<h3 id="1挖需求新增页面">1）挖需求，新增页面</h3>
+<p>新增页面可以是：</p>
+<ul>
+<li>小工具页</li>
+<li>内容页（教程、解释、清单、对比、FAQ）</li>
+</ul>
+<p>目标是围绕潜在用户需求，把相关问题尽可能覆盖掉。</p>
+<h3 id="2找问题优化老页面">2）找问题，优化老页面</h3>
+<p>按哥飞提到的检查项，我整理成一份“站内 SEO 自检清单”：</p>
+<ul>
+<li><strong>TDK 是否规范</strong>（Title/Description 长度与表达）</li>
+<li><strong>内链是否合理</strong>（从首页到内页尽量不超过 4 次点击）</li>
+<li><strong>是否有 sitemap.xml</strong></li>
+<li><strong>是否设置 canonical</strong></li>
+<li><strong>H1/H2/H3 是否合理</strong>（建议一个页面一个 H1）</li>
+<li><strong>图片 alt 是否完善</strong></li>
+<li><strong>站外链接是否需要 nofollow</strong></li>
+<li><strong>robots meta 是否正确</strong>（该收录的别误 noindex）</li>
+</ul>
+<hr/>
+<h2 id="六工具清单ahrefs-免费工具矩阵够新手用很久">六、工具清单：Ahrefs 免费工具矩阵（够新手用很久）</h2>
+<p>课程里把 Ahrefs 的免费工具拆得很细，我按用途归类一下，方便你以后查：</p>
+<h3 id="关键词方向">关键词方向</h3>
+<ul>
+<li>Free Keyword Generator</li>
+<li>Keyword Difficulty Checker</li>
+<li>SERP Checker</li>
+<li>Keyword Rank Checker</li>
+</ul>
+<h3 id="流量与权威">流量与权威</h3>
+<ul>
+<li>Website Traffic Checker</li>
+<li>Website Authority Checker</li>
+</ul>
+<h3 id="外链与死链">外链与死链</h3>
+<ul>
+<li>Backlink Checker</li>
+<li>Broken Link Checker</li>
+</ul>
+<h3 id="平台关键词">平台关键词</h3>
+<ul>
+<li>Amazon Keyword Tool</li>
+<li>Bing Keyword Tool</li>
+<li>YouTube Keyword Tool</li>
+</ul>
+<h3 id="辅助工具">辅助工具</h3>
+<ul>
+<li>Ahrefs SEO Toolbar（强烈推荐，做网页诊断很直观）</li>
+<li>AI Writing Tools</li>
+<li>WordPress SEO Plugin（做 WP 可用）</li>
+</ul>
+<hr/>
+<h2 id="七内容策略的几个关键认知泛流量没钱途要做精准流量">七、内容策略的几个关键认知：泛流量没钱途，要做精准流量</h2>
+<p>这里我自己感触很深：</p>
+<ul>
+<li><strong>泛娱乐流量</strong>往往很难变现</li>
+<li><strong>精准流量</strong>（尤其是 B 端）才更有价值<br/>
+传统企业依然需要搜索流量，你用内容去承接需求，就能形成稳定的转化入口</li>
+</ul>
+<p>同时，AI 写文章是可行的，但前提是：</p>
+<ul>
+<li>不是乱写</li>
+<li>要基于企业服务范围/产品信息</li>
+<li>围绕潜在客户会搜的词</li>
+<li>真正解决痛点，提升“信任度”</li>
+</ul>
+<hr/>
+<h2 id="八关于排名因素新鲜度信任度外链参与度专业度">八、关于排名因素：新鲜度、信任度、外链、参与度、专业度</h2>
+<p>课程里还提到一组对“做工具站的人”很实用的启发（我用自己的话总结）：</p>
+<ul>
+<li><strong>新鲜度越来越重要</strong> → 工具站也要更新、要有内容（所以要加博客）</li>
+<li><strong>信任度成为关键</strong> → 胡编/AI 胡编都会被打低信任，内容要认真做</li>
+<li><strong>外链依然有效</strong> → 但不要买那种“80 美元 100 条垃圾外链”</li>
+<li><strong>用户参与度重要</strong> → 满足搜索意图，用户停留时间更长，排名更有利</li>
+<li><strong>专业度重要（枢纽-辐射式结构）</strong> → 首页/栏目页做“枢纽”，细分关键词页做“辐射”</li>
+</ul>
+<hr/>
+<h2 id="九我接下来的行动清单照着做就能推进">九、我接下来的行动清单（照着做就能推进）</h2>
+<p>最后给自己定一个可执行的节奏：</p>
+<ol>
+<li><strong>每天用 Similarweb / Semrush / Ahrefs 看 3 个站</strong>，保持数据敏感度</li>
+<li>每周选 1 个低 KD 且趋势稳定/上升的关键词，做一个最小可用工具页</li>
+<li>每个工具站都加博客：每周至少更新 2-3 篇内容（教程/FAQ/对比/清单）</li>
+<li>做站内 SEO 自检（TDK、H 标签、alt、canonical、sitemap、内链深度）</li>
+<li>尽量不动旧 URL，只新增、只优化</li>
+<li>追求“快速正反馈”：优先做<strong>一年内新出现的新词</strong>（更容易上首页）</li>
+</ol>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
