@@ -1,0 +1,83 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>做了5个月垂直小号，我才知道自媒体有多难 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/wechat-vertical-account-5months/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/wechat-vertical-account-5months/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="做了5个月垂直小号，我才知道自媒体有多难 - xiaofeng.show"><meta property="og:site_name" content="做了5个月垂直小号，我才知道自媒体有多难 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/wechat-vertical-account-5months/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/wechat-vertical-account-5months/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/wechat-vertical-account-5months/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.B8kE07iW_1vxM7k.webp" alt="做了5个月垂直小号，我才知道自媒体有多难" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1376" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>做了5个月垂直小号，我才知道自媒体有多难</h1> <time datetime="2026-03-05T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/3/5 </time> </header> <blockquote>
+<p>去年下半年，亦仁在生财有术发了多个超级标，其中就有垂直小号。当时的我就蠢蠢欲动了，以为能像大佬们那样哐哐赚钱，发了五个多月了，我才知道自媒体真不好做。</p>
+</blockquote>
+<h2 id="一概述">一、概述</h2>
+<p>去年418加入了生财有术，同月跟朋友合订了 Lenny’s Newsletter。当时是本着 Cursor 等 AI 工具去的，后来我发现它的订阅文章和视频质量非常高，便尝试学习，但是由于自身英语很差，也没学下来。</p>
+<p>下半年的时候，垂直小号火了。我便想着让 AI 翻译解读 Lenny’s Newsletter 的订阅文章，然后发到微信公众号，方便自己学习，顺便做做自媒体。</p>
+<p>但是涨粉真的难，2025年9月25号发了第一篇，一直到今年1月19号才涨到100粉。</p>
+<p>但是上个月有两篇文章像是入池了，然后每天都有涨粉，到今天刚好超过200粉。</p>
+<hr/>
+<h2 id="二主要内容">二、主要内容</h2>
+<h3 id="素材来源">素材来源</h3>
+<p>主要是 Lenny’s Newsletter 的相关内容，后续也加入了 a16z、Y Combinator、Every、硅谷101等知名播客，还有一些海外的个人 YouTube 博主，当然大部分都是关于 AI 的，还是以个人兴趣为导向的。</p>
+<p>此外，还有宝玉老师推荐的各种文章和视频。</p>
+<h3 id="整理方式">整理方式</h3>
+<p>刚开始还是纯手动，把视频或音频先转文字稿，然后把文字稿发给 Gemini Web 来生成文章，然后根据文章生成封面和配图的提示词，再通过 Nanobanana 生成图片。最后把 markdown 文稿转成微信公众号格式，还要手动选择图片插入位置。一套流程下来，半个多小时过去了，我都不知道自己怎么坚持下来的。</p>
+<p>中间尝试过用 N8N 来自动化，但是效果不好，只能自动化一部分。</p>
+<p>直到宝玉老师开源了他的 skills（<a href="https://github.com/JimLiu/baoyu-skills">baoyu-skills</a>），加上 Claude Code 的狂飙模式，才让我现在只要投入10分钟就能完成上述步骤。</p>
+<p>具体参考：<a href="https://mp.weixin.qq.com/s/O2Xv7m8EdYz0OwRhZZ9ThQ">Claude Skills 自动化发布公众号</a></p>
+<h3 id="流量主">流量主</h3>
+<p>1月20号开通的流量主，但是因为粉丝比较少，所以平均每天才几毛钱，都不到一块钱。</p>
+<h3 id="公众号">公众号</h3>
+<p>公众号名称为：<strong>Lenny的增长笔记</strong></p>
+<p>公众号介绍：精选、翻译并深度解读硅谷顶级产品通讯。每天分享关于产品管理、用户增长和职业跃迁的实战干货。</p>
+<p>如果你也喜欢 AI、产品及用户增长相关资讯，可以关注下。</p>
+<p><img src="/_astro/wechat-qrcode.Bdh-dSTj_1bLxBa.webp" alt="微信公众号二维码：Lenny的增长笔记" loading="lazy" decoding="async" fetchpriority="auto" width="1024" height="1024"></p>
+<hr/>
+<h2 id="三总结">三、总结</h2>
+<p>今天曹大（caoz）发了一篇文章，标题是《分享即学习 - AI时代》，在分享的过程中，作者本人也能不断更新认知。</p>
+<p>这个公众号我注册两年多了，一直写的是自己的碎碎念，没想到最近居然也在涨粉。这种正向反馈激励了我更多的分享欲，先定个小目标，每周至少两次分享，同时同步到博客上（<a href="https://www.xiaofeng.show">xiaofeng.show</a>）。</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
