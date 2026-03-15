@@ -1,0 +1,147 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Perception Engineering: How SaaS Companies Win Before Prospects Visit Your Website - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/perception-engineering-saas-ai/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/perception-engineering-saas-ai/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Perception Engineering: How SaaS Companies Win Before Prospects Visit Your Website - frency.me"><meta property="og:site_name" content="Perception Engineering: How SaaS Companies Win Before Prospects Visit Your Website - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/perception-engineering-saas-ai/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/perception-engineering-saas-ai/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/perception-engineering-saas-ai/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.r8J8N4DM_1jaid5.webp" alt="Perception Engineering: How SaaS Companies Win Before Prospects Visit Your Website" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Perception Engineering: How SaaS Companies Win Before Prospects Visit Your Website</h1> <time datetime="2026-03-15T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/15/2026 </time> </header> <p><em>Based on a talk by Jonathan Kiekbusch | SwishDM</em></p>
+<hr/>
+<blockquote>
+<p>In the next five years, some of the companies in this room will stop growing. Not because your product got worse, not because a competitor built something better, but because a machine quietly removed you from the shortlist.</p>
+</blockquote>
+<p>That was Jonathan Kiekbusch’s opening line in a talk aimed at SaaS founders. It’s a jarring statement — and one that’s becoming closer to reality every day.</p>
+<p>Kiekbusch is the CEO of SwishDM, with over 12 years of experience in online retail and SaaS transformation. He has worked with major brands like EcoFlow, Insta360, and Dreame, helping them boost visibility and conversions through smarter SEO and GEO (Generative Engine Optimization). In this talk, he introduced a core framework — the <strong>Perception Engineering Framework</strong> — to explain how SaaS companies can systematically manage and optimize their “image” in the eyes of AI, at a time when AI is fundamentally reshaping the buyer’s decision-making journey.</p>
+<hr/>
+<h2 id="1-youve-already-lost-control-of-the-first-impression">1. You’ve Already Lost Control of the First Impression</h2>
+<p>In the old internet world, every road led to the same destination — your website. Users searched for keywords, clicked links, landed on your site, browsed your carefully designed pages, were moved by your brand story, and eventually converted into customers. You controlled the narrative because you controlled the destination.</p>
+<p>But now, that path is being fundamentally rewritten.</p>
+<p><img src="/_astro/pef-08.BzS9k8me_Zg1c1J.webp" alt="Old vs. New Funnel" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<p>In the new funnel, users enter a prompt, AI performs synthesis, and perception forms directly in the user’s mind. Your website? It’s just a validation step — if the user even bothers to visit. By the time a prospect actually reaches your website, the buying decision is already largely made.</p>
+<p>Kiekbusch put it clearly: most companies still think they control how their brand is perceived — you control the homepage, the brand messaging, the owned media. <strong>But you no longer control the first impression. AI is doing that for you.</strong></p>
+<p>And the first impression AI delivers might be completely different from what you intend. Imagine this: you spent three months redesigning your website, updating all your product copy, producing a beautiful brand video. But when a prospect asks ChatGPT “which project management tool is best for a 50-person SaaS team,” the AI’s response either doesn’t mention your brand at all or describes you as you were two years ago. All your effort may simply not exist in AI’s narrative.</p>
+<hr/>
+<h2 id="2-this-is-not-a-channel-shift--its-a-structural-transformation">2. This Is Not a Channel Shift — It’s a Structural Transformation</h2>
+<p>Many people treat AI search as an “upgrade” to traditional search — just a different channel where the old playbook needs minor tweaks. Kiekbusch believes this understanding is dangerous.</p>
+<p>There’s a fundamental difference between traditional search and AI. Traditional search directs users to various sources and lets them compare on their own, giving you a chance to persuade them. AI compresses and merges those sources, eliminates the user’s self-directed exploration, and outputs conclusions directly.</p>
+<p><img src="/_astro/pef-10.BGIXlYwP_ZmM8p8.webp" alt="Search vs. AI Comparison" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<p>What does this mean? Your carefully crafted brand story gets compressed into a few bullet points. Your unique market positioning becomes a single “also offers…” clause. If you haven’t optimized for machine readability, you’ll be drowned out.</p>
+<p>Even more brutal: in the AI world, there’s no “page two.” In traditional search, users typically compare 5 to 10 options. But in AI-synthesized responses, usually only 2 to 3 brands dominate the entire narrative, and AI will explicitly recommend a top choice. You’re either mentioned or completely invisible — there’s no middle ground.</p>
+<p>Kiekbusch summed up the essence of this change: <strong>The old game was about capturing traffic. The new game is about controlling consensus.</strong> Because in an AI-mediated world, consensus determines visibility, and visibility determines survival.</p>
+<hr/>
+<h2 id="3-the-invisible-quality-score-how-ai-reputation-affects-your-customer-acquisition-cost">3. The Invisible Quality Score: How AI Reputation Affects Your Customer Acquisition Cost</h2>
+<p>Your AI reputation is a quiet, invisible metric that’s profoundly affecting buyer trust — before you even enter the conversation.</p>
+<p>Kiekbusch calls it “The Invisible Quality Score,” and here’s how it works: if AI positions you poorly or surfaces historical negative information, the prospects who reach you start with skepticism and price sensitivity baked in. This leads to declining conversion rates, longer sales cycles, and ultimately a silently rising customer acquisition cost (CAC) — and you may not even know why.</p>
+<p><img src="/_astro/pef-14.CcNodtW2_Z1muaMm.webp" alt="The Invisible Quality Score" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<p>Conversely, a better AI reputation means higher recommendation probability and lower acquisition costs. It’s a flywheel — either virtuous or vicious — and the difference is whether you’re actively managing it.</p>
+<hr/>
+<h2 id="4-where-does-ai-get-its-information-not-from-your-website">4. Where Does AI Get Its Information? Not From Your Website</h2>
+<p>This might be one of the most counterintuitive insights from the entire talk: <strong>when LLMs build a narrative about you, the starting point is not your website.</strong></p>
+<p>LLMs don’t begin with your latest product launch page or your freshly updated positioning copy. They start with signals distributed across the entire internet — your website is just one node in the panorama, not the sole source.</p>
+<p>More critically, when AI synthesizes information, it relies heavily on third-party platform content. Review sites, forum discussions, comparison blogs, industry media, Reddit posts — these third-party sources are treated by AI as more neutral than your owned media.</p>
+<p><img src="/_astro/pef-16.BeSwB0Rn_gwtAr.webp" alt="Where AI Gets Its Information" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<p>Kiekbusch gave a striking example: a Reddit post with 400 upvotes and extensive comments might carry more weight in AI’s narrative than 20 carefully crafted case studies you produced. Why? Because controversial content generates more discussion, replies, backlinks, and repeated citations — and repetition reinforces the signal.</p>
+<p>This leads to an important concept about AI’s weighting mechanism: AI judgment is based on three dimensions — Authority, Consensus, and Frequency. If someone wrote a review two years ago saying “this product isn’t suitable for agencies,” and you never countered that claim with enough authoritative content, AI might still describe you that way today. <strong>You’re defined by historical content until new consensus overwrites it.</strong></p>
+<p>AI pulls from these places: old reviews, Reddit posts, comparison articles, missing use-case coverage. This content gets compiled into a clean summary — and that summary becomes your first impression. You didn’t write it, but it defines you.</p>
+<hr/>
+<h2 id="5-where-are-most-saas-companies-dropping-the-ball">5. Where Are Most SaaS Companies Dropping the Ball?</h2>
+<p>Kiekbusch points out that most SaaS executives have never done any of the following: never run a structured prompt audit, never categorized AI outputs by sentiment, never tested how AI describes their product features, never checked what AI says about them in competitive comparisons.</p>
+<p>Yet these AI outputs are shaping buyer perception every single day.</p>
+<p>It’s as if your competitor is sending a “report” about you to every potential customer, every day — and you don’t know what it says, nor do you have any way to intervene. This isn’t an edge case — it’s a core competitive blind spot.</p>
+<p>Kiekbusch proposed a simple but powerful test: go to ChatGPT or Perplexity and ask “what’s the best [your category] tool for [your target scenario]” and see what AI says about you. If that paragraph were the only thing a prospect ever read about you, could you win? No website, no demo, no pricing page — just a machine-generated summary shaping their expectations, trust, and willingness to pay. Before you even enter the conversation, everything is already set.</p>
+<hr/>
+<h2 id="6-the-perception-engineering-framework-the-5d-methodology">6. The Perception Engineering Framework: The 5D Methodology</h2>
+<p>Kiekbusch’s Perception Engineering Framework is not a one-time marketing campaign — it’s a continuous operating system for reputation management in the age of machines. It consists of five phases: Discover, Diagnose, Design, Distribute, and Defend.</p>
+<h3 id="step-1-discover--you-cant-fix-what-you-cant-see">Step 1: Discover — You Can’t Fix What You Can’t See</h3>
+<p>Start with a prompt audit. Most companies have never done this. Here’s how: create a project in ChatGPT, set memory to “Project-only” to prevent AI from using external memory and ensure unbiased output. Then write a persona prompt, putting yourself in the customer’s shoes — something like “I manage a 40-person marketing team and we’re expanding internationally…” Then, within that same project, ask the questions your real prospects would ask.</p>
+<p>Key audit directions include: best tool recommendations for specific use cases, how your brand compares to competitors, whether your brand fits a particular niche, and whether your brand supports a specific feature. Export all responses, categorize them by sentiment, and patterns will emerge quickly.</p>
+<p>For executing at scale, use prompt tracking tools like Scrunch AI to batch-download AI outputs and analyze sentiment. You’ll see clearly where the narrative breaks down.</p>
+<h3 id="step-2-diagnose--pinpoint-where-youve-lost-narrative-control">Step 2: Diagnose — Pinpoint Where You’ve Lost Narrative Control</h3>
+<p>After discovering the problems, the next step is mapping exactly where you’ve lost control of the narrative. Loss of control typically occurs across five dimensions: positioning in competitive comparisons, authority of feature descriptions, coverage of use cases, residual impact of historical negative content, and visibility of problem-solving capabilities.</p>
+<p>The key principle: prioritize by pipeline impact. Ask yourself “which issues are actually hurting our conversion rates?” Fix the narrative breakpoints that directly affect purchasing decisions first.</p>
+<h3 id="step-3-design--proactively-build-the-narrative-you-want">Step 3: Design — Proactively Build the Narrative You Want</h3>
+<p>If AI is synthesizing comparison information, you need to structure the comparison first. Build around: X vs. Y comparison content, “best alternatives” content, clear differentiation positioning, and explicit use-case segmentation.</p>
+<p><strong>If you don’t define the comparison, AI will define it for you.</strong> And AI’s definition might be based on outdated information from two years ago.</p>
+<p>For every niche where you’re currently mislabeled or absent: create targeted use-case content, publish it on third-party platforms, and encourage users from that segment to update their reviews.</p>
+<p>Review strategy is especially important. Old reviews don’t disappear, but they can be outweighed. A continuous, proactive review strategy — getting your current product described by real users — isn’t a nice-to-have. It’s a necessity.</p>
+<h3 id="step-4-distribute--signals-must-be-everywhere-ai-pulls-information">Step 4: Distribute — Signals Must Be Everywhere AI Pulls Information</h3>
+<p>Publishing only on your own website is far from enough. AI pulls information from: your website, review platforms, industry media, Reddit and community forums, developer documentation and tech ecosystems.</p>
+<p>Your website is just one signal. Authority is distributed. You need to establish presence wherever momentum can accumulate: backlinks, discussions, citations, mentions.</p>
+<p>Kiekbusch offered a clear benchmark: <strong>ten high-quality distributed mentions beat fifty mediocre blog posts. Signal density matters more than volume.</strong></p>
+<h3 id="step-5-defend--continuously-monitor-and-reinforce-the-narrative">Step 5: Defend — Continuously Monitor and Reinforce the Narrative</h3>
+<p>Perception is dynamic. Competitors are publishing new content, reviews are being updated, old posts resurface, and new features change the positioning landscape.</p>
+<p>Continuous defense should include: ongoing content creation to control the narrative, regular prompt tracking cadence, cross-platform sentiment monitoring, and quarterly audit cycles to catch new narrative gaps.</p>
+<p><strong>Reputation drift is real. Your competitors won’t stand still.</strong></p>
+<p><img src="/_astro/pef-37.v2uVcyv-_MBwfe.webp" alt="Complete Framework Flow" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<hr/>
+<h2 id="7-the-five-year-outlook-from-ai-advice-to-ai-purchasing-on-your-behalf">7. The Five-Year Outlook: From AI Advice to AI Purchasing on Your Behalf</h2>
+<p>Kiekbusch laid out a four-stage prediction for AI’s role in purchasing decisions.</p>
+<p><img src="/_astro/pef-41.DGkrkzC9_Z1MnAvb.webp" alt="Four Stages of AI Decision-Making" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<p>We’re currently in Stage 1: AI summarizes options, humans decide. It still feels advisory, consultative, low-risk.</p>
+<p>But what comes next, in sequence: Stage 2 — AI shortlists candidates; Stage 3 — AI directly recommends one option; Stage 4 — AI executes the purchase (no browsing, no demo calls).</p>
+<p>This progression isn’t speculation — it’s already happening. Kiekbusch gave a relatable example: you tell your home AI device “organize a princess-themed birthday party for my daughter next Saturday.” The AI orders decorations, books performers, confirms catering. Did you compare 12 vendors? Read reviews? Browse websites? No. AI chose for you.</p>
+<p>The same applies in SaaS. A founder might say: “Set up a collaboration platform for our new marketing team, mid-range pricing, integrates with HubSpot, invite everyone.” AI evaluates tools, reads sentiment, selects a vendor, creates the account. If you’re not in the machine’s consensus, you won’t even be considered.</p>
+<p>In the old world, you might lose the race. In the new world, you might never make it to the starting line. <strong>You won’t fail. You simply won’t exist. And you won’t know why.</strong></p>
+<p>When AI agents start executing purchasing decisions on behalf of humans, differentiation must be machine-readable. Authority must be distributed. Reputation must be structured. Consensus must be engineered. If your narrative is vague, AI will flatten you into the same description as your competitors. If your narrative is weak, you’ll be excluded entirely.</p>
+<p>This isn’t a distant future. OpenAI’s Operator can already browse the web and execute actions on behalf of users, and Google’s AI Agent is iterating rapidly. The distance from “AI helps you choose” to “AI buys for you” might be just a year or two.</p>
+<hr/>
+<h2 id="8-dont-forget-seo-is-still-king">8. Don’t Forget: SEO Is Still King</h2>
+<p>Before going all-in on AI narrative, Kiekbusch offered an important reminder: SEO is still the largest-traffic, highest-intent channel in existence, with 3 trillion searches globally every year.</p>
+<p><img src="/_astro/pef-46.DRzk72_y_Z10Ryjj.webp" alt="Where SEO and AI Converge" loading="lazy" decoding="async" fetchpriority="auto" width="2000" height="1125"></p>
+<p>This isn’t an “SEO or AI” binary choice. The winners are companies that excel at both. <strong>Win search, win synthesis.</strong> The customer journey now begins before search. The companies that win understand that decisions happen before the visit — and increasingly, decisions happen without any visit at all.</p>
+<hr/>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Kiekbusch’s core argument can be distilled to a single sentence: <strong>Perception is no longer a part of brand building — it’s the infrastructure for competitive survival.</strong></p>
+<p>In the AI era, your brand is no longer what you say it is — it’s whatever version AI compiles. Design disappears, emotion disappears, persuasion disappears. What’s left is flattened consensus. If that consensus works against you, your customer acquisition costs will quietly climb, your pipeline will mysteriously shrink, and you might not even be able to figure out why.</p>
+<p>But the good news is that consensus can be engineered. Through the five-step framework of Discover-Diagnose-Design-Distribute-Defend, you can systematically audit how AI describes you, locate where the narrative breaks, build the right content and authority to fix it, distribute signals to wherever AI pulls information, and then continuously monitor and reinforce.</p>
+<p>This isn’t a one-time project — it’s a continuous operating system. Just as you wouldn’t build a website and never update it, you can’t run one AI audit and consider the job done. Perception is dynamic, and your competitors won’t wait around for you.</p>
+<p>If you can only do one thing today, do this: open ChatGPT and ask how AI describes your product, how it compares you to competitors, and how it evaluates your fit for specific use cases. Export the responses. Read them carefully. You’ll likely find that what AI says is completely different from what you assumed. That gap is exactly where you need to start engineering.</p>
+<p>The window for this transformation won’t stay open forever. When AI evolves from “summarizing options” to “placing orders directly,” you’ll either already be on the machine’s consensus list, or you’ll never appear on it. Act now — there’s still time.</p>
+<blockquote>
+<p>Engineer your perception. Before it engineers you.</p>
+</blockquote>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
