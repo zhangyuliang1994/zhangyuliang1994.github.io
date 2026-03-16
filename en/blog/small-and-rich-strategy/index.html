@@ -1,0 +1,312 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>The &quot;Small &amp; Rich&quot; Strategy: Capturing High-Value SaaS Users in Low-Competition Markets - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/small-and-rich-strategy/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/small-and-rich-strategy/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="The &#34;Small &#38; Rich&#34; Strategy: Capturing High-Value SaaS Users in Low-Competition Markets - frency.me"><meta property="og:site_name" content="The &#34;Small &#38; Rich&#34; Strategy: Capturing High-Value SaaS Users in Low-Competition Markets - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/small-and-rich-strategy/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/small-and-rich-strategy/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/small-and-rich-strategy/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.Bu8jjg4I_Z19AgII.webp" alt="The &#34;Small &#38; Rich&#34; Strategy: Capturing High-Value SaaS Users in Low-Competition Markets" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>The &quot;Small &amp; Rich&quot; Strategy: Capturing High-Value SaaS Users in Low-Competition Markets</h1> <time datetime="2026-03-15T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/15/2026 </time> </header> <blockquote>
+<p>This article is based on a talk titled “The Small &amp; Rich Strategy” by Wolfgang Geiger (Wolf). Through the real-world case of Pinhok Languages, it reveals a growth opportunity overlooked by most SaaS companies — targeting small European countries with low populations, high GDP per capita, and their own native languages.</p>
+</blockquote>
+<hr/>
+<h2 id="1-about-the-speaker">1. About the Speaker</h2>
+<p>Wolfgang “Wolf” Geiger, born in Austria, studied in the UK and Beijing, and is currently based in Hong Kong. He is the founder of Pinhok Languages, a company focused on language learning content.</p>
+<p>Pinhok Languages had very humble beginnings — around 2012, Wolf compiled a series of vocabulary lists for his own study of HSK (Chinese Proficiency Test) and Cantonese. By around 2014, he began self-publishing these vocabulary lists as books and simultaneously launched the Pinhok.com website, supporting 13 languages.</p>
+<p>Today, Pinhok has published over 1,000 books covering 50 languages, generating revenue through book royalties. The website also offers a large amount of free SEO content — some vocabulary lists have been turned into online learning pages for free use, which also drive significant organic search traffic to the site.</p>
+<h2 id="2-the-data-first-traffic-performance-on-gsc-and-bing">2. The Data First: Traffic Performance on GSC and Bing</h2>
+<p>Before discussing strategy, let’s look at some real data.</p>
+<h3 id="google-search-console-2025-overview">Google Search Console 2025 Overview</h3>
+<p><img src="/_astro/gsc-overview.CP6EbFGi_fXId6.webp" alt="GSC 2025 Traffic Overview" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>In 2025, Pinhok.com received <strong>554,000 clicks</strong> and <strong>82.7 million impressions</strong> from Google, with an average CTR of 0.7% and an average position of 8.3. The trend chart shows relatively stable traffic throughout the year with some cyclical fluctuations.</p>
+<h3 id="bing-2025-overview">Bing 2025 Overview</h3>
+<p><img src="/_astro/bing-overview.D7CXAn7x_Z2nN5xy.webp" alt="Bing 2025 Traffic Overview" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>On Bing, the site received <strong>86,900 clicks</strong> and <strong>8.8 million impressions</strong> for the full year, with an average CTR of 0.98%. While Bing’s volume is much smaller than Google’s, it remains a traffic source that cannot be ignored.</p>
+<h3 id="gsc-data-by-country--heres-where-it-gets-interesting">GSC Data by Country — Here’s Where It Gets Interesting</h3>
+<p><img src="/_astro/gsc-country.B0B0noBm_Z1KpcbT.webp" alt="GSC Data by Country" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>This table is at the heart of the entire strategy. Among the top 10 countries by clicks, we see some very interesting patterns:</p>
+<p>Japan (123 million population) ranks first with 48,780 clicks; Germany (85 million population) ranks second with 42,498 clicks; Italy (59 million population) ranks third with 42,097 clicks. These are large countries, so their high rankings are not surprising.</p>
+<p>But take note of the countries highlighted in the red box:</p>
+<ul>
+<li><strong>Netherlands</strong> (18 million population): 33,607 clicks</li>
+<li><strong>Finland</strong> (6 million population): 25,401 clicks</li>
+<li><strong>Sweden</strong> (11 million population): 23,652 clicks</li>
+<li><strong>Norway</strong> (6 million population): 22,312 clicks</li>
+<li><strong>Denmark</strong> (6 million population): 21,554 clicks</li>
+</ul>
+<p>A country with only 6 million people — roughly the size of Shenzhen — actually surpassed India, a population giant, in click volume. How is this possible?</p>
+<h2 id="3-what-are-small--rich-countries">3. What Are “Small &amp; Rich” Countries?</h2>
+<p><img src="/_astro/small-rich-countries.BKc7UO87_ZMbLih.webp" alt="Overview of &#34;Small &#38; Rich&#34; Countries" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>Wolf defines “Small &amp; Rich” countries as having the following characteristics:</p>
+<ol>
+<li><strong>Small population</strong> (under 20 million, roughly the size of Shenzhen)</li>
+<li><strong>Have their own distinct language</strong></li>
+<li><strong>High GDP per capita</strong></li>
+<li><strong>High education levels</strong></li>
+<li><strong>Strong English proficiency</strong></li>
+</ol>
+<p>The core six countries are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Country</th><th>Language</th><th>Population</th><th>GDP per Capita (USD)</th></tr></thead><tbody><tr><td>Norway</td><td>Norwegian</td><td>5 million</td><td>90,000</td></tr><tr><td>Iceland</td><td>Icelandic</td><td>400,000</td><td>82,000</td></tr><tr><td>Denmark</td><td>Danish</td><td>6 million</td><td>75,000</td></tr><tr><td>Netherlands</td><td>Dutch</td><td>18 million</td><td>72,000</td></tr><tr><td>Sweden</td><td>Swedish</td><td>10 million</td><td>70,000</td></tr><tr><td>Finland</td><td>Finnish/Swedish</td><td>6 million</td><td>63,000</td></tr></tbody></table>
+<p>It’s worth noting that Luxembourg, Belgium, Ireland, Malta, and other countries share some similar traits but don’t fully fit the criteria — either they use another major language (such as French or English) or have other special circumstances.</p>
+<h2 id="4-why-does-the-small--rich-strategy-work">4. Why Does the “Small &amp; Rich” Strategy Work?</h2>
+<p>Returning to the core question: why can a country with 6 million people generate more traffic than much larger nations? Wolf offers three possible reasons:</p>
+<p><strong>First, higher rankings on target keywords.</strong> Due to less competition, it’s easier to achieve good rankings in these small-language markets.</p>
+<p><strong>Second, broad keywords also rank well.</strong> This is a very critical finding.</p>
+<p><img src="/_astro/keyword-cantonese.BBzZPhnS_25u9rY.webp" alt="Cross-Language Search Volume for &#34;Cantonese&#34; Keyword" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>Take the keyword “Cantonese” (and its translations in various languages) as an example. We can see: the English “cantonese” has 18,490 impressions, the Dutch “kantonees” has 12,845 impressions, the Swedish “kantonesiska” has 7,440 impressions, and the Danish and Norwegian “kantonesisk” each have 3,355 impressions.</p>
+<p>Relative to population size, the impression volumes from these small countries are disproportionately high.</p>
+<p>More importantly, let’s look at what keywords users in each country are searching for:</p>
+<p><img src="/_astro/netherlands-keywords.Dd7X0Mcd_Z1DLvnP.webp" alt="Top Search Terms in the Netherlands Market" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>In the Netherlands market, top search terms include “arabische zinnen” (Arabic sentences), “arabische woorden leren” (learn Arabic vocabulary), “koreaanse woorden” (Korean vocabulary), “russische woorden” (Russian vocabulary), and more.</p>
+<p><img src="/_astro/sweden-keywords.7AR9wksC_cb2Gd.webp" alt="Top Search Terms in the Sweden Market" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>The Swedish market shows a similar pattern, with top terms like “franska glosor” (French vocabulary), “italienska glosor” (Italian vocabulary), “franska glosor nybörjare” (French beginner vocabulary), and so on.</p>
+<p>“Woorden” and “glosor” mean “vocabulary” or “words” in Dutch and Swedish respectively. This means that in “Small &amp; Rich” countries, Pinhok can rank not only for long-tail keywords (like “French numbers”) but also for broader category-level keywords (like “French vocabulary”).</p>
+<p>In large markets like the US or Germany, you can only rank for specific long-tail keywords — the competition for broad category-level keywords is simply too fierce.</p>
+<p><strong>Third, brand searches account for a higher proportion.</strong></p>
+<p><img src="/_astro/brand-searches.CO53hqWE_1Lxmiu.webp" alt="Brand Keyword &#34;Pinhok&#34; Search Data" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>Looking at the search data for the brand keyword “Pinhok,” small countries like the Netherlands (339 clicks), Denmark (204 clicks), and Sweden (201 clicks) show brand search volumes that, when adjusted for the population gap, are proportionally much higher than the US (543 clicks) and Germany (431 clicks). This indicates that users in these small markets have built a stronger association with the brand.</p>
+<h3 id="data-summary">Data Summary</h3>
+<p>The “Small &amp; Rich” country strategy is clearly working: countries with populations of only around 10 million are outperforming the US, UK, and even India in traffic; broad keywords rank well in small markets but not in large ones; and brand searches have higher proportions and better rankings in small markets.</p>
+<h2 id="5-more-potential-countries">5. More “Potential Countries”</h2>
+<p><img src="/_astro/upcoming-countries.TyvH5bdf_kMTi4.webp" alt="Up-and-Coming Potential Countries" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>Beyond the original six “Small &amp; Rich” countries, Wolf also identified a group of “up-and-coming countries” that share similar characteristics but are not yet as wealthy:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Country</th><th>Language</th><th>Population</th><th>GDP per Capita (USD)</th></tr></thead><tbody><tr><td>Slovenia</td><td>Slovenian</td><td>2 million</td><td>42,000</td></tr><tr><td>Estonia</td><td>Estonian</td><td>1.3 million</td><td>41,000</td></tr><tr><td>Czech Republic</td><td>Czech</td><td>11 million</td><td>40,000</td></tr><tr><td>Lithuania</td><td>Lithuanian</td><td>3 million</td><td>39,000</td></tr><tr><td>Slovakia</td><td>Slovak</td><td>5 million</td><td>35,000</td></tr><tr><td>Hungary</td><td>Hungarian</td><td>10 million</td><td>33,000</td></tr><tr><td>Croatia</td><td>Croatian</td><td>4 million</td><td>32,000</td></tr><tr><td>Romania</td><td>Romanian</td><td>19 million</td><td>30,000</td></tr><tr><td>Latvia</td><td>Latvian</td><td>2 million</td><td>29,000</td></tr></tbody></table>
+<p>As these Central and Eastern European countries continue to develop economically, they could become new growth engines in the future.</p>
+<h2 id="6-implications-for-saas-companies">6. Implications for SaaS Companies</h2>
+<h3 id="the-typical-internationalization-path-for-most-saas-companies">The Typical Internationalization Path for Most SaaS Companies</h3>
+<p><img src="/_astro/languages-available.zYSfafjL_Z1pLBTH.webp" alt="SaaS Company Language Support Comparison" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>Wolf surveyed the language support of a range of Western SaaS companies — from legacy enterprises (SAP, Oracle, Adobe) to mature companies (Salesforce, Shopify, Canva) to emerging companies (Snowflake, Monday.com, DocuSign) — and found a common internationalization pattern:</p>
+<p>Most SaaS companies expand internationally in this order: first the English market, then German, French, Portuguese, and Spanish, followed possibly by Chinese, Japanese, and Korean, then large countries like Italy, Poland, Turkey, or Russia, and only then do they consider small markets.</p>
+<p>From the table, it’s clear that “Small &amp; Rich” countries and “up-and-coming countries” are still largely blank spaces in most SaaS companies’ language support. Only legacy giants like Adobe and SAP have achieved relatively comprehensive coverage.</p>
+<h3 id="the-saas-version-of-the-small--rich-strategy">The SaaS Version of the “Small &amp; Rich” Strategy</h3>
+<p>Wolf’s recommendation: prioritize by GDP per capita rather than population size.</p>
+<ul>
+<li>English remains the top priority</li>
+<li>Followed by German, French, and Spanish</li>
+<li>But next, instead of jumping to Chinese or Japanese, consider <strong>adding Dutch, Swedish, Norwegian, and Danish support early on</strong></li>
+</ul>
+<p>The reasoning is simple: users in these countries have strong purchasing power, there are fewer competitors, and because of the small population sizes and unique languages, very few companies bother with localization — which is precisely your opportunity.</p>
+<h2 id="7-how-to-execute">7. How to Execute</h2>
+<h3 id="deciding-which-small--rich-country-to-start-with">Deciding Which “Small &amp; Rich” Country to Start With</h3>
+<p>Localizing a website or SaaS product is a significant investment. Wolf proposed four methods for gathering data to guide the decision:</p>
+<p><strong>Method 1: Leverage existing customers.</strong> This is probably the best approach, because existing customers prove that demand exists and there are no unforeseen barriers. You can reach out to these customers to understand what localization improvements they need — such as integrations with local tools (accounting, payments, etc.) and why they use your product. Start with the country where you have the most customers.</p>
+<p><strong>Method 2: Use GSC or website analytics data.</strong> Your website may already be ranking and receiving traffic from countries you haven’t specifically optimized for. Check the “Countries” tab in Google Search Console to see which countries are searching for your product.</p>
+<p><strong>Method 3: Translate 2-3 pages as a test first.</strong> When you’re working on English, German, Spanish, and French versions, also translate 2-3 important landing pages into other small languages. Let them sit for a while, and by the time you finish the main languages, you’ll have first-hand data to judge which languages have already gained traction.</p>
+<p><strong>Method 4: Create a free tool.</strong> Build a free tool that many people need (Ahrefs does this well, offering a wide range of free SEO tools), then translate it into as many languages as possible. If successful, these tools will tell you which countries are using them, provide potential users you can interview, and serve as a free launch platform when you complete localization for a given country.</p>
+<h3 id="how-to-handle-translation">How to Handle Translation</h3>
+<p><img src="/_astro/ai-translation.ChTaxLh4_ZEm2Tv.webp" alt="AI Translation Quality Comparison" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>Wolf admits that translation seems simple but really isn’t. The core challenge is: you don’t speak the target language, so you must find someone who can do the translation well. The emergence of AI has been both helpful and complicating — because it’s now harder to distinguish between human and machine translation, making it more difficult to evaluate translators.</p>
+<p>From the AI translation quality comparison chart above, we can see that mainstream AI models perform well on major languages (green), but quality is inconsistent on smaller languages (yellow and red).</p>
+<p><strong>Translation workflow before AI:</strong></p>
+<ol>
+<li>Find at least 3 native speakers to translate the vocabulary list</li>
+<li>Simultaneously use Google and Bing Translate</li>
+<li>Manually compare 4-5 datasets</li>
+<li>For inconsistencies, use Google Image Search, Wiktionary, and other tools to verify</li>
+<li>Have 1-2 more native speakers proofread</li>
+<li>Incorporate feedback and publish</li>
+</ol>
+<p><strong>Translation workflow after AI:</strong></p>
+<ol>
+<li>Find at least 3 native speakers to translate the first 500 words</li>
+<li>Simultaneously have 3 AI models translate the same 500 words</li>
+<li>Compare human and AI translations (if human translations are too similar to each other, translators may be using AI too)</li>
+<li>Use AI to analyze inconsistencies and select the best translations</li>
+<li>Have the best translator complete the full vocabulary list</li>
+<li>Use AI to check for potential issues</li>
+<li>Make corrections and publish</li>
+</ol>
+<p>Regarding keyword translation, Wolf recommends: use AI to translate English keywords into the target language, have the AI provide 3-5 options, then check on Google which option yields the best search results, and use that one.</p>
+<h2 id="8-sales-data-validation">8. Sales Data Validation</h2>
+<p><img src="/_astro/sales-data.d6E14oI1_21iqil.webp" alt="December 2025 Sales Data" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>The final sales data provides the most powerful validation of this strategy. Taking December 2025 as an example:</p>
+<p><strong>By units sold:</strong> “Small &amp; Rich” countries (Netherlands 25%, Sweden 11%, Finland 2%, Norway 2%) together contributed <strong>40%</strong> of total sales.</p>
+<p><strong>By profit:</strong> “Small &amp; Rich” countries (Netherlands 16%, Sweden 13%, Norway 2%, Finland 1%) together contributed <strong>32%</strong> of total profits.</p>
+<p>For comparison, the English market contributed 17% of sales and 24% of profits, while the German market contributed 14% of sales and 16% of profits. In other words, a handful of small countries with a combined population of less than 40 million outperformed both the English and German markets in both sales and profits.</p>
+<p>The Netherlands performed particularly well. Wolf explained why: he partnered with a local Dutch company to ensure books were available in all Dutch online bookstores. Additionally, Dutch people enjoy learning languages and prefer practical, no-frills products.</p>
+<p>Another interesting story is the Swedish market. Sweden was originally on par with Norway and Denmark, but after Amazon.se launched in 2020, it gained an additional local sales channel and sales increased fivefold. Similar boosts occurred in Poland (Amazon.pl) and the Netherlands/Belgium (Amazon.nl and Amazon.be).</p>
+<h2 id="9-localization-beyond-language-translation">9. Localization Beyond Language Translation</h2>
+<p>Wolf emphasized that true localization goes far beyond translating language.</p>
+<p>For Pinhok, the key was getting into local online bookstores (such as Amazon.se, Bol.com, etc.).</p>
+<p>For SaaS companies, considerations include: integrating local payment providers and accounting tools, obtaining local certifications (such as SGS, TUV, etc.), and building reputation on local trust platforms (Trustpilot, G2, etc.).</p>
+<p>Wolf also specifically mentioned that Chinese companies like Alibaba, JD.com, Tencent, and Pinduoduo are all actively expanding into Europe. If your SaaS can partner with these platforms — for example, integrating with Alipay when it launches in a given market, or connecting to JD.com’s fulfillment network — that would be a unique competitive advantage.</p>
+<h2 id="10-additional-growth-strategies">10. Additional Growth Strategies</h2>
+<h3 id="1-using-pdfs-to-capture-search-traffic">1. Using PDFs to Capture Search Traffic</h3>
+<p>While studying Bing data, Wolf discovered an interesting pattern: many users add “filetype:pdf” to their keyword searches. This could be a user habit or related to AI crawlers.</p>
+<p>His approach: provide a PDF download link at the bottom of every free content page. Key details include: linking directly to the PDF file, hosting the PDF on your own server (not a CDN), using the target keyword as the PDF filename, and including the website URL inside the PDF.</p>
+<h3 id="2-offering-free-features">2. Offering Free Features</h3>
+<p>Pinhok’s approach is to provide free learning materials (website, PDFs, YouTube, etc.) that are completely free with no registration or email required, then upsell from the free content.</p>
+<p>For SaaS companies, this could mean offering a free version of a small feature or creating small standalone platforms.</p>
+<h3 id="3-niche-down--go-more-specific">3. Niche Down — Go More Specific</h3>
+<p><img src="/_astro/niching-down.BZ5uOkYv_ZuKqAu.webp" alt="Niche Down — FlashCardo Case Study" loading="lazy" decoding="async" fetchpriority="auto" width="2667" height="1500"></p>
+<p>A smaller addressable market means less SEO competition. Wolf discovered that some users prefer learning with flashcards, so he created Flashcardo.com. Users searching for flashcards are roughly one-tenth of those searching for vocabulary lists, but precisely because of less competition, Flashcardo achieved solid rankings in English-speaking markets like the US, UK, and Australia, which in turn boosted English book sales.</p>
+<p>This approach applies equally to SaaS: if you can’t compete in a large category, find a more specific angle to enter.</p>
+<h2 id="11-conclusion">11. Conclusion</h2>
+<p>The core idea of the “Small &amp; Rich” strategy can be summarized as:</p>
+<p><strong>Target countries with small populations, their own native languages, and high GDP per capita.</strong> These markets hold enormous SEO potential because competition is minimal. Most SaaS companies are still following the traditional path — major languages and large markets first — to expand internationally, completely overlooking these “Small &amp; Rich” blue oceans.</p>
+<p>For Pinhok Languages, four “Small &amp; Rich” countries contributed <strong>40% of sales and 32% of profits</strong>. That number alone is the most compelling proof.</p>
+<p>If you’re working on international SaaS or cross-border business, it’s worth re-examining your market prioritization. Perhaps those small Northern and Western European countries you’ve never seriously considered are exactly where your next growth breakthrough lies.</p>
+<hr/>
+<p><em>Speaker contact information:</em></p>
+<ul>
+<li><em>Website (English): wolfweb.hk</em></li>
+<li><em>Website (Chinese): langzhan.net</em></li>
+<li><em>Email: <a href="mailto:contact@wohok-solutions.com">contact@wohok-solutions.com</a></em></li>
+<li><em>WeChat: xiaolangAUT</em></li>
+</ul>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
