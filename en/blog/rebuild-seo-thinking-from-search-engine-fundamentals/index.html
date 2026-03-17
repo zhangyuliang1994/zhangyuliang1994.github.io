@@ -1,0 +1,307 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>Rebuild Your SEO Thinking from Search Engine Fundamentals - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/rebuild-seo-thinking-from-search-engine-fundamentals/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/rebuild-seo-thinking-from-search-engine-fundamentals/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Rebuild Your SEO Thinking from Search Engine Fundamentals - frency.me"><meta property="og:site_name" content="Rebuild Your SEO Thinking from Search Engine Fundamentals - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/rebuild-seo-thinking-from-search-engine-fundamentals/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/rebuild-seo-thinking-from-search-engine-fundamentals/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/rebuild-seo-thinking-from-search-engine-fundamentals/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.C457f94W_1UBntC.webp" alt="Rebuild Your SEO Thinking from Search Engine Fundamentals" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Rebuild Your SEO Thinking from Search Engine Fundamentals</h1> <time datetime="2026-03-17T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/17/2026 </time> </header> <blockquote>
+<p>This article is based on GeFei’s talk “Rebuild Your SEO Thinking from Search Engine Fundamentals” at the 2026 China Google SEO &amp; GEO Conference. By doing SEO well, you can truly acquire free traffic and save massive advertising costs. This article will help you build your own SEO thinking framework starting from three fundamental essences.</p>
+</blockquote>
+<hr/>
+<h2 id="1-who-is-gefei">1. Who is GeFei</h2>
+<p><img src="/_astro/who-is-gefei.BYr5dMk2_Z2gteIp.webp" alt="Who is GeFei" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>GeFei wears four hats:</p>
+<ul>
+<li><strong>SEO Practitioner</strong>: Years of SEO experience, started as a webmaster in 2008, researching SEO and practicing website building, and developed his own SEO thinking framework</li>
+<li><strong>Hands-on Developer</strong>: Years as a frontline engineer, continuously writing code. An SEO person who can’t code is not a good webmaster</li>
+<li><strong>Website Operator</strong>: Runs multiple AI tool websites, acquires traffic through SEO and SEM, and monetizes through AdSense and paid subscriptions</li>
+<li><strong>Community Leader</strong>: Runs a 5,000+ member paid community for AI-powered international business, teaching members how to discover demand, do SEO, acquire traffic, and monetize</li>
+</ul>
+<h3 id="gefeis-website-gsc-data">GeFei’s Website GSC Data</h3>
+<p><img src="/_astro/gefei-gsc-data.OWOk67Xy_DQ400.webp" alt="GeFei's website GSC data" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>GeFei’s websites show impressive Google Search Console performance, with multiple sites achieving hundreds of thousands of clicks and millions of impressions. These numbers demonstrate the power of SEO.</p>
+<h3 id="community-members-website-gsc-data">Community Members’ Website GSC Data</h3>
+<p><img src="/_astro/community-gsc-data.D2Vkt--1_1MnK4C.webp" alt="Community members' website GSC data" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>It’s not just GeFei’s own sites that perform well — community members’ websites show equally impressive results. Multiple members’ sites have achieved hundreds of thousands or even millions of clicks, with the highest single site reaching 3.07 million clicks and 28.32 million impressions.</p>
+<h3 id="whats-the-value-of-good-seo">What’s the Value of Good SEO?</h3>
+<p><img src="/_astro/seo-value.DY4y8MPq_Z1htTJW.webp" alt="SEO traffic = free precision traffic" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>SEO traffic = free precision traffic.</strong></p>
+<p>Using one of GeFei’s websites as an example (February 2026 data):</p>
+<ul>
+<li>3.7M search traffic, 3.08M organic traffic</li>
+<li>618.79K paid traffic, $309.3K cost per click spend</li>
+<li><strong>If you had to buy those 3.08M organic visits through ads, it would cost approximately $1.54 million</strong></li>
+</ul>
+<p>This is the value of SEO — the advertising money saved is pure profit.</p>
+<hr/>
+<h2 id="2-why-rebuild-your-seo-thinking">2. Why Rebuild Your SEO Thinking</h2>
+<p><img src="/_astro/why-rebuild-seo-thinking.DDuUyuD6_Z1XIPhD.webp" alt="Why rebuild SEO thinking" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>Most people learn SEO techniques. Today we’re talking about SEO’s underlying logic.</strong></p>
+<ul>
+<li><strong>Techniques become outdated</strong>: When the algorithm updates, yesterday’s effective techniques stop working today</li>
+<li><strong>Underlying logic doesn’t change</strong>: Understand the essence of search engines, and you can derive the right approach for any change</li>
+<li><strong>Today’s goal</strong>: Starting from three essences, help you build your own SEO thinking framework</li>
+</ul>
+<hr/>
+<h2 id="3-understanding-the-three-essences-of-seo">3. Understanding the Three Essences of SEO</h2>
+<p><img src="/_astro/three-essences.CCaazlfh_Z2brN6r.webp" alt="To understand SEO thinking, you must understand three essences" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>To understand SEO thinking, you must understand three essences: <strong>the essence of the internet</strong>, <strong>the essence of search engines</strong>, and <strong>the essence of SEO</strong>.</p>
+<h3 id="the-essence-of-the-internet">The Essence of the Internet</h3>
+<p><img src="/_astro/internet-essence.Cv74fNlC_1xIK4d.webp" alt="The essence of the internet" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>The essence of the internet is <strong>a massive network of countless web pages connected by links</strong>.</p>
+<p>Key numbers:</p>
+<ul>
+<li><strong>1.1 billion</strong> — total websites globally</li>
+<li><strong>100 billion+</strong> — total web pages globally</li>
+<li><strong>50 billion+</strong> — web pages indexed by Google</li>
+</ul>
+<p>Even as the world’s largest search engine, Google has only indexed about half of all web pages. This shows the internet’s scale far exceeds our imagination.</p>
+<h3 id="the-essence-of-search-engines">The Essence of Search Engines</h3>
+<p><img src="/_astro/search-engine-essence.DE3V_sSj_2oJ41R.webp" alt="The essence of search engines" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>The essence of search engines is <strong>to find and index as many web pages as possible, to satisfy all kinds of search queries</strong>.</p>
+<p><strong>Google’s goals</strong>:</p>
+<ul>
+<li><strong>Most current</strong>: Satisfy new search queries emerging every moment</li>
+<li><strong>Most comprehensive</strong>: Satisfy every user’s diverse and unusual needs</li>
+</ul>
+<p><strong>The world’s largest web crawler system</strong>: To achieve currency and comprehensiveness, Google built the world’s largest web crawling system. The crawler’s goal is to fetch all quality web pages, but since page quality can’t be determined before crawling, the crawler must try to reach every page on the entire internet.</p>
+<h3 id="the-essence-of-seo">The Essence of SEO</h3>
+<p><img src="/_astro/seo-essence.CwF4qPxc_wqqGQ.webp" alt="The essence of SEO" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>The essence of SEO is to help search engines better crawl and understand your web pages.</strong></p>
+<p>This has two dimensions:</p>
+<ul>
+<li><strong>Better crawling</strong>: Clear site structure, complete internal links, and proper sitemap, so crawlers can traverse every page without obstacles</li>
+<li><strong>Better understanding</strong>: Accurate titles, descriptions, and body keywords, so search engines understand what your page is about</li>
+</ul>
+<hr/>
+<h2 id="4-the-relationship-between-webmasters-and-search-engines--ecological-complementarity">4. The Relationship Between Webmasters and Search Engines — Ecological Complementarity</h2>
+<p><img src="/_astro/webmaster-search-engine-relationship.Bg6NfBm6_Z24IYTo.webp" alt="What's the relationship between webmasters and search engines?" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>Webmasters and search engines have an <strong>ecologically complementary relationship</strong>, not an adversarial one.</p>
+<ul>
+<li><strong>Webmasters need search engines</strong>: To bring long-term free traffic</li>
+<li><strong>Search engines need webmasters</strong>: To produce quality, fresh content</li>
+<li><strong>Three-way win</strong>: Users get their needs met, webmasters get free traffic, search engines earn ad revenue</li>
+</ul>
+<p><strong>Correct understanding</strong>: Embrace search engines, befriend them. Whatever search engines want, we create web pages to supply it.</p>
+<p><strong>Wrong understanding</strong>: SEO = exploiting search engines; good SEO = cheating and deception.</p>
+<hr/>
+<h2 id="5-ai-is-here-is-seo-dead">5. AI Is Here, Is SEO Dead?</h2>
+<p><img src="/_astro/ai-seo-dead.BThKzFHH_1Ierqy.webp" alt="AI is here, is SEO dead?" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>I disagree with this claim.</strong></p>
+<p>Anyone saying this clearly doesn’t understand SEO or AI.</p>
+<ul>
+<li><strong>What AI can satisfy</strong>: AI can handle some informational search queries</li>
+<li><strong>What AI cannot directly satisfy</strong>: There are many interaction-heavy needs AI cannot directly fulfill — social media, e-commerce, gaming, tools, services, video streaming…</li>
+</ul>
+<p><strong>Why does this misconception exist?</strong> Because most people assume: website = content website. In reality, websites can provide all kinds of diverse services.</p>
+<hr/>
+<h2 id="6-how-search-engines-work">6. How Search Engines Work</h2>
+<p><img src="/_astro/search-engine-workflow.bgCm2gU8_Z1LaBTo.webp" alt="Search engine workflow" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>Understanding the search engine workflow is crucial for good SEO:</p>
+<ol>
+<li><strong>Crawling</strong>: The crawler sends GET requests to fetch HTML code. Note: it only fetches — it <strong>does not execute JavaScript</strong></li>
+<li><strong>Parsing</strong>: Extracts the page’s main content, Meta information, and all links on the page</li>
+<li><strong>Indexing</strong>: Word segmentation → extract page topics → build indexes
+<ul>
+<li>Forward index: which keywords does a given URL contain</li>
+<li>Inverted index: which pages contain a given keyword</li>
+</ul>
+</li>
+<li><strong>Ranking</strong>: User enters a search query → word segmentation → find pages from inverted index → multi-factor ranking → display search results</li>
+<li><strong>User clicks</strong>: Most people only look at the first page, some only click the top three results → <strong>ranking equals traffic</strong></li>
+</ol>
+<hr/>
+<h2 id="7-three-classic-questions-answered">7. Three Classic Questions Answered</h2>
+<p><img src="/_astro/three-classic-questions.CuIFwIYM_Z2vCivU.webp" alt="Once you understand the principles, three classic questions are no longer questions" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>Once you understand how search engines work, three classic questions have obvious answers:</p>
+<h3 id="should-tool-sites-e-commerce-video-and-gaming-pages-create-content">Should tool sites, e-commerce, video, and gaming pages create content?</h3>
+<p>→ <strong>Absolutely!</strong> Without content, how does Google know what’s on your page? Google can only judge and match user searches based on the text content you write.</p>
+<h3 id="why-avoid-client-side-rendering">Why avoid client-side rendering?</h3>
+<p>→ Crawlers only fetch HTML — they <strong>don’t execute JS</strong>. Client-side rendering = an “empty shell.” Google only renders JS for major sites; our small sites don’t get that treatment.</p>
+<h3 id="why-cant-multilingual-sites-use-js-switching">Why can’t multilingual sites use JS switching?</h3>
+<p>→ JS switching doesn’t change the URL. Crawlers can only capture content in one language — other languages are effectively wasted effort.</p>
+<hr/>
+<h2 id="8-two-goals-and-three-practical-experiences-for-web-pages">8. Two Goals and Three Practical Experiences for Web Pages</h2>
+<p><img src="/_astro/two-goals-three-experiences.BloKMQ16_Z1AcueA.webp" alt="Two goals and three practical experiences for web pages" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<h3 id="two-goals">Two Goals</h3>
+<ul>
+<li><strong>Goal 1</strong>: Get crawled and enter the index</li>
+<li><strong>Goal 2</strong>: Rank in the top two pages of search results (top 20)</li>
+</ul>
+<h3 id="three-practical-experiences">Three Practical Experiences</h3>
+<ol>
+<li><strong>Do On-Page SEO well</strong>: Helps our pages enter the ranking range</li>
+<li><strong>Build backlinks well</strong>: Helps us reach the top 10 positions in Google search results</li>
+<li><strong>Deliver great user experience</strong>: Determines the final ranking position</li>
+</ol>
+<hr/>
+<h2 id="9-seo-is-dynamic-competition">9. SEO Is Dynamic Competition</h2>
+<p><img src="/_astro/dynamic-competition.jFYlySO-_1LbWeR.webp" alt="SEO is dynamic competition" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>Every keyword’s search results page is a leaderboard — you’re competing against other pages on that leaderboard.</strong></p>
+<p>Four practical insights:</p>
+<ol>
+<li><strong>Links pass authority</strong>: Any link can pass authority, whether internal or external</li>
+<li><strong>Pages are the smallest unit</strong>: Google’s smallest ranking unit is the page; the homepage is just a special page</li>
+<li><strong>Competitiveness is a prerequisite</strong>: For any page to rank, having sufficient competitiveness is the precondition</li>
+<li><strong>Search results are leaderboards</strong>: Every keyword’s search results are a leaderboard where pages compete against each other</li>
+</ol>
+<hr/>
+<h2 id="10-three-things-to-do-well-in-seo">10. Three Things to Do Well in SEO</h2>
+<p><img src="/_astro/three-things.jPJkU3AQ_anbjs.webp" alt="To get traffic through SEO, doing three things well is enough" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>To get traffic through SEO, doing three things well is enough:</strong></p>
+<ol>
+<li><strong>Aggressively mine demand</strong>: Behind every keyword is a user need; the same need can be expressed with different keywords</li>
+<li><strong>Continuously publish pages</strong>: One keyword topic per page; understand the demand, then create an SEO-friendly page for every keyword with search volume</li>
+<li><strong>Steadily build backlinks</strong>: While having backlinks doesn’t guarantee rankings, without them you usually can’t rank at all</li>
+</ol>
+<hr/>
+<h2 id="11-demand-keyword-mining">11. Demand Keyword Mining</h2>
+<h3 id="what-are-demand-keywords">What Are Demand Keywords</h3>
+<p><img src="/_astro/demand-keywords.D_w_vFlc_Z23NEJJ.webp" alt="What are demand keywords" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>After search engines crawl web pages, they segment the content into tokens and build an index. <strong>Keywords = the words users type into the search box = carriers of user demand.</strong></p>
+<p><strong>Every keyword’s search results page is an independent leaderboard.</strong></p>
+<p>Our goal: Be better than the competitors already ranking at the top of that leaderboard to have a chance at ranking.</p>
+<p>Key mindset shift:</p>
+<ul>
+<li><strong>You don’t need</strong> to compete with every web page in the world</li>
+<li><strong>You only need</strong> to compete with the top few dozen pages in that keyword’s search results</li>
+</ul>
+<p>Once you understand this, you’ll realize SEO isn’t that hard.</p>
+<h3 id="how-to-mine-demand-keywords">How to Mine Demand Keywords</h3>
+<p><img src="/_astro/keyword-mining.dyTYCJr5_ZdAUVK.webp" alt="How to mine demand keywords" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>Free tools</strong>:</p>
+<ul>
+<li>Google autocomplete suggestions</li>
+<li>Google related searches</li>
+<li>Google Keyword Planner</li>
+<li>Google Trends</li>
+<li>Google Search Console</li>
+</ul>
+<p><strong>Paid tools</strong>:</p>
+<ul>
+<li>Ahrefs</li>
+<li>Similarweb</li>
+<li>Semrush</li>
+</ul>
+<p><strong>The core logic in 12 characters: word-to-word, word-to-site, site-to-word, site-to-site</strong></p>
+<ul>
+<li><strong>Word-to-word</strong>: Start from one keyword, find more related keywords</li>
+<li><strong>Word-to-site</strong>: Search a keyword to find competing websites that rank well</li>
+<li><strong>Site-to-word</strong>: Analyze competitor sites to find all keywords they rank for</li>
+<li><strong>Site-to-site</strong>: Through one competitor, discover more similar competitors</li>
+</ul>
+<p>Repeat these four steps in a cycle to uncover a massive pool of demand keywords.</p>
+<hr/>
+<h2 id="12-on-page-seo">12. On-Page SEO</h2>
+<p><img src="/_astro/on-page-seo.DU3p1L7a_fxeMm.webp" alt="How to build pages — On-Page SEO" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>Remember the key principle: one page, one core keyword.</strong></p>
+<h3 id="page-structure-elements">Page Structure Elements</h3>
+<ul>
+<li><strong>Title</strong>: Match the demand keyword</li>
+<li><strong>Description</strong>: Attract user clicks</li>
+<li><strong>H1</strong>: Provide focus, target the keyword</li>
+<li><strong>H2~H4</strong>: Expand and organize supporting content</li>
+</ul>
+<h3 id="key-data-metrics">Key Data Metrics</h3>
+<ul>
+<li>Core keyword density: <strong>3%~5%</strong></li>
+<li>Ensure each page has <strong>800+ words</strong> of content</li>
+</ul>
+<h3 id="internal-link-structure">Internal Link Structure</h3>
+<ul>
+<li>Build proper internal links between pages</li>
+<li>Use a tree-like site structure: trunk → branches → leaves</li>
+<li>Keep the hierarchy within 3 levels</li>
+</ul>
+<hr/>
+<h2 id="13-how-to-build-backlinks">13. How to Build Backlinks</h2>
+<p><img src="/_astro/backlinks.CLrI3zro_g4Hvi.webp" alt="How to build backlinks" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>Use every possible method to get your website’s links appearing on other websites.</strong></p>
+<p>The best approach is to “copy the homework”:</p>
+<ol>
+<li><strong>Find competitor websites</strong>: Use keywords to find peer websites in your niche</li>
+<li><strong>Analyze competitor backlinks</strong>: Use Ahrefs or Semrush to examine their backlink profiles</li>
+<li><strong>Filter actionable backlinks</strong>: Analyze and select backlinks that you can realistically replicate</li>
+<li><strong>Accumulate steadily</strong>: Build up gradually, continuously adding backlinks over time</li>
+</ol>
+<hr/>
+<h2 id="14-seo--sem--the-optimal-traffic-strategy">14. SEO + SEM = The Optimal Traffic Strategy</h2>
+<p><img src="/_astro/seo-sem.Dl-uvSWU_2bSH80.webp" alt="SEO + SEM = The optimal traffic strategy" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>SEO</strong>: Long-term compounding, free traffic, but slow to take effect.</p>
+<p><strong>SEM</strong>: Immediate results, pay to play, but stops when you stop paying.</p>
+<p><strong>Best strategy: Run both in parallel.</strong></p>
+<p>Start with SEM to validate conversions; user behavior data feeds back to improve SEO rankings. As SEO traffic grows, gradually reduce the ad budget.</p>
+<blockquote>
+<p>Traffic flows to where monetization efficiency is highest — Yang Tao’s famous quote</p>
+<p>Traffic ultimately flows to where resistance is lowest — GeFei’s law</p>
+</blockquote>
+<ul>
+<li><strong>Low monetization efficiency</strong> → Even pushing traffic doesn’t move the needle → Hard to acquire traffic</li>
+<li><strong>High monetization efficiency</strong> → Low resistance → Smooth traffic flow → Acquire more traffic</li>
+</ul>
+<hr/>
+<h2 id="15-summary">15. Summary</h2>
+<p>Starting from search engine fundamentals, we can build a complete SEO thinking framework:</p>
+<ol>
+<li><strong>Understand three essences</strong>: The internet is a network of pages, search engines index all pages to satisfy search needs, and SEO is about helping search engines better crawl and understand your pages</li>
+<li><strong>Recognize the relationship</strong>: Webmasters and search engines are ecologically complementary, not adversarial</li>
+<li><strong>Master the workflow</strong>: Crawl → Parse → Index → Rank → User click</li>
+<li><strong>Do three things well</strong>: Aggressively mine demand, continuously publish pages, steadily build backlinks</li>
+<li><strong>Run SEO + SEM in parallel</strong>: SEM validates conversions, SEO acquires long-term free traffic</li>
+</ol>
+<blockquote>
+<p>Techniques become outdated, but underlying logic doesn’t change. Understand the essence of search engines, and you can derive the right approach for any change.</p>
+</blockquote>
+<hr/>
+<p><em>Speaker contact:</em></p>
+<ul>
+<li><em>WeChat / Twitter: GeFei55</em></li>
+<li><em>WeChat Official Account / Jike: GeFei (哥飞)</em></li>
+<li><em>Community: GeFei’s Friends (哥飞的朋友们)</em></li>
+</ul>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

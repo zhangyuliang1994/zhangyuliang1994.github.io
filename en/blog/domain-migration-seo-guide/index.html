@@ -1,0 +1,204 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>How to Minimize the SEO Impact of Domain Migration: A Complete Guide - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/domain-migration-seo-guide/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/domain-migration-seo-guide/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="How to Minimize the SEO Impact of Domain Migration: A Complete Guide - frency.me"><meta property="og:site_name" content="How to Minimize the SEO Impact of Domain Migration: A Complete Guide - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/domain-migration-seo-guide/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/domain-migration-seo-guide/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/domain-migration-seo-guide/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.CYIZsbMv_qpJmY.webp" alt="How to Minimize the SEO Impact of Domain Migration: A Complete Guide" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>How to Minimize the SEO Impact of Domain Migration: A Complete Guide</h1> <time datetime="2026-03-17T00:00:00.000Z" data-astro-cid-v3cnrnum> 3/17/2026 </time> </header> <blockquote>
+<p>This article is based on Wang Feng’s (Ruoju Fanxing) presentation “How to Minimize the SEO Impact of Domain Migration” at the 2026 China Google SEO &amp; GEO Conference. Domain migration is a challenge many businesses face during brand upgrades or business restructuring. This guide systematically covers the principles, preparation, execution, and monitoring needed to minimize SEO loss.</p>
+</blockquote>
+<hr/>
+<h2 id="1-why-domain-migration-affects-seo">1. Why Domain Migration Affects SEO</h2>
+<p><img src="/_astro/why-affects-seo.zhnpEoYD_Z2riIVK.webp" alt="How domain migration affects SEO" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>The core reason domain migration impacts SEO is not that “authority suddenly disappears,” but rather that <strong>search engines need to re-understand and re-process the relationship between old and new pages</strong>.</p>
+<p>When a domain changes, Google goes through the following process:</p>
+<ul>
+<li><strong>Domain change</strong>: URLs change, and Google needs to identify the old domain’s corresponding new domain, re-establishing trust for the new domain</li>
+<li><strong>Page changes</strong>: Page addresses change, requiring 301 redirects to inform Google, which then re-crawls and re-indexes</li>
+<li><strong>Authority transfer</strong>: The old domain’s authority is passed to the new domain through 301 redirects</li>
+</ul>
+<p>Throughout this process, Google discovers the 301 redirects on old URLs, re-crawls them, re-indexes the content, and eventually transfers rankings to the new domain. <strong>Short-term ranking fluctuations are a normal part of migration</strong> — the key is minimizing the duration of this transition period.</p>
+<h3 id="common-mistakes-vs-correct-approach">Common Mistakes vs. Correct Approach</h3>
+<p><img src="/_astro/common-mistakes.DFEnDHbQ_ZBWLVC.webp" alt="Common risks and misconceptions in domain migration" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p><strong>The biggest SEO losses often come not from the domain change itself, but from mistakes made during the migration process.</strong></p>
+<p>Common mistakes include:</p>
+<ul>
+<li><strong>Redirect errors</strong>: Old URLs randomly redirecting, returning 404s, or failing to match old site URL patterns and robots rules</li>
+<li><strong>Index request rejections</strong>: Using noindex, incorrect canonical tags, or making major redesigns simultaneously</li>
+<li><strong>Signal misconfigurations</strong>: Improper canonical usage, URL parameter confusion</li>
+<li><strong>Major simultaneous changes</strong>: Redesigning the website at the same time as migrating the domain</li>
+</ul>
+<p>The correct migration approach should be:</p>
+<ul>
+<li><strong>One-to-one redirects</strong>: Every old URL maps to a corresponding new URL</li>
+<li><strong>Crawlable and indexable</strong>: Ensure the new site is fully accessible to search engines</li>
+<li><strong>Unified signals</strong>: Redirects, canonicals, internal links, and sitemaps should all be consistent</li>
+<li><strong>Phased migration</strong>: Don’t make too many changes at once</li>
+</ul>
+<hr/>
+<h2 id="2-four-core-principles-for-minimizing-seo-impact">2. Four Core Principles for Minimizing SEO Impact</h2>
+<p><img src="/_astro/core-principles.aVpsy7tu_12S9cO.webp" alt="Core principles for reducing SEO impact" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>Wang Feng summarized four core principles for domain migration:</p>
+<ol>
+<li><strong>The inheritance relationship between old and new URLs must be clear</strong> — Build a complete URL mapping table ensuring every old URL has a corresponding new URL</li>
+<li><strong>Use 301 permanent redirects to clearly communicate the migration signal</strong> — 301 is the clearest way to tell Google “this page has permanently moved”</li>
+<li><strong>Canonical, internal links, sitemap, and other on-site signals must all be aligned</strong> — All signals should consistently point to the new domain</li>
+<li><strong>Migration is a continuous process of monitoring and correction, not a one-time action</strong> — Post-launch requires ongoing observation and adjustment</li>
+</ol>
+<hr/>
+<h2 id="3-pre-migration-essential-preparation">3. Pre-Migration: Essential Preparation</h2>
+<h3 id="31-map-old-urls-to-new-urls">3.1 Map Old URLs to New URLs</h3>
+<p><img src="/_astro/url-mapping.Do452v35_Z10kWIt.webp" alt="URL mapping table example" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>The essential pre-migration task is to create a URL mapping based on the old site’s sitemap (olddomain.com/sitemap.xml).</p>
+<p>Key steps:</p>
+<ul>
+<li><strong>Create a complete old URL → new URL mapping table</strong></li>
+<li><strong>Cover all important pages</strong>: High-traffic pages, core conversion pages, pages with external links, image pages, PDF pages</li>
+<li><strong>Define the handling method for each URL</strong>: Migrate, merge, retire, or keep</li>
+<li><strong>Clarify which content is being “migrated,” “merged,” or “retired”</strong></li>
+</ul>
+<p>The mapping table should include: old URL, new URL, handling method, and notes. For example, the homepage gets a full migration, core conversion pages get migrated, old FAQs get merged into new FAQs, and outdated content gets retired.</p>
+<h3 id="32-set-up-and-test-the-new-site-environment">3.2 Set Up and Test the New Site Environment</h3>
+<p><img src="/_astro/test-environment.PQTiTe03_1ba5BW.webp" alt="New site environment testing" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>Copy the complete site to the new environment for testing. Test content includes web page access, images, forms, downloadable files, etc. If using a temporary test domain, add <code>rel=noindex</code> to the test environment to prevent search engines from accidentally indexing it.</p>
+<p>Testing checklist:</p>
+<ol>
+<li><strong>All pages load, display, and navigate correctly</strong></li>
+<li><strong>Images, assets, attachments, and downloads work properly</strong></li>
+<li><strong>Forms, UI interactions, add-to-cart, and checkout flows function normally</strong></li>
+<li><strong>Test covers both mobile and desktop</strong></li>
+</ol>
+<h3 id="33-confirm-the-new-site-is-crawlable-indexable-and-accessible-to-googlebot">3.3 Confirm the New Site Is Crawlable, Indexable, and Accessible to Googlebot</h3>
+<p><img src="/_astro/confirm-crawlability.qrMJgQM-_1lieAK.webp" alt="Confirm crawlability and indexability" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>After testing, verify that Googlebot can access the new environment before migration. Any noindex tags or robots blocks used during development must be removed before migration begins.</p>
+<p>Key checks:</p>
+<ul>
+<li><strong>Configure robots.txt properly</strong>: Clearly allow/disallow crawl paths with no accidental blocks</li>
+<li><strong>Remove noindex</strong>: Ensure the homepage, category pages, product pages, and feature pages have rel=noindex removed and are indexable</li>
+</ul>
+<h3 id="34-pre-migration-checklist">3.4 Pre-Migration Checklist</h3>
+<p><img src="/_astro/pre-migration-checklist.BmaK-LXM_Z1QhRdi.webp" alt="Pre-migration checklist summary" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>Pre-migration checklist:</p>
+<ol>
+<li>Map old URLs to new URLs</li>
+<li>Test the new site’s functionality</li>
+<li>Confirm the new site is crawlable, indexable, and accessible to Googlebot</li>
+<li>Set up Google Search Console and sitemap</li>
+</ol>
+<hr/>
+<h2 id="4-migration-day-key-actions">4. Migration Day: Key Actions</h2>
+<h3 id="41-implement-301-redirects">4.1 Implement 301 Redirects</h3>
+<p><img src="/_astro/301-redirects.doj-BH0N_1biyIa.webp" alt="301 redirect setup" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>The first step when migration begins is implementing 301 redirects. Google typically processes 301 redirects faster than other types.</p>
+<p>Key considerations:</p>
+<ul>
+<li><strong>All core domain URLs have 301 redirects enabled</strong></li>
+<li><strong>Avoid modifying old URLs</strong></li>
+<li><strong>URLs should redirect directly to the final new URL — no redirect chains</strong></li>
+<li><strong>Avoid redirecting too many pages to the homepage</strong> (Google treats this as a soft 404)</li>
+</ul>
+<h3 id="42-ensure-the-new-site-is-crawlable-and-indexable">4.2 Ensure the New Site Is Crawlable and Indexable</h3>
+<p><img src="/_astro/ensure-indexable.nTy0iiM__Z2dpuv9.webp" alt="Ensure the new site is crawlable and indexable" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>Immediately after going live, confirm:</p>
+<ol>
+<li><strong>Source code inspection confirms noindex has been removed</strong></li>
+<li><strong>robots.txt has no rules blocking crawling</strong></li>
+<li><strong>Use GSC to run crawl tests on pages</strong></li>
+<li><strong>Submit the new sitemap</strong></li>
+</ol>
+<h3 id="43-access-verification">4.3 Access Verification</h3>
+<p><img src="/_astro/access-verification.qjUPpTPF_Z1h0TRu.webp" alt="Access verification" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>After the sitemap and other settings are complete, verify:</p>
+<ol>
+<li><strong>Test that 301 redirects for core pages work correctly</strong></li>
+<li><strong>Check for 404 errors or incorrect redirects</strong></li>
+<li><strong>Test site loading speed and interaction responsiveness</strong></li>
+<li><strong>Verify GSC crawl success rate</strong>: Settings → Crawl Stats → Success rate</li>
+</ol>
+<h3 id="44-update-external-information">4.4 Update External Information</h3>
+<p><img src="/_astro/update-info.DK0xQpoT_xaaeW.webp" alt="Update external information" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>After the domain goes live, update all external channels:</p>
+<ol>
+<li><strong>Social media profiles</strong>: Update FB, Instagram, X, YouTube, Reddit, and other account bios with the new domain</li>
+<li><strong>Authoritative media links</strong>: Update links on KOL sites, supplier websites, and other external content</li>
+<li><strong>Backlink outreach</strong>: Contact webmasters of linking sites to update old domain references to the new domain</li>
+</ol>
+<hr/>
+<h2 id="5-post-migration-ranking-recovery-and-performance-monitoring">5. Post-Migration: Ranking Recovery and Performance Monitoring</h2>
+<h3 id="monitor-gsc-data">Monitor GSC Data</h3>
+<p><img src="/_astro/gsc-crawl-data.BnlQQ1wH_20du8T.webp" alt="GSC crawl statistics" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>Immediately after migration, monitor crawl data through Google Search Console. Pay attention to crawl frequency, crawl responses, and Googlebot activity to ensure Google is properly discovering and processing pages on the new domain.</p>
+<h3 id="track-performance-metrics">Track Performance Metrics</h3>
+<p><img src="/_astro/track-performance.Cmu9IMEO_WRhBj.webp" alt="Track performance data" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>The top priority after migration is not whether “keywords have come back yet,” but confirming that Google is properly discovering and processing new domain URLs.</p>
+<p>Key monitoring areas:</p>
+<ul>
+<li><strong>Check submitted sitemap indexing status</strong> (is the count increasing or decreasing?)</li>
+<li><strong>Check for anomalies in response status data</strong></li>
+<li><strong>Use GSC to monitor impression and click trends for branded and core non-branded keywords</strong></li>
+</ul>
+<p>In Google Search Console’s crawl statistics, focus on response category data:</p>
+<ul>
+<li>Success (200) should account for the vast majority (~90%)</li>
+<li>Permanent redirects (301) should be around 5%</li>
+<li>Not found (404) should be kept to a minimum (below 1%)</li>
+</ul>
+<hr/>
+<h2 id="6-summary-minimal-changes-precise-redirects-strong-signals-strong-monitoring">6. Summary: Minimal Changes, Precise Redirects, Strong Signals, Strong Monitoring</h2>
+<p><img src="/_astro/summary.DnHEf6XO_Z1s8tjt.webp" alt="Summary" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>SEO loss from a domain migration can never be reduced to absolute zero, but it can be minimized through <strong>“Minimal Changes, Precise Redirects, Strong Signals, Strong Monitoring”</strong>:</p>
+<ul>
+<li><strong>Minimal Changes</strong>: Only change the domain — don’t simultaneously overhaul site structure, content, or templates</li>
+<li><strong>Precise Redirects</strong>: Ensure old URLs have one-to-one mappings to the most relevant new URLs</li>
+<li><strong>Strong Signals</strong>: Redirects, canonicals, internal links, and sitemaps must all consistently point to the new domain</li>
+<li><strong>Strong Monitoring</strong>: After launch, continuously monitor index replacement, redirect errors, and traffic recovery — don’t just watch rankings</li>
+</ul>
+<blockquote>
+<p>The essence of domain migration is not “changing a web address,” but rather “ensuring search engines correctly recognize that the new domain has fully inherited the page value and search signals of the old domain.”</p>
+</blockquote>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

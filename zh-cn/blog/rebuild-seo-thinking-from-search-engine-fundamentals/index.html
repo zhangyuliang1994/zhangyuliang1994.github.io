@@ -1,0 +1,309 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>从搜索引擎底层逻辑出发，重构你的SEO思维体系 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/rebuild-seo-thinking-from-search-engine-fundamentals/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/rebuild-seo-thinking-from-search-engine-fundamentals/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="从搜索引擎底层逻辑出发，重构你的SEO思维体系 - xiaofeng.show"><meta property="og:site_name" content="从搜索引擎底层逻辑出发，重构你的SEO思维体系 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/rebuild-seo-thinking-from-search-engine-fundamentals/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/rebuild-seo-thinking-from-search-engine-fundamentals/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/rebuild-seo-thinking-from-search-engine-fundamentals/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.C457f94W_1UBntC.webp" alt="从搜索引擎底层逻辑出发，重构你的SEO思维体系" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>从搜索引擎底层逻辑出发，重构你的SEO思维体系</h1> <time datetime="2026-03-17T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/3/17 </time> </header> <blockquote>
+<p>本文整理自哥飞在2026中国谷歌SEO &amp; GEO大会上的演讲”从搜索引擎底层逻辑出发，重构你的SEO思维体系”。做好了SEO，真的可以获取到免费流量，节省海量宣传费用。本文将从三个本质出发，帮你建立自己的SEO思维体系。</p>
+</blockquote>
+<hr/>
+<h2 id="一哥飞是谁">一、哥飞是谁</h2>
+<p><img src="/_astro/who-is-gefei.BYr5dMk2_Z2gteIp.webp" alt="哥飞是谁" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>哥飞有四个身份：</p>
+<ul>
+<li><strong>SEO从业者</strong>：多年SEO从业者，2008年开始做个人站长，研究SEO、做网站实践，总结出来了自己的SEO思维体系</li>
+<li><strong>一线技术人员</strong>：多年一线技术人员，一直在写代码，从来没有停止。不懂开发的SEO人员不是好站长</li>
+<li><strong>网站运营者</strong>：运营多个AI工具网站，通过SEO和SEM获取流量，通过Adsense和付费订阅变现</li>
+<li><strong>社群运营者</strong>：运营5000+人的AI出海付费社群，教会大家如何挖掘需求做好SEO获取流量最终变现赚到钱</li>
+</ul>
+<h3 id="哥飞的部分网站gsc数据">哥飞的部分网站GSC数据</h3>
+<p><img src="/_astro/gefei-gsc-data.OWOk67Xy_DQ400.webp" alt="哥飞的部分网站GSC数据" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>哥飞运营的多个网站在Google Search Console中展现出强劲的数据表现，多个网站实现了数十万级别的点击次数和数百万级别的曝光次数。这些数据充分说明了SEO的威力。</p>
+<h3 id="哥飞社群成员的部分网站gsc数据">哥飞社群成员的部分网站GSC数据</h3>
+<p><img src="/_astro/community-gsc-data.D2Vkt--1_1MnK4C.webp" alt="哥飞社群成员的部分网站GSC数据" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>不仅哥飞自己的网站做得好，社群成员的网站同样表现出色。多个社群成员的网站实现了数十万甚至上百万级别的点击量，其中最高的单个网站达到了307万点击次数和2,832万曝光次数。</p>
+<h3 id="做好seo到底有什么用">做好SEO到底有什么用？</h3>
+<p><img src="/_astro/seo-value.DY4y8MPq_Z1htTJW.webp" alt="SEO流量=免费的精准流量" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>SEO流量 = 免费的精准流量。</strong></p>
+<p>以哥飞的一个网站为例（2026年2月数据）：</p>
+<ul>
+<li>搜索流量370万，自然流量308万</li>
+<li>付费流量61.879万，单次点击付费支出$309.3K</li>
+<li><strong>如果308万的自然搜索流量全部用广告来买，需要花费约154万美元</strong></li>
+</ul>
+<p>这就是SEO的价值——省下来的广告费就是利润。</p>
+<hr/>
+<h2 id="二为什么要重构seo思维">二、为什么要重构SEO思维</h2>
+<p><img src="/_astro/why-rebuild-seo-thinking.DDuUyuD6_Z1XIPhD.webp" alt="为什么要重构SEO思维" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>大多数人学SEO，学的是技巧。今天要讲的，是SEO底层逻辑。</strong></p>
+<ul>
+<li><strong>技巧会过时</strong>：算法一更新，昨天有效的技巧今天就失效</li>
+<li><strong>思维逻辑不会变</strong>：理解搜索引擎的本质，任何变化都能自己推导</li>
+<li><strong>今天的目标</strong>：从三个本质出发，帮你建立自己的SEO思维体系</li>
+</ul>
+<hr/>
+<h2 id="三理解seo的三个本质">三、理解SEO的三个本质</h2>
+<p><img src="/_astro/three-essences.CCaazlfh_Z2brN6r.webp" alt="要理解SEO的思维，就要理解三个本质" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>要理解SEO的思维，就要理解三个本质：<strong>互联网的本质</strong>、<strong>搜索引擎的本质</strong>、<strong>SEO的本质</strong>。</p>
+<h3 id="1-互联网的本质">1. 互联网的本质</h3>
+<p><img src="/_astro/internet-essence.Cv74fNlC_1xIK4d.webp" alt="互联网的本质" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>互联网的本质是<strong>无数靠链接连起来的网页组成的巨大网络</strong>。</p>
+<p>几个关键数字：</p>
+<ul>
+<li><strong>11亿</strong>——全球网站数量</li>
+<li><strong>1000亿+</strong>——全球网页数量</li>
+<li><strong>500亿+</strong>——谷歌索引网页数量</li>
+</ul>
+<p>谷歌即使作为全球最大的搜索引擎，也只索引了全部网页的约一半。这说明互联网的规模远超我们的想象。</p>
+<h3 id="2-搜索引擎的本质">2. 搜索引擎的本质</h3>
+<p><img src="/_astro/search-engine-essence.DE3V_sSj_2oJ41R.webp" alt="搜索引擎的本质" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>搜索引擎的本质是<strong>通过找到并收录尽可能多的网页，来满足各种稀奇古怪的搜索需求</strong>。</p>
+<p><strong>谷歌追求的目标</strong>：</p>
+<ul>
+<li><strong>最新</strong>：满足时刻出现的全新搜索需求</li>
+<li><strong>最全</strong>：满足每个用户各种稀奇古怪需求</li>
+</ul>
+<p><strong>全球最大的网页爬虫系统</strong>：为了实现最新和最全，谷歌建立了全球最大的网页爬虫系统。爬虫系统的目标是抓取全网所有优质网页，但网页是否优质，在抓取之前是不知道的，所以需要让爬虫尽可能爬到全网的所有网页。</p>
+<h3 id="3-seo的本质">3. SEO的本质</h3>
+<p><img src="/_astro/seo-essence.CwF4qPxc_wqqGQ.webp" alt="SEO的本质" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>SEO的本质是让搜索引擎更好地抓取和读懂你的网页。</strong></p>
+<p>这包含两个层面：</p>
+<ul>
+<li><strong>更好地抓取</strong>：网站结构清晰、内链完善、sitemap齐全，让爬虫无障碍跑遍每一个页面</li>
+<li><strong>更好地读懂</strong>：标题、描述、正文关键词准确，让搜索引擎理解你的页面在讲什么</li>
+</ul>
+<hr/>
+<h2 id="四站长和搜索引擎的关系生态互补">四、站长和搜索引擎的关系——生态互补</h2>
+<p><img src="/_astro/webmaster-search-engine-relationship.Bg6NfBm6_Z24IYTo.webp" alt="站长和搜索引擎是什么关系" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>站长和搜索引擎是<strong>生态互补关系</strong>，而不是对抗关系。</p>
+<ul>
+<li><strong>站长需要搜索引擎</strong>：带来长期免费流量</li>
+<li><strong>搜索引擎需要站长</strong>：生产优质新鲜内容</li>
+<li><strong>三方共赢</strong>：用户需求得到满足，站长免费得到流量，搜索引擎得到广告收入</li>
+</ul>
+<p><strong>正确理解</strong>：迎合搜索引擎，跟搜索引擎交朋友，而不是对抗。搜索引擎想要什么，我们就做什么网页去供应。</p>
+<p><strong>错误理解</strong>：SEO = 薅搜索引擎羊毛，做好SEO = 作弊、欺骗。</p>
+<hr/>
+<h2 id="五ai来了seo已死">五、AI来了，SEO已死？</h2>
+<p><img src="/_astro/ai-seo-dead.BThKzFHH_1Ierqy.webp" alt="AI来了，SEO已死？" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>我不同意这个说法。</strong></p>
+<p>说这话的人，明显是既不懂SEO，也不懂AI。</p>
+<ul>
+<li><strong>AI能满足的需求</strong>：AI可以满足部分资讯信息类检索需求</li>
+<li><strong>AI无法直接满足的需求</strong>：还有更多重交互的需求AI无法直接满足——社交、电商、游戏、工具、服务、影视……</li>
+</ul>
+<p><strong>为什么会出现这样的误解？</strong> 因为大部分人认为：网站 = 内容型网站。其实网站可提供各种多样服务。</p>
+<hr/>
+<h2 id="六搜索引擎工作流程">六、搜索引擎工作流程</h2>
+<p><img src="/_astro/search-engine-workflow.bgCm2gU8_Z1LaBTo.webp" alt="搜索引擎工作流程" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>理解搜索引擎的工作流程，对做好SEO至关重要：</p>
+<ol>
+<li><strong>爬取</strong>：爬虫发GET请求，获取HTML代码。注意，只是获取，<strong>并不执行JavaScript</strong></li>
+<li><strong>解析</strong>：提取网页主体内容、Meta信息、页面中所有链接</li>
+<li><strong>索引</strong>：分词处理→提取网页主题→建立索引
+<ul>
+<li>正排索引：某个URL有哪些关键词</li>
+<li>倒排索引：某个关键词有哪些网页</li>
+</ul>
+</li>
+<li><strong>排序</strong>：用户输入搜索关键词→分词→从倒排索引找出网页→多因素排序→呈现搜索结果</li>
+<li><strong>用户点击</strong>：大部分人只会看第一页，甚至只点前三个结果→<strong>排名即流量</strong></li>
+</ol>
+<hr/>
+<h2 id="七三个经典问题的解答">七、三个经典问题的解答</h2>
+<p><img src="/_astro/three-classic-questions.CuIFwIYM_Z2vCivU.webp" alt="理解了原理后，三个经典问题就不是问题了" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>理解了搜索引擎的工作原理后，三个经典问题就迎刃而解了：</p>
+<h3 id="1-工具电商影视游戏页面要不要做内容">1. 工具、电商、影视、游戏页面要不要做内容？</h3>
+<p>→ <strong>当然要！</strong> 你不做内容，谷歌怎么知道你页面里有什么？谷歌只能靠你写的文字内容来判断和匹配用户搜索。</p>
+<h3 id="2-为什么不要前端渲染">2. 为什么不要前端渲染？</h3>
+<p>→ 爬虫只获取HTML，<strong>不执行JS</strong>。前端渲染 = “空壳”。谷歌只给大站渲染JS的优待，我们的小站享受不到。</p>
+<h3 id="3-为什么多语言不能用js切换">3. 为什么多语言不能用JS切换？</h3>
+<p>→ JS切换不会改变URL。爬虫只能抓到一种语言的内容，其他语言等于白做。</p>
+<hr/>
+<h2 id="八做网页的两个目标和三个实战经验">八、做网页的两个目标和三个实战经验</h2>
+<p><img src="/_astro/two-goals-three-experiences.BloKMQ16_Z1AcueA.webp" alt="做网页的两个目标和三个实战经验" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<h3 id="两个目标">两个目标</h3>
+<ul>
+<li><strong>目标一</strong>：被爬虫抓取，进入索引库</li>
+<li><strong>目标二</strong>：进入搜索结果前两页（前20名）</li>
+</ul>
+<h3 id="三个实战经验">三个实战经验</h3>
+<ol>
+<li><strong>做好On-Page SEO</strong>：帮助我们的网页进入搜索排名范围内</li>
+<li><strong>做好外链</strong>：帮助我们进入谷歌搜索结果排名前10个位置</li>
+<li><strong>做好网站用户体验</strong>：决定最终的排名位置</li>
+</ol>
+<hr/>
+<h2 id="九seo是动态竞争">九、SEO是动态竞争</h2>
+<p><img src="/_astro/dynamic-competition.jFYlySO-_1LbWeR.webp" alt="SEO是动态竞争" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>每一个关键词的搜索结果都是一个排行榜，你和排行榜上的其他页面在PK。</strong></p>
+<p>四个实践经验：</p>
+<ol>
+<li><strong>链接传递权重</strong>：任何链接都能够传递权重，不管是内链还是外链</li>
+<li><strong>页面为最小单位</strong>：谷歌的最小排名单位是页面，首页也是一个特殊的页面</li>
+<li><strong>竞争力是前提</strong>：任何页面能够到排名的前提条件都是竞争力足够</li>
+<li><strong>搜索结果是排行榜</strong>：任何关键词搜索结果都是一个排行榜，页面之间在相互竞争</li>
+</ol>
+<hr/>
+<h2 id="十做好seo的三件事">十、做好SEO的三件事</h2>
+<p><img src="/_astro/three-things.jPJkU3AQ_anbjs.webp" alt="要想通过SEO搞到流量，做好三件事就足够" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>要想通过SEO搞到流量，做好三件事就足够：</strong></p>
+<ol>
+<li><strong>使劲挖需求</strong>：关键词的背后是需求，同一个需求会有不同的关键词说法</li>
+<li><strong>不断上页面</strong>：一个关键词主题一个页面，理解需求后为每一个有搜索量的关键词做出SEO友好的页面</li>
+<li><strong>持续加外链</strong>：虽说不是有了外链就一定行，但是没有外链大多数时候都拿不到排名</li>
+</ol>
+<hr/>
+<h2 id="十一需求关键词挖掘">十一、需求关键词挖掘</h2>
+<h3 id="什么是需求关键词">什么是需求关键词</h3>
+<p><img src="/_astro/demand-keywords.D_w_vFlc_Z23NEJJ.webp" alt="什么是需求关键词" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p>搜索引擎网页抓取网页后对页面内容进行分词后建立索引。<strong>关键词 = 用户在搜索框输入的词语 = 用户需求的载体。</strong></p>
+<p><strong>每一个关键词的搜索结果都是一个独立的排行榜。</strong></p>
+<p>我们的目标：做到比排行榜里靠前排的竞争对手更好，才有可能拿到排名。</p>
+<p>关键认知转变：</p>
+<ul>
+<li><strong>你不需要</strong>跟全世界的网页竞争</li>
+<li><strong>你只需要</strong>跟这个关键词搜索结果的前几十个网页竞争</li>
+</ul>
+<p>搞清楚这一点，你会发现SEO没那么难。</p>
+<h3 id="需求关键词怎么挖">需求关键词怎么挖</h3>
+<p><img src="/_astro/keyword-mining.dyTYCJr5_ZdAUVK.webp" alt="需求关键词怎么挖" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>免费工具</strong>：</p>
+<ul>
+<li>谷歌下拉搜索</li>
+<li>谷歌相关搜索</li>
+<li>谷歌关键词规划工具</li>
+<li>谷歌趋势</li>
+<li>Google Search Console</li>
+</ul>
+<p><strong>收费工具</strong>：</p>
+<ul>
+<li>Ahrefs</li>
+<li>Similarweb</li>
+<li>Semrush</li>
+</ul>
+<p><strong>核心逻辑12字秘诀：词找词、词找站、站找词、站找站</strong></p>
+<ul>
+<li><strong>词找词</strong>：从一个关键词出发，找到更多相关关键词</li>
+<li><strong>词找站</strong>：通过关键词搜索，找到排名靠前的竞争对手网站</li>
+<li><strong>站找词</strong>：分析竞争对手网站，找到他们排名的所有关键词</li>
+<li><strong>站找站</strong>：通过一个竞争对手，找到更多类似的竞争对手</li>
+</ul>
+<p>这四步循环往复，就能挖掘出海量的需求关键词。</p>
+<hr/>
+<h2 id="十二on-page-seo">十二、On Page SEO</h2>
+<p><img src="/_astro/on-page-seo.DU3p1L7a_fxeMm.webp" alt="页面怎么做——On Page SEO" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>记住大原则：一个页面一个核心关键词。</strong></p>
+<h3 id="页面结构要素">页面结构要素</h3>
+<ul>
+<li><strong>Title</strong>：迎合需求关键词</li>
+<li><strong>Description</strong>：吸引用户点击</li>
+<li><strong>H1</strong>：提供聚焦、瞄准关键词</li>
+<li><strong>H2~H4</strong>：展开拓展梳理清楚</li>
+</ul>
+<h3 id="关键数据指标">关键数据指标</h3>
+<ul>
+<li>核心关键词密度 <strong>3%~5%</strong></li>
+<li>确保每个页面内容 <strong>800个单词以上</strong></li>
+</ul>
+<h3 id="内部链接结构">内部链接结构</h3>
+<ul>
+<li>页面之间做好内部链接</li>
+<li>全站树状结构，从主干到枝干到枝叶</li>
+<li>层级不超过3层</li>
+</ul>
+<hr/>
+<h2 id="十三外链怎么做">十三、外链怎么做</h2>
+<p><img src="/_astro/backlinks.CLrI3zro_g4Hvi.webp" alt="外链怎么做" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>想尽一切办法，让自己的网站链接出现在别的网站里。</strong></p>
+<p>最好的办法就是”抄作业”：</p>
+<ol>
+<li><strong>找到同行网站</strong>：通过关键词找到同行的网站</li>
+<li><strong>分析竞品外链</strong>：用Ahrefs、Semrush看同行网站的外链</li>
+<li><strong>筛选可执行外链</strong>：分析筛选每一个我们能做的外链</li>
+<li><strong>持续积累</strong>：慢慢积累，持续加外链</li>
+</ol>
+<hr/>
+<h2 id="十四seo--sem--最优流量策略">十四、SEO + SEM = 最优流量策略</h2>
+<p><img src="/_astro/seo-sem.Dl-uvSWU_2bSH80.webp" alt="SEO + SEM = 最优流量策略" loading="lazy" decoding="async" fetchpriority="auto" width="2304" height="1296"></p>
+<p><strong>SEO</strong>：长期复利，流量免费，但是效慢。</p>
+<p><strong>SEM</strong>：立竿见影，花钱就有，但停了就没。</p>
+<p><strong>最佳策略：并行。</strong></p>
+<p>SEM先跑起来验证转化，用户行为数据反哺SEO排名。SEO流量起来后逐步降低广告预算。</p>
+<blockquote>
+<p>流量会流向变现效率高的地方 ——杨涛名言</p>
+<p>流量最终会流向阻力小的地方 ——哥飞定律</p>
+</blockquote>
+<ul>
+<li><strong>变现效率低</strong> → 推流量过来都推不动 → 难拿到流量</li>
+<li><strong>变现效率高</strong> → 阻力小 → 流量流转顺畅 → 拿到更多流量</li>
+</ul>
+<hr/>
+<h2 id="十五总结">十五、总结</h2>
+<p>从搜索引擎底层逻辑出发，我们可以建立起完整的SEO思维体系：</p>
+<ol>
+<li><strong>理解三个本质</strong>：互联网是网页的网络，搜索引擎要收录所有网页来满足搜索需求，SEO就是让搜索引擎更好地抓取和读懂你的页面</li>
+<li><strong>认清关系</strong>：站长和搜索引擎是生态互补关系，不是对抗关系</li>
+<li><strong>掌握工作流程</strong>：爬取→解析→索引→排序→用户点击</li>
+<li><strong>做好三件事</strong>：使劲挖需求、不断上页面、持续加外链</li>
+<li><strong>SEO+SEM并行</strong>：SEM验证转化，SEO获取长期免费流量</li>
+</ol>
+<blockquote>
+<p>技巧会过时，但底层逻辑不会变。理解搜索引擎的本质，任何变化都能自己推导。</p>
+</blockquote>
+<hr/>
+<p><em>演讲者联系方式：</em></p>
+<ul>
+<li><em>微信号 / Twitter：GeFei55</em></li>
+<li><em>公众号 / 即刻：哥飞</em></li>
+<li><em>社群：哥飞的朋友们</em></li>
+</ul>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

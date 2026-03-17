@@ -1,0 +1,206 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>如何降低域名切换对SEO的效果影响：从准备到监控的完整指南 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/domain-migration-seo-guide/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/domain-migration-seo-guide/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="如何降低域名切换对SEO的效果影响：从准备到监控的完整指南 - xiaofeng.show"><meta property="og:site_name" content="如何降低域名切换对SEO的效果影响：从准备到监控的完整指南 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/domain-migration-seo-guide/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/domain-migration-seo-guide/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/domain-migration-seo-guide/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.CYIZsbMv_qpJmY.webp" alt="如何降低域名切换对SEO的效果影响：从准备到监控的完整指南" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>如何降低域名切换对SEO的效果影响：从准备到监控的完整指南</h1> <time datetime="2026-03-17T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/3/17 </time> </header> <blockquote>
+<p>本文整理自王丰（若聚凡星）在2026中国谷歌SEO &amp; GEO大会上的演讲”如何降低域名切换对SEO的效果影响”。域名迁移是许多企业在品牌升级、业务重组过程中都会面临的问题。本文将从原理、准备、执行和监控四个维度，系统梳理如何将SEO损失降到最低。</p>
+</blockquote>
+<hr/>
+<h2 id="一为什么域名切换会影响seo">一、为什么域名切换会影响SEO</h2>
+<p><img src="/_astro/why-affects-seo.zhnpEoYD_Z2riIVK.webp" alt="域名切换影响SEO的原理" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>域名切换影响SEO的本质，不是”权重突然消失”，而是<strong>搜索引擎需要重新理解和处理新旧页面的关系</strong>。</p>
+<p>当域名发生变化时，Google需要经历以下过程：</p>
+<ul>
+<li><strong>域名的变化</strong>：URL发生变化，Google需要识别旧域名对应的新域名，重新迁移和建立新域名的信任</li>
+<li><strong>页面的变化</strong>：页面地址变了，需要通过301重定向告知Google，Google会重新抓取并重新索引</li>
+<li><strong>权重的传递</strong>：旧域名的权重通过301重定向传递到新域名</li>
+</ul>
+<p>整个过程中，Google会对旧URL进行301重定向发现、重新抓取、重新索引，最终将排名转移到新域名。<strong>短期的排名波动是正常的迁移现象</strong>，关键在于如何缩短这个过渡期。</p>
+<h3 id="常见错误-vs-正确做法">常见错误 vs 正确做法</h3>
+<p><img src="/_astro/common-mistakes.DFEnDHbQ_ZBWLVC.webp" alt="域名迁移中最常见的风险与误区" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p><strong>真正造成大的SEO损失的，往往不是域名切换本身，而是迁移过程中的错误操作。</strong></p>
+<p>常见错误做法包括：</p>
+<ul>
+<li><strong>重定向错误</strong>：旧URL随机跳转、返回404，或未匹配旧站点URL、未添加旧站robots规则</li>
+<li><strong>索引请求被拒</strong>：站点使用了noindex、canonical指向错误，或同时大改版</li>
+<li><strong>信号说明错误</strong>：canonical（权威标记）使用不当、URL参数混乱</li>
+<li><strong>大幅修改</strong>：在域名迁移的同时进行网站大改版</li>
+</ul>
+<p>正确的迁移方式应该是：</p>
+<ul>
+<li><strong>一对一重定向</strong>：每个旧URL对应一个新URL</li>
+<li><strong>可抓取可索引</strong>：确保新站点对搜索引擎完全开放</li>
+<li><strong>信号统一</strong>：重定向、canonical、内链、sitemap等信号一致</li>
+<li><strong>分阶段迁移</strong>：不要同时做太多变动</li>
+</ul>
+<hr/>
+<h2 id="二降低seo影响的四大核心原则">二、降低SEO影响的四大核心原则</h2>
+<p><img src="/_astro/core-principles.aVpsy7tu_12S9cO.webp" alt="降低SEO影响的核心原则" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>王丰总结了域名迁移的四大核心原则：</p>
+<ol>
+<li><strong>旧URL与新URL的继承关系要清晰</strong>——建立完整的URL映射表，确保每个旧URL都有对应的新URL</li>
+<li><strong>用301永久重定向明确传递迁移信号</strong>——301是告诉Google”这个页面已经永久搬家”的最明确方式</li>
+<li><strong>canonical、内链、sitemap等站内信号必须配套</strong>——所有信号统一指向新域名</li>
+<li><strong>迁移是持续监控与修正的过程，不是一次性动作</strong>——上线后需要持续观察和调整</li>
+</ol>
+<hr/>
+<h2 id="三迁移前必须完成的准备工作">三、迁移前：必须完成的准备工作</h2>
+<h3 id="1-梳理旧url与新url的映射关系">1. 梳理旧URL与新URL的映射关系</h3>
+<p><img src="/_astro/url-mapping.Do452v35_Z10kWIt.webp" alt="URL映射表示例" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>迁移前的必备动作就是基于旧站点的站点地图页面（olddomain.com/sitemap.xml），做好新站点页面映射。</p>
+<p>关键步骤：</p>
+<ul>
+<li><strong>输出一份旧URL → 新URL的映射表</strong></li>
+<li><strong>覆盖所有重要页面</strong>：高流量页面、核心转化页、已有外链页、图片页、PDF页</li>
+<li><strong>明确每个URL的处理方式</strong>：迁移、合并、下线、保留等</li>
+<li><strong>明确哪些内容是”迁移”，哪些是”合并”，哪些是”下线”</strong></li>
+</ul>
+<p>映射表应包含：旧URL、新URL、处理方式和说明。例如首页完整迁移、核心转化页迁移、旧FAQ合并到新FAQ、过时内容标记为下线等。</p>
+<h3 id="2-新站环境搭建与测试">2. 新站环境搭建与测试</h3>
+<p><img src="/_astro/test-environment.PQTiTe03_1ba5BW.webp" alt="新站环境测试" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>将完整站点复制到新环境进行测试。测试内容包括网页访问、图片、表单、下载文件等。如果使用临时测试域名，需在测试环境中添加<code>rel=noindex</code>，以避免测试环境被搜索引擎误收录。</p>
+<p>测试要点：</p>
+<ol>
+<li><strong>所有页面可正常访问、展示、跳转</strong></li>
+<li><strong>图片、素材、附件、下载文件可正常加载与下载</strong></li>
+<li><strong>表单提交、UI交互、加购下单等流程正常</strong></li>
+<li><strong>测试需涵盖移动端/PC端</strong></li>
+</ol>
+<h3 id="3-确认新站可抓取可索引googlebot可访问">3. 确认新站可抓取、可索引、Googlebot可访问</h3>
+<p><img src="/_astro/confirm-crawlability.qrMJgQM-_1lieAK.webp" alt="确认可抓取可索引" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>测试完成后，在迁移前检查Googlebot能否访问新环境。开发阶段测试用的noindex或robots屏蔽，在迁移开始前须移除。</p>
+<p>关键检查项：</p>
+<ul>
+<li><strong>robots.txt按需求配置</strong>：明确允许/禁止抓取路径，无错误屏蔽</li>
+<li><strong>移除noindex</strong>：首页、集合页、产品页、功能页移除rel=noindex，确保可索引</li>
+</ul>
+<h3 id="4-迁移前事项小结">4. 迁移前事项小结</h3>
+<p><img src="/_astro/pre-migration-checklist.BmaK-LXM_Z1QhRdi.webp" alt="迁移前事项小结" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>迁移前的Checklist：</p>
+<ol>
+<li>梳理旧URL与新URL的映射关系</li>
+<li>新站功能测试</li>
+<li>确认新站可抓取、可索引、Googlebot可访问</li>
+<li>准备Google Search Console、sitemap</li>
+</ol>
+<hr/>
+<h2 id="四迁移中上线当天的关键动作">四、迁移中：上线当天的关键动作</h2>
+<h3 id="1-提交301页面重定向">1. 提交301页面重定向</h3>
+<p><img src="/_astro/301-redirects.doj-BH0N_1biyIa.webp" alt="301重定向设置" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>域名迁移开始的首要步骤是提交301页面重定向。301的重定向Google通常能更快地理解。</p>
+<p>重点注意事项：</p>
+<ul>
+<li><strong>域名核心URL已全部启用301</strong></li>
+<li><strong>旧URL尽量不要做修改</strong></li>
+<li><strong>URL直接跳到最终新URL，不要多级跳转</strong></li>
+<li><strong>避免过多的页面跳转到首页</strong>（这会被Google视为soft 404）</li>
+</ul>
+<h3 id="2-确保新站可抓取索引">2. 确保新站可抓取索引</h3>
+<p><img src="/_astro/ensure-indexable.nTy0iiM__Z2dpuv9.webp" alt="确保新站可抓取索引" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>上线后立即确认：</p>
+<ol>
+<li><strong>源码检测确保noindex已经移除</strong></li>
+<li><strong>robots.txt没有阻拦抓取的规则</strong></li>
+<li><strong>用GSC后台对页面进行抓取测试</strong></li>
+<li><strong>提交新的sitemap</strong></li>
+</ol>
+<h3 id="3-访问验证">3. 访问验证</h3>
+<p><img src="/_astro/access-verification.qjUPpTPF_Z1h0TRu.webp" alt="访问验证" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>sitemap等都已经完成设置或者提交后进行验证：</p>
+<ol>
+<li><strong>测试核心页面的301跳转是否正常</strong></li>
+<li><strong>测试是否存在404、页面跳转错误</strong></li>
+<li><strong>测试网站访问速度、交互响应速度</strong></li>
+<li><strong>验证GSC后台抓取成功率</strong>：设置 → 抓取统计信息 → 成功几率</li>
+</ol>
+<h3 id="4-新信息替换">4. 新信息替换</h3>
+<p><img src="/_astro/update-info.DK0xQpoT_xaaeW.webp" alt="新信息替换" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>域名上线后，需要同步更新所有外部渠道的信息：</p>
+<ol>
+<li><strong>社交平台信息更新</strong>：FB、INS、X、YouTube、Reddit等账号简介联系信息更新为新域名</li>
+<li><strong>权威媒体链接更新</strong>：KOL、上下游供应商官网等内容信息链接更新</li>
+<li><strong>外链站长联系</strong>：SC外链联系站长进行新老域名的替换</li>
+</ol>
+<hr/>
+<h2 id="五迁移后排名恢复与效果监控">五、迁移后：排名恢复与效果监控</h2>
+<h3 id="看gsc的数据">看GSC的数据</h3>
+<p><img src="/_astro/gsc-crawl-data.BnlQQ1wH_20du8T.webp" alt="GSC抓取统计" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>迁移上线后，第一时间通过Google Search Console监控抓取数据。关注抓取频率、抓取响应、Googlebot的活动情况，确保Google正在正常发现和处理新域名的页面。</p>
+<h3 id="追踪数据表现">追踪数据表现</h3>
+<p><img src="/_astro/track-performance.Cmu9IMEO_WRhBj.webp" alt="追踪数据表现" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>迁移后首要优先级不是关注”关键词有没有立刻回来”，而是确认Google是否正常发现和处理新域名URL。</p>
+<p>监控重点：</p>
+<ul>
+<li><strong>检查提交的站点地图收录状态</strong>（数量是提升还是下降）</li>
+<li><strong>检查响应状态中的异常数据</strong></li>
+<li><strong>通过GSC查看品牌词和核心非品牌关键词的曝光和点击趋势</strong></li>
+</ul>
+<p>Google Search Console的抓取统计信息中，关注按响应分类的数据：</p>
+<ul>
+<li>成功（200）应该占绝大部分（90%）</li>
+<li>永久跳转（301）约占5%</li>
+<li>未找到（404）应控制在极低水平（1%以下）</li>
+</ul>
+<hr/>
+<h2 id="六总结少改动准跳转强信号强监控">六、总结：少改动、准跳转、强信号、强监控</h2>
+<p><img src="/_astro/summary.DnHEf6XO_Z1s8tjt.webp" alt="总结" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"></p>
+<p>域名切换的SEO损失无法做到完全为0，但可以通过**「少改动、准跳转、强信号、强监控」**把损失压到最低：</p>
+<ul>
+<li><strong>少改动</strong>：优先只换域名，不同步大改结构、内容和模板</li>
+<li><strong>准跳转</strong>：确保旧URL一对一继承到最相关的新URL</li>
+<li><strong>强信号</strong>：重定向、canonical、内链、sitemap必须统一指向新域名</li>
+<li><strong>强监控</strong>：上线后持续看索引替换、跳转错误和流量恢复，而不是只盯排名</li>
+</ul>
+<blockquote>
+<p>域名迁移的本质，不是”换一个网址”，而是”让搜索引擎正确认知到新域名已经完整接替旧域名的页面价值与搜索信号”。</p>
+</blockquote>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
