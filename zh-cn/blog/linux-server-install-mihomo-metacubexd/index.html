@@ -1,0 +1,230 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>Linux 服务器安装 mihomo + metacubexd - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/linux-server-install-mihomo-metacubexd/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/linux-server-install-mihomo-metacubexd/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Linux 服务器安装 mihomo + metacubexd - xiaofeng.show"><meta property="og:site_name" content="Linux 服务器安装 mihomo + metacubexd - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/linux-server-install-mihomo-metacubexd/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/linux-server-install-mihomo-metacubexd/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/linux-server-install-mihomo-metacubexd/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Linux 服务器安装 mihomo + metacubexd</h1> <time datetime="2026-04-18T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/4/18 </time> </header> <h3 id="一概述">一、概述</h3>
+<p>由于最近翻墙查得比较严重，导致我之前使用的 <code>v2rayA</code> 无法正常使用。之前我也写过一篇<a href="/zh-cn/blog/ubuntu-install-v2ray/">Ubuntu 安装翻墙软件</a>，当时用的是 <code>v2ray + v2rayA</code> 的组合；但在当前环境下，这套方案的稳定性已经不太理想了。</p>
+<p>后来在朋友推荐下，我换成了 <code>mihomo + metacubexd</code>，整体感觉还不错，使用体验有点像 <code>Clash Verge</code>，但更适合放在 Linux 服务器上长期运行。</p>
+<p>在 Linux 服务器上安装翻墙工具，核心目标通常有两个：</p>
+<ol>
+<li>让服务器本身能够稳定访问 GitHub、OpenAI、Docker Hub 等海外服务；</li>
+<li>为开发工具、命令行程序或容器环境提供统一的代理能力。</li>
+</ol>
+<p>相比桌面端，服务器环境更强调稳定性、可维护性以及开机自启能力。因此在方案选择上，除了关注是否能正常联网，还要考虑配置方式、日志排查、服务管理和后续升级是否方便。</p>
+<p>目前常见方案很多，例如传统的命令行代理、<code>v2ray</code> 系工具链，以及基于 Clash / Mihomo 内核的方案。结合最近一段时间的使用体验，<code>mihomo + metacubexd</code> 是一个比较适合 Linux 服务器的组合：前者负责核心代理能力，后者提供可视化管理界面，既能满足日常使用，也方便查看节点、切换策略、观察连接状态和排查问题。</p>
+<p>本文将以 Linux 服务器为目标环境，介绍如何安装并配置 <code>mihomo + metacubexd</code>，包括基础安装思路、服务启动方式、订阅或配置文件导入、Web 管理界面访问，以及几个常见问题的简单说明。完成后，你可以让服务器具备更稳定的科学上网能力，并为后续的 <code>Codex CLI</code>、<code>OpenAI API</code>、<code>GitHub</code> 拉取代码等场景提供网络支持。</p>
+<h3 id="二安装">二、安装</h3>
+<p>我这里采用 <code>docker-compose</code> 安装。中间遇到了跨域问题，后面又加了一个 <code>Nginx</code> 做转发，参考了这个讨论：</p>
+<p><a href="https://github.com/MetaCubeX/metacubexd/discussions/638">https://github.com/MetaCubeX/metacubexd/discussions/638</a></p>
+<p><code>docker-compose.yml</code> 配置如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yml"><code><span class="line"><span style="color:#85E89D">version</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&#39;3&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  nginx</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx-proxy</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx:latest</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">always</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;8383:80&quot;</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./nginx.conf:/etc/nginx/nginx.conf</span></span>
+<span class="line"><span style="color:#85E89D">    depends_on</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">metacubexd</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">meta</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">proxy_net</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  metacubexd</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metacubexd</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ghcr.io/metacubex/metacubexd</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">always</span></span>
+<span class="line"><span style="color:#85E89D">    expose</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;80&quot;</span></span>
+<span class="line"><span style="color:#85E89D">    networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">proxy_net</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  meta</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">meta</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">docker.io/metacubex/mihomo:Alpha</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">always</span></span>
+<span class="line"><span style="color:#85E89D">    pid</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">host</span></span>
+<span class="line"><span style="color:#85E89D">    ipc</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">host</span></span>
+<span class="line"><span style="color:#85E89D">    network_mode</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">host</span></span>
+<span class="line"><span style="color:#85E89D">    cap_add</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">ALL</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./config.yaml:/root/.config/mihomo/config.yaml</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">/dev/net/tun:/dev/net/tun</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">networks</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  proxy_net</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    driver</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">bridge</span></span></code></pre>
+<p>这里的思路是：</p>
+<ul>
+<li><code>mihomo</code> 负责真正的代理和 API 服务；</li>
+<li><code>metacubexd</code> 负责 Web 管理界面；</li>
+<li><code>Nginx</code> 负责把前端页面和 <code>mihomo</code> 的 API 统一到一个入口，避免浏览器跨域访问失败。</li>
+</ul>
+<p>对应的 <code>nginx.conf</code> 配置如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#F97583">worker_processes </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">events</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583"> worker_connections </span><span style="color:#79B8FF">1024</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">http</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    include </span><span style="color:#E1E4E8">      mime.types;</span></span>
+<span class="line"><span style="color:#F97583">    default_type </span><span style="color:#E1E4E8"> application/octet-stream;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    server</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        listen </span><span style="color:#79B8FF">80</span><span style="color:#79B8FF"> default_server</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        server_name </span><span style="color:#E1E4E8">_;</span></span>
+<span class="line"><span style="color:#F97583">        absolute_redirect </span><span style="color:#79B8FF">off</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#9ECBFF">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#9ECBFF"> &#39;*&#39;</span><span style="color:#E1E4E8"> always;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#9ECBFF">&#39;Access-Control-Allow-Methods&#39;</span><span style="color:#9ECBFF"> &#39;GET, POST, OPTIONS&#39;</span><span style="color:#E1E4E8"> always;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#9ECBFF">&#39;Access-Control-Allow-Headers&#39;</span><span style="color:#9ECBFF"> &#39;Content-Type, Authorization&#39;</span><span style="color:#E1E4E8"> always;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#9ECBFF">&#39;Access-Control-Allow-Credentials&#39;</span><span style="color:#9ECBFF"> &#39;true&#39;</span><span style="color:#E1E4E8"> always;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> ($request_method </span><span style="color:#F97583">= </span><span style="color:#9ECBFF">&#39;OPTIONS&#39;</span><span style="color:#E1E4E8">) { </span><span style="color:#F97583">return</span><span style="color:#79B8FF"> 204</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        # 根路径代理到 metacubexd，避免 SPA 子路径资源 404</span></span>
+<span class="line"><span style="color:#F97583">        location</span><span style="color:#B392F0"> / </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">            proxy_pass </span><span style="color:#E1E4E8">http://metacubexd/;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        # mihomo 的 RESTful API</span></span>
+<span class="line"><span style="color:#F97583">        location</span><span style="color:#B392F0"> /meta/ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">            proxy_pass </span><span style="color:#E1E4E8">http://YOUR_SERVER_IP:9090/;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">            proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>上面 <code>YOUR_SERVER_IP</code> 换成你的服务器公网 IP 或内网 IP 即可。由于我的 <code>mihomo</code> 使用的是 <code>host</code> 网络模式，所以这里直接反代宿主机上的 <code>9090</code> 端口。</p>
+<p>配置完成后，执行下面的命令启动：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span></code></pre>
+<p>如果后面修改了配置，也可以直接重启：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> restart</span></span></code></pre>
+<h3 id="三配置">三、配置</h3>
+<p><code>mihomo</code> 的配置文件这里使用 <code>config.yaml</code>。如果你之前已经在桌面端使用过 <code>Clash Verge</code>，很多情况下可以直接把那边的配置复制过来，再根据服务器环境做一点调整。</p>
+<p>例如我就是直接参考 <code>Clash Verge</code> 的订阅和配置内容，再补上服务器场景需要的控制接口配置。</p>
+<p><img src="/_astro/clash-verge-config.BW76YUKQ_Z10tkLJ.webp" alt="Clash Verge 配置界面" loading="lazy" decoding="async" fetchpriority="auto" width="953" height="683"></p>
+<p>需要注意的地方主要有两个：</p>
+<ol>
+<li><code>external-controller</code> 之前如果是 <code>127.0.0.1</code>，这里要改成 <code>0.0.0.0</code>；</li>
+<li>最好配置一个 <code>secret</code>，因为控制接口通常会暴露到服务器网络环境中。</li>
+</ol>
+<p>配置示例如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">mixed-port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">7890</span></span>
+<span class="line"><span style="color:#85E89D">allow-lan</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">bind-address</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&#39;*&#39;</span></span>
+<span class="line"><span style="color:#85E89D">mode</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">rule</span></span>
+<span class="line"><span style="color:#85E89D">log-level</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">info</span></span>
+<span class="line"><span style="color:#85E89D">external-controller</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&#39;0.0.0.0:9090&#39;</span></span>
+<span class="line"><span style="color:#85E89D">external-controller-cors</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  allow-origins</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">&#39;*&#39;</span></span>
+<span class="line"><span style="color:#85E89D">  allow-private-network</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">secret</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;your-secret&quot;</span></span>
+<span class="line"><span style="color:#85E89D">unified-delay</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">tcp-concurrent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span></code></pre>
+<p>这里最关键的是 <code>external-controller: &#39;0.0.0.0:9090&#39;</code>。如果还是写成 <code>127.0.0.1:9090</code>，那 <code>metacubexd</code> 或 <code>Nginx</code> 在外部访问的时候就连不上接口。</p>
+<p>另外，<code>secret</code> 强烈建议设置，不然控制面板暴露出去之后风险会比较大。第一次登录时，前端面板也会要求你输入这个密钥。</p>
+<h3 id="四浏览器登录及配置">四、浏览器登录及配置</h3>
+<p>启动完成后，可以通过 <code>http://YOUR_SERVER_IP:8383/</code> 访问前面 <code>Nginx</code> 暴露出来的统一入口。</p>
+<p>第一次进入时，需要填写后端地址和你在 <code>config.yaml</code> 中设置的 <code>secret</code>。</p>
+<p><img src="/_astro/metacubexd-login.u9c8qA0P_1qFWB2.webp" alt="metacubexd 首次登录" loading="lazy" decoding="async" fetchpriority="auto" width="1736" height="788"></p>
+<p>如果你使用的是上面这套 <code>Nginx</code> 转发方案，后端地址建议直接填写反向代理后的地址，例如：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>http://YOUR_SERVER_IP:8383/meta</span></span></code></pre>
+<p>这样浏览器始终只和同一个入口通信，跨域问题也更少。如果你没有额外做反向代理，而是直接暴露 <code>mihomo</code> 控制接口，那也可以直接填写 <code>http://YOUR_SERVER_IP:9090</code>。</p>
+<p>登录成功后，就可以在面板里查看代理组、测试延迟、切换节点以及观察当前连接状态。</p>
+<p><img src="/_astro/metacubexd-dashboard.BKVKYWlQ_ZyDhQg.webp" alt="metacubexd 节点与代理组面板" loading="lazy" decoding="async" fetchpriority="auto" width="1900" height="903"></p>
+<p>整体体验和 <code>Clash Verge</code> 比较接近：</p>
+<ul>
+<li>可以直接切换节点；</li>
+<li>可以查看策略组当前命中的节点；</li>
+<li>可以测试延迟；</li>
+<li>可以通过日志和连接信息排查问题。</li>
+</ul>
+<p>如果你平时主要是在服务器上跑开发工具、脚本或者 API 请求，那么这套方式已经足够用了。</p>
+<h3 id="五常见问题">五、常见问题</h3>
+<h4 id="51-metacubexd-无法连接后端">5.1 metacubexd 无法连接后端</h4>
+<p>优先检查下面几个地方：</p>
+<ul>
+<li><code>mihomo</code> 是否已经正常启动；</li>
+<li><code>external-controller</code> 是否设置成了 <code>0.0.0.0:9090</code>；</li>
+<li><code>secret</code> 是否和登录时输入的一致；</li>
+<li>服务器防火墙或安全组是否放通了 <code>9090</code> 和 <code>8383</code> 端口。</li>
+</ul>
+<h4 id="52-页面能打开但接口请求失败或报跨域错误">5.2 页面能打开，但接口请求失败或报跨域错误</h4>
+<p>这类问题通常和反向代理有关，重点检查：</p>
+<ul>
+<li><code>Nginx</code> 是否正确代理了 <code>/meta/</code>；</li>
+<li><code>metacubexd</code> 中填写的后端地址是否和反向代理路径一致；</li>
+<li>CORS 响应头是否已经带上；</li>
+<li><code>proxy_pass</code> 指向的 IP 和端口是否正确。</li>
+</ul>
+<p>如果你是 <code>host</code> 网络模式，<code>proxy_pass</code> 一般要指向宿主机可以访问到的地址，而不是 <code>127.0.0.1</code> 这种只在容器内部有意义的写法。</p>
+<h4 id="53-修改了-configyaml-但没有生效">5.3 修改了 config.yaml 但没有生效</h4>
+<p>通常可以先重启容器：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> restart</span><span style="color:#9ECBFF"> meta</span></span></code></pre>
+<p>如果还是不生效，再检查一下宿主机挂载路径是否正确，尤其是：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>./config.yaml:/root/.config/mihomo/config.yaml</span></span></code></pre>
+<p>这类文件挂载一定要带上完整文件名，不然容易出现“以为挂上了，实际上路径不对”的情况。</p>
+<h3 id="六写在最后">六、写在最后</h3>
+<p>对我来说，这套 <code>mihomo + metacubexd</code> 的组合，目前在 Linux 服务器上的体验还是比较满意的。它既保留了桌面端常见代理工具那种可视化操作方式，又兼顾了服务器环境需要的稳定性和可维护性。</p>
+<p>如果你最近也遇到 <code>v2rayA</code> 不太稳定，或者只是想在服务器上找一套更顺手的方案，可以试试这个组合。</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
