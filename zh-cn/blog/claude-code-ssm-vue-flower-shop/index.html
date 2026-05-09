@@ -1,0 +1,190 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>用 Claude Code 五天接完 SSM + Vue 鲜花商城毕设：一份完整复盘 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/claude-code-ssm-vue-flower-shop/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-ssm-vue-flower-shop/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="用 Claude Code 五天接完 SSM + Vue 鲜花商城毕设：一份完整复盘 - xiaofeng.show"><meta property="og:site_name" content="用 Claude Code 五天接完 SSM + Vue 鲜花商城毕设：一份完整复盘 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-ssm-vue-flower-shop/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/claude-code-ssm-vue-flower-shop/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/claude-code-ssm-vue-flower-shop/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.C6WZgLaf_1q3c4V.webp" alt="用 Claude Code 五天接完 SSM + Vue 鲜花商城毕设：一份完整复盘" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2752" height="1536" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>用 Claude Code 五天接完 SSM + Vue 鲜花商城毕设：一份完整复盘</h1> <time datetime="2026-05-09T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/5/9 </time> </header> <blockquote>
+<p>TL;DR — 五一前接的一个毕设外包，主题是鲜花商城。<strong>前后端全程 Claude Code 托管，4-5 天 4-5 轮迭代，最终交付：可运行系统 + 论文 30+ 张配图 + 答辩 PPT。</strong> 客户回头介绍了下一单。</p>
+</blockquote>
+<p>这是一篇”我是怎么用 AI 做完外包”的复盘。不是教程，是观察 + 方法论。</p>
+<h2 id="一单子长什么样">一、单子长什么样</h2>
+<p>五一节前，朋友给我推了一个毕业设计外包，主题叫「六月花艺线上销售网站」。技术栈：</p>
+<ul>
+<li><strong>后端</strong>：Spring + SpringMVC + MyBatis-Plus（标准 SSM），Druid 连接池，MySQL 5.7</li>
+<li><strong>前台</strong>：jQuery + Layui + Vue 2，老式三件套混搭</li>
+<li><strong>后台</strong>：Vue 2 + Vue Router + Element UI，标准管理 SPA</li>
+<li><strong>认证</strong>：Token-based，自定义拦截器把 <code>userId / role / tableName / username</code> 注入 session</li>
+</ul>
+<p>业务上是个鲜花商城：商品（鲜花 / 花材 / 永生花）、订单（含退款 / 退货）、库存（入库 / 出库联动）、客服 chat、新闻、用户中心。</p>
+<p>打开仓库的第一感觉是：<strong>这玩意儿是个半成品</strong>。</p>
+<ul>
+<li>前台首页是 2015 风灰底 + 宋体</li>
+<li>后台一半的按钮点了 500</li>
+<li>订单状态流转是断的</li>
+<li>退款功能根本没写</li>
+<li>文档（用户手册、ER 图、PPT）一份没有</li>
+</ul>
+<p>正常思路是要么推掉，要么从头重做。但我手上有 Claude Code，所以我接了。</p>
+<h2 id="二改造路径为什么我先改前端最后才动后端">二、改造路径：为什么我先改前端，最后才动后端</h2>
+<p>我做的第一个反直觉决定：<strong>前台 UI → 后台 UI → 后端代码</strong>，反过来。</p>
+<p>教科书会告诉你应该先把数据模型对齐再写前端。但跟 Claude Code 一起干活，这个顺序是错的。</p>
+<p><strong>原因 1：可即时验证的范围更小，AI 出错少。</strong></p>
+<p>让 Claude Code 改一个 <code>Home.vue</code>，它做完我打开浏览器就能看见对错。让它改一个跨三个表的事务方法，它做完我得跑 mvn 打 war 部署到 Tomcat 才能看见对错。前者验证耗时 5 秒，后者 5 分钟。当 AI 还会犯错的时候，<strong>让验证回路尽可能短</strong>比什么都重要。</p>
+<p><strong>原因 2：先把 UI 做出来，后续描述需求成本更低。</strong></p>
+<p>后端的业务字段和逻辑大多是对的，只是被烂 UI 遮住了。先不动它。先把 UI 做漂亮——做完之后，再描述新需求时，我可以指着具体的页面说”这个购物车要支持批量结算”，而不是抽象地讲”购物车实体加一个 selected 字段”。<strong>让对话锚定在用户能看见的东西上</strong>，AI 误解的概率会降一个数量级。</p>
+<p><strong>原因 3：心理收益。</strong></p>
+<p>前台改完是立竿见影的——丑变好看，需要不到一天。这种正反馈对接外包的人来说是必要的，因为接下来还要打硬仗。</p>
+<h2 id="三第一阶段前台改造day-1">三、第一阶段：前台改造（Day 1）</h2>
+<p>我直接把前台首页和 Claude Code 的对话起手是这样的：</p>
+<blockquote>
+<p>“这是一个鲜花商城网站的前台。技术栈是 jQuery + Layui + Vue 2。当前 UI 太老了。请重做整个前台风格：参考小红书、花点时间的视觉调性，柔粉/米白主色，整体感觉精致、年轻、像精品。先做首页（Home.vue），其他页面后面分批做。要求：</p>
+<ol>
+<li>不动后端接口和数据结构</li>
+<li>不引入新的 UI 库（只用现有的 Layui + Vue 2）</li>
+<li>保留现有路由和数据绑定</li>
+<li>用 SCSS 抽 skin 文件，便于后续整体换肤”</li>
+</ol>
+</blockquote>
+<p>第三、第四条是关键。<strong>它给 Claude Code 设了边界</strong>——不准动 schema、不准引入新依赖。这两条是后面所有页面改造的隐性前提。</p>
+<p>Claude Code 第一轮交付的首页就直接能看：</p>
+<p><img src="/_astro/01-front-home.CVWgAFkx_1LaxCR.webp" alt="改造后的前台首页" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p>后面用同样的对话模板做了商品列表、详情页、购物车、订单页：</p>
+<p><img src="/_astro/02-front-flower-list.CV8BKldB_Z17NTvO.webp" alt="商品列表" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p><img src="/_astro/04-front-cart.DgZ4lahi_1g99Tk.webp" alt="购物车" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p><img src="/_astro/08-front-order-tabs.CaNnqK17_ZLvPrM.webp" alt="订单中心 - tab 切换" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1711"></p>
+<p>整个前台 14 个页面，<strong>一天搞完</strong>。</p>
+<h2 id="四第二阶段后台改造day-2">四、第二阶段：后台改造（Day 2）</h2>
+<p>后台的活是体力活。十几个 CRUD 模块（鲜花信息 / 鲜花入库 / 鲜花出库 / 花材选择 / 订单 / 用户 / 评论 / 新闻 / 客服），每个都是 Element UI 的标准三段：搜索栏 + 表格 + 操作按钮。</p>
+<p>策略很简单：<strong>改一个当样板，剩下让 Claude Code 照着改。</strong></p>
+<p>我先把 <code>admin-flower.vue</code> 改成定稿版本（粉色系 skin、表格圆角、按钮分组），然后告诉 Claude Code：</p>
+<blockquote>
+<p>“用 admin-flower.vue 当样板，把 admin/src/views/ 下所有列表页都按这个风格改一遍。要求：</p>
+<ol>
+<li>不改路由，不改 API 调用</li>
+<li>抽 mixin / 抽组件能抽就抽，但不要过度</li>
+<li>改完每个文件给我列出来，让我抽几个验证”</li>
+</ol>
+</blockquote>
+<p>它在一个上下文里把十几个页面全改了。我抽样验证了 4 个，全过。</p>
+<p><img src="/_astro/05-admin-home.pdPQYbQO_Z274pDQ.webp" alt="后台首页" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p><img src="/_astro/03-admin-flower.DqXDqrVI_Z1rFmux.webp" alt="后台鲜花管理" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p><img src="/_astro/07-admin-ruku.BEl1RWw9_Z1BmlnS.webp" alt="后台鲜花入库管理" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p>后台改造，<strong>第二天结束</strong>。</p>
+<h2 id="五第三阶段后端补完day-3-4">五、第三阶段：后端补完（Day 3-4）</h2>
+<p>到这里 UI 已经像个能上线的产品了，但很多功能还是断的。最严重的几个：</p>
+<ol>
+<li><strong>订单状态流转</strong>：从「待付款 → 已付款 → 待发货 → 已发货 → 已完成」整条链路有断点</li>
+<li><strong>退款 / 退货退款</strong>：根本没写</li>
+<li><strong>库存联动</strong>：鲜花信息表的 <code>kucun</code> 字段不会随着入库 / 出库自动调整</li>
+<li><strong>支付</strong>：原代码硬编码了”扣余额”，没有支付模拟流程</li>
+</ol>
+<p>这一阶段就开始动后端代码了。Spring MVC controller、MyBatis-Plus mapper、service 层。</p>
+<p>我跟 Claude Code 的协作方式变了——前面是”按样板做”，这里变成”按业务逻辑做”。我会先用一段中文描述完整的业务流程：</p>
+<blockquote>
+<p>“用户下单的流程是：购物车 → 选地址 → 提交订单（生成订单号、扣库存、不扣余额、状态=待付款）→ 模拟支付（扣余额、状态=待发货）→ 后台发货（状态=待收货）→ 用户收货（状态=已完成）。</p>
+<p>退款流程：用户在「待发货」或「待收货」状态可以发起仅退款 / 退货退款；后台审核通过后，状态变成 已退款，库存回滚。</p>
+<p>库存联动：入库单审核通过 → kucun += quantity；出库单审核通过 → kucun -= quantity；订单生成 / 退款回滚都要联动。</p>
+<p>现在告诉我：当前代码里这套流程哪些已经写了、哪些缺、哪些是错的。先不要改，先列清单。”</p>
+</blockquote>
+<p>让它先<strong>审计</strong>再<strong>实现</strong>，是这种复杂业务的关键。Claude Code 会列出来：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>- OrderController#createOrder：缺库存扣减、缺事务</span></span>
+<span class="line"><span>- OrderController#refund：根本没有这个方法</span></span>
+<span class="line"><span>- XianhuarukuService#audit：写了，但没触发库存联动</span></span>
+<span class="line"><span>...</span></span></code></pre>
+<p>清单出来后，我一项项去描述要怎么改，Claude Code 一项项实现。每改完一项，我开浏览器跑一遍，验证通过再走下一项。</p>
+<p>第三天和第四天，做完了订单全链路 + 退款 + 库存联动。</p>
+<p><img src="/_astro/06-admin-orders.9sifsY6y_48mAQ.webp" alt="后台订单管理" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="900"></p>
+<p>这一阶段最大的体会是：<strong>Claude Code 不会魔法。</strong> 你描述得越清楚，它做得越准；你含糊，它就猜，猜错就要回滚。所以这阶段最值钱的不是 prompt 工程花式，而是把业务逻辑写清楚的能力——这是经验，不是话术。</p>
+<h2 id="六第四阶段文档--论文--pptday-5">六、第四阶段：文档 + 论文 + PPT（Day 5）</h2>
+<p>毕设要交的不只是代码，还有论文和答辩。</p>
+<p>论文里要改一堆图——ER 图、业务流程图、交互图——一共三四十张。这部分代码做不了，我用的是 <strong>Claude Cowork</strong>（Anthropic 另一个产品形态，专门做内容协作）。</p>
+<blockquote>
+<p><strong>Claude Code vs Claude Cowork 的分工</strong>：</p>
+<ul>
+<li>写代码、读代码、跑命令、改文件 → Claude Code</li>
+<li>画图、做 PPT、写论文段落、内容创作 → Claude Cowork</li>
+</ul>
+<p>这两年我的经验是这两个工具不要混用。Code 不擅长视觉创作；Cowork 不擅长跑环境。各干各的，效率最高。</p>
+</blockquote>
+<p>论文的 ER 图、业务流程图、补充图（drawio 格式）、数据库表结构（docx）、用户手册（md + html）都是 Cowork 出。我做的是把它们 review 一遍，调整不合理的字段命名和流程箭头方向。</p>
+<p>最后还要一份答辩 PPT。Cowork 直接按论文章节生成大纲 → 我修一遍 → 渲染成 pptx。</p>
+<p>第五天结束，所有交付物齐活：</p>
+<ul>
+<li>一个能跑的 SSM + Vue 鲜花商城</li>
+<li>一份 1.0 版的用户手册（HTML + 截图）</li>
+<li>30+ 张论文配图（ER / 流程 / 交互）</li>
+<li>一份数据库表结构 docx</li>
+<li>一份答辩 PPT</li>
+</ul>
+<h2 id="七买家回头又介绍了一单">七、买家回头又介绍了一单</h2>
+<p>交付后一周内，买家又给我推了一个小单子——<strong>只要答辩 PPT，不要代码</strong>。我就更省事了，全程 Claude Cowork，半天搞完。</p>
+<p>这件事让我想到一个商业层面的观察：<strong>用 AI 做交付，复购率高得离谱</strong>。原因不在于价格——AI 对价格压力的影响其实没那么大；原因在于”快”和”稳”。买家一旦发现你能在他们要的时间内交付他们要的东西，他们会反复找你。</p>
+<h2 id="八几个-claude-code-实操小经验">八、几个 Claude Code 实操小经验</h2>
+<p>把这次踩到的坑提炼出来，方便下次复用：</p>
+<p><strong>1. 让 AI 先审计，再实现。</strong> 复杂业务别让它直接改，先让它列清单”哪些缺 / 哪些错 / 哪些已经对”，你 review 完再让它动手。</p>
+<p><strong>2. 给硬约束，比给软偏好有用十倍。</strong> “不要动 schema&quot;&quot;不要引入新依赖&quot;&quot;不要修改 API 契约”——这种硬约束 Claude Code 遵守得非常好。“代码风格优雅一点”这种就经常飘。</p>
+<p><strong>3. 用样板传播风格。</strong> 改完一个页面让它当样板，比口头描述”风格是怎样的”快得多。</p>
+<p><strong>4. 验证回路要短。</strong> 让 AI 在能 5 秒看到结果的范围里干活——前端、配置、文档；不要让它一次性改完跨三个表的事务方法再去看效果。</p>
+<p><strong>5. Code 和 Cowork 分工。</strong> 代码用 Code，文档 / 图表 / PPT 用 Cowork。两者都是 Claude，但工具形态不同，硬切的成本反而最低。</p>
+<p><strong>6. 描述业务流程的能力，决定上限。</strong> 一旦上升到”实现复杂业务”，AI 不会替你思考。你描述得清楚，它做得准；你含糊它就猜。</p>
+<h2 id="九一个观察">九、一个观察</h2>
+<p>做完整个项目，我最大的感受是：</p>
+<blockquote>
+<p><strong>现在做这种”标准化的简单开发”，AI 已经比绝大多数人做得好了。</strong></p>
+</blockquote>
+<p>毕设这种活——业务不复杂、技术栈成熟、有明确交付物——本来就是给学生练手的。但 Claude Code 干这事的下限，已经超过了大多数学生的上限。</p>
+<p>这意味着评估一个开发者的标准变了。<strong>从前看的是写代码的速度、质量、风格；现在更值得看的是他能不能用好 AI</strong>。</p>
+<p>会用 AI 的人，五天交付一个能上线的鲜花商城；不会用的，五天还在 debug 一个 NPE。</p>
+<p>差距已经不在”会不会写代码”，而在”会不会用 AI 写代码”。</p>
+<hr/>
+<p>我感觉，现在做这种简单的开发和任务，AI 已经比绝大多数人做得好了——我们要做的，是用好 AI。</p>
+<p>如果你也在接外包 / 做毕设 / 做副业开发，可以留言聊聊你怎么用 Claude Code。我后面打算多接几个类似单子，做完会再写一篇更细的方法论。</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
