@@ -1,0 +1,188 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>半个月、5 轮迭代、0.29 元 OCR：一个被平台政策杀死的全栈项目复盘 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/claude-code-ruoyi-ocr-platform-killed/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-ruoyi-ocr-platform-killed/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="半个月、5 轮迭代、0.29 元 OCR：一个被平台政策杀死的全栈项目复盘 - xiaofeng.show"><meta property="og:site_name" content="半个月、5 轮迭代、0.29 元 OCR：一个被平台政策杀死的全栈项目复盘 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/claude-code-ruoyi-ocr-platform-killed/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/claude-code-ruoyi-ocr-platform-killed/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/claude-code-ruoyi-ocr-platform-killed/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.Do_xEARP_AtuUO.webp" alt="半个月、5 轮迭代、0.29 元 OCR：一个被平台政策杀死的全栈项目复盘" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2752" height="1536" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>半个月、5 轮迭代、0.29 元 OCR：一个被平台政策杀死的全栈项目复盘</h1> <time datetime="2026-05-10T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/5/10 </time> </header> <h1 id="半个月5-轮迭代029-元-ocr一个被平台政策杀死的全栈项目复盘">半个月、5 轮迭代、0.29 元 OCR：一个被平台政策杀死的全栈项目复盘</h1>
+<h2 id="一项目讣告">一、项目讣告</h2>
+<p>上个月帮朋友定制了一套内部管理后台，跨度半个多月，前后 5 轮需求迭代，主力开发是 Claude Code，集成阿里百炼的视觉模型做图片识别。</p>
+<p>第五轮交付完成的第二天，朋友的腾讯账号被全面封禁，10 年老号，项目当天彻底关停。</p>
+<p>一行代码没改，系统就死了。</p>
+<p>这篇复盘想讲三件事：</p>
+<ol>
+<li>2026 年的 AI 编码到底强到什么程度</li>
+<li>5 轮口语化反馈，怎么管成可执行的需求</li>
+<li>工程做对了，但商业判断做错了，会发生什么</li>
+</ol>
+<hr/>
+<h2 id="二系统是什么">二、系统是什么</h2>
+<p>业务定位很简单：<strong>游戏账号收益的内部管理后台</strong>。</p>
+<p>每天，业务员要面对一堆第三方软件吐出来的截图——账号余额、产出明细——人肉抄到 Excel 再对账，错漏率高、时效性差。我们做的事情就是把这件事系统化：设备、账号、每日产出、卖出记录、结算单，五张主表打通；截图自动识别成结构化数据，自动入库、自动对账。</p>
+<p>抽象一下数据模型，差不多是这样：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>device ──┬── account ──┬── daily_income</span></span>
+<span class="line"><span>         │             └── sale_record ── settlement</span></span>
+<span class="line"><span>         └── operator</span></span></code></pre>
+<p>技术栈一句话：<strong>若依（RuoYi-Vue）二开 + 阿里百炼 qwen-vl-max + Claude Code 主力开发</strong>。</p>
+<p><img src="/_astro/01-sale-list.C90Ode4J_Z2jK1Vz.webp" alt="卖出记录主列表：五张主表中最高频的一张，每天靠它对账" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<hr/>
+<h2 id="三技术栈选型与取舍">三、技术栈选型与取舍</h2>
+<h3 id="为什么选若依">为什么选若依</h3>
+<p>客户预算紧、交付窗口短。若依自带权限、字典、代码生成器、菜单、日志，开箱可用。从零写一套权限体系再做业务，时间至少多花 60%。这个项目没有任何理由不复用。</p>
+<p>二开的代价是每次升级若依底座要小心，但客户后续不打算大版本升级，权衡之后选若依完全成立。</p>
+<h3 id="为什么选阿里百炼-qwen-vl-max">为什么选阿里百炼 qwen-vl-max</h3>
+<p>候选有 GPT-4V、Gemini、阿里百炼、智谱 GLM-4V 几家。最终选阿里百炼的理由：</p>
+<ul>
+<li><strong>国内合规</strong>：客户场景是国内 toB，数据走境内通道是硬要求</li>
+<li><strong>中文截图准</strong>：第三方软件截图大量中文文本和数字，qwen-vl-max 在这种场景下识别率高</li>
+<li><strong>计费便宜</strong>：按 token 计费，单次截图大概 800–900 tokens，单价友好</li>
+<li><strong>接入简单</strong>：DashScope SDK 一行调用，不需要复杂 prompt 工程</li>
+</ul>
+<h3 id="为什么不上-spring-ai--langchain">为什么不上 Spring AI / LangChain</h3>
+<p>这个项目里 AI 只承担一个明确的单点能力：把图片转成结构化字段。包一层 RestTemplate 调 DashScope HTTP 接口就够。引入 Spring AI 的好处主要在多模型路由、agent 编排、向量检索——这些功能在本项目里全都用不上。引入大框架等于增加无效复杂度。</p>
+<p>工程取舍的原则是：<strong>能少一层就少一层</strong>。</p>
+<h3 id="影刀-rpa-mcp备用未启用">影刀 RPA MCP（备用未启用）</h3>
+<p>仓库里有一份 <code>yingdao_mcp_server/</code>。原计划是把第三方软件操作也自动化掉（Claude Code 通过 MCP 直接驱动影刀做点击/截图），但客户最终反馈”业务员每天点点就行不用全自动”，没启用。这部分代码留着备用。</p>
+<hr/>
+<h2 id="四ai-开发力压测029-元跑完-150-次识别">四、AI 开发力压测：0.29 元跑完 150 次识别</h2>
+<p>这是整个项目最反直觉的部分。</p>
+<p><img src="/_astro/02-ocr-drag-upload.DI1_7gXC_1iVqoU.webp" alt="OCR 入口：拖一张第三方软件截图进来" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><img src="/_astro/02-ocr-drag-upload.DI1_7gXC_1iVqoU.webp" alt="识别结果直接落到表单，业务员审一下点保存就入库" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><strong>阿里百炼后台数据</strong>：</p>
+<ul>
+<li>调用模型数：1（qwen-vl-max）</li>
+<li>调用成功总次数：150 次</li>
+<li>Token 总数：127K</li>
+<li>平均单次请求：849 tokens</li>
+</ul>
+<p><strong>阿里云月账单</strong>：</p>
+<ul>
+<li>应付金额：<strong>¥0.29</strong></li>
+<li>优惠抵扣：¥0</li>
+<li>命中优惠：否</li>
+</ul>
+<p>整整 150 次多模态图像识别，全栈联调期间反复回归测试，<strong>总共花了 0.29 元</strong>。token 经济学已经被打到了”对中小项目几乎免费”的水平。</p>
+<p>Claude Code 在这次的角色更直接：</p>
+<ul>
+<li>设计阶段：和我对话拆需求、写设计文档草稿</li>
+<li>编码阶段：写 Service、Mapper、XML、Vue 组件、Element Plus 表单</li>
+<li>联调阶段：复现客户截图里的 bug、读 Mapper SQL 改时间筛选精度</li>
+<li>文档阶段：生成《操作手册-用户篇》《操作手册-管理员篇》两份带截图的手册（管理员篇 4 万字+）</li>
+</ul>
+<p>我的角色更多是”产品 + 架构 + 客户接口人”，<strong>写代码这件事在这个项目里几乎不再是瓶颈</strong>。</p>
+<p>但代码生成快，不等于项目交付快。真正的瓶颈在下一节。</p>
+<hr/>
+<h2 id="五5-轮需求迭代怎么管">五、5 轮需求迭代怎么管</h2>
+<p>客户反馈的形态长这样：</p>
+<ul>
+<li><strong>语音</strong>：“这版改的有点乱，其它不重要，现在要统计总数量，根据勾选的统计出卖前总余额和卖后总余额”</li>
+<li><strong>文字</strong>：“新增设备加一个录入人员，默认是当前登陆用户，也可以修改”</li>
+<li><strong>截图</strong>：3 张错误状态截图 + 一句”结算状态没有跟着变”</li>
+</ul>
+<p>无结构、有歧义、混合载体。<strong>直接照着做就是返工。</strong></p>
+<p>我自己定的处理流程是：每一轮收到反馈，先把客户原话<strong>逐条抄录到一份确认稿里</strong>，然后给每条拆出三栏：</p>
+<p>| 我方理解 | 当前实现现状 | 待客户拍板的细节（Q&amp;A 选项） |</p>
+<p>让客户在每个 Q 下面<strong>勾选</strong>，而不是凭印象描述。</p>
+<p>举两个真实案例。</p>
+<h3 id="案例-1勾选汇总">案例 1：勾选汇总</h3>
+<p>客户原话：“<strong>最重要、最重要</strong>的就是根据勾选显示出代币总数，这个我们要给老板报。”</p>
+<p>直接照做，会做出”勾选行的余额合计”。但拆细之后发现至少 3 个待定项：</p>
+<ul>
+<li><strong>Q1.1</strong>　原有 4 张汇总卡怎么处理？全部保留 / 全部替换 / 只留几张（具体留哪几张要客户指明）</li>
+<li><strong>Q1.2</strong>　没有勾选任何行时，显示什么？显示 0 / 灰色提示 / 自动汇总当前页</li>
+<li><strong>Q1.3</strong>　翻页之后勾选状态要保留吗？保留（跨页累加） / 不保留（翻页清空）</li>
+</ul>
+<p>每一个 Q 都是真实分歧点。如果不在确认稿里逼出来，等开发完了客户一句”不是我想要的”就要返工。</p>
+<p><img src="/_astro/04-sale-summary-checkbox.DVfMCGCy_Z1CzP38.webp" alt="勾选行后顶部出现卖前总余额、卖后总余额、代币总数三张 chip" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<h3 id="案例-2字段命名歧义">案例 2：字段命名歧义</h3>
+<p>客户截图反馈”卖出记录的结算状态没有根据结算管理同步改变”。</p>
+<p>我读源码发现：后端 <code>BizSettlementServiceImpl.syncSettlementBizRecords()</code> 逻辑是对的，根据 <code>BizSettlementItem.bizType=&#39;SALE&#39;</code> 把对应 <code>BizSaleRecord.settle_status</code> 置 1，绑定 <code>settlement_id</code>。<strong>但</strong>前端列表展示的列叫”结账状态”，prop 是 <code>settledFlag</code>（手工标记字段），<strong>不是</strong> <code>settleStatus</code>（自动同步字段）。两个字段命名相近、语义不同，看起来”没变”实际上是显示了错的字段。</p>
+<p>如果直接照客户说的”修后端同步逻辑”去改，就是错的修法。<strong>真正的 bug 是前端列展示了错误的字段，或者两个字段的命名/语义本身就该重构。</strong></p>
+<p>这种歧义如果不在确认稿里把”客户说的没变”和”代码里到底哪条逻辑没跑”对齐，就会反复返工。</p>
+<h3 id="教训">教训</h3>
+<p>AI 让写代码快了 10 倍。但<strong>把客户的口语反馈翻译成确定的需求</strong>，AI 帮不上。这一步还是只能靠人——靠你强迫客户在选项里勾选，而不是靠脑补。</p>
+<p>这件事也是 AI 时代外包/接活的真正护城河。代码人人都能让 AI 写出来，需求确定性和产品判断不是。</p>
+<hr/>
+<h2 id="六工程做完了但业务死了">六、工程做完了，但业务死了</h2>
+<p>5-07 上午，第五轮交付收口。<code>CHANGES.md</code> 列了 6 项主要变更 + 1 项优化，全部完成并通过编译：</p>
+<ol>
+<li>时间筛选支持时分秒精度</li>
+<li>列名调整（云机号 → 设备编号）</li>
+<li>退款流程自动化（移除手动确认按钮）</li>
+<li>操作员奖励口径从”比例”改为”固定金额”</li>
+<li>设备管理默认奖励口径同步调整</li>
+<li>OCR 批量识别支持手动编辑</li>
+<li>OCR 识别精度优化（小额阈值过滤）</li>
+</ol>
+<p><img src="/_astro/05-settlement-list.dpNJ5IZm_Z1EtAVA.webp" alt="结算单列表：第五轮把退款流程接进来后，状态流转才算闭环" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><img src="/_astro/06-datetime-range-picker.YJu0IIGe_1rsjSs.webp" alt="时间筛选支持到秒——客户业务结算高峰集中在凌晨某一分钟内，原来的&#34;日&#34;精度根本没法用" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p>同一周，朋友的腾讯账号被批量封禁，10 年老号。项目当天关停。</p>
+<p>一行代码没改，系统下线。</p>
+<h3 id="真正的反思">真正的反思</h3>
+<p>技术评估之外，必须做<strong>平台风险评估</strong>。</p>
+<p>接外包、做朋友的项目，大家容易盯着技术可行性、预算、工期。但有一类风险被反复忽略：<strong>这个业务在它依赖的渠道（微信、抖音、支付宝、应用市场）那边，是合规的吗？是灰区吗？是政策窗口随时会关的吗？</strong></p>
+<p>这一项不过关，AI 写得再快也是埋单。</p>
+<p>我下次会做的：项目启动会增加一个环节，<strong>平台依赖清单 + 政策稳定性自评</strong>：</p>
+<ul>
+<li>列出业务赚钱链路上所有依赖的平台</li>
+<li>对每个平台标注：白 / 灰 / 黑</li>
+<li>灰区以上的项目，要么不接，要么定金一次付清、合同里写清楚平台风险归属</li>
+<li>约定平台政策变化时双方的退出机制</li>
+</ul>
+<p>这不是法务问题，是<strong>项目可行性评估的一部分</strong>。</p>
+<hr/>
+<h2 id="七结语">七、结语</h2>
+<p>AI 开发力 = 加速器。
+平台政策 = 刹车 + 急停按钮。</p>
+<p>两件事没有先后——<strong>刹车永远先于加速器</strong>。</p>
+<p>2026 年再说”开发太贵”基本上是借口。但说”项目失败是因为技术没做完”，更像是借口。</p>
+<p>这次不是技术失败，是商业判断失败。</p>
+<p>下次先做后者。</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
