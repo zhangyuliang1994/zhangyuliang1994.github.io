@@ -50,7 +50,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
       location.href = event.target?.value;
     });
   });
-</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.DVEzfBMx_Z1jDCGm.webp" alt="AI Coding Tips from Boris, Creator of Claude Code" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>AI Coding Tips from Boris, Creator of Claude Code</h1> <time datetime="2026-01-07T00:00:00.000Z" data-astro-cid-v3cnrnum> 1/7/2026 </time> </header> <blockquote>
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.BmCCrzAn_Z2cQR84.webp" alt="AI Coding Tips from Boris, Creator of Claude Code" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>AI Coding Tips from Boris, Creator of Claude Code</h1> <time datetime="2026-01-07T00:00:00.000Z" data-astro-cid-v3cnrnum> 1/7/2026 </time> </header> <blockquote>
 <p>I’m Boris and I created Claude Code. Lots of people have asked how I use Claude Code, so I wanted to show off my setup a bit.</p>
 </blockquote>
 <p>My setup might be surprisingly vanilla! Claude Code works great out of the box, so I personally don’t customize it much. There is no one correct way to use Claude Code: we intentionally build it in a way that you can use it, customize it, and hack it however you like. Each person on the Claude Code team uses it very differently.</p>
@@ -62,7 +62,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <hr/>
 <h2 id="2-local--web-parallel-collaboration">2. Local + Web Parallel Collaboration</h2>
 <p>I also run 5-10 Claudes on <a href="https://claude.ai/code">claude.ai/code</a>, in parallel with my local Claudes.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-2.jpeg" alt="Web Sessions List"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-2.webp" alt="Web Sessions List"/></p>
 <p>As I code in my terminal, I will often:</p>
 <ul>
 <li>Hand off local sessions to web (using <code>&amp;</code>)</li>
@@ -73,22 +73,22 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <hr/>
 <h2 id="3-always-use-opus-45--thinking">3. Always Use Opus 4.5 + Thinking</h2>
 <p>I use <strong>Opus 4.5 with thinking</strong> for everything. It’s the best coding model I’ve ever used, and even though it’s bigger &amp; slower than Sonnet, since you have to steer it less and it’s better at tool use, it is almost always faster than using a smaller model in the end.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-12.jpeg" alt="Deep Thinking Mode"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-12.webp" alt="Deep Thinking Mode"/></p>
 <hr/>
 <h2 id="4-team-shared-claudemd">4. Team-Shared CLAUDE.md</h2>
 <p>Our team shares a single <code>CLAUDE.md</code> for the Claude Code repo. We check it into git, and the whole team contributes multiple times a week.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-4.jpeg" alt="CLAUDE.md Example"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-4.webp" alt="CLAUDE.md Example"/></p>
 <p><strong>Key Practice</strong>: Anytime we see Claude do something incorrectly, we add it to the <code>CLAUDE.md</code>, so Claude knows not to do it next time.</p>
 <p>Other teams maintain their own <code>CLAUDE.md</code>’s. It is each team’s job to keep theirs up to date.</p>
 <hr/>
 <h2 id="5-use-claude-in-code-review">5. Use @claude in Code Review</h2>
 <p>During code review, I will often tag <code>@claude</code> on my coworkers’ PRs to add something to the <code>CLAUDE.md</code> as part of the PR.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-5.jpeg" alt="Claude Updating CLAUDE.md"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-5.webp" alt="Claude Updating CLAUDE.md"/></p>
 <p>We use the Claude Code GitHub Action (<code>/install-github-action</code>) for this. It’s our version of <strong>Compounding Engineering</strong>.</p>
 <hr/>
 <h2 id="6-most-sessions-start-in-plan-mode">6. Most Sessions Start in Plan Mode</h2>
 <p>Most sessions start in <strong>Plan mode</strong> (<code>Shift + Tab</code> twice).</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-6.png" alt="Plan Mode"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-6.webp" alt="Plan Mode"/></p>
 <p>If my goal is to write a Pull Request, I will:</p>
 <ol>
 <li>Use Plan mode</li>
@@ -96,13 +96,13 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <li>Switch into auto-accept edits mode</li>
 <li>Claude can usually 1-shot it from there</li>
 </ol>
-<p><img src="/images/blog/boris-claude-code-tips/cc-1.jpeg" alt="Auto-Edit Mode"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-1.webp" alt="Auto-Edit Mode"/></p>
 <p><strong>A good plan is really important!</strong></p>
 <hr/>
 <h2 id="7-use-slash-commands-for-repetitive-workflows">7. Use Slash Commands for Repetitive Workflows</h2>
 <p>I use slash commands for every “inner loop” workflow that I end up doing many times a day. This saves me from repeated prompting, and makes it so Claude can use these workflows, too.</p>
 <p>Commands are checked into git and live in <code>.claude/commands/</code>.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-7.jpeg" alt="Slash Command Example"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-7.webp" alt="Slash Command Example"/></p>
 <p><strong>Example</strong>: Claude and I use a <code>/commit-push-pr</code> slash command dozens of times every day. The command uses inline bash to pre-compute git status and a few other pieces of info to make the command run quickly and avoid back-and-forth with the model.</p>
 <p>📖 <a href="https://code.claude.com/docs/en/slash-commands#bash-command-execution">Bash Command Execution</a></p>
 <hr/>
@@ -126,18 +126,18 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 
 
 <table><thead><tr><th>Subagent</th><th>Purpose</th></tr></thead><tbody><tr><td><code>code-simplifier</code></td><td>Simplifies the code after Claude is done working</td></tr><tr><td><code>verify-app</code></td><td>Has detailed instructions for testing Claude Code end to end</td></tr></tbody></table>
-<p><img src="/images/blog/boris-claude-code-tips/cc-8.png" alt="Agents Directory Structure"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-8.webp" alt="Agents Directory Structure"/></p>
 <p>Similar to slash commands, I think of subagents as automating the most common workflows that I do for most PRs.</p>
 <p>📖 <a href="https://code.claude.com/docs/en/sub-agents">Subagents Documentation</a></p>
 <hr/>
 <h2 id="9-use-posttooluse-hook-for-code-formatting">9. Use PostToolUse Hook for Code Formatting</h2>
 <p>We use a <strong>PostToolUse hook</strong> to format Claude’s code.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-9.jpeg" alt="Hooks Configuration Example"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-9.webp" alt="Hooks Configuration Example"/></p>
 <p>Claude usually generates well-formatted code out of the box, and the hook handles the last 10% to avoid formatting errors in CI later.</p>
 <hr/>
 <h2 id="10-pre-allow-commands-instead-of-skipping-permissions">10. Pre-Allow Commands Instead of Skipping Permissions</h2>
 <p>I don’t use <code>--dangerously-skip-permissions</code>. Instead, I use <code>/permissions</code> to pre-allow common bash commands that I know are safe in my environment, to avoid unnecessary permission prompts.</p>
-<p><img src="/images/blog/boris-claude-code-tips/cc-10.jpeg" alt="Permissions Configuration Interface"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-10.webp" alt="Permissions Configuration Interface"/></p>
 <p>Most of these are checked into <code>.claude/settings.json</code> and shared with the team.</p>
 <hr/>
 <h2 id="11-claude-code-uses-all-my-tools">11. Claude Code Uses All My Tools</h2>
@@ -148,7 +148,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <li>Grabs error logs from <strong>Sentry</strong></li>
 <li>And more…</li>
 </ul>
-<p><img src="/images/blog/boris-claude-code-tips/cc-11.jpeg" alt="MCP Configuration Example"/></p>
+<p><img src="/images/blog/boris-claude-code-tips/cc-11.webp" alt="MCP Configuration Example"/></p>
 <p>The Slack MCP configuration is checked into our <code>.mcp.json</code> and shared with the team.</p>
 <hr/>
 <h2 id="12-handle-long-running-tasks">12. Handle Long-Running Tasks</h2>

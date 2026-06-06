@@ -50,7 +50,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
       location.href = event.target?.value;
     });
   });
-</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.BAOTJnP4_rWTf.webp" alt="A Week to Drop My Cloudflare Bill from $6.44 to $5.92 — and Why the Money Saved Wasn't the Real Win" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2752" height="1536" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>A Week to Drop My Cloudflare Bill from $6.44 to $5.92 — and Why the Money Saved Wasn&#39;t the Real Win</h1> <time datetime="2026-05-16T00:00:00.000Z" data-astro-cid-v3cnrnum> 5/16/2026 </time> </header> <blockquote>
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.Bpk6GZNz_ZFQku2.webp" alt="A Week to Drop My Cloudflare Bill from $6.44 to $5.92 — and Why the Money Saved Wasn't the Real Win" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2752" height="1536" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>A Week to Drop My Cloudflare Bill from $6.44 to $5.92 — and Why the Money Saved Wasn&#39;t the Real Win</h1> <time datetime="2026-05-16T00:00:00.000Z" data-astro-cid-v3cnrnum> 5/16/2026 </time> </header> <blockquote>
 <p>This isn’t a cost-cutting tutorial. It’s a retrospective on five projects sharing one template and falling into the same trap — and a meditation on where the real leverage lives when you’re trying to scale to dozens of projects.</p>
 </blockquote>
 <h2 id="the-setup">The Setup</h2>
@@ -58,7 +58,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>Invoice IN-64514070</span></span>
 <span class="line"><span>Date of issue: May 7, 2026</span></span>
 <span class="line"><span>Amount due: $6.44 USD</span></span></code></pre>
-<p><img src="/_astro/01-invoice.fY1wI_OY_Z13dSfC.webp" alt="Cloudflare $6.44 invoice screenshot" loading="lazy" decoding="async" fetchpriority="auto" width="2526" height="830"></p>
+<p><img src="/_astro/01-invoice.CjOXiV-O_ZXHXaz.webp" alt="Cloudflare $6.44 invoice screenshot" loading="lazy" decoding="async" fetchpriority="auto" width="2526" height="830"></p>
 <p>Not a lot of money. But the trend was the thing that put me on alert:</p>
 
 
@@ -144,7 +144,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 
 
 <table><thead><tr><th>Project</th><th>Domain</th><th>Requests</th><th>CPU per req</th><th>Total CPU</th><th>Status</th></tr></thead><tbody><tr><td>tomodachi-life</td><td>islebuddies.com</td><td>2.2k</td><td>675.9 ms</td><td>~1.49M</td><td>Active</td></tr><tr><td>crimsondesert</td><td>crimsondeserthq.com</td><td>5.0k</td><td>293.6 ms</td><td>~1.50M</td><td>Active</td></tr><tr><td>curve-rush-2</td><td>curverush2.net</td><td>2.1k</td><td>580.5 ms</td><td>~1.22M</td><td>Untouched 42 days</td></tr><tr><td>aimotiongen</td><td>aimotiongen.com</td><td>527</td><td>728.0 ms</td><td>~0.38M</td><td>Untouched 41 days</td></tr><tr><td>seo-os</td><td>seo.frency.me</td><td>379</td><td>285.8 ms</td><td>~0.11M</td><td>Untouched 58 days</td></tr></tbody></table>
-<p><img src="/_astro/02-cost-pie.DRr_Teb0_1SAfa9.webp" alt="CPU cost share across 5 projects" loading="lazy" decoding="async" fetchpriority="auto" width="1785" height="1091"></p>
+<p><img src="/_astro/02-cost-pie.C-Ty0Z2o_Q1WoG.webp" alt="CPU cost share across 5 projects" loading="lazy" decoding="async" fetchpriority="auto" width="1785" height="1091"></p>
 <p><strong>The top three projects split the bill almost evenly.</strong> That was the counter-intuitive part: you can’t just optimize “the one with the most traffic” — three projects contributed nearly equally, but <strong>the optimization paths were completely different</strong>:</p>
 <ul>
 <li>tomodachi-life had high per-request CPU → probably a heavy SSR path</li>
@@ -187,7 +187,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <p>Meaning: <strong>every request hits the Worker, the Worker reads R2 across the Pacific, then returns the big HTML payload</strong>. <code>HIT</code> just means SSR rendering was skipped — <strong>the network round-trip was not</strong>.</p>
 <p>This is a classic trap when optimizing black-box systems: <strong>a header saying “success” doesn’t mean you saved money</strong>.</p>
 <h2 id="finding-2-one-template-five-projects-same-bug">Finding #2: One Template, Five Projects, Same Bug</h2>
-<p><img src="/_astro/03-template-disease.DI6gvLqm_Oiy2P.webp" alt="Template-borne defects across projects" loading="lazy" decoding="async" fetchpriority="auto" width="1935" height="1033"></p>
+<p><img src="/_astro/03-template-disease.DQXFr3ek_KSA5Q.webp" alt="Template-borne defects across projects" loading="lazy" decoding="async" fetchpriority="auto" width="1935" height="1033"></p>
 <p>What really set off alarms was running <code>verify-cache.sh</code> against different URL patterns and finding a “failure-by-grouping” pattern:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>✅ /zh/guides/personality-types-guide  → x-nextjs-cache: HIT</span></span>
 <span class="line"><span>❌ /zh/guides                          → cache-control: no-store</span></span>
@@ -246,7 +246,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 
 
 <table><thead><tr><th>Snapshot</th><th>CPU per req (tomodachi-life)</th><th>May bill projection</th></tr></thead><tbody><tr><td>Before</td><td>868.8 ms</td><td>$7–8 (at the prior growth rate)</td></tr><tr><td>After fix + project deletion</td><td>542 ms (<strong>-38%</strong>)</td><td><strong>$5.92</strong></td></tr></tbody></table>
-<p><img src="/_astro/04-before-after.DfeT5DQb_9XnwL.webp" alt="CPU before vs after" loading="lazy" decoding="async" fetchpriority="auto" width="1935" height="925"></p>
+<p><img src="/_astro/04-before-after.rbyBvNGh_Z1aD9ug.webp" alt="CPU before vs after" loading="lazy" decoding="async" fetchpriority="auto" width="1935" height="925"></p>
 <p>I have to be honest about one thing: <strong>the optimization gains got diluted by traffic growth</strong>. Over the same period total requests grew from 9k/day to 13k/day (+47%). Without the Better Auth TypeError cleanup, May’s bill would probably have been $7–8.</p>
 <h2 id="the-cheap-savings-vs-the-valuable-insight">The Cheap Savings vs the Valuable Insight</h2>
 <p>If you only look at the bill, this exercise saved maybe $1–2. As an hourly-rate calculation it’s one of the worst trades in the world.</p>
@@ -275,7 +275,7 @@ const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简�
 <p><code>x-nextjs-cache: HIT</code> plus <code>s-maxage=2</code> <em>looked</em> like the cache was working, but the actual wall time was still 4–5 seconds. When optimizing black-box systems, <strong>there’s often a chasm between metrics and money</strong>. In the end you have to trust the bill — it’s the only feedback signal that doesn’t lie.</p>
 <h2 id="whats-next">What’s Next</h2>
 <p>I’m pausing on CPU for now. $5.92 is fine — diminishing returns from here.</p>
-<p><img src="/_astro/05-preview.CIYUA4yo_ZnjUN2.webp" alt="Next-stage optimization preview" loading="lazy" decoding="async" fetchpriority="auto" width="1453" height="840"></p>
+<p><img src="/_astro/05-preview.Bc_oqSyZ_Z226ge4.webp" alt="Next-stage optimization preview" loading="lazy" decoding="async" fetchpriority="auto" width="1453" height="840"></p>
 <p>The higher-leverage things:</p>
 <ol>
 <li>Back-port these fixes into my mksaas-template fork so every future project starts healthy.</li>
