@@ -1,0 +1,695 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>A Step-by-Step Guide: Building a Knowledge-Base AI Assistant on Aliyun Bailian That Can Query Live Business Data - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/bailian-rag-knowledge-base-ai-assistant/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/bailian-rag-knowledge-base-ai-assistant/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="A Step-by-Step Guide: Building a Knowledge-Base AI Assistant on Aliyun Bailian That Can Query Live Business Data - frency.me"><meta property="og:site_name" content="A Step-by-Step Guide: Building a Knowledge-Base AI Assistant on Aliyun Bailian That Can Query Live Business Data - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/bailian-rag-knowledge-base-ai-assistant/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/bailian-rag-knowledge-base-ai-assistant/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/bailian-rag-knowledge-base-ai-assistant/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.VnCPbyC1_Z2riOk.webp" alt="A Step-by-Step Guide: Building a Knowledge-Base AI Assistant on Aliyun Bailian That Can Query Live Business Data" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>A Step-by-Step Guide: Building a Knowledge-Base AI Assistant on Aliyun Bailian That Can Query Live Business Data</h1> <time datetime="2026-06-13T00:00:00.000Z" data-astro-cid-v3cnrnum> 6/13/2026 </time> </header> <blockquote>
+<p>Feed your company’s product manuals, operating procedures, and error-code references to an LLM, and turn it into a 7×24 always-on, accurate “business support / ops assistant.” This post is my complete from-scratch record of building exactly that — follow along and it’ll work end to end.</p>
+<p>It’s a long read, so bookmark it first. Every platform operation comes with a screenshot, and the advanced sections include ready-to-use Spring Boot code.</p>
+</blockquote>
+<h2 id="what-youll-get-from-this-post">What You’ll Get From This Post</h2>
+<ul>
+<li>Create a knowledge base (RAG) from scratch on <strong>Aliyun Bailian</strong> and bind it to an agent application</li>
+<li>Integrate this AI app into your own system via an <strong>HTTP / SSE streaming interface</strong></li>
+<li>Use a <strong>custom plugin</strong> so the AI can not only search documents but also query <strong>live business data</strong> (is a device online, how many alerts a site has today)</li>
+<li>Write a <strong>backend SSE proxy in Spring Boot</strong>: hide the API Key, apply unified authentication, and <strong>log every user query</strong></li>
+<li>A set of <strong>content-writing and maintenance principles</strong> that make the knowledge base “more accurate the more you use it,” plus the <strong>compliance red lines</strong> you must read before uploading</li>
+</ul>
+<hr/>
+<h2 id="1-first-things-first-what-exactly-is-a-knowledge-base--rag">1. First Things First: What Exactly Is a Knowledge Base / RAG?</h2>
+<p>A knowledge base supplements an LLM with <strong>private material</strong> it doesn’t otherwise know (your company’s product manuals, operating procedures, internal rules). The underlying technology is called <strong>RAG (Retrieval-Augmented Generation)</strong>: before answering, the model retrieves relevant content from the knowledge base, then generates an answer grounded in that material — which makes it more accurate.</p>
+<p>Remember this one key insight:</p>
+<blockquote>
+<p><strong>The model does not read your system code, nor your database. It only knows the text we feed into the knowledge base.</strong></p>
+</blockquote>
+<p>So the ceiling on answer quality = the quality of your knowledge-base content. Write it clearly and it answers accurately; leave something out and it either can’t answer or makes things up. The good news: <strong>whether the answers are accurate is entirely in our hands</strong> — you don’t need to understand the algorithms, you just need to express your business knowledge in clear text.</p>
+<p>This also leads to the division of labor between the two capabilities below. Keep this table in mind — we’ll come back to it repeatedly:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Question type</th><th>Who handles it</th><th>Example</th></tr></thead><tbody><tr><td>Static, explanatory, procedural</td><td><strong>Knowledge base</strong></td><td>”How do I add a device?” “What does this error code mean?”</td></tr><tr><td>Dynamic, real-time, needs live lookup/computation</td><td><strong>Plugin</strong></td><td>”Is device A online right now?” “How many alerts does site #3 have today?“</td></tr></tbody></table>
+<hr/>
+<h2 id="2-hands-on-create-a-knowledge-base-on-bailian">2. Hands-On: Create a Knowledge Base on Bailian</h2>
+<h3 id="21-enter-knowledge-base-management">2.1 Enter Knowledge Base Management</h3>
+<p>Log in to the <strong>Aliyun Bailian platform</strong>, click <strong>Applications → Knowledge Base</strong> in turn to open the knowledge base management page, then click <strong>”+ Create Knowledge Base”</strong> at the top right.</p>
+<p><img src="/_astro/01.CnXxYAiq_Z2qshLi.webp" alt="01 Knowledge base management entry" loading="lazy" decoding="async" fetchpriority="auto" width="1895" height="904"></p>
+<blockquote>
+<p>Activate “Applications” at the top (①), select “Knowledge Base” on the left (②), and click the blue ”+ Create Knowledge Base” at the top right (③) to start.</p>
+</blockquote>
+<h3 id="22-pricing-note-buy-a-resource-pack">2.2 Pricing Note: Buy a Resource Pack</h3>
+<blockquote>
+<p>💡 <strong>A resource pack is recommended</strong> — it’s more cost-effective than pay-as-you-go.</p>
+</blockquote>
+<p><img src="/_astro/02.BbPkHKMC_Z1YkCrQ.webp" alt="02 Resource pack purchase suggestion" loading="lazy" decoding="async" fetchpriority="auto" width="1872" height="943"></p>
+<blockquote>
+<p>Standard-tier resource pack: 720 unit-hours for ¥18.00 (original price ¥20.00), valid for 1 year, ideal for new-user testing/validation or lightweight apps. Capacities range across 720 / 2160 / 8760 / 87600 and more.</p>
+</blockquote>
+<p><img src="/_astro/03.-Bva1Gsl_Z1puVvY.webp" alt="03 Cost breakdown" loading="lazy" decoding="async" fetchpriority="auto" width="783" height="662"></p>
+<blockquote>
+<p>Knowledge bases come in two tiers: the <strong>Flagship</strong> tier supports unlimited documents and tens-of-thousands QPS, suited for high concurrency; the <strong>Standard</strong> tier shares compute resources, ideal for quick experiments and business validation. The Standard tier is enough early on.</p>
+</blockquote>
+<h3 id="23-basic-configuration">2.3 Basic Configuration</h3>
+<p>For this step, just remember two key choices:</p>
+<ul>
+<li><strong>Knowledge base type</strong>: choose <strong>“Document Search”</strong> (supports a mix of documents, images, and Excel — the broadest coverage)</li>
+<li><strong>Use case</strong>: choose <strong>“Basic Document Q&amp;A”</strong> (chunk-based retrieval — a perfect match for the “heading-per-entry” writing style, fast, economical, and the most controllable)</li>
+</ul>
+<p><img src="/_astro/04.sSSFCW7n_dzvy5.webp" alt="04 Knowledge base type configuration" loading="lazy" decoding="async" fetchpriority="auto" width="1253" height="843"></p>
+<blockquote>
+<p>The other types (Data Query / Image Q&amp;A / Audio-Video Search) and other use cases (Rich Image-Text Replies / Visual Understanding / Instant Q&amp;A) are for specialized scenarios — you won’t need them for a general FAQ early on.</p>
+</blockquote>
+<h3 id="24-select-data-first-build-your-own-file-connector">2.4 Select Data: First Build Your Own File Connector</h3>
+<p>At the “Select Data” step, <strong>it’s recommended to create your own file connector</strong>. Click <strong>“Data Connection ↗”</strong> to enter the connector configuration page.</p>
+<p><img src="/_astro/05.DpO_iuCo_ZAF1yR.webp" alt="05 Data ingestion entry" loading="lazy" decoding="async" fetchpriority="auto" width="1278" height="858"></p>
+<blockquote>
+<p>Click the “Data Connection ↗” text link below the “Select Connector” area to jump to the connector configuration page.</p>
+</blockquote>
+<p>Once the connector is created, upload your knowledge-base files into it.</p>
+<p><img src="/_astro/06.B28st5kG_Z9BtsP.webp" alt="06 File connector management" loading="lazy" decoding="async" fetchpriority="auto" width="1810" height="549"></p>
+<blockquote>
+<p>The connector’s file list page: use “Import Data” at the top to upload new files, and “Default Category” on the left to switch or add categories.</p>
+</blockquote>
+<p>Back in the creation flow, select the connector you just created, set the data source to <strong>“Select Category,”</strong> and check the uploaded files.</p>
+<p><img src="/_astro/07.DbRtf2zz_Z1upQmV.webp" alt="07 Import by selecting category" loading="lazy" decoding="async" fetchpriority="auto" width="1699" height="916"></p>
+<blockquote>
+<p>Checking “Default Category” imports all files under that category. ⚠️ You can turn on the <strong>“Auto-Sync Knowledge Index”</strong> switch so the index updates automatically whenever files in the category change (it’s off in the screenshot — enable it as needed).</p>
+</blockquote>
+<h3 id="25-index-settings-defaults-are-fine">2.5 Index Settings: Defaults Are Fine</h3>
+<p><img src="/_astro/08.BLkjQMU4_xL9xW.webp" alt="08 Index settings configuration" loading="lazy" decoding="async" fetchpriority="auto" width="1248" height="848"></p>
+<blockquote>
+<p>For the final step, keep the <strong>default configuration</strong> (vector retrieval + default embedding model) and just click “Finish” — your knowledge base is now built.</p>
+</blockquote>
+<hr/>
+<h2 id="3-create-an-agent-application-and-bind-the-knowledge-base">3. Create an Agent Application and Bind the Knowledge Base</h2>
+<p>The knowledge base is just a “material library.” To let users converse with it, you need to build an <strong>application</strong> on top of it.</p>
+<h3 id="31-enter-application-management">3.1 Enter Application Management</h3>
+<p><img src="/_astro/09.BwpCqb4A_avByV.webp" alt="09 Application management entry" loading="lazy" decoding="async" fetchpriority="auto" width="1885" height="893"></p>
+<blockquote>
+<p>On the “Application Management” page, click <strong>”+ Create Application”</strong> at the top right.</p>
+</blockquote>
+<h3 id="32-choose-the-application-type-agent--agent-20">3.2 Choose the Application Type: Agent + Agent 2.0</h3>
+<p><img src="/_astro/10.BW46U9w3_iJQsJ.webp" alt="10 Choose application type" loading="lazy" decoding="async" fetchpriority="auto" width="1009" height="771"></p>
+<blockquote>
+<p>Choose <strong>“Agent Application,”</strong> and set the mode to <strong>Agent 2.0 (Recommended)</strong>. Agent 2.0 is built on the AgentScope framework and strengthens ReAct and Function Call capabilities, <strong>making it suited for the complex multi-tool-call, multi-step decision scenarios we’ll need later</strong> (i.e., the plugin capability in Section 5). After filling in the application name, click “Create Now.”</p>
+</blockquote>
+<h3 id="33-configure-the-application-bind-the-knowledge-base-write-the-persona">3.3 Configure the Application: Bind the Knowledge Base, Write the Persona</h3>
+<p><img src="/_astro/11.C0kcSQ8-_X9EpH.webp" alt="11 Application planning configuration" loading="lazy" decoding="async" fetchpriority="auto" width="1885" height="904"></p>
+<blockquote>
+<p>In the “Planning” module, do three things: <strong>① Select a model</strong>; <strong>② Write the prompt</strong> (give it a persona and answering rules, e.g., “You are the ops assistant for the integrated management platform; answer based on the knowledge base, and clearly say you don’t know when there’s no basis”); <strong>③ Link the knowledge base</strong> (attach the one you built in Section 2 — you can set a similarity threshold to filter out low-relevance content).</p>
+</blockquote>
+<h3 id="34-publish-and-test">3.4 Publish and Test</h3>
+<p><img src="/_astro/12.CPdSgiln_6HHro.webp" alt="12 Application details and testing" loading="lazy" decoding="async" fetchpriority="auto" width="1895" height="932"></p>
+<blockquote>
+<p>The full configuration interface contains four modules — <strong>Planning / Skills / Memory / Replies</strong> — and you can type questions to test results directly on the right. Once tuned, click <strong>“Publish”</strong> at the top right to publish — only after publishing can external interfaces call it.</p>
+</blockquote>
+<hr/>
+<h2 id="4-integrate-into-your-own-system-http--sse-streaming-calls">4. Integrate Into Your Own System: HTTP + SSE Streaming Calls</h2>
+<p>Once the app is published, you can integrate it into your own website / app via HTTP.</p>
+<h3 id="41-get-the-two-keys-api-key-and-application-id">4.1 Get the Two “Keys”: API Key and Application ID</h3>
+<p><img src="/_astro/13.BME3gcDl_Z19sPEU.webp" alt="13 API Key management" loading="lazy" decoding="async" fetchpriority="auto" width="1881" height="918"></p>
+<blockquote>
+<p>Create / view keys under “API Key Management.” When calling, put it in the request header: <code>Authorization: Bearer &lt;your API Key&gt;</code>.</p>
+</blockquote>
+<p><img src="/_astro/14.Mpc6V_c1_s0M60.webp" alt="14 Get the application ID" loading="lazy" decoding="async" fetchpriority="auto" width="633" height="374"></p>
+<blockquote>
+<p>Get the <strong>Application ID</strong> from the app card on the “Application Management” page, and fill it into the call URL: <code>https://dashscope.aliyuncs.com/api/v1/apps/{appId}/completion</code></p>
+</blockquote>
+<h3 id="42-interface-reference">4.2 Interface Reference</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Item</th><th>Content</th></tr></thead><tbody><tr><td>Method</td><td><code>POST</code></td></tr><tr><td>URL</td><td><code>https://dashscope.aliyuncs.com/api/v1/apps/{appId}/completion</code></td></tr><tr><td>Auth</td><td>Request header <code>Authorization: Bearer &lt;API Key&gt;</code></td></tr><tr><td>Streaming output</td><td>Add request header <code>X-DashScope-SSE: enable</code></td></tr><tr><td>Incremental output</td><td>Add <code>&quot;incremental_output&quot;: true</code> to <code>parameters</code> in the body</td></tr><tr><td>Multi-turn conversation</td><td>Pass back the previous <code>session_id</code> in <code>input</code> (auto-expires after 1 hour of inactivity)</td></tr></tbody></table>
+<h3 id="43-why-use-sse-streaming-responses">4.3 Why Use SSE Streaming Responses?</h3>
+<p>With <code>X-DashScope-SSE: enable</code>, the server no longer “holds” the full answer until it’s complete — it <strong>pushes as it generates</strong>, sending an event for each small chunk produced. This is mainly for the experience:</p>
+<ul>
+<li><strong>Typewriter effect</strong>: text is “typed” out character by character, consistent with mainstream AI chat products;</li>
+<li><strong>Lower perceived wait</strong>: a full answer often takes 10+ seconds; non-streaming users face a 10-plus-second blank screen, while in streaming mode the first characters usually appear within 1–2 seconds;</li>
+<li><strong>Easy to interrupt mid-stream</strong>: users can stop as soon as they see the opening is off.</li>
+</ul>
+<blockquote>
+<p>💡 For background tasks, batch processing, and similar scenarios that don’t need character-by-character display, you can skip this header and return the full result in one shot — the processing logic is simpler.</p>
+</blockquote>
+<p>One more key parameter, <strong><code>incremental_output</code></strong>:</p>
+<ul>
+<li><code>false</code> (default): each chunk returns <strong>the full text so far</strong> (I → I like → I like apple), so the frontend has to overwrite;</li>
+<li><code>true</code> (recommended): <strong>returns only the newly added segment</strong> (I → like → apple), so the frontend just concatenates. The backend proxy below uses <code>true</code>.</li>
+</ul>
+<h3 id="44-call-example-curl">4.4 Call Example (curl)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> --location</span><span style="color:#79B8FF"> --request</span><span style="color:#9ECBFF"> POST</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  &#39;https://dashscope.aliyuncs.com/api/v1/apps/{appId}/completion&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --header</span><span style="color:#9ECBFF"> &#39;Authorization: Bearer sk-xxxxx&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --header</span><span style="color:#9ECBFF"> &#39;X-DashScope-SSE: enable&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --header</span><span style="color:#9ECBFF"> &#39;Content-Type: application/json&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --data-raw</span><span style="color:#9ECBFF"> &#39;{</span></span>
+<span class="line"><span style="color:#9ECBFF">    &quot;input&quot;: { &quot;prompt&quot;: &quot;What is data sync for?&quot; },</span></span>
+<span class="line"><span style="color:#9ECBFF">    &quot;parameters&quot;: { &quot;incremental_output&quot;: true }</span></span>
+<span class="line"><span style="color:#9ECBFF">  }&#39;</span></span></code></pre>
+<p><img src="/_astro/15.Dql5F7MH_Zc5FYo.webp" alt="15 Postman call example" loading="lazy" decoding="async" fetchpriority="auto" width="1478" height="965"></p>
+<blockquote>
+<p>When testing with Postman, click “Code” at the top right to auto-generate a curl command — handy for integrating into your code.</p>
+</blockquote>
+<h3 id="45-response-fields">4.5 Response Fields</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;output&quot;</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;session_id&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;5ba5ba152b924ee1912867baf3cbfd62&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;finish_reason&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;null&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;text&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;The data sync feature is mainly used for CWB-4...&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;usage&quot;</span><span style="color:#E1E4E8">: {},</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;request_id&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;a52c9719-46c0-9208-a18e-6ec86e76dd4d&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td><code>output.text</code></td><td>AI reply content (returned segment by segment in SSE mode)</td></tr><tr><td><code>output.session_id</code></td><td>Session ID; pass it back in multi-turn conversations to keep context</td></tr><tr><td><code>output.finish_reason</code></td><td>Finish reason; <code>null</code> while not finished</td></tr><tr><td><code>request_id</code></td><td>This request’s ID (provide it to Aliyun when troubleshooting)</td></tr></tbody></table>
+<hr/>
+<h2 id="5-advanced--use-a-plugin-to-let-the-ai-query-live-business-data">5. Advanced ①: Use a Plugin to Let the AI Query “Live Business Data”</h2>
+<p>By this point, the AI can answer the <strong>static knowledge written into the knowledge base</strong>. But some questions are <strong>dynamic</strong>:</p>
+<blockquote>
+<p>“Is device A123 online right now?” “How many alerts does site #3 have today?”</p>
+</blockquote>
+<p>These <strong>should not be written into the knowledge base</strong> — the data changes constantly, so anything you write becomes outdated immediately. The right approach: let the AI <strong>query your backend interface in real time</strong>. Bailian’s <strong>custom plugin</strong> is exactly for this.</p>
+<h3 id="51-the-principle-its-essentially-a-function-call">5.1 The Principle: It’s Essentially a Function Call</h3>
+<p>You “register” one of your backend HTTP interfaces as a plugin and describe what it does in natural language. During a conversation, the LLM <strong>decides on its own</strong> whether to call it, <strong>extracts the parameters</strong> from the user’s question, calls it, gets a JSON result, and then phrases it into human language.</p>
+<p>There’s a rule here that’s identical to the knowledge base:</p>
+<blockquote>
+<p><strong>How well the “description” of a plugin / tool is written directly determines how accurately the model calls it.</strong> Describe it clearly and give examples so it knows when to call and how to fill the parameters.</p>
+</blockquote>
+<h3 id="52-first-prepare-a-business-interface-spring-boot">5.2 First, Prepare a Business Interface (Spring Boot)</h3>
+<p>Say we want the AI to query a device’s live status — first write an ordinary query interface:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RestController</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RequestMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/api/biz&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> DeviceController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> DeviceService deviceService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> DeviceController</span><span style="color:#E1E4E8">(DeviceService </span><span style="color:#FFAB70">deviceService</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.deviceService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> deviceService;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** Called by the Bailian custom plugin: query a device&#39;s live status */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">GetMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/device/status&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> DeviceStatus </span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">RequestParam</span><span style="color:#E1E4E8"> String </span><span style="color:#FFAB70">deviceId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> deviceService.</span><span style="color:#B392F0">getStatus</span><span style="color:#E1E4E8">(deviceId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** Keep the output structure as flat as possible with self-explanatory field names, so the LLM can understand and organize it */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> record</span><span style="color:#B392F0"> DeviceStatus</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">            String deviceId,</span></span>
+<span class="line"><span style="color:#F97583">            boolean</span><span style="color:#E1E4E8"> online,</span></span>
+<span class="line"><span style="color:#F97583">            int</span><span style="color:#E1E4E8"> batteryPercent,</span></span>
+<span class="line"><span style="color:#E1E4E8">            String lastReportTime</span></span>
+<span class="line"><span style="color:#E1E4E8">    ) {}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="53-register-it-as-a-plugin-on-bailian">5.3 Register It as a Plugin on Bailian</h3>
+<p>Go to the <strong>“Plugins”</strong> page in the Bailian console (under the Applications tab, “Component Management / Plugins”), and follow the official three-step flow:</p>
+<p><strong>Step 1 · Create the plugin</strong></p>
+<ul>
+<li><strong>Plugin name</strong>: e.g., <code>Device Status Query Tool</code></li>
+<li><strong>Plugin description</strong>: state the purpose clearly in natural language to help the LLM decide when to call it. e.g.: <code>Query a device&#39;s real-time online status, battery level, and last report time by its device ID.</code></li>
+<li><strong>Plugin URL</strong>: your service domain, e.g., <code>https://api.yourcompany.com</code></li>
+<li><strong>Authentication</strong>: if the interface needs auth, turn on the switch, choose <code>bearer</code>, and enter the Token</li>
+</ul>
+<p><strong>Step 2 · Create the tool</strong> (a plugin can host multiple tools, corresponding to multiple interfaces)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Config item</th><th>What to fill in</th></tr></thead><tbody><tr><td>Tool name</td><td><code>queryDeviceStatus</code></td></tr><tr><td>Tool description</td><td>Natural language + <strong>give examples</strong> — the more specific, the better the recall</td></tr><tr><td>Tool path</td><td><code>/api/biz/device/status</code> (appended after the plugin URL)</td></tr><tr><td>Method</td><td><code>GET</code></td></tr><tr><td>Input parameters</td><td><code>deviceId</code>, with parameter mode set to <strong>“LLM Recognition”</strong></td></tr><tr><td>Output parameters</td><td><code>online</code> / <code>batteryPercent</code> / <code>lastReportTime</code>, each with a clear description</td></tr></tbody></table>
+<blockquote>
+<p>⚠️ Two easy pitfalls:</p>
+<ul>
+<li><strong>The “parameter mode” of input parameters</strong>: for things the user can say out loud (device ID), choose <strong>“LLM Recognition”</strong> to let the model extract it from the question automatically; for things like “current logged-in user ID” or “tenant ID” that are <strong>injected by the caller and should not be guessed by the model</strong>, choose <strong>“Business Pass-Through,”</strong> passing them via the <code>biz_params</code> field during the API call.</li>
+<li><strong>GET request inputs do not support the Object type</strong>; and sub-properties of an Object type cannot be empty, or publishing will error out.</li>
+</ul>
+</blockquote>
+<p><strong>Step 3 · Test → Publish</strong></p>
+<p>Click “Test Tool,” fill in the parameters and run it; once it passes, click “Publish.” <strong>Only “Published” tools can be called by the application.</strong></p>
+<h3 id="54-connect-the-plugin-to-the-agent-application">5.4 Connect the Plugin to the Agent Application</h3>
+<p>The new Agent 2.0 attaches plugins via the <strong>MCP service</strong> in two steps:</p>
+<ol>
+<li>On the plugin card, click <strong>“Publish as MCP Service”</strong>;</li>
+<li>Go back to the agent application’s <strong>orchestration page</strong>, click ”+” in the <strong>MCP block</strong>, switch to “Custom MCP,” and <strong>add</strong> the service you just published.</li>
+</ol>
+<p>Then test in the chat box on the right: “Is A123 online now?” — if the model automatically calls the plugin and gives a live answer, you’re done. Finally, don’t forget to <strong>re-publish the application</strong>.</p>
+<blockquote>
+<p>Summary: <strong>the knowledge base handles “what it is and how to do it,” the plugin handles “how it is right now.”</strong> One static, one dynamic — only together do they make a truly useful business assistant.</p>
+</blockquote>
+<hr/>
+<h2 id="6-advanced--a-spring-boot-backend-sse-proxy--query-logging">6. Advanced ②: A Spring Boot Backend SSE Proxy + Query Logging</h2>
+<p>In Section 4 we called Bailian directly with curl. But <strong>in production you must never let the frontend connect to Bailian directly</strong> — you must add a layer of <strong>backend proxy</strong> in between.</p>
+<h3 id="61-why-this-proxy-layer-is-a-must">6.1 Why This Proxy Layer Is a Must</h3>
+<ol>
+<li><strong>API Key security</strong>: once <code>sk-xxx</code> is written into the frontend, it’s effectively public — it’ll be scraped and abused, and model calls are <strong>billed in real money, by usage</strong>. The key belongs only on the server.</li>
+<li><strong>Unified auth / rate limiting</strong>: validate your own system’s login state at the proxy layer and rate-limit per user to block malicious flooding.</li>
+<li><strong>Query logging</strong> (the focus of this section): who, when, asked what, got what answer, how long it took — all persisted to the database.</li>
+<li><strong>Fallbacks / rewriting</strong>: sensitive-word filtering, context supplementation, and exception fallbacks all happen at this layer.</li>
+</ol>
+<p>The architecture is simple:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Browser ──SSE──&gt; Spring Boot proxy ──SSE(X-DashScope-SSE)──&gt; Bailian DashScope</span></span>
+<span class="line"><span>                     │</span></span>
+<span class="line"><span>                     └──&gt; Database (logs each query)</span></span></code></pre>
+<p>The proxy <strong>forwards the upstream SSE to the frontend as it receives it</strong> (the typewriter effect is fully preserved), while <strong>accumulating the complete answer</strong> in memory and writing a log when it finishes.</p>
+<p>For the tech stack, use <strong>Spring WebFlux</strong>: it’s built for streaming — calling the upstream with <code>WebClient</code> and returning a <code>Flux&lt;ServerSentEvent&gt;</code> to the frontend is the most natural fit.</p>
+<h3 id="62-dependencies-and-configuration">6.2 Dependencies and Configuration</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#6A737D">&lt;!-- pom.xml --&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.springframework.boot&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;spring-boot-starter-webflux&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.springframework.boot&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;spring-boot-starter-data-jpa&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;com.mysql&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;mysql-connector-j&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">scope</span><span style="color:#E1E4E8">&gt;runtime&lt;/</span><span style="color:#85E89D">scope</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># application.yml</span></span>
+<span class="line"><span style="color:#85E89D">dashscope</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  base-url</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">https://dashscope.aliyuncs.com</span></span>
+<span class="line"><span style="color:#85E89D">  app-id</span><span style="color:#E1E4E8">:  </span><span style="color:#9ECBFF">${DASHSCOPE_APP_ID}</span></span>
+<span class="line"><span style="color:#85E89D">  api-key</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${DASHSCOPE_API_KEY}</span><span style="color:#6A737D">   # ⚠️ Inject from an env var; never hard-code, never commit to Git</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Configuration</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> WebClientConfig</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Bean</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> WebClient </span><span style="color:#B392F0">dashScopeWebClient</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">Value</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;${dashscope.base-url}&quot;</span><span style="color:#E1E4E8">) String </span><span style="color:#FFAB70">baseUrl</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> WebClient.</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">baseUrl</span><span style="color:#E1E4E8">(baseUrl)</span></span>
+<span class="line"><span style="color:#6A737D">                // The accumulated SSE content can be large, so raise the buffer limit</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">codecs</span><span style="color:#E1E4E8">(c </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> c.</span><span style="color:#B392F0">defaultCodecs</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">maxInMemorySize</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> 1024</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> 1024</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="63-the-core-the-streaming-proxy-service">6.3 The Core: The Streaming Proxy Service</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Service</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ChatProxyService</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> static</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> Logger log </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> LoggerFactory.</span><span style="color:#B392F0">getLogger</span><span style="color:#E1E4E8">(ChatProxyService.class);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> WebClient dashScopeWebClient;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> QueryLogRepository logRepository;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> ObjectMapper objectMapper </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ObjectMapper</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Value</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;${dashscope.app-id}&quot;</span><span style="color:#E1E4E8">)  </span><span style="color:#F97583">private</span><span style="color:#E1E4E8"> String appId;</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Value</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;${dashscope.api-key}&quot;</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">private</span><span style="color:#E1E4E8"> String apiKey;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> ChatProxyService</span><span style="color:#E1E4E8">(WebClient </span><span style="color:#FFAB70">dashScopeWebClient</span><span style="color:#E1E4E8">, QueryLogRepository </span><span style="color:#FFAB70">logRepository</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.dashScopeWebClient </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> dashScopeWebClient;</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.logRepository </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> logRepository;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** Returns a stream of &quot;incremental text fragments,&quot; forwarding to the frontend while accumulating the full answer internally */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> Flux&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt; </span><span style="color:#B392F0">streamChat</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">prompt</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">sessionId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        long</span><span style="color:#E1E4E8"> start </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        StringBuilder answer </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> StringBuilder</span><span style="color:#E1E4E8">();   </span><span style="color:#6A737D">// accumulate the full answer</span></span>
+<span class="line"><span style="color:#F97583">        String</span><span style="color:#E1E4E8">[] session   </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> { sessionId };           </span><span style="color:#6A737D">// must be mutable inside the closure, so use a length-1 array</span></span>
+<span class="line"><span style="color:#F97583">        String</span><span style="color:#E1E4E8">[] requestId </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Map&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; input </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> HashMap&lt;&gt;();</span></span>
+<span class="line"><span style="color:#E1E4E8">        input.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;prompt&quot;</span><span style="color:#E1E4E8">, prompt);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (sessionId </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> null</span><span style="color:#F97583"> &amp;&amp;</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">sessionId.</span><span style="color:#B392F0">isBlank</span><span style="color:#E1E4E8">()) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            input.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;session_id&quot;</span><span style="color:#E1E4E8">, sessionId);        </span><span style="color:#6A737D">// multi-turn conversation</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        Map&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; body </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Map.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">                &quot;input&quot;</span><span style="color:#E1E4E8">, input,</span></span>
+<span class="line"><span style="color:#9ECBFF">                &quot;parameters&quot;</span><span style="color:#E1E4E8">, Map.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;incremental_output&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">)   </span><span style="color:#6A737D">// increments only</span></span>
+<span class="line"><span style="color:#E1E4E8">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> dashScopeWebClient.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">uri</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/api/v1/apps/{appId}/completion&quot;</span><span style="color:#E1E4E8">, appId)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">header</span><span style="color:#E1E4E8">(HttpHeaders.AUTHORIZATION, </span><span style="color:#9ECBFF">&quot;Bearer &quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> apiKey)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">header</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;X-DashScope-SSE&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;enable&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">contentType</span><span style="color:#E1E4E8">(MediaType.APPLICATION_JSON)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">accept</span><span style="color:#E1E4E8">(MediaType.TEXT_EVENT_STREAM)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">bodyValue</span><span style="color:#E1E4E8">(body)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">retrieve</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">bodyToFlux</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#E1E4E8"> ParameterizedTypeReference&lt;ServerSentEvent&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt;&gt;() {})</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">mapNotNull</span><span style="color:#E1E4E8">(sse </span><span style="color:#F97583">-&gt;</span><span style="color:#B392F0"> extractText</span><span style="color:#E1E4E8">(sse.</span><span style="color:#B392F0">data</span><span style="color:#E1E4E8">(), answer, session, requestId))</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">(s </span><span style="color:#F97583">-&gt;</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">s.</span><span style="color:#B392F0">isEmpty</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#6A737D">                // Normal completion: write a success log</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">doOnComplete</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">-&gt;</span><span style="color:#B392F0"> saveLog</span><span style="color:#E1E4E8">(userId, prompt, answer.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">                        session[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], requestId[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> start, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#6A737D">                // Error: write a failure log to aid troubleshooting</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">doOnError</span><span style="color:#E1E4E8">(err </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">                    log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Bailian call failed userId={}, prompt={}&quot;</span><span style="color:#E1E4E8">, userId, prompt, err);</span></span>
+<span class="line"><span style="color:#B392F0">                    saveLog</span><span style="color:#E1E4E8">(userId, prompt, answer.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">                            session[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], requestId[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> start, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">                });</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** Parse one upstream SSE data(JSON) segment, accumulate the full answer, and return this incremental fragment */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String </span><span style="color:#B392F0">extractText</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">, StringBuilder </span><span style="color:#FFAB70">answer</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">                              String</span><span style="color:#E1E4E8">[] </span><span style="color:#FFAB70">session</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">String</span><span style="color:#E1E4E8">[] </span><span style="color:#FFAB70">requestId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (data </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> null</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">isBlank</span><span style="color:#E1E4E8">()) </span><span style="color:#F97583">return</span><span style="color:#9ECBFF"> &quot;&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            JsonNode root </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> objectMapper.</span><span style="color:#B392F0">readTree</span><span style="color:#E1E4E8">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8">            JsonNode output </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> root.</span><span style="color:#B392F0">path</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;output&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (output.</span><span style="color:#B392F0">hasNonNull</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;session_id&quot;</span><span style="color:#E1E4E8">)) session[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]   </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> output.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;session_id&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">asText</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (root.</span><span style="color:#B392F0">hasNonNull</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;request_id&quot;</span><span style="color:#E1E4E8">))   requestId[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> root.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;request_id&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">asText</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">            String fragment </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> output.</span><span style="color:#B392F0">path</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;text&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">asText</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            answer.</span><span style="color:#B392F0">append</span><span style="color:#E1E4E8">(fragment);</span></span>
+<span class="line"><span style="color:#F97583">            return</span><span style="color:#E1E4E8"> fragment;</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">warn</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;Failed to parse SSE data: {}&quot;</span><span style="color:#E1E4E8">, data, e);</span></span>
+<span class="line"><span style="color:#F97583">            return</span><span style="color:#9ECBFF"> &quot;&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** JPA is blocking, so run it on the boundedElastic scheduler to avoid stalling the WebFlux event loop */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> saveLog</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">prompt</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">answer</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">sessionId</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                         String </span><span style="color:#FFAB70">requestId</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">long</span><span style="color:#FFAB70"> latencyMs</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">boolean</span><span style="color:#FFAB70"> success</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        Mono.</span><span style="color:#B392F0">fromRunnable</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            QueryLog row </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> QueryLog</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setUserId</span><span style="color:#E1E4E8">(userId);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setPrompt</span><span style="color:#E1E4E8">(prompt);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setAnswer</span><span style="color:#E1E4E8">(answer);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setSessionId</span><span style="color:#E1E4E8">(sessionId);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setRequestId</span><span style="color:#E1E4E8">(requestId);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setLatencyMs</span><span style="color:#E1E4E8">(latencyMs);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setSuccess</span><span style="color:#E1E4E8">(success);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setCreatedAt</span><span style="color:#E1E4E8">(LocalDateTime.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">            logRepository.</span><span style="color:#B392F0">save</span><span style="color:#E1E4E8">(row);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }).</span><span style="color:#B392F0">subscribeOn</span><span style="color:#E1E4E8">(Schedulers.</span><span style="color:#B392F0">boundedElastic</span><span style="color:#E1E4E8">()).</span><span style="color:#B392F0">subscribe</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="64-the-public-interface-re-wrap-fragments-as-sse-for-the-frontend">6.4 The Public Interface (Re-wrap Fragments as SSE for the Frontend)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> record</span><span style="color:#B392F0"> ChatRequest</span><span style="color:#E1E4E8">(String prompt, String sessionId) {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RestController</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ChatController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> ChatProxyService chatProxyService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> ChatController</span><span style="color:#E1E4E8">(ChatProxyService </span><span style="color:#FFAB70">chatProxyService</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.chatProxyService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> chatProxyService;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">PostMapping</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">value</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;/api/chat/stream&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">produces</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> MediaType.TEXT_EVENT_STREAM_VALUE)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> Flux&lt;ServerSentEvent&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt;&gt; </span><span style="color:#B392F0">stream</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">            @</span><span style="color:#F97583">RequestBody</span><span style="color:#E1E4E8"> ChatRequest </span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            @</span><span style="color:#F97583">RequestHeader</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">value</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;X-User-Id&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">defaultValue</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;anonymous&quot;</span><span style="color:#E1E4E8">) String </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> chatProxyService.</span><span style="color:#B392F0">streamChat</span><span style="color:#E1E4E8">(userId, req.</span><span style="color:#B392F0">prompt</span><span style="color:#E1E4E8">(), req.</span><span style="color:#B392F0">sessionId</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(fragment </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> ServerSentEvent.</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">(fragment).</span><span style="color:#B392F0">event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;message&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">concatWithValues</span><span style="color:#E1E4E8">(ServerSentEvent.</span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8">String</span><span style="color:#F97583">&gt;</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;done&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">data</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;[DONE]&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="65-persist-the-query-log">6.5 Persist the Query Log</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Entity</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Table</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;query_log&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">indexes</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> @</span><span style="color:#F97583">Index</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;idx_user_time&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">columnList</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;userId,createdAt&quot;</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> QueryLog</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Id</span><span style="color:#E1E4E8"> @</span><span style="color:#F97583">GeneratedValue</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">strategy</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> GenerationType.IDENTITY)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Long id;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String userId;</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Column</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 1000</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">private</span><span style="color:#E1E4E8"> String prompt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Lob</span><span style="color:#F97583">   private</span><span style="color:#E1E4E8"> String answer;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String sessionId;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String requestId;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> long</span><span style="color:#E1E4E8">   latencyMs;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> boolean</span><span style="color:#E1E4E8"> success;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> LocalDateTime createdAt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // getters / setters omitted</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> QueryLogRepository</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> JpaRepository</span><span style="color:#E1E4E8">&lt;</span><span style="color:#F97583">QueryLog</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Long</span><span style="color:#E1E4E8">&gt; {}</span></span></code></pre>
+<p>The corresponding table-creation statement:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">CREATE</span><span style="color:#F97583"> TABLE</span><span style="color:#B392F0"> query_log</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">  id          </span><span style="color:#F97583">BIGINT</span><span style="color:#E1E4E8"> AUTO_INCREMENT </span><span style="color:#F97583">PRIMARY KEY</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  user_id     </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  prompt      </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  answer      MEDIUMTEXT,</span></span>
+<span class="line"><span style="color:#E1E4E8">  session_id  </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  request_id  </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  latency_ms  </span><span style="color:#F97583">BIGINT</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  success     </span><span style="color:#F97583">TINYINT</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  created_at  </span><span style="color:#F97583">DATETIME</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">  INDEX</span><span style="color:#E1E4E8"> idx_user_time (user_id, created_at)</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<blockquote>
+<p>If you want it “fully reactive and non-blocking,” you can swap JPA for <strong>Spring Data R2DBC</strong> and drop the <code>boundedElastic</code> step. This post uses the more familiar JPA for readability.</p>
+</blockquote>
+<h3 id="66-frontend-read-sse-and-render-character-by-character">6.6 Frontend: Read SSE and Render Character by Character</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> ask</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">prompt</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">sessionId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> resp</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;/api/chat/stream&#39;</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">&#39;POST&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: { </span><span style="color:#9ECBFF">&#39;Content-Type&#39;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&#39;application/json&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;X-User-Id&#39;</span><span style="color:#E1E4E8">: currentUserId },</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ prompt, sessionId })</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> reader</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> resp.body.</span><span style="color:#B392F0">getReader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> decoder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextDecoder</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> buffer </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &#39;&#39;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  while</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">value</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">done</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> reader.</span><span style="color:#B392F0">read</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (done) </span><span style="color:#F97583">break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    buffer </span><span style="color:#F97583">+=</span><span style="color:#E1E4E8"> decoder.</span><span style="color:#B392F0">decode</span><span style="color:#E1E4E8">(value, { stream: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // SSE events are separated by blank lines; lines starting with data: are the payload</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> events</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> buffer.</span><span style="color:#B392F0">split</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">&#39;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    buffer </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> events.</span><span style="color:#B392F0">pop</span><span style="color:#E1E4E8">();                 </span><span style="color:#6A737D">// the tail may be half an event, keep it for next time</span></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">const</span><span style="color:#79B8FF"> evt</span><span style="color:#F97583"> of</span><span style="color:#E1E4E8"> events) {</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> line</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> evt.</span><span style="color:#B392F0">split</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">&#39;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">find</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">l</span><span style="color:#F97583"> =&gt;</span><span style="color:#E1E4E8"> l.</span><span style="color:#B392F0">startsWith</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;data:&#39;</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">line) </span><span style="color:#F97583">continue</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> text</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> line.</span><span style="color:#B392F0">slice</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">trim</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (text </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> &#39;[DONE]&#39;</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      appendToUI</span><span style="color:#E1E4E8">(text);                    </span><span style="color:#6A737D">// append char by char, typewriter effect</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="67-the-real-value-of-logs-making-the-knowledge-base-better-the-more-you-use-it">6.7 The Real Value of Logs: Making the Knowledge Base Better the More You Use It</h3>
+<p>Logging isn’t for show. Its most valuable use is to <strong>pull out queries where <code>success=false</code> or the answer was vague</strong>:</p>
+<ul>
+<li>Things users asked but the knowledge base didn’t cover well → exactly the <strong>new entries to add</strong> (this echoes the “driven by real questions” maintenance principle in the next section);</li>
+<li>High-frequency questions → prioritize polishing them, or even turn them into quick shortcuts;</li>
+<li>Average latency and call volume → the basis for capacity planning and cost accounting.</li>
+</ul>
+<hr/>
+<h2 id="7-inner-skills-how-to-write-knowledge-base-content-thats-actually-useful">7. Inner Skills: How to Write Knowledge-Base Content That’s Actually Useful</h2>
+<p>Anyone can click around a platform — <strong>what truly determines the experience is how the content is written.</strong> This part is the essence distilled from repeated trial and error.</p>
+<h3 id="71-six-core-principles-for-writing-content">7.1 Six Core Principles for Writing Content</h3>
+<ol>
+<li><strong>One question per answer, and one answer says one thing</strong>: don’t stuff multiple topics into a single answer; split into smaller questions when needed.</li>
+<li><strong>Answers should carry their own context and stand alone</strong>: during retrieval, fragments are extracted individually and fed to the model, so don’t write “as mentioned above” or “same as before” — spell out the key information.</li>
+<li><strong>Write questions the way users actually ask them</strong>: retrieval matches against the question (Q), so list 2–3 phrasings for the same question (formal, colloquial, fault-style).</li>
+<li><strong>Use precise wording, avoid vagueness</strong>: use less “maybe,” “probably,” “generally speaking”; be explicit with the numbers, conditions, and steps that matter.</li>
+<li><strong>Put applicable conditions up front</strong>: for answers that only hold under specific conditions, write the condition at the start and flag it with ⚠️.</li>
+<li><strong>Clear structure, good use of headings</strong>: one heading per question (e.g., <code>## How to Return Items</code>), which aids chunking and retrieval and makes maintenance easier.</li>
+</ol>
+<p>When writing a new entry, just copy this template and fill it in:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>### [Module/Number] Short question title</span></span>
+<span class="line"><span>**Q (with 2-3 phrasings):** Formal phrasing? / Colloquial phrasing? / Fault-style phrasing?</span></span>
+<span class="line"><span>**Applicable conditions:** ⚠️ Only applies to… (write &quot;none&quot; if there are none)</span></span>
+<span class="line"><span>**A:**</span></span>
+<span class="line"><span>1. Step one…</span></span>
+<span class="line"><span>2. Step two…</span></span>
+<span class="line"><span>**Related:** See &quot;XXX&quot;</span></span></code></pre>
+<h3 id="72-directory-skeleton-layered-from-core-high-frequency-to-peripheral-background">7.2 Directory Skeleton: Layered From “Core High-Frequency” to “Peripheral Background”</h3>
+<p>Layer by priority and place new content in the matching chapter. <strong>Do P0 first, P1 next, P2 backfilled as needed</strong>:</p>
+<ul>
+<li><strong>Part 1 · System Usage Guide [P0]</strong>: stops repeated questions of “how do I use this feature”</li>
+<li><strong>Part 2 · Troubleshooting &amp; Ops [P0]</strong>: written as “symptom → possible cause → troubleshooting steps → solution”</li>
+<li><strong>Part 3 · Product Overview [P1]</strong>: lets sales / newcomers quickly understand “what we have”</li>
+<li><strong>Part 4 · System Integration &amp; Interaction [P1~P2]</strong>: how data flows and who connects with whom</li>
+<li><strong>Part 5 · Industry Background &amp; Glossary [P2]</strong>: serves as a shared dictionary to unify terminology</li>
+</ul>
+<blockquote>
+<p><strong>Backfill principle</strong>: don’t dream up what to write — <strong>let it be driven by real questions</strong>: whenever someone asks, distill it into an entry on the spot. (Remember the logs from Section 6? That’s your “source of questions.”)</p>
+</blockquote>
+<h3 id="73-storage-structure-connector--category--file">7.3 Storage Structure: Connector → Category → File</h3>
+<p>In Bailian it’s a three-tier structure:</p>
+<ul>
+<li><strong>Connector</strong>: a big repository, corresponding to one knowledge source (e.g., “Integrated Management Platform Connector”)</li>
+<li><strong>Category</strong>: a partition within the repository, ideally mapping to the layers above</li>
+<li><strong>File</strong>: the actual unit that gets parsed, chunked, and retrieved</li>
+</ul>
+<p><strong>File-splitting suggestion</strong>: one file per “second-level module” (e.g., <code>business-center.md</code>, <code>device-faults.md</code>) — don’t cram everything into one giant file, nor fragment it down to one entry per file. The benefits: more precise retrieval, easier maintenance, and a single file’s error doesn’t drag others down.</p>
+<p><strong>Parsing settings</strong>: for FAQs split by Markdown headings, <strong>split by heading / level</strong> so each Q&amp;A is kept together as much as possible.</p>
+<h3 id="74-evolution-path-dont-build-a-big-framework-right-away">7.4 Evolution Path: Don’t Build a Big Framework Right Away</h3>
+<ol>
+<li><strong>Stage 1 (Foundation)</strong>: polish the content quality of a single knowledge base — how good the answers are comes entirely down to how good the content is;</li>
+<li><strong>Stage 2</strong>: structure the knowledge base with “categories + multiple files”;</li>
+<li><strong>Stage 3</strong>: expand to “multiple knowledge bases organized by department,” maintained collaboratively by each department, with the maintainer shifting from “sole author” to “rule-setter + reviewer”;</li>
+<li><strong>Stage 4</strong>: upgrade the experience to “rich image-text + tool calls” (i.e., what Sections 5 and 6 of this post do).</li>
+</ol>
+<blockquote>
+<p>A mature multi-department knowledge base is “the result of running it for a while,” not a framework you must build from day one. <strong>Get the content right first, then talk about scaling.</strong></p>
+</blockquote>
+<hr/>
+<h2 id="8-compliance--security-read-before-uploading-️">8. Compliance &amp; Security: Read Before Uploading ⚠️</h2>
+<p>This section is the easiest to overlook, but <strong>getting it wrong is a big deal</strong> — be sure to read it first.</p>
+<ol>
+<li><strong>Data leaving the boundary</strong>: uploading to Aliyun Bailian = content entering a third-party public cloud. Before any sensitive content involving technical parameters, frequencies, device models, military-related matters, etc., <strong>you must first confirm whether the confidentiality level permits uploading to a public cloud</strong>.</li>
+<li><strong>Tiered handling</strong>: clarify what may be uploaded, what needs to be de-identified, and what is forbidden — don’t apply a blanket rule.</li>
+<li><strong>Account and region</strong>: confirm which enterprise account to use, the data storage region, and whether internal approval / filing is required.</li>
+<li><strong>Permissions and sharing</strong>: for multi-department or external access, set member permissions per internal regulations (such operations should be performed by the responsible person on the platform).</li>
+<li><strong>Deletion is irreversible</strong>: deleted files cannot be recovered — be careful and have the operation done by the person responsible.</li>
+</ol>
+<p><strong>Checklist to confirm with leadership / relevant departments:</strong></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> For this kind of material, does the confidentiality level permit uploading to a public cloud?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> If partially permitted: what may be uploaded, what needs de-identification, what is forbidden?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Which company account to use? Any requirements on the data storage region?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Is an internal approval or filing process required?</li>
+<li class="task-list-item"><input type="checkbox" disabled/> For later multi-department or external access, how will permissions be defined?</li>
+</ul>
+<hr/>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>The build order of this whole thing is essentially the table of contents of this post: <strong>build the knowledge base → build the app → integrate the interface → query live data with a plugin → backend proxy + logs → continuously maintain the content.</strong></p>
+<p>But the real core is just one sentence: <strong>the ceiling on answer quality is the quality of your content.</strong> The platform, interfaces, and proxy are all scaffolding — distilling your business knowledge into clear text and continuously backfilling it with real questions is what determines whether this thing turns out “useful.”</p>
+<p>If this post helped you, feel free to like, share, and pass it along to friends who are also tinkering with AI assistants 👇</p>
+<blockquote>
+<p>Quick notes: ⚠️ Model calls are pricey, so control the frequency; 💡 vector storage is free, use it with confidence; 🔗 you must create your own file connector to upload data; 📊 keep the index settings at defaults; 📦 a resource pack is recommended over pay-as-you-go.</p>
+</blockquote>
+<p>(The end. This tutorial is revised on an ongoing basis as the platform updates.)</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  

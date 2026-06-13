@@ -1,0 +1,697 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>保姆级｜用阿里云百炼从 0 搭一个能查实时业务数据的知识库 AI 助手 - xiaofeng.show</title><meta name="description" content="具有 i18n 支持的 Astro 入门模板。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/bailian-rag-knowledge-base-ai-assistant/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/bailian-rag-knowledge-base-ai-assistant/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="保姆级｜用阿里云百炼从 0 搭一个能查实时业务数据的知识库 AI 助手 - xiaofeng.show"><meta property="og:site_name" content="保姆级｜用阿里云百炼从 0 搭一个能查实时业务数据的知识库 AI 助手 - xiaofeng.show"><meta property="og:description" content="具有 i18n 支持的 Astro 入门模板。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/bailian-rag-knowledge-base-ai-assistant/"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/zh-cn/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-zh.BoqvBI0d_1WNOEj.webp" alt="xiaofeng" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/bailian-rag-knowledge-base-ai-assistant/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/bailian-rag-knowledge-base-ai-assistant/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.VnCPbyC1_Z2riOk.webp" alt="保姆级｜用阿里云百炼从 0 搭一个能查实时业务数据的知识库 AI 助手" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>保姆级｜用阿里云百炼从 0 搭一个能查实时业务数据的知识库 AI 助手</h1> <time datetime="2026-06-13T00:00:00.000Z" data-astro-cid-v3cnrnum> 2026/6/13 </time> </header> <blockquote>
+<p>把公司的产品手册、操作流程、报错对照表喂给大模型，让它变成一个 7×24 小时在线、答得准的”业务客服 / 运维助手”——这篇就是我从 0 把这套东西搭起来的完整记录，照着做就能跑通。</p>
+<p>全文偏长，建议先收藏。涉及平台操作的地方都配了截图，进阶部分给了可直接用的 Spring Boot 代码。</p>
+</blockquote>
+<h2 id="这篇你会得到什么">这篇你会得到什么</h2>
+<ul>
+<li>在<strong>阿里云百炼</strong>上从零创建一个知识库（RAG）并绑定到智能体应用</li>
+<li>把这个 AI 应用通过 <strong>HTTP / SSE 流式接口</strong>接进自己的系统</li>
+<li>用<strong>自定义插件</strong>让 AI 不止会查文档，还能查<strong>实时业务数据</strong>（某设备在不在线、某站点今天告警几条）</li>
+<li>用 <strong>Spring Boot 写一个后端 SSE 代理</strong>：藏好 API Key、统一鉴权，并<strong>记录每一条用户查询日志</strong></li>
+<li>一套让知识库”越用越准”的<strong>内容编写与维护心法</strong>，以及上传前必看的<strong>合规红线</strong></li>
+</ul>
+<hr/>
+<h2 id="一先搞懂知识库--rag-到底是什么">一、先搞懂：知识库 / RAG 到底是什么</h2>
+<p>知识库的作用，是给大模型补充它本来不知道的<strong>私有资料</strong>（你公司的产品手册、操作流程、内部规章）。底层技术叫 <strong>RAG（检索增强生成）</strong>：模型在回答前，先从知识库里检索相关内容，再结合这些资料生成答案，因此更准确。</p>
+<p>一句话记住关键认知：</p>
+<blockquote>
+<p><strong>模型不会读你的系统代码，也不会读你的数据库。它只知道我们喂给知识库的那些文字。</strong></p>
+</blockquote>
+<p>所以回答质量的天花板 = 知识库内容质量。内容写清楚了，它就答得准；没写到的，它要么答不出、要么瞎编。好消息是：<strong>答案准不准，完全掌握在我们手里</strong>——不需要懂算法，只要把业务知识用清楚的文字表达出来。</p>
+<p>这也引出后面两块能力的分工，先记住这张分工表，后面会反复用到：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>问题类型</th><th>交给谁</th><th>例子</th></tr></thead><tbody><tr><td>静态、解释性、流程性</td><td><strong>知识库</strong></td><td>”设备怎么添加？&quot;&quot;这个报错码什么意思？“</td></tr><tr><td>动态、实时、要现查现算</td><td><strong>插件</strong></td><td>”A 设备现在在线吗？&quot;&quot;3 号站点今天告警几条？“</td></tr></tbody></table>
+<hr/>
+<h2 id="二动手搭在百炼创建知识库">二、动手搭：在百炼创建知识库</h2>
+<h3 id="21-进入知识库管理">2.1 进入知识库管理</h3>
+<p>登录<strong>阿里云百炼平台</strong>，依次点击 <strong>应用 → 知识库</strong>，进入知识库管理页，点右上角 <strong>「+ 创建知识库」</strong>。</p>
+<p><img src="/_astro/01.CnXxYAiq_Z2qshLi.webp" alt="01 知识库管理入口" loading="lazy" decoding="async" fetchpriority="auto" width="1895" height="904"></p>
+<blockquote>
+<p>顶部「应用」激活（①），左侧选「知识库」（②），右上角蓝色「+ 创建知识库」（③）开始创建。</p>
+</blockquote>
+<h3 id="22-费用说明建议买资源包">2.2 费用说明：建议买资源包</h3>
+<blockquote>
+<p>💡 <strong>推荐购买资源包</strong>，比按量付费划算。</p>
+</blockquote>
+<p><img src="/_astro/02.BbPkHKMC_Z1YkCrQ.webp" alt="02 资源包购买建议" loading="lazy" decoding="async" fetchpriority="auto" width="1872" height="943"></p>
+<blockquote>
+<p>标准版资源包：720 个 H ¥18.00（原价 ¥20.00），有效期 1 年，适合新用户测试验证或轻量级应用。容量有 720 / 2160 / 8760 / 87600 多档可选。</p>
+</blockquote>
+<p><img src="/_astro/03.-Bva1Gsl_Z1puVvY.webp" alt="03 费用构成说明" loading="lazy" decoding="async" fetchpriority="auto" width="783" height="662"></p>
+<blockquote>
+<p>知识库分两档：<strong>旗舰版</strong>支持无限文档、万级 QPS，适合高并发；<strong>标准版</strong>共享计算资源，适合快速实验和业务验证。前期用标准版足够。</p>
+</blockquote>
+<h3 id="23-基础信息配置">2.3 基础信息配置</h3>
+<p>这一步只需记住两个关键选择：</p>
+<ul>
+<li><strong>知识库类型</strong>：选 <strong>「文档搜索」</strong>（支持文档、图片、Excel 混合，涵盖面最广）</li>
+<li><strong>使用场景</strong>：选 <strong>「基础文档问答」</strong>（切片检索，和”标题分条目”的写法是绝配，又快又省、最可控）</li>
+</ul>
+<p><img src="/_astro/04.sSSFCW7n_dzvy5.webp" alt="04 知识库类型配置" loading="lazy" decoding="async" fetchpriority="auto" width="1253" height="843"></p>
+<blockquote>
+<p>其他类型（数据查询 / 图片问答 / 音视频搜索）和其他场景（图文并茂回复 / 视觉理解 / 极速问答）是专用场景，综合 FAQ 前期都用不上。</p>
+</blockquote>
+<h3 id="24-选择数据先建自己的文件连接器">2.4 选择数据：先建自己的文件连接器</h3>
+<p>在「选择数据」这一步，<strong>建议创建自己的文件连接器</strong>。点 <strong>「数据连接 ↗」</strong> 进入连接器配置页。</p>
+<p><img src="/_astro/05.DpO_iuCo_ZAF1yR.webp" alt="05 数据接入入口" loading="lazy" decoding="async" fetchpriority="auto" width="1278" height="858"></p>
+<blockquote>
+<p>点「选择连接器」区域下方的「数据连接 ↗」文字链接，跳转到连接器配置页。</p>
+</blockquote>
+<p>创建好连接器后，把你的知识库文件上传进去。</p>
+<p><img src="/_astro/06.B28st5kG_Z9BtsP.webp" alt="06 文件连接器管理" loading="lazy" decoding="async" fetchpriority="auto" width="1810" height="549"></p>
+<blockquote>
+<p>连接器的文件列表页：顶部「导入数据」上传新文件，左侧「默认类目」可切换或新增分类。</p>
+</blockquote>
+<p>回到创建流程，选中刚建好的连接器，数据来源选 <strong>「选择类目」</strong>，勾选已上传的文件。</p>
+<p><img src="/_astro/07.DbRtf2zz_Z1upQmV.webp" alt="07 选择类目导入" loading="lazy" decoding="async" fetchpriority="auto" width="1699" height="916"></p>
+<blockquote>
+<p>勾「默认类目」即可导入该类目下全部文件。⚠️ 可打开**「自动同步知识索引」**开关，类目内文件一变更就自动更新索引（图中为关闭状态，按需开）。</p>
+</blockquote>
+<h3 id="25-索引设置默认即可">2.5 索引设置：默认即可</h3>
+<p><img src="/_astro/08.BLkjQMU4_xL9xW.webp" alt="08 索引设置配置" loading="lazy" decoding="async" fetchpriority="auto" width="1248" height="848"></p>
+<blockquote>
+<p>最后一步保持<strong>默认配置</strong>（向量检索 + 默认 embedding 模型），直接点「完成」，知识库就建好了。</p>
+</blockquote>
+<hr/>
+<h2 id="三建一个智能体应用并绑定知识库">三、建一个智能体应用，并绑定知识库</h2>
+<p>知识库只是”资料库”，要让用户能对话，得在它上面建一个<strong>应用</strong>。</p>
+<h3 id="31-进入应用管理">3.1 进入应用管理</h3>
+<p><img src="/_astro/09.BwpCqb4A_avByV.webp" alt="09 应用管理入口" loading="lazy" decoding="async" fetchpriority="auto" width="1885" height="893"></p>
+<blockquote>
+<p>「应用管理」页右上角点 <strong>「+ 创建应用」</strong>。</p>
+</blockquote>
+<h3 id="32-选择应用类型智能体--agent-20">3.2 选择应用类型：智能体 + Agent 2.0</h3>
+<p><img src="/_astro/10.BW46U9w3_iJQsJ.webp" alt="10 选择应用类型" loading="lazy" decoding="async" fetchpriority="auto" width="1009" height="771"></p>
+<blockquote>
+<p>选 <strong>「智能体应用」</strong>，模式选 <strong>Agent 2.0（推荐）</strong>。Agent 2.0 基于 AgentScope 框架，强化了 ReAct 与 Function Call 能力，<strong>适合后面要做多工具调用、多步决策的复杂场景</strong>（也就是我们第五节要用的插件能力）。填好应用名后点「立即创建」。</p>
+</blockquote>
+<h3 id="33-配置应用绑定知识库写人设">3.3 配置应用：绑定知识库、写人设</h3>
+<p><img src="/_astro/11.C0kcSQ8-_X9EpH.webp" alt="11 应用规划配置" loading="lazy" decoding="async" fetchpriority="auto" width="1885" height="904"></p>
+<blockquote>
+<p>在「规划」模块里完成三件事：<strong>① 选模型</strong>；<strong>② 写提示词</strong>（给它一个人设和回答规则，比如”你是综合管理平台的运维助手，依据知识库回答，无依据时明确说不知道”）；<strong>③ 关联知识库</strong>（把第二节建的知识库挂上来，可设相似度阈值过滤低相关内容）。</p>
+</blockquote>
+<h3 id="34-发布与测试">3.4 发布与测试</h3>
+<p><img src="/_astro/12.CPdSgiln_6HHro.webp" alt="12 应用详情与测试" loading="lazy" decoding="async" fetchpriority="auto" width="1895" height="932"></p>
+<blockquote>
+<p>完整配置界面包含<strong>规划 / 技能 / 记忆 / 回复</strong>四大模块，右侧可直接输入问题测试效果。调好后点右上角 <strong>「发布」</strong> 完成发布——只有发布后，外部接口才能调到它。</p>
+</blockquote>
+<hr/>
+<h2 id="四接入自己的系统http--sse-流式调用">四、接入自己的系统：HTTP + SSE 流式调用</h2>
+<p>应用发布后，就能用 HTTP 接口把它接进你自己的网站 / App。</p>
+<h3 id="41-拿到两把钥匙api-key-和-应用-id">4.1 拿到两把”钥匙”：API Key 和 应用 ID</h3>
+<p><img src="/_astro/13.BME3gcDl_Z19sPEU.webp" alt="13 API Key 管理" loading="lazy" decoding="async" fetchpriority="auto" width="1881" height="918"></p>
+<blockquote>
+<p>在「API Key 管理」创建 / 查看密钥。调用时放进请求头：<code>Authorization: Bearer &lt;你的 API Key&gt;</code>。</p>
+</blockquote>
+<p><img src="/_astro/14.Mpc6V_c1_s0M60.webp" alt="14 应用 ID 获取" loading="lazy" decoding="async" fetchpriority="auto" width="633" height="374"></p>
+<blockquote>
+<p>在「应用管理」的应用卡片上拿到<strong>应用 ID</strong>，填进调用地址：<code>https://dashscope.aliyuncs.com/api/v1/apps/{应用ID}/completion</code></p>
+</blockquote>
+<h3 id="42-接口说明">4.2 接口说明</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>请求方法</td><td><code>POST</code></td></tr><tr><td>URL</td><td><code>https://dashscope.aliyuncs.com/api/v1/apps/{应用ID}/completion</code></td></tr><tr><td>认证</td><td>请求头 <code>Authorization: Bearer &lt;API Key&gt;</code></td></tr><tr><td>流式输出</td><td>请求头加 <code>X-DashScope-SSE: enable</code></td></tr><tr><td>增量输出</td><td>body 的 <code>parameters</code> 里加 <code>&quot;incremental_output&quot;: true</code></td></tr><tr><td>多轮对话</td><td>body 的 <code>input</code> 里回传上次的 <code>session_id</code>（1 小时无请求自动失效）</td></tr></tbody></table>
+<h3 id="43-为什么要用-sse-流式返回">4.3 为什么要用 SSE 流式返回？</h3>
+<p>开启 <code>X-DashScope-SSE: enable</code> 后，服务端不再”憋”出完整答案才返回，而是<strong>边生成边推送</strong>，每生成一小段就发一个事件。这样做主要是为了体验：</p>
+<ul>
+<li><strong>打字机效果</strong>：文字逐字”打”出来，和主流 AI 对话产品一致；</li>
+<li><strong>降低体感等待</strong>：完整回答常常 10 秒以上，非流式用户要面对 10 多秒白屏；流式下首字通常 1～2 秒就出现；</li>
+<li><strong>便于中途打断</strong>：用户看开头不对就能停。</li>
+</ul>
+<blockquote>
+<p>💡 如果是后台任务、批量处理这类不需要逐字展示的场景，可以不加这个头，改为一次性返回完整结果，处理逻辑更简单。</p>
+</blockquote>
+<p>再补一个关键参数 <strong><code>incremental_output</code></strong>：</p>
+<ul>
+<li><code>false</code>（默认）：每个数据块返回的是<strong>到目前为止的完整文本</strong>（I → I like → I like apple），前端要自己做覆盖；</li>
+<li><code>true</code>（推荐）：<strong>只返回新增的那一小段</strong>（I → like → apple），前端直接拼接即可。下面后端代理就用 <code>true</code>。</li>
+</ul>
+<h3 id="44-调用示例curl">4.4 调用示例（curl）</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> --location</span><span style="color:#79B8FF"> --request</span><span style="color:#9ECBFF"> POST</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  &#39;https://dashscope.aliyuncs.com/api/v1/apps/{应用ID}/completion&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --header</span><span style="color:#9ECBFF"> &#39;Authorization: Bearer sk-xxxxx&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --header</span><span style="color:#9ECBFF"> &#39;X-DashScope-SSE: enable&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --header</span><span style="color:#9ECBFF"> &#39;Content-Type: application/json&#39;</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --data-raw</span><span style="color:#9ECBFF"> &#39;{</span></span>
+<span class="line"><span style="color:#9ECBFF">    &quot;input&quot;: { &quot;prompt&quot;: &quot;数据同步是干啥的&quot; },</span></span>
+<span class="line"><span style="color:#9ECBFF">    &quot;parameters&quot;: { &quot;incremental_output&quot;: true }</span></span>
+<span class="line"><span style="color:#9ECBFF">  }&#39;</span></span></code></pre>
+<p><img src="/_astro/15.Dql5F7MH_Zc5FYo.webp" alt="15 Postman 调用示例" loading="lazy" decoding="async" fetchpriority="auto" width="1478" height="965"></p>
+<blockquote>
+<p>用 Postman 测试时，点右上角「Code」可自动生成 curl 命令，方便集成到代码里。</p>
+</blockquote>
+<h3 id="45-响应字段说明">4.5 响应字段说明</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;output&quot;</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;session_id&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;5ba5ba152b924ee1912867baf3cbfd62&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;finish_reason&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;null&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    &quot;text&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;数据同步功能主要用于 CWB-4...&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;usage&quot;</span><span style="color:#E1E4E8">: {},</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;request_id&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;a52c9719-46c0-9208-a18e-6ec86e76dd4d&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><code>output.text</code></td><td>AI 回复内容（SSE 模式下逐段返回）</td></tr><tr><td><code>output.session_id</code></td><td>会话 ID，多轮对话回传它可保持上下文</td></tr><tr><td><code>output.finish_reason</code></td><td>结束原因，未结束时为 <code>null</code></td></tr><tr><td><code>request_id</code></td><td>本次请求 ID（排查问题时给阿里云用）</td></tr></tbody></table>
+<hr/>
+<h2 id="五进阶-用插件让-ai-查实时业务数据">五、进阶 ①：用插件让 AI 查”实时业务数据”</h2>
+<p>到这里，AI 已经能回答<strong>写进知识库的静态知识</strong>了。但有些问题是<strong>动态</strong>的：</p>
+<blockquote>
+<p>“A123 这台设备现在在线吗？&quot;&quot;3 号站点今天告警几条？”</p>
+</blockquote>
+<p>这些<strong>不该写进知识库</strong>——数据时刻在变，写进去立刻就过时。正确做法是：让 AI <strong>实时去查你的后端接口</strong>。百炼的<strong>自定义插件</strong>就是干这个的。</p>
+<h3 id="51-原理本质是-function-call">5.1 原理：本质是 Function Call</h3>
+<p>你把后端的一个 HTTP 接口”注册”成插件，并用自然语言描述它能干嘛。对话时，大模型会<strong>自己判断</strong>要不要调它、从用户问题里<strong>抽出参数</strong>、调用、拿到 JSON 结果，再组织成人话回答。</p>
+<p>这里有个和知识库一模一样的规律：</p>
+<blockquote>
+<p><strong>插件 / 工具的”描述”写得好不好，直接决定模型调得准不准。</strong> 描述清楚、给示例，它才知道什么时候该调、参数怎么填。</p>
+</blockquote>
+<h3 id="52-先准备一个业务接口spring-boot">5.2 先准备一个业务接口（Spring Boot）</h3>
+<p>假设我们要让 AI 能查设备实时状态，先写一个普通的查询接口：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RestController</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RequestMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/api/biz&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> DeviceController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> DeviceService deviceService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> DeviceController</span><span style="color:#E1E4E8">(DeviceService </span><span style="color:#FFAB70">deviceService</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.deviceService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> deviceService;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 供百炼自定义插件调用：查询设备实时状态 */</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">GetMapping</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/device/status&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> DeviceStatus </span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">RequestParam</span><span style="color:#E1E4E8"> String </span><span style="color:#FFAB70">deviceId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> deviceService.</span><span style="color:#B392F0">getStatus</span><span style="color:#E1E4E8">(deviceId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 出参结构尽量扁平、字段名见名知意，方便大模型理解和组织 */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#F97583"> record</span><span style="color:#B392F0"> DeviceStatus</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">            String deviceId,</span></span>
+<span class="line"><span style="color:#F97583">            boolean</span><span style="color:#E1E4E8"> online,</span></span>
+<span class="line"><span style="color:#F97583">            int</span><span style="color:#E1E4E8"> batteryPercent,</span></span>
+<span class="line"><span style="color:#E1E4E8">            String lastReportTime</span></span>
+<span class="line"><span style="color:#E1E4E8">    ) {}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="53-在百炼把它注册成插件">5.3 在百炼把它注册成插件</h3>
+<p>进入百炼控制台的**「插件」**页（应用 Tab 下的”组件管理 / 插件”），按官方流程三步走：</p>
+<p><strong>第一步 · 创建插件</strong></p>
+<ul>
+<li><strong>插件名称</strong>：如<code>设备状态查询工具</code></li>
+<li><strong>插件描述</strong>：用自然语言写清用途，帮大模型判断何时调用。例：<code>根据设备编号查询某台设备的实时在线状态、电量与最近上报时间。</code></li>
+<li><strong>插件 URL</strong>：你的服务域名，如 <code>https://api.yourcompany.com</code></li>
+<li><strong>是否鉴权</strong>：如接口需要鉴权，打开开关，选 <code>bearer</code>，填入 Token</li>
+</ul>
+<p><strong>第二步 · 创建工具</strong>（一个插件下可挂多个工具，对应多个接口）</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>配置项</th><th>填什么</th></tr></thead><tbody><tr><td>工具名称</td><td><code>queryDeviceStatus</code></td></tr><tr><td>工具描述</td><td>自然语言 + <strong>给示例</strong>，越具体召回越准</td></tr><tr><td>工具路径</td><td><code>/api/biz/device/status</code>（拼在插件 URL 后）</td></tr><tr><td>请求方法</td><td><code>GET</code></td></tr><tr><td>输入参数</td><td><code>deviceId</code>，传参方式选 <strong>「大模型识别」</strong></td></tr><tr><td>输出参数</td><td><code>online</code> / <code>batteryPercent</code> / <code>lastReportTime</code>，逐个写清描述</td></tr></tbody></table>
+<blockquote>
+<p>⚠️ 两个易踩的坑：</p>
+<ul>
+<li><strong>输入参数的”传参方式”</strong>：用户能从嘴里说出来的（设备编号）选 <strong>「大模型识别」</strong>，让模型自动从问题里抽；而像”当前登录用户 ID&quot;&quot;租户 ID”这种由<strong>调用方注入、不该让模型猜</strong>的，选 <strong>「业务透传」</strong>，通过 API 调用时用 <code>biz_params</code> 字段传进来。</li>
+<li><strong>GET 请求的入参不支持 Object 类型</strong>；Object 类型下的子属性也不能为空，否则发布会报错。</li>
+</ul>
+</blockquote>
+<p><strong>第三步 · 测试 → 发布</strong></p>
+<p>点「测试工具」填入参试跑，通了再点「发布」。<strong>只有”已发布”的工具才能被应用调用。</strong></p>
+<h3 id="54-把插件接进智能体应用">5.4 把插件接进智能体应用</h3>
+<p>新版 Agent 2.0 通过 <strong>MCP 服务</strong>来挂插件，两步：</p>
+<ol>
+<li>在插件卡片上点 <strong>「发布为 MCP 服务」</strong>；</li>
+<li>回到智能体应用的<strong>编排页</strong>，在 <strong>MCP 区块</strong>点「+」，切到「自定义 MCP」，把刚才的服务<strong>添加</strong>进来。</li>
+</ol>
+<p>然后在右侧对话框测试：“A123 现在在线吗？“——如果模型自动调用了插件并给出实时答案，就成了。最后别忘了<strong>重新发布应用</strong>。</p>
+<blockquote>
+<p>小结：<strong>知识库管”是什么、怎么做”，插件管”现在怎么样”。</strong> 两者一静一动，配合起来才是一个真正好用的业务助手。</p>
+</blockquote>
+<hr/>
+<h2 id="六进阶-spring-boot-后端-sse-代理--查询日志">六、进阶 ②：Spring Boot 后端 SSE 代理 + 查询日志</h2>
+<p>第四节我们直接用 curl 调了百炼。但<strong>生产环境绝不能让前端直连百炼</strong>，必须在中间加一层<strong>后端代理</strong>。</p>
+<h3 id="61-为什么一定要加这层代理">6.1 为什么一定要加这层代理</h3>
+<ol>
+<li><strong>API Key 安全</strong>：<code>sk-xxx</code> 一旦写进前端，等于公开——会被人扒去盗刷，而模型调用是<strong>真金白银按量计费</strong>的。Key 只能放服务器。</li>
+<li><strong>统一鉴权 / 限流</strong>：在代理层校验你自己系统的登录态、按用户限流，挡住恶意刷量。</li>
+<li><strong>记录查询日志</strong>（本节重点）：谁、什么时候、问了什么、答了什么、耗时多少，全部落库。</li>
+<li><strong>可兜底 / 改写</strong>：敏感词过滤、补充上下文、异常兜底，都在这层做。</li>
+</ol>
+<p>架构很简单：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>浏览器 ──SSE──&gt; Spring Boot 代理 ──SSE(X-DashScope-SSE)──&gt; 百炼 DashScope</span></span>
+<span class="line"><span>                     │</span></span>
+<span class="line"><span>                     └──&gt; 数据库（记录每条查询日志）</span></span></code></pre>
+<p>代理把上游的 SSE <strong>边收边转发</strong>给前端（打字机效果一点不丢），同时在内存里<strong>累积完整回答</strong>，结束时写一条日志。</p>
+<p>技术选型用 <strong>Spring WebFlux</strong>：它天生为流式而生，用 <code>WebClient</code> 调上游、返回 <code>Flux&lt;ServerSentEvent&gt;</code> 给前端，最顺手。</p>
+<h3 id="62-依赖与配置">6.2 依赖与配置</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="xml"><code><span class="line"><span style="color:#6A737D">&lt;!-- pom.xml --&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.springframework.boot&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;spring-boot-starter-webflux&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;org.springframework.boot&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;spring-boot-starter-data-jpa&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;com.mysql&lt;/</span><span style="color:#85E89D">groupId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;mysql-connector-j&lt;/</span><span style="color:#85E89D">artifactId</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    &lt;</span><span style="color:#85E89D">scope</span><span style="color:#E1E4E8">&gt;runtime&lt;/</span><span style="color:#85E89D">scope</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#85E89D">dependency</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># application.yml</span></span>
+<span class="line"><span style="color:#85E89D">dashscope</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  base-url</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">https://dashscope.aliyuncs.com</span></span>
+<span class="line"><span style="color:#85E89D">  app-id</span><span style="color:#E1E4E8">:  </span><span style="color:#9ECBFF">${DASHSCOPE_APP_ID}</span></span>
+<span class="line"><span style="color:#85E89D">  api-key</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${DASHSCOPE_API_KEY}</span><span style="color:#6A737D">   # ⚠️ 从环境变量注入，切勿写死、切勿提交到 Git</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Configuration</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> WebClientConfig</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Bean</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> WebClient </span><span style="color:#B392F0">dashScopeWebClient</span><span style="color:#E1E4E8">(@</span><span style="color:#F97583">Value</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;${dashscope.base-url}&quot;</span><span style="color:#E1E4E8">) String </span><span style="color:#FFAB70">baseUrl</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> WebClient.</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">baseUrl</span><span style="color:#E1E4E8">(baseUrl)</span></span>
+<span class="line"><span style="color:#6A737D">                // SSE 累积内容可能较大，调大缓冲区上限</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">codecs</span><span style="color:#E1E4E8">(c </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> c.</span><span style="color:#B392F0">defaultCodecs</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">maxInMemorySize</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">4</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> 1024</span><span style="color:#F97583"> *</span><span style="color:#79B8FF"> 1024</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="63-核心流式代理服务">6.3 核心：流式代理服务</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Service</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ChatProxyService</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> static</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> Logger log </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> LoggerFactory.</span><span style="color:#B392F0">getLogger</span><span style="color:#E1E4E8">(ChatProxyService.class);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> WebClient dashScopeWebClient;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> QueryLogRepository logRepository;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> ObjectMapper objectMapper </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> ObjectMapper</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Value</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;${dashscope.app-id}&quot;</span><span style="color:#E1E4E8">)  </span><span style="color:#F97583">private</span><span style="color:#E1E4E8"> String appId;</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Value</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;${dashscope.api-key}&quot;</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">private</span><span style="color:#E1E4E8"> String apiKey;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> ChatProxyService</span><span style="color:#E1E4E8">(WebClient </span><span style="color:#FFAB70">dashScopeWebClient</span><span style="color:#E1E4E8">, QueryLogRepository </span><span style="color:#FFAB70">logRepository</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.dashScopeWebClient </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> dashScopeWebClient;</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.logRepository </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> logRepository;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 返回&quot;增量文本片段&quot;的流，边转发给前端边在内部累积完整回答 */</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> Flux&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt; </span><span style="color:#B392F0">streamChat</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">prompt</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">sessionId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        long</span><span style="color:#E1E4E8"> start </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        StringBuilder answer </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> StringBuilder</span><span style="color:#E1E4E8">();   </span><span style="color:#6A737D">// 累积完整回答</span></span>
+<span class="line"><span style="color:#F97583">        String</span><span style="color:#E1E4E8">[] session   </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> { sessionId };           </span><span style="color:#6A737D">// 闭包里要可变，用长度1的数组</span></span>
+<span class="line"><span style="color:#F97583">        String</span><span style="color:#E1E4E8">[] requestId </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8"> };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        Map&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; input </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#E1E4E8"> HashMap&lt;&gt;();</span></span>
+<span class="line"><span style="color:#E1E4E8">        input.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;prompt&quot;</span><span style="color:#E1E4E8">, prompt);</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (sessionId </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> null</span><span style="color:#F97583"> &amp;&amp;</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">sessionId.</span><span style="color:#B392F0">isBlank</span><span style="color:#E1E4E8">()) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            input.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;session_id&quot;</span><span style="color:#E1E4E8">, sessionId);        </span><span style="color:#6A737D">// 多轮对话</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        Map&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Object</span><span style="color:#E1E4E8">&gt; body </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Map.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">                &quot;input&quot;</span><span style="color:#E1E4E8">, input,</span></span>
+<span class="line"><span style="color:#9ECBFF">                &quot;parameters&quot;</span><span style="color:#E1E4E8">, Map.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;incremental_output&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">)   </span><span style="color:#6A737D">// 只要增量</span></span>
+<span class="line"><span style="color:#E1E4E8">        );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> dashScopeWebClient.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">uri</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;/api/v1/apps/{appId}/completion&quot;</span><span style="color:#E1E4E8">, appId)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">header</span><span style="color:#E1E4E8">(HttpHeaders.AUTHORIZATION, </span><span style="color:#9ECBFF">&quot;Bearer &quot;</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> apiKey)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">header</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;X-DashScope-SSE&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&quot;enable&quot;</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">contentType</span><span style="color:#E1E4E8">(MediaType.APPLICATION_JSON)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">accept</span><span style="color:#E1E4E8">(MediaType.TEXT_EVENT_STREAM)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">bodyValue</span><span style="color:#E1E4E8">(body)</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">retrieve</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">bodyToFlux</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">new</span><span style="color:#E1E4E8"> ParameterizedTypeReference&lt;ServerSentEvent&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt;&gt;() {})</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">mapNotNull</span><span style="color:#E1E4E8">(sse </span><span style="color:#F97583">-&gt;</span><span style="color:#B392F0"> extractText</span><span style="color:#E1E4E8">(sse.</span><span style="color:#B392F0">data</span><span style="color:#E1E4E8">(), answer, session, requestId))</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">(s </span><span style="color:#F97583">-&gt;</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">s.</span><span style="color:#B392F0">isEmpty</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#6A737D">                // 正常结束：落一条成功日志</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">doOnComplete</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">-&gt;</span><span style="color:#B392F0"> saveLog</span><span style="color:#E1E4E8">(userId, prompt, answer.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">                        session[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], requestId[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> start, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#6A737D">                // 异常：落一条失败日志，方便排查</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">doOnError</span><span style="color:#E1E4E8">(err </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">                    log.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;调用百炼失败 userId={}, prompt={}&quot;</span><span style="color:#E1E4E8">, userId, prompt, err);</span></span>
+<span class="line"><span style="color:#B392F0">                    saveLog</span><span style="color:#E1E4E8">(userId, prompt, answer.</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">                            session[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], requestId[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], System.</span><span style="color:#B392F0">currentTimeMillis</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> start, </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">                });</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** 解析上游一段 SSE 的 data(JSON)，累积完整答案并返回本次增量片段 */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String </span><span style="color:#B392F0">extractText</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">, StringBuilder </span><span style="color:#FFAB70">answer</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">                              String</span><span style="color:#E1E4E8">[] </span><span style="color:#FFAB70">session</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">String</span><span style="color:#E1E4E8">[] </span><span style="color:#FFAB70">requestId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (data </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> null</span><span style="color:#F97583"> ||</span><span style="color:#E1E4E8"> data.</span><span style="color:#B392F0">isBlank</span><span style="color:#E1E4E8">()) </span><span style="color:#F97583">return</span><span style="color:#9ECBFF"> &quot;&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            JsonNode root </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> objectMapper.</span><span style="color:#B392F0">readTree</span><span style="color:#E1E4E8">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8">            JsonNode output </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> root.</span><span style="color:#B392F0">path</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;output&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (output.</span><span style="color:#B392F0">hasNonNull</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;session_id&quot;</span><span style="color:#E1E4E8">)) session[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]   </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> output.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;session_id&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">asText</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (root.</span><span style="color:#B392F0">hasNonNull</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;request_id&quot;</span><span style="color:#E1E4E8">))   requestId[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> root.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;request_id&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">asText</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">            String fragment </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> output.</span><span style="color:#B392F0">path</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;text&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">asText</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;&quot;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            answer.</span><span style="color:#B392F0">append</span><span style="color:#E1E4E8">(fragment);</span></span>
+<span class="line"><span style="color:#F97583">            return</span><span style="color:#E1E4E8"> fragment;</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (Exception </span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            log.</span><span style="color:#B392F0">warn</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;解析 SSE 数据失败: {}&quot;</span><span style="color:#E1E4E8">, data, e);</span></span>
+<span class="line"><span style="color:#F97583">            return</span><span style="color:#9ECBFF"> &quot;&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    /** JPA 是阻塞的，放到 boundedElastic 线程，别卡住 WebFlux 事件循环 */</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> saveLog</span><span style="color:#E1E4E8">(String </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">prompt</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">answer</span><span style="color:#E1E4E8">, String </span><span style="color:#FFAB70">sessionId</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                         String </span><span style="color:#FFAB70">requestId</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">long</span><span style="color:#FFAB70"> latencyMs</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">boolean</span><span style="color:#FFAB70"> success</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        Mono.</span><span style="color:#B392F0">fromRunnable</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            QueryLog row </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> QueryLog</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setUserId</span><span style="color:#E1E4E8">(userId);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setPrompt</span><span style="color:#E1E4E8">(prompt);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setAnswer</span><span style="color:#E1E4E8">(answer);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setSessionId</span><span style="color:#E1E4E8">(sessionId);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setRequestId</span><span style="color:#E1E4E8">(requestId);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setLatencyMs</span><span style="color:#E1E4E8">(latencyMs);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setSuccess</span><span style="color:#E1E4E8">(success);</span></span>
+<span class="line"><span style="color:#E1E4E8">            row.</span><span style="color:#B392F0">setCreatedAt</span><span style="color:#E1E4E8">(LocalDateTime.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">            logRepository.</span><span style="color:#B392F0">save</span><span style="color:#E1E4E8">(row);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }).</span><span style="color:#B392F0">subscribeOn</span><span style="color:#E1E4E8">(Schedulers.</span><span style="color:#B392F0">boundedElastic</span><span style="color:#E1E4E8">()).</span><span style="color:#B392F0">subscribe</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="64-对外接口把片段重新包成-sse-给前端">6.4 对外接口（把片段重新包成 SSE 给前端）</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> record</span><span style="color:#B392F0"> ChatRequest</span><span style="color:#E1E4E8">(String prompt, String sessionId) {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">RestController</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> ChatController</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> final</span><span style="color:#E1E4E8"> ChatProxyService chatProxyService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#B392F0"> ChatController</span><span style="color:#E1E4E8">(ChatProxyService </span><span style="color:#FFAB70">chatProxyService</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">        this</span><span style="color:#E1E4E8">.chatProxyService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> chatProxyService;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">PostMapping</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">value</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;/api/chat/stream&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">produces</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> MediaType.TEXT_EVENT_STREAM_VALUE)</span></span>
+<span class="line"><span style="color:#F97583">    public</span><span style="color:#E1E4E8"> Flux&lt;ServerSentEvent&lt;</span><span style="color:#F97583">String</span><span style="color:#E1E4E8">&gt;&gt; </span><span style="color:#B392F0">stream</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">            @</span><span style="color:#F97583">RequestBody</span><span style="color:#E1E4E8"> ChatRequest </span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            @</span><span style="color:#F97583">RequestHeader</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">value</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;X-User-Id&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">defaultValue</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;anonymous&quot;</span><span style="color:#E1E4E8">) String </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> chatProxyService.</span><span style="color:#B392F0">streamChat</span><span style="color:#E1E4E8">(userId, req.</span><span style="color:#B392F0">prompt</span><span style="color:#E1E4E8">(), req.</span><span style="color:#B392F0">sessionId</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(fragment </span><span style="color:#F97583">-&gt;</span><span style="color:#E1E4E8"> ServerSentEvent.</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">(fragment).</span><span style="color:#B392F0">event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;message&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">                .</span><span style="color:#B392F0">concatWithValues</span><span style="color:#E1E4E8">(ServerSentEvent.</span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8">String</span><span style="color:#F97583">&gt;</span><span style="color:#B392F0">builder</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">event</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;done&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">data</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;[DONE]&quot;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">build</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="65-查询日志落库">6.5 查询日志落库</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="java"><code><span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Entity</span></span>
+<span class="line"><span style="color:#E1E4E8">@</span><span style="color:#F97583">Table</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;query_log&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">indexes</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> @</span><span style="color:#F97583">Index</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">name</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;idx_user_time&quot;</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">columnList</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> &quot;userId,createdAt&quot;</span><span style="color:#E1E4E8">))</span></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> QueryLog</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Id</span><span style="color:#E1E4E8"> @</span><span style="color:#F97583">GeneratedValue</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">strategy</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> GenerationType.IDENTITY)</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> Long id;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String userId;</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Column</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 1000</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">private</span><span style="color:#E1E4E8"> String prompt;</span></span>
+<span class="line"><span style="color:#E1E4E8">    @</span><span style="color:#F97583">Lob</span><span style="color:#F97583">   private</span><span style="color:#E1E4E8"> String answer;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String sessionId;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> String requestId;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> long</span><span style="color:#E1E4E8">   latencyMs;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#F97583"> boolean</span><span style="color:#E1E4E8"> success;</span></span>
+<span class="line"><span style="color:#F97583">    private</span><span style="color:#E1E4E8"> LocalDateTime createdAt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // 省略 getter / setter</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">public</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> QueryLogRepository</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> JpaRepository</span><span style="color:#E1E4E8">&lt;</span><span style="color:#F97583">QueryLog</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">Long</span><span style="color:#E1E4E8">&gt; {}</span></span></code></pre>
+<p>对应建表语句：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">CREATE</span><span style="color:#F97583"> TABLE</span><span style="color:#B392F0"> query_log</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">  id          </span><span style="color:#F97583">BIGINT</span><span style="color:#E1E4E8"> AUTO_INCREMENT </span><span style="color:#F97583">PRIMARY KEY</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  user_id     </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  prompt      </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1000</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  answer      MEDIUMTEXT,</span></span>
+<span class="line"><span style="color:#E1E4E8">  session_id  </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  request_id  </span><span style="color:#F97583">VARCHAR</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">64</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  latency_ms  </span><span style="color:#F97583">BIGINT</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  success     </span><span style="color:#F97583">TINYINT</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">  created_at  </span><span style="color:#F97583">DATETIME</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">  INDEX</span><span style="color:#E1E4E8"> idx_user_time (user_id, created_at)</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<blockquote>
+<p>想要”全响应式、不阻塞”的同学，可以把 JPA 换成 <strong>Spring Data R2DBC</strong>，省掉 <code>boundedElastic</code> 那步。本文为了好懂用了大家更熟的 JPA。</p>
+</blockquote>
+<h3 id="66-前端读-sse逐字渲染">6.6 前端：读 SSE，逐字渲染</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> ask</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">prompt</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">sessionId</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> resp</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;/api/chat/stream&#39;</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">&#39;POST&#39;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: { </span><span style="color:#9ECBFF">&#39;Content-Type&#39;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&#39;application/json&#39;</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">&#39;X-User-Id&#39;</span><span style="color:#E1E4E8">: currentUserId },</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ prompt, sessionId })</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> reader</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> resp.body.</span><span style="color:#B392F0">getReader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> decoder</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TextDecoder</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> buffer </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> &#39;&#39;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  while</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">value</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">done</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> reader.</span><span style="color:#B392F0">read</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (done) </span><span style="color:#F97583">break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    buffer </span><span style="color:#F97583">+=</span><span style="color:#E1E4E8"> decoder.</span><span style="color:#B392F0">decode</span><span style="color:#E1E4E8">(value, { stream: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // SSE 事件之间以空行分隔，data: 开头是数据</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> events</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> buffer.</span><span style="color:#B392F0">split</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">&#39;</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    buffer </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> events.</span><span style="color:#B392F0">pop</span><span style="color:#E1E4E8">();                 </span><span style="color:#6A737D">// 末尾可能是半条，留到下次</span></span>
+<span class="line"><span style="color:#F97583">    for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">const</span><span style="color:#79B8FF"> evt</span><span style="color:#F97583"> of</span><span style="color:#E1E4E8"> events) {</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> line</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> evt.</span><span style="color:#B392F0">split</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">&#39;</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">find</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">l</span><span style="color:#F97583"> =&gt;</span><span style="color:#E1E4E8"> l.</span><span style="color:#B392F0">startsWith</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&#39;data:&#39;</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">line) </span><span style="color:#F97583">continue</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> text</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> line.</span><span style="color:#B392F0">slice</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">trim</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (text </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> &#39;[DONE]&#39;</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">      appendToUI</span><span style="color:#E1E4E8">(text);                    </span><span style="color:#6A737D">// 逐字追加，打字机效果</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="67-日志的真正价值让知识库越用越准">6.7 日志的真正价值：让知识库越用越准</h3>
+<p>记日志不是为了存着好看。最值钱的用法是——<strong>把 <code>success=false</code> 或答得含糊的查询捞出来</strong>：</p>
+<ul>
+<li>用户问了、但知识库没覆盖好的 → 正是要<strong>补充的新条目</strong>（这恰好呼应下一节的”用真实提问驱动”维护心法）；</li>
+<li>高频问题 → 优先打磨、甚至做成快捷入口；</li>
+<li>平均耗时、调用量 → 容量规划和成本核算的依据。</li>
+</ul>
+<hr/>
+<h2 id="七内功心法知识库内容怎么写才好用">七、内功心法：知识库内容怎么写才好用</h2>
+<p>平台谁都会点，<strong>真正决定体验的是内容怎么写</strong>。这部分是反复踩坑后总结的精华。</p>
+<h3 id="71-内容编写六条核心原则">7.1 内容编写六条核心原则</h3>
+<ol>
+<li><strong>一问对一答，一答只说一件事</strong>：别在一条答案里塞多个主题，必要时拆成更小的问题。</li>
+<li><strong>答案自带上下文、能独立看懂</strong>：检索时片段是被单独抽出来喂给模型的，别写”如上所述&quot;&quot;同上”，关键信息写全。</li>
+<li><strong>问题写成用户真会问的样子</strong>：检索匹配的是问题（Q），给同一问题列 2～3 种问法（规范、口语、故障式）。</li>
+<li><strong>用词准确、避免模糊</strong>：少用”可能&quot;&quot;大概&quot;&quot;一般来说”，该给的数字、条件、步骤要明确。</li>
+<li><strong>适用条件前置</strong>：只在特定情况成立的答案，把条件写在开头并用 ⚠️ 标注。</li>
+<li><strong>结构清晰、善用标题</strong>：一个问题一个标题（如 <code>## 如何退货</code>），利于切片与检索，也便于维护。</li>
+</ol>
+<p>写新条目时，直接复制这个模板照着填：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>### [模块/编号] 简短问题标题</span></span>
+<span class="line"><span>**Q（含 2-3 种问法）：** 规范问法？/ 口语问法？/ 故障式问法？</span></span>
+<span class="line"><span>**适用条件：** ⚠️ 仅适用于…（没有就写&quot;无&quot;）</span></span>
+<span class="line"><span>**A：**</span></span>
+<span class="line"><span>1. 步骤一…</span></span>
+<span class="line"><span>2. 步骤二…</span></span>
+<span class="line"><span>**相关：** 见《XXX》</span></span></code></pre>
+<h3 id="72-目录骨架从核心高频到外围背景分层">7.2 目录骨架：从”核心高频”到”外围背景”分层</h3>
+<p>按优先级分层，新内容放进对应章节。<strong>P0 最先做，P1 其次，P2 按需回填</strong>：</p>
+<ul>
+<li><strong>第一部分 · 系统使用指南【P0】</strong>：挡掉反复来问”这功能怎么用”</li>
+<li><strong>第二部分 · 故障排查与运维【P0】</strong>：写法是”现象 → 可能原因 → 排查步骤 → 解决方法”</li>
+<li><strong>第三部分 · 产品概览【P1】</strong>：让销售 / 新人快速了解”我们有什么”</li>
+<li><strong>第四部分 · 系统集成与交互【P1~P2】</strong>：数据怎么流、谁和谁对接</li>
+<li><strong>第五部分 · 行业背景与名词速查【P2】</strong>：作为公共词典，统一术语</li>
+</ul>
+<blockquote>
+<p><strong>填充心法</strong>：不要凭空想该写什么，<strong>用真实提问驱动</strong>——每当有人来问，就顺手沉淀成一条。（还记得第六节的日志吗？那就是你的”提问来源”。）</p>
+</blockquote>
+<h3 id="73-存放结构连接器--类目--文件">7.3 存放结构：连接器 → 类目 → 文件</h3>
+<p>百炼里是三层结构：</p>
+<ul>
+<li><strong>连接器</strong>：一个大仓库，对应一个知识来源（如”综合管理平台连接器”）</li>
+<li><strong>类目</strong>：仓库里的分区，建议对应上面的分层</li>
+<li><strong>文件</strong>：真正被解析、切片、检索的内容单位</li>
+</ul>
+<p><strong>文件拆分建议</strong>：按”二级模块”一个文件（如 <code>业务中心.md</code>、<code>设备类故障.md</code>），别一个大文件装全部，也别碎到一条一个文件。好处是检索更精准、维护更方便、单文件出错不牵连其他。</p>
+<p><strong>解析设置</strong>：对用 Markdown 标题分条目的 FAQ，建议<strong>按标题 / 层级切分</strong>，保证每条问答尽量切在一起。</p>
+<h3 id="74-演进路线别一上来就搭大架子">7.4 演进路线：别一上来就搭大架子</h3>
+<ol>
+<li><strong>阶段一（地基）</strong>：打磨单个知识库的内容质量——回答好不好全看内容好不好；</li>
+<li><strong>阶段二</strong>：用”分类目 + 多文件”把知识库结构化；</li>
+<li><strong>阶段三</strong>：扩展为”按部门组织的多知识库”，由各部门协作维护，维护者从”唯一作者”变成”规则制定者 + 审核者”；</li>
+<li><strong>阶段四</strong>：升级体验为”图文并茂 + 工具调用”（也就是本文五、六节做的事）。</li>
+</ol>
+<blockquote>
+<p>成熟的多部门知识库是”运营一段时间后的结果”，不是一开始就要搭出的架子。<strong>先做好内容，再谈扩张。</strong></p>
+</blockquote>
+<hr/>
+<h2 id="八合规与安全上传前必读-️">八、合规与安全：上传前必读 ⚠️</h2>
+<p>这一节最容易被忽略，但<strong>踩了就是大事</strong>，务必先看。</p>
+<ol>
+<li><strong>数据出域</strong>：上传到阿里云百炼 = 内容进入第三方公有云。涉及技术参数、频率、设备型号、军工相关等敏感内容前，<strong>必须先确认保密等级是否允许上传公有云</strong>。</li>
+<li><strong>分级处理</strong>：明确哪些可传、哪些需脱敏、哪些禁止上传，别一刀切。</li>
+<li><strong>账号与地域</strong>：确认用哪个企业账号、数据存储地域、是否需走内部审批 / 备案。</li>
+<li><strong>权限与共享</strong>：对多部门 / 对外开放时，成员权限按内部规定设置（这类操作请由负责人本人在平台执行）。</li>
+<li><strong>删除不可恢复</strong>：删除文件无法找回，请谨慎并由本人操作。</li>
+</ol>
+<p><strong>跟领导 / 相关部门确认清单：</strong></p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 这类资料的保密等级，是否允许上传到公有云？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 若部分允许：哪些可传、哪些需脱敏、哪些禁止？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 用哪个公司账号？数据存放地域有无要求？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 是否需要走内部审批或备案流程？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 后续多部门 / 对外开放时，权限如何界定？</li>
+</ul>
+<hr/>
+<h2 id="写在最后">写在最后</h2>
+<p>这套东西的搭建顺序，其实就是本文的目录：<strong>建知识库 → 建应用 → 接口接入 → 插件查实时数据 → 后端代理 + 日志 → 持续维护内容</strong>。</p>
+<p>但真正的核心只有一句：<strong>回答质量的天花板，就是你内容的质量。</strong> 平台、接口、代理都是脚手架，把业务知识用清楚的文字沉淀下来、并用真实提问不断回填，才是这件事能不能”好用”的关键。</p>
+<p>如果这篇对你有帮助，欢迎点赞、在看、转发给同样在折腾 AI 助手的朋友 👇</p>
+<blockquote>
+<p>注意事项速记：⚠️ 模型调用费用较高，注意控制频率；💡 向量存储免费，可放心用；🔗 必须创建自己的文件连接器才能上传数据；📊 索引设置保持默认即可；📦 推荐买资源包，比按量付费划算。</p>
+</blockquote>
+<p>（全文完，本教程随平台更新持续修订。）</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2026 By xiaofeng </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
