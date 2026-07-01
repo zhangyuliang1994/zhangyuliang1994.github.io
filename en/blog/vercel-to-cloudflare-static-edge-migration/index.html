@@ -1,0 +1,230 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en-US"> <head><meta charset="UTF-8"><title>From Vercel to Cloudflare: A Static-First, Edge-First Migration Retrospective for an SEO Content Site - frency.me</title><meta name="description" content="A starter template for Astro with i18n support."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en-US" href="https://zhangyuliang1994.github.io/en/blog/vercel-to-cloudflare-static-edge-migration/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/vercel-to-cloudflare-static-edge-migration/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="From Vercel to Cloudflare: A Static-First, Edge-First Migration Retrospective for an SEO Content Site - frency.me"><meta property="og:site_name" content="From Vercel to Cloudflare: A Static-First, Edge-First Migration Retrospective for an SEO Content Site - frency.me"><meta property="og:description" content="A starter template for Astro with i18n support."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/vercel-to-cloudflare-static-edge-migration/"><meta property="og:locale" content="en-US"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B010tZVZ.css">
+<style>header[data-astro-cid-v3cnrnum]{text-align:center;border-block-end:1px solid var(--color-theme);padding-block-end:var(--sp-m);h1{color:var(--color-theme);font-size:1.8rem}}.cover[data-astro-cid-v3cnrnum]{border-radius:16px;margin:0}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.B1OF1bPr.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" data-astro-cid-onlux7ho> <span class="material-icons-sharp" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en-US"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = LOCALES[lang].label;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="l-header l-content" data-astro-cid-3ef6ksr2> <h1 dir="ltr" data-astro-cid-3ef6ksr2> <a href="/en/" data-astro-cid-3ef6ksr2> <img src="/_astro/logo-en.BgGA6mw7_1z4ED4.webp" alt="frency" data-astro-cid-3ef6ksr2="true" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="768" class="logo-img"> </a> </h1> <div class="header-actions" data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/about/" data-astro-cid-3ef6ksr2> About </a> </li> <li data-astro-cid-3ef6ksr2> <a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </li> </ul> </nav> <label data-astro-cid-opxux4jt> <span class="material-icons-sharp" data-astro-cid-opxux4jt>translate</span> <select data-languageSelect data-astro-cid-opxux4jt> <option label="English" value="/en/blog/vercel-to-cloudflare-static-edge-migration/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/vercel-to-cloudflare-static-edge-migration/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </header>  <main class="l-main l-content">  <article data-astro-cid-uwv4mmhs> <img src="/_astro/cover.ISRHP4gv_278bKe.webp" alt="From Vercel to Cloudflare: A Static-First, Edge-First Migration Retrospective for an SEO Content Site" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1919" height="820" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>From Vercel to Cloudflare: A Static-First, Edge-First Migration Retrospective for an SEO Content Site</h1> <time datetime="2026-07-01T00:00:00.000Z" data-astro-cid-v3cnrnum> 7/1/2026 </time> </header> <p>I recently moved a content project from Vercel to Cloudflare Workers. It is a game content site built for overseas search traffic, and the core requirements were simple: pages must stay stable, SEO must not drop, the launch must be reversible, and unnecessary template features should ideally be removed along the way.</p>
+<p>The direct trigger was that the project’s compute usage on Vercel’s free tier was starting to run out. The dashboard showed <code>Exceeded free resources</code>; Fluid Active CPU had already gone beyond the free allowance, and the warning email made it clear that the free team had used all included Fluid Active CPU. If usage kept exceeding the free quota, the project could be automatically paused.</p>
+<p>This migration was not as simple as switching a deployment button. Looking at the git history, the real migration work happened between June 24 and June 29, 2026. There were 6 core commits, touching 293 files, adding roughly 3,000 lines and deleting about 38,000 lines. That number says a lot: the main job was not “add Cloudflare”, but first reshape the project into something suitable for Cloudflare.</p>
+<h2 id="1-why-migrate">1. Why Migrate</h2>
+<p><img src="/_astro/01-vercel-resource-risk.-X2PXMUi_1EPKxj.webp" alt="Vercel free tier warning and traffic pressure on a content site" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>The project originally came from a SaaS template. It included many capabilities that were not necessary for a content site: login and registration, admin pages, Stripe payments, credits, email, an AI playground, database migrations, file uploads, and more.</p>
+<p>Those features make sense in a SaaS product, but for a site centered on SEO content and static pages, they created several problems:</p>
+<ol>
+<li>The runtime became heavier, and the deployment environment became more complex.</li>
+<li>Many APIs and service dependencies were not a natural fit for Cloudflare Workers.</li>
+<li>Maintenance cost was inflated by template features; every future upgrade had to account for modules that were not currently needed.</li>
+<li>Once search traffic grew, dynamic rendering and function execution would burn through platform free quotas faster.</li>
+</ol>
+<p>What finally made me commit to the migration was the combination of resource billing pressure and stability risk.</p>
+<p>On one side, traffic growth is a good thing. But Vercel’s warning was direct: Fluid Active CPU on the free tier had already been exhausted. Continued growth meant either upgrading to a paid plan or accepting the risk that the project could be paused. For a content site that depends on steady search traffic, “could be paused” is not acceptable.</p>
+<p>On the other side, the site’s business shape did not require much server-side compute. Most pages were content pages, listing pages, docs pages, and static assets. Since the access pressure was mostly read traffic, the more reasonable direction was not to keep paying for dynamic runtime, but to make the architecture more static and more edge-oriented.</p>
+<p>So the first step of the migration was not writing a Worker. It was making tradeoffs: what does this site actually need? Which runtime capabilities are real business needs, and which ones are just historical baggage from the template?</p>
+<p>The final core capabilities were straightforward:</p>
+<ul>
+<li>multilingual content pages;</li>
+<li>blog and documentation content;</li>
+<li>SEO infrastructure such as sitemap, robots, canonical, and hreflang;</li>
+<li>a few Worker-native APIs, such as health, ping, and search;</li>
+<li>static asset hosting and edge caching.</li>
+</ul>
+<p>Everything else that did not serve the current goal was removed.</p>
+<h2 id="2-migration-path-let-nextjs-generate-static-content-let-the-worker-own-edge-logic">2. Migration Path: Let Next.js Generate Static Content, Let the Worker Own Edge Logic</h2>
+<p><img src="/_astro/02-static-first-worker-architecture.D66MUY3N_1nFlJA.webp" alt="Next.js static export and Cloudflare Worker edge distribution architecture" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>The original project was a typical Next.js application. After moving to Cloudflare, I did not try to force every piece of Next.js server logic into a Worker. Instead, I shifted the architecture to static-first:</p>
+<p>Next.js generates static pages, and Cloudflare Worker handles the request entry point.</p>
+<p>The build scripts now include a Cloudflare-specific command:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">pnpm</span><span style="color:#9ECBFF"> build:cf</span></span></code></pre>
+<p>It actually does two things:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">CLOUDFLARE_STATIC_EXPORT</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">true</span><span style="color:#B392F0"> next</span><span style="color:#9ECBFF"> build</span></span>
+<span class="line"><span style="color:#B392F0">tsx</span><span style="color:#9ECBFF"> scripts/generate-llms-assets.mts</span></span></code></pre>
+<p>In <code>next.config.ts</code>, when <code>CLOUDFLARE_STATIC_EXPORT</code> is enabled, Next.js uses <code>output: &#39;export&#39;</code>. In other words, content pages are exported to the <code>out</code> directory and then served by Cloudflare Workers Assets.</p>
+<p>The Worker configuration is also direct:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#E1E4E8">name = </span><span style="color:#9ECBFF">&quot;content-site&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">main = </span><span style="color:#9ECBFF">&quot;src/worker.ts&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">assets</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">directory = </span><span style="color:#9ECBFF">&quot;out&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">binding = </span><span style="color:#9ECBFF">&quot;ASSETS&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">html_handling = </span><span style="color:#9ECBFF">&quot;none&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">not_found_handling = </span><span style="color:#9ECBFF">&quot;none&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">run_worker_first = </span><span style="color:#79B8FF">true</span></span></code></pre>
+<p>The key setting is <code>run_worker_first = true</code>. Every request enters the Worker first, and the Worker decides whether it should go to an API, a static asset, default-language fallback, 404 handling, or a root-domain redirect.</p>
+<p>This keeps the site’s edge logic concentrated in <code>src/worker.ts</code> instead of spreading it across platform configuration and framework conventions.</p>
+<h2 id="3-the-biggest-change-slimming-a-saas-template-down-into-a-content-site">3. The Biggest Change: Slimming a SaaS Template Down Into a Content Site</h2>
+<p>On June 29, there was one large commit:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>feat: enhance Cloudflare integration and clean up unused scripts and configurations</span></span></code></pre>
+<p>That commit removed many capabilities inherited from the original template:</p>
+<ul>
+<li>auth login and registration;</li>
+<li>Stripe payments and webhooks;</li>
+<li>credits system;</li>
+<li>newsletter subscriptions;</li>
+<li>admin/dashboard/settings pages;</li>
+<li>Drizzle database configuration and migrations;</li>
+<li>AI chat/image/text playgrounds;</li>
+<li>S3 storage uploads;</li>
+<li>Resend/Beehiiv and other email or subscription integrations.</li>
+</ul>
+<p>At the same time, it added the Cloudflare foundation:</p>
+<ul>
+<li><code>src/worker.ts</code>: Worker request entry point;</li>
+<li><code>src/api/health.ts</code>, <code>src/api/ping.ts</code>, <code>src/api/search.ts</code>: Worker-native APIs;</li>
+<li><code>src/lib/cloudflare/cache.ts</code>: edge cache wrapper;</li>
+<li><code>src/lib/cloudflare/kv.ts</code>: utility layer for future KV usage;</li>
+<li><code>src/lib/cloudflare/d1.ts</code>: utility layer for future D1 usage;</li>
+<li><code>wrangler.toml</code>: Cloudflare deployment configuration;</li>
+<li><code>src/env.ts</code>: Worker environment variable and binding types.</li>
+</ul>
+<p>The essence of this step was dependency reduction. When migrating platforms, many people first try to make old code compatible. For this project, the better move was the opposite: remove runtime dependencies the current business did not need, then move the remaining parts to Cloudflare.</p>
+<p>After that, the Cloudflare adaptation became much simpler.</p>
+<h2 id="4-what-the-worker-handles">4. What the Worker Handles</h2>
+<p>After the migration, the Worker mainly handles five types of logic.</p>
+<p>The first is API routing.</p>
+<p>The original Next.js API routes were reduced to Worker-native handlers:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>/api/ping</span></span>
+<span class="line"><span>/api/health</span></span>
+<span class="line"><span>/api/search</span></span></code></pre>
+<p>The <code>/api/health</code> endpoint returns:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;ok&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;runtime&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;cloudflare-workers&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;site&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;content-site&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;timestamp&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;...&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>This endpoint was very useful during the migration because it directly confirmed that production requests were actually hitting Cloudflare Workers rather than still running on the old platform.</p>
+<p>The second is static asset routing.</p>
+<p>The Worker generates candidate assets based on the request path, for example:</p>
+<ul>
+<li><code>/</code> maps to the default-language homepage;</li>
+<li><code>/example-page</code> can fall back to <code>/en/example-page.html</code>;</li>
+<li><code>/docs/xxx.mdx</code> can map to generated LLM markdown assets;</li>
+<li>paths with file extensions are handled directly as static files.</li>
+</ul>
+<p>This solves one of the most common problems after static export: users visit clean URLs, but the output directory may contain <code>.html</code> files or <code>index.html</code> files.</p>
+<p>The third is caching.</p>
+<p>The project added a Cloudflare cache wrapper that edge-caches GET requests and sets:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>s-maxage=3600</span></span>
+<span class="line"><span>stale-while-revalidate=86400</span></span></code></pre>
+<p>That is a reasonable fit for a content site. Pages do not need to hit origin on every request, and stale content can continue serving while revalidation happens.</p>
+<p>The fourth is security and indexing control.</p>
+<p>The Worker adds security response headers consistently, including:</p>
+<ul>
+<li><code>X-Content-Type-Options: nosniff</code></li>
+<li><code>Referrer-Policy: strict-origin-when-cross-origin</code></li>
+<li><code>X-Frame-Options: SAMEORIGIN</code></li>
+<li><code>Permissions-Policy</code></li>
+</ul>
+<p>For the <code>workers.dev</code> staging domain, it also adds:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>X-Robots-Tag: noindex, nofollow</span></span></code></pre>
+<p>The fifth is domain canonicalization.</p>
+<p>When the root domain is visited, the Worker sends a 301 redirect to the canonical <code>www</code> domain:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>https://&lt;www-production-domain&gt;</span></span></code></pre>
+<p>This matters for SEO. During a migration, one of the worst outcomes is having the same pages appear under the production domain, the <code>workers.dev</code> domain, the root domain, and the <code>www</code> domain, creating canonical confusion.</p>
+<h2 id="5-seo-is-the-most-easily-underestimated-part-of-the-migration">5. SEO Is the Most Easily Underestimated Part of the Migration</h2>
+<p>This was not a URL migration. The production domain remained:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>https://&lt;www-production-domain&gt;</span></span></code></pre>
+<p>But even when URLs do not change, SEO still has plenty of traps.</p>
+<p>For example, the staging domain must not be indexed. The Worker protects <code>workers.dev</code> in two ways:</p>
+<ol>
+<li>It adds <code>X-Robots-Tag: noindex, nofollow</code> to responses.</li>
+<li>When <code>/robots.txt</code> is requested, it returns <code>Disallow: /</code>.</li>
+</ol>
+<p>Another issue is that sitemap and canonical URLs must not become <code>workers.dev</code> URLs just because the site is running in staging. The project’s <code>getBaseUrl()</code> includes a guard: if an environment variable contains <code>.workers.dev</code>, the final base URL still falls back to the official production domain.</p>
+<p>There was also a small robots rule detail.</p>
+<p>After the migration, this was fixed in a separate commit:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="txt"><code><span class="line"><span>fix: update robots.txt rules to remove disallow for _next directory</span></span></code></pre>
+<p>That commit looks tiny, changing only one line, but it was important. A static site may still depend on resources generated under Next.js paths. If <code>_next</code> is incorrectly blocked, search engines and browsers may run into resource access problems.</p>
+<p>When migrating platforms, the issues that truly affect launch quality are often not the big features, but these small rules.</p>
+<h2 id="6-launch-does-not-end-at-deploy">6. Launch Does Not End at Deploy</h2>
+<p><img src="/_astro/03-launch-checklist.BLb8a-B4_29gdFL.webp" alt="Validation checklist before and after a Cloudflare migration launch" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>During the migration, I created quite a few temporary files and checklists. Many were just stage-specific investigation notes and were later removed during cleanup. What was worth keeping was not a specific filename, but the categories of checks that must be validated before and after launch.</p>
+<p>These are the checks I think are worth preserving.</p>
+<p>Before launch, check staging:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">worker-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">accoun</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.workers.dev/</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">worker-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">accoun</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.workers.dev/en</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">worker-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">accoun</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.workers.dev/api/health</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">worker-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">accoun</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.workers.dev/robots.txt</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -s</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">worker-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">accoun</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">.workers.dev/sitemap.xml</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> workers.dev</span></span></code></pre>
+<p>After launch, check production:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">www-production-domai</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">www-production-domai</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">/en</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">www-production-domai</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">/api/health</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">www-production-domai</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">/robots.txt</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -s</span><span style="color:#9ECBFF"> https://</span><span style="color:#F97583">&lt;</span><span style="color:#9ECBFF">www-production-domai</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF">/sitemap.xml</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#9ECBFF"> workers.dev</span></span></code></pre>
+<p>The expected results are clear:</p>
+<ul>
+<li>staging should be reachable, but not indexable;</li>
+<li>production must not contain <code>workers.dev</code>;</li>
+<li>sitemap should only contain the official production domain;</li>
+<li><code>/api/health</code> should return the Cloudflare Workers marker;</li>
+<li>the root domain should correctly 301 to <code>www</code>;</li>
+<li>if something goes wrong, remove the Worker Custom Domain and switch DNS/CNAME back to Vercel.</li>
+</ul>
+<p>The value of this checklist is not the commands themselves. Its value is that it defines what “launch succeeded” means.</p>
+<p>For a content site, “the page opens” is not enough. SEO URLs, robots, sitemap, canonical, API health, and rollback path all need to be confirmed before the migration is truly complete.</p>
+<h2 id="7-lessons-from-this-migration">7. Lessons From This Migration</h2>
+<p>First, decide what the project actually needs before migrating.</p>
+<p>If a content site only needs static pages, search traffic, and a few APIs, there is no reason to keep a full SaaS template with auth, billing, dashboards, and databases. Removing unnecessary things is part of a successful migration.</p>
+<p>Second, do not treat Cloudflare as just another Vercel.</p>
+<p>Cloudflare Workers are strongest at edge execution, caching, lightweight APIs, and static asset delivery. The closer a project gets to those strengths, the smoother the migration becomes. If the code still carries a lot of Node.js server runtime assumptions, the migration will be more painful.</p>
+<p>Third, SEO migration needs its own design.</p>
+<p>Even if the domain does not change, you still need to handle staging noindex, production canonical URLs, sitemap domains, robots rules, and <code>www</code>/root domain unification. <code>workers.dev</code> in particular must never enter search engine indexes.</p>
+<p>Fourth, keep a rollback plan.</p>
+<p>Platform migration is not a one-way door. The launch document explicitly included rollback steps: remove the Worker Custom Domain, restore DNS/CNAME to Vercel, clear the Cloudflare cache, and verify the production domain again. That makes launch much easier to reason about.</p>
+<p>Fifth, a health check endpoint is useful.</p>
+<p><code>/api/health</code> looks like a small endpoint, but it answers a critical question: which runtime is current production traffic actually running on? During a migration, that is more reliable than guessing or reading dashboards.</p>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>This migration from Vercel to Cloudflare looked like a deployment platform change on the surface, but in practice it was a reshaping of the project.</p>
+<p>Before the migration, it was more like a Next.js application that still carried many SaaS template capabilities.</p>
+<p>After the migration, it became a static-first content site: Next.js generates content assets, and Cloudflare Workers handle the edge entry point, APIs, caching, routing, SEO protection, and domain canonicalization.</p>
+<p>For this kind of SEO content site, the direction is clearer: fewer runtime dependencies, more static output; less template baggage, more edge control; less platform magic, more verifiable launch flow.</p>
+<p>If the site continues evolving, I will probably connect Cloudflare KV and D1 later for search indexes, content cache, or lightweight data features. But that step is not urgent. In the first phase of the migration, the most important thing was to make the site stable, clean, and verifiably running on Cloudflare.</p>
+<p>The biggest reminder from this commit history is this: a good migration is not about moving the old system unchanged. It is about using the migration as a chance to confirm boundaries again and reshape the project into something better suited to the new platform.</p>  </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="l-footer l-content" data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <ul class="locale-list" data-astro-cid-sz7xmlte> <li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li> </ul> <div class="copy" data-astro-cid-sz7xmlte> ©2024 - 2025 By frency </div> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> <div class="footer-glow" data-astro-cid-sz7xmlte></div> </footer>   </body> </html>  
