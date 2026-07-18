@@ -1,0 +1,397 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>Building an Internal API Documentation Portal with Casdoor, Docusaurus, oauth2-proxy, and Nginx - frency.me</title><meta name="description" content="A production-ready internal documentation architecture using Docusaurus for static content, Casdoor for identity, oauth2-proxy for OIDC sessions, and Nginx for HTTPS and site-wide authentication."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Building an Internal API Documentation Portal with Casdoor, Docusaurus, oauth2-proxy, and Nginx - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="A production-ready internal documentation architecture using Docusaurus for static content, Casdoor for identity, oauth2-proxy for OIDC sessions, and Nginx for HTTPS and site-wide authentication."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B4k_B3Ur.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.2rem,6vw,3.75rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:460px;border-radius:var(--radius);margin:0;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.CE_a4KFw.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/casdoor-docusaurus-oauth2-proxy-nginx-portal/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/cover.BhX5J1Xa_KW7kJ.webp" alt="Building an Internal API Documentation Portal with Casdoor, Docusaurus, oauth2-proxy, and Nginx" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Building an Internal API Documentation Portal with Casdoor, Docusaurus, oauth2-proxy, and Nginx</h1> <p class="description" data-astro-cid-v3cnrnum>A production-ready internal documentation architecture using Docusaurus for static content, Casdoor for identity, oauth2-proxy for OIDC sessions, and Nginx for HTTPS and site-wide authentication.</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2026-07-18T00:00:00.000Z" data-astro-cid-v3cnrnum>7/18/2026</time> <a href="/en/categories/Tech Sharing/" data-astro-cid-v3cnrnum>Tech Sharing</a> <a href="/en/tags/Casdoor/" data-astro-cid-v3cnrnum>#Casdoor</a><a href="/en/tags/Docusaurus/" data-astro-cid-v3cnrnum>#Docusaurus</a><a href="/en/tags/oauth2-proxy/" data-astro-cid-v3cnrnum>#oauth2-proxy</a><a href="/en/tags/Nginx/" data-astro-cid-v3cnrnum>#Nginx</a><a href="/en/tags/OIDC/" data-astro-cid-v3cnrnum>#OIDC</a><a href="/en/tags/Docker/" data-astro-cid-v3cnrnum>#Docker</a> </div> </header> <p>We wanted a maintainable internal documentation site for HTTP APIs, Kafka messages, authentication guides, error codes, deployment manuals, troubleshooting notes, and release history.</p>
+<p>Docusaurus is an excellent static documentation generator, but a static site has no server-side authorization layer. Putting login checks in the browser would be insecure and would force the documentation project to own responsibilities that belong elsewhere. I therefore split the system into four layers:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>Responsibility</th></tr></thead><tbody><tr><td>Docusaurus</td><td>Generate and serve the static documentation</td></tr><tr><td>Casdoor</td><td>Manage organizations, users, applications, and sign-in</td></tr><tr><td>oauth2-proxy</td><td>Handle OIDC login, callbacks, and Cookie sessions</td></tr><tr><td>Nginx</td><td>Terminate HTTPS, proxy requests, serve static files, and protect the whole site</td></tr></tbody></table>
+<p><img src="/_astro/01-overall-architecture.BjngDoxk_24dXjH.webp" alt="Overall architecture of the internal portal built with Casdoor, Docusaurus, oauth2-proxy, and Nginx" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><em>Figure 1: Overall architecture. The browser talks only to Nginx; the static files, authentication proxy, and identity service stay on the server side.</em></p>
+<p>The final request flow looks like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>User opens https://docs.example.com</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>Nginx issues an auth_request</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>oauth2-proxy checks the session</span></span>
+<span class="line"><span>  ↓ not signed in</span></span>
+<span class="line"><span>Redirect to https://auth.example.com for Casdoor authentication</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>Callback to https://docs.example.com/oauth2/callback</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>oauth2-proxy sets a Cookie; Nginx serves the Docusaurus files</span></span></code></pre>
+<p>The setup uses two subdomains: <code>auth.example.com</code> for Casdoor and <code>docs.example.com</code> for the protected documentation site.</p>
+<h2 id="1-deploy-docusaurus">1. Deploy Docusaurus</h2>
+<p>Running <code>npm run build</code> produces a <code>build/</code> directory. Deploy the <strong>contents of that directory</strong>, not the directory itself:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>/var/www/openapi-docs/index.html</span></span>
+<span class="line"><span>/var/www/openapi-docs/404.html</span></span>
+<span class="line"><span>/var/www/openapi-docs/assets/</span></span>
+<span class="line"><span>/var/www/openapi-docs/docs/</span></span></code></pre>
+<p>Do not end up with <code>/var/www/openapi-docs/build/index.html</code>.</p>
+<p>Because the site is served from the domain root, configure <code>docusaurus.config.ts</code> as follows:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  url: </span><span style="color:#9ECBFF">&quot;https://docs.example.com&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  baseUrl: </span><span style="color:#9ECBFF">&quot;/&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<p>Using <code>baseUrl: &#39;/openapi/&#39;</code> makes the browser report that the configured base URL does not match the actual path. After fixing it, rebuild and deploy:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">rm</span><span style="color:#79B8FF"> -rf</span><span style="color:#9ECBFF"> /var/www/openapi-docs/</span><span style="color:#79B8FF">*</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#79B8FF"> -r</span><span style="color:#9ECBFF"> build/</span><span style="color:#79B8FF">*</span><span style="color:#9ECBFF"> /var/www/openapi-docs/</span></span>
+<span class="line"><span style="color:#B392F0">chown</span><span style="color:#79B8FF"> -R</span><span style="color:#9ECBFF"> www-data:www-data</span><span style="color:#9ECBFF"> /var/www/openapi-docs</span></span>
+<span class="line"><span style="color:#B392F0">nginx</span><span style="color:#79B8FF"> -t</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> reload</span><span style="color:#9ECBFF"> nginx</span></span></code></pre>
+<p>Before clearing the directory, verify the target carefully and use the backup or atomic-release policy appropriate for your production environment.</p>
+<h2 id="2-deploy-and-configure-casdoor">2. Deploy and Configure Casdoor</h2>
+<p>Casdoor provides centralized authentication. For the first phase, we only enabled password login and deliberately postponed third-party providers to keep the system simple.</p>
+<p>Casdoor is available publicly at <code>https://auth.example.com</code>, while its container port is bound only to <code>127.0.0.1:8000</code> and exposed through Nginx. Complete these steps in its admin console:</p>
+<ol>
+<li>Create an organization named <code>internal</code>.</li>
+<li>Create a user in that organization, such as <code>internal/zhangyuliang</code>.</li>
+<li>Create an OAuth application named <code>dev-portal</code> and bind it to <code>internal</code>.</li>
+<li>Enable the password provider.</li>
+<li>Set the Redirect URL to <code>https://docs.example.com/oauth2/callback</code>.</li>
+<li>Save the generated Client ID and Client Secret for oauth2-proxy.</li>
+</ol>
+<p><img src="/_astro/02-casdoor-object-model.BXc7O4-u_Z1u6dwn.webp" alt="Relationship among Casdoor organizations, users, applications, providers, redirect URLs, and client credentials" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><em>Figure 2: Casdoor’s object model. A user belongs to an organization; the application binds the organization and login provider, then supplies its callback and credentials to oauth2-proxy.</em></p>
+<p>Do not use <code>https://auth.example.com/oauth2/callback</code>. The callback is handled by oauth2-proxy on the documentation domain, not by Casdoor itself.</p>
+<p>One detail can be confusing: opening <code>https://auth.example.com/login</code> directly takes you to the <code>built-in</code> organization’s login page. Entering <code>zhangyuliang</code> there makes Casdoor search for <code>built-in/zhangyuliang</code>, not <code>internal/zhangyuliang</code>.</p>
+<p>To test an internal user directly, open:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>https://auth.example.com/login/internal</span></span></code></pre>
+<p>Normal users do not need this URL. When they visit the documentation site, oauth2-proxy starts the correct OAuth flow automatically.</p>
+<h2 id="3-configure-oauth2-proxy">3. Configure oauth2-proxy</h2>
+<p>oauth2-proxy connects Nginx to Casdoor. In this setup, it lives under <code>/opt/oauth2-proxy/</code>, with its configuration at <code>/opt/oauth2-proxy/oauth2-proxy.cfg</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#E1E4E8">http_address = </span><span style="color:#9ECBFF">&quot;0.0.0.0:4180&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">provider = </span><span style="color:#9ECBFF">&quot;oidc&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">provider_display_name = </span><span style="color:#9ECBFF">&quot;Casdoor&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">client_id = </span><span style="color:#9ECBFF">&quot;replace with the Casdoor Application Client ID&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">client_secret = </span><span style="color:#9ECBFF">&quot;replace with the Casdoor Application Client Secret&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">oidc_issuer_url = </span><span style="color:#9ECBFF">&quot;https://auth.example.com&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">redirect_url = </span><span style="color:#9ECBFF">&quot;https://docs.example.com/oauth2/callback&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">scope = </span><span style="color:#9ECBFF">&quot;openid email profile&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">email_domains = [ </span><span style="color:#9ECBFF">&quot;*&quot;</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#E1E4E8">whitelist_domains = [ </span><span style="color:#9ECBFF">&quot;docs.example.com&quot;</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Temporary compatibility option while email addresses remain unverified</span></span>
+<span class="line"><span style="color:#E1E4E8">insecure_oidc_allow_unverified_email = </span><span style="color:#79B8FF">true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">cookie_name = </span><span style="color:#9ECBFF">&quot;_oauth2_proxy_docs&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">cookie_secret = </span><span style="color:#9ECBFF">&quot;replace with a randomly generated cookie secret&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">cookie_secure = </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">cookie_httponly = </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">cookie_samesite = </span><span style="color:#9ECBFF">&quot;lax&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">reverse_proxy = </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">skip_provider_button = </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">set_xauthrequest = </span><span style="color:#79B8FF">true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">upstreams = [</span></span>
+<span class="line"><span style="color:#9ECBFF">  &quot;static://202&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">]</span></span></code></pre>
+<p>Generate a Cookie secret with:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openssl</span><span style="color:#9ECBFF"> rand</span><span style="color:#79B8FF"> -base64</span><span style="color:#79B8FF"> 32</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> tr</span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> &#39;+/&#39;</span><span style="color:#9ECBFF"> &#39;-_&#39;</span></span></code></pre>
+<p>Use this Docker Compose file:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  oauth2-proxy</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">quay.io/oauth2-proxy/oauth2-proxy:v7.15.3</span></span>
+<span class="line"><span style="color:#85E89D">    container_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">oauth2-proxy</span></span>
+<span class="line"><span style="color:#85E89D">    restart</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">&quot;127.0.0.1:4180:4180&quot;</span></span>
+<span class="line"><span style="color:#85E89D">    volumes</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">./oauth2-proxy.cfg:/etc/oauth2-proxy/oauth2-proxy.cfg:ro</span></span>
+<span class="line"><span style="color:#85E89D">    command</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">--config=/etc/oauth2-proxy/oauth2-proxy.cfg</span></span></code></pre>
+<p>Start it and inspect the logs:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> /opt/oauth2-proxy</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> compose</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> logs</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> oauth2-proxy</span></span></code></pre>
+<p>Check the authentication endpoint:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> http://127.0.0.1:4180/oauth2/auth</span></span></code></pre>
+<p>An unauthenticated request should return <code>HTTP/1.1 401 Unauthorized</code>. That response confirms the endpoint is working.</p>
+<h2 id="4-protect-docsexamplecom-with-nginx">4. Protect docs.example.com with Nginx</h2>
+<p><img src="/_astro/03-nginx-auth-flow.CCX9QNFV_ZmnHwk.webp" alt="Nginx authentication routing for ACME, OAuth paths, and ordinary documentation requests" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><em>Figure 3: Nginx authentication flow. ACME and OAuth routes are passed through, while ordinary pages use auth_request and continue according to a 202 or 401 response.</em></p>
+<p>There are only three essential routing rules:</p>
+<ul>
+<li>allow <code>/.well-known/acme-challenge/</code> for certificate validation;</li>
+<li>proxy <code>/oauth2/</code> to oauth2-proxy;</li>
+<li>authenticate <code>/</code> through the internal <code>/oauth2/auth</code> endpoint before serving Docusaurus files.</li>
+</ul>
+<p>The complete configuration is below. Replace the certificate paths for your environment:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#F97583">upstream</span><span style="color:#B392F0"> docs_oauth2_proxy_backend </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">    server</span><span style="color:#E1E4E8"> 127.0.0.1:4180;</span></span>
+<span class="line"><span style="color:#F97583">    keepalive </span><span style="color:#79B8FF">32</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">server</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    listen </span><span style="color:#79B8FF">80</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    server_name </span><span style="color:#E1E4E8">docs.example.com;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> ^~</span><span style="color:#DBEDFF"> /.well-known/acme-challenge/ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        root </span><span style="color:#E1E4E8">/www/server/stop;</span></span>
+<span class="line"><span style="color:#F97583">        allow </span><span style="color:#79B8FF">all</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> / </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 301</span><span style="color:#E1E4E8"> https://$host$request_uri;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">server</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    listen </span><span style="color:#79B8FF">443</span><span style="color:#E1E4E8"> ssl http2;</span></span>
+<span class="line"><span style="color:#F97583">    server_name </span><span style="color:#E1E4E8">docs.example.com;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    ssl_certificate </span><span style="color:#E1E4E8">/etc/ssl/example.com_bundle.pem;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_certificate_key </span><span style="color:#E1E4E8">/etc/ssl/example.com.key;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_protocols </span><span style="color:#E1E4E8">TLSv1.2 TLSv1.3;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_session_cache </span><span style="color:#E1E4E8">shared:SSL:10m;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_session_timeout </span><span style="color:#79B8FF">10m</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_prefer_server_ciphers </span><span style="color:#79B8FF">on</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    ssl_ciphers </span><span style="color:#E1E4E8">HIGH:!aNULL:!MD5;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    add_header </span><span style="color:#E1E4E8">Strict-Transport-Security </span><span style="color:#9ECBFF">&quot;max-age=31536000&quot;</span><span style="color:#E1E4E8"> always;</span></span>
+<span class="line"><span style="color:#F97583">    error_page </span><span style="color:#79B8FF">497</span><span style="color:#E1E4E8"> https://$host$request_uri;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    access_log </span><span style="color:#E1E4E8">/var/log/nginx/docs.example.com.access.log;</span></span>
+<span class="line"><span style="color:#F97583">    error_log </span><span style="color:#E1E4E8">/var/log/nginx/docs.example.com.error.log;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    root </span><span style="color:#E1E4E8">/var/www/openapi-docs;</span></span>
+<span class="line"><span style="color:#F97583">    index </span><span style="color:#E1E4E8">index.html;</span></span>
+<span class="line"><span style="color:#F97583">    client_max_body_size </span><span style="color:#79B8FF">50m</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    proxy_buffer_size </span><span style="color:#79B8FF">256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    proxy_buffers </span><span style="color:#79B8FF">16</span><span style="color:#79B8FF"> 256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    proxy_busy_buffers_size </span><span style="color:#79B8FF">512k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> ^~</span><span style="color:#DBEDFF"> /.well-known/acme-challenge/ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        root </span><span style="color:#E1E4E8">/www/server/stop;</span></span>
+<span class="line"><span style="color:#F97583">        allow </span><span style="color:#79B8FF">all</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> ^~</span><span style="color:#DBEDFF"> /oauth2/ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass </span><span style="color:#E1E4E8">http://docs_oauth2_proxy_backend;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_http_version </span><span style="color:#79B8FF">1.1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Scheme $scheme;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Auth-Request-Redirect $scheme://$host$request_uri;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        proxy_buffer_size </span><span style="color:#79B8FF">256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_buffers </span><span style="color:#79B8FF">16</span><span style="color:#79B8FF"> 256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_busy_buffers_size </span><span style="color:#79B8FF">512k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> =</span><span style="color:#DBEDFF"> /oauth2/auth </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        internal</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass </span><span style="color:#E1E4E8">http://docs_oauth2_proxy_backend;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_http_version </span><span style="color:#79B8FF">1.1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Scheme $scheme;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Proto $scheme;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-For $proxy_add_x_forwarded_for;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">X-Forwarded-Uri $request_uri;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_set_header </span><span style="color:#E1E4E8">Content-Length </span><span style="color:#9ECBFF">&quot;&quot;</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_pass_request_body </span><span style="color:#79B8FF">off</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        proxy_buffer_size </span><span style="color:#79B8FF">256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_buffers </span><span style="color:#79B8FF">16</span><span style="color:#79B8FF"> 256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">        proxy_busy_buffers_size </span><span style="color:#79B8FF">512k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> / </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        auth_request </span><span style="color:#E1E4E8">/oauth2/auth;</span></span>
+<span class="line"><span style="color:#F97583">        error_page </span><span style="color:#79B8FF">401</span><span style="color:#E1E4E8"> = @oauth2_start;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        auth_request_set </span><span style="color:#E1E4E8">$auth_user $upstream_http_x_auth_request_user;</span></span>
+<span class="line"><span style="color:#F97583">        auth_request_set </span><span style="color:#E1E4E8">$auth_email $upstream_http_x_auth_request_email;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#E1E4E8">X-Auth-User $auth_user;</span></span>
+<span class="line"><span style="color:#F97583">        add_header </span><span style="color:#E1E4E8">X-Auth-Email $auth_email;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        try_files </span><span style="color:#E1E4E8">$uri $uri.html $uri/ /404.html;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#B392F0"> @oauth2_start </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 302</span><span style="color:#E1E4E8"> /oauth2/start?rd=$scheme://$host$request_uri;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> ~</span><span style="color:#DBEDFF"> ^/(\.user\.ini|\.htaccess|\.git|\.env|\.svn|\.project|LICENSE|README\.md|package\.json|package-lock\.json|yarn\.lock|pnpm-lock\.yaml)$ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 404</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    location</span><span style="color:#F97583"> ~</span><span style="color:#DBEDFF"> ^/\.well-known/.*\.(php|jsp|py|js|css|lua|ts|go|zip|tar\.gz|rar|7z|sql|bak)$ </span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#79B8FF"> 403</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Apply the configuration:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">nginx</span><span style="color:#79B8FF"> -t</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> reload</span><span style="color:#9ECBFF"> nginx</span></span></code></pre>
+<p>At the network boundary, only Nginx ports 80 and 443 should be public. Keep oauth2-proxy on 4180 and Casdoor on 8000 bound to localhost, and restrict MySQL port 3306 with a security group or firewall.</p>
+<p><img src="/_astro/04-port-security-boundary.Cg4skjw6_Z43yUO.webp" alt="Public ports, localhost services, and the database security boundary" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><em>Figure 4: Port and security boundaries. Only ports 80 and 443 are public; 4180, 8000, and 3306 are not exposed directly to the internet.</em></p>
+<h2 id="5-five-problems-we-encountered">5. Five Problems We Encountered</h2>
+<p><img src="/_astro/05-troubleshooting-map.CQA2NbOH_1Wldmg.webp" alt="Troubleshooting map for Docusaurus baseUrl, Casdoor organizations, redirect allowlists, email verification, and Nginx buffers" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><em>Figure 5: Five access failures and the corresponding fixes.</em></p>
+<h3 id="51-incorrect-docusaurus-baseurl">5.1 Incorrect Docusaurus baseUrl</h3>
+<p><strong>Symptom:</strong> the page reports <code>Current configured baseUrl = /openapi/</code>.</p>
+<p><strong>Cause:</strong> the site was built for <code>/openapi/</code> but served from the domain root.</p>
+<p><strong>Fix:</strong> set <code>baseUrl: &#39;/&#39;</code>, rebuild, and replace the deployed static files.</p>
+<h3 id="52-casdoors-default-login-searches-the-built-in-organization">5.2 Casdoor’s default login searches the built-in organization</h3>
+<p><strong>Symptom:</strong> Casdoor says <code>built-in/zhangyuliang</code> does not exist.</p>
+<p><strong>Cause:</strong> <code>/login</code> belongs to the <code>built-in</code> organization by default.</p>
+<p><strong>Fix:</strong> continue using <code>built-in/admin</code> for administration and place documentation users under <code>internal</code>. In production, let oauth2-proxy initiate login instead of opening <code>/login</code> manually.</p>
+<h3 id="53-oauth2-proxy-reports-an-invalid-redirect">5.3 oauth2-proxy reports an invalid redirect</h3>
+<p>Log message:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Rejecting invalid redirect &quot;https://docs.example.com/&quot;: domain / port not in whitelist</span></span></code></pre>
+<p>Add this setting:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="toml"><code><span class="line"><span style="color:#E1E4E8">whitelist_domains = [ </span><span style="color:#9ECBFF">&quot;docs.example.com&quot;</span><span style="color:#E1E4E8"> ]</span></span></code></pre>
+<h3 id="54-oauth2-proxy-rejects-an-unverified-email-address">5.4 oauth2-proxy rejects an unverified email address</h3>
+<p>The log says <code>email in id_token (...) isn&#39;t verified</code> because Casdoor returned <code>email_verified=false</code>.</p>
+<p>As a temporary workaround, set <code>insecure_oidc_allow_unverified_email = true</code>. The long-term fix is to mark the user’s email as verified in Casdoor and then remove this permissive option.</p>
+<h3 id="55-nginx-returns-502-after-the-login-callback">5.5 Nginx returns 502 after the login callback</h3>
+<p>The error log contains:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>upstream sent too big header while reading response header from upstream</span></span></code></pre>
+<p>The Cookie and headers written during the oauth2-proxy callback can exceed Nginx’s default buffers. Add the following settings globally and inside both <code>/oauth2/</code> and <code>/oauth2/auth</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="nginx"><code><span class="line"><span style="color:#F97583">proxy_buffer_size </span><span style="color:#79B8FF">256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">proxy_buffers </span><span style="color:#79B8FF">16</span><span style="color:#79B8FF"> 256k</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">proxy_busy_buffers_size </span><span style="color:#79B8FF">512k</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h2 id="6-post-deployment-verification">6. Post-deployment Verification</h2>
+<p>First, check Casdoor’s OIDC discovery endpoint:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> https://auth.example.com/.well-known/openid-configuration</span></span></code></pre>
+<p>It should return 200. Then test oauth2-proxy:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -I</span><span style="color:#9ECBFF"> http://127.0.0.1:4180/oauth2/auth</span></span></code></pre>
+<p>It should return 401 while you are signed out. Finally, open <code>https://docs.example.com</code> in an incognito window. The complete flow should be:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Redirect to auth.example.com</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>Enter credentials for a user in the internal organization</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>Complete sign-in and return to docs.example.com</span></span>
+<span class="line"><span>  ↓</span></span>
+<span class="line"><span>View the Docusaurus documentation site</span></span></code></pre>
+<h2 id="7-ongoing-maintenance">7. Ongoing Maintenance</h2>
+<p>Once authentication is stable, routine maintenance is mostly about Docusaurus content. The deployment flow can be wrapped in a script:</p>
+<p><img src="/_astro/06-doc-maintenance-flow.8ZRjclTQ_sGNhI.webp" alt="Documentation maintenance flow from Markdown and OpenAPI updates through build, deployment, Nginx reload, and incognito verification" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="900"></p>
+<p><em>Figure 6: Documentation maintenance flow, covering content updates, build, deployment, and production verification.</em></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/usr/bin/env bash</span></span>
+<span class="line"><span style="color:#79B8FF">set</span><span style="color:#79B8FF"> -e</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">APP_DIR</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;/opt/openapi-docs&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8">WEB_DIR</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">&quot;/var/www/openapi-docs&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$APP_DIR</span><span style="color:#9ECBFF">&quot;</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> build</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">rm</span><span style="color:#79B8FF"> -rf</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$WEB_DIR</span><span style="color:#9ECBFF">&quot;/</span><span style="color:#79B8FF">*</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#79B8FF"> -r</span><span style="color:#9ECBFF"> build/</span><span style="color:#79B8FF">*</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$WEB_DIR</span><span style="color:#9ECBFF">&quot;/</span></span>
+<span class="line"><span style="color:#B392F0">chown</span><span style="color:#79B8FF"> -R</span><span style="color:#9ECBFF"> www-data:www-data</span><span style="color:#9ECBFF"> &quot;</span><span style="color:#E1E4E8">$WEB_DIR</span><span style="color:#9ECBFF">&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">nginx</span><span style="color:#79B8FF"> -t</span></span>
+<span class="line"><span style="color:#B392F0">systemctl</span><span style="color:#9ECBFF"> reload</span><span style="color:#9ECBFF"> nginx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">echo</span><span style="color:#9ECBFF"> &quot;Docusaurus docs deployed.&quot;</span></span></code></pre>
+<p>For production, you can improve this further by deploying to timestamped release directories and switching a symlink. That keeps the previous version available for a fast rollback.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This architecture keeps the documentation site entirely static while assigning identity, sessions, and access control to dedicated components. Casdoor centralizes users, oauth2-proxy owns the OIDC session, and Nginx protects the whole site. No login code is needed inside Docusaurus, and the authentication layer can later protect other internal tools such as n8n, ShowDoc, Hoppscotch, or RuoYi.</p>
+<p>At the end of the first phase, anonymous users cannot reach the documentation, authenticated users can browse it normally, and content remains decoupled from access control. The next priority is no longer rebuilding the login system; it is continuously improving the documentation until the site becomes a genuinely reusable internal developer portal.</p> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  
