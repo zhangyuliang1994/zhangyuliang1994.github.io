@@ -1,0 +1,194 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>Giving a Static Content Site an AI Brain: RAG Q&amp;A with Automatic GitHub Actions Sync - frency.me</title><meta name="description" content="A reusable AI Q&#38;A architecture for bilingual content sites, combining Cloudflare Workers AI, D1, Vectorize, and automatic GitHub Actions synchronization."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/blog/blog-ai-qa-rag-auto-sync/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/blog-ai-qa-rag-auto-sync/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/blog-ai-qa-rag-auto-sync/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/blog-ai-qa-rag-auto-sync/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Giving a Static Content Site an AI Brain: RAG Q&#38;A with Automatic GitHub Actions Sync - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="A reusable AI Q&#38;A architecture for bilingual content sites, combining Cloudflare Workers AI, D1, Vectorize, and automatic GitHub Actions synchronization."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/blog-ai-qa-rag-auto-sync/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B4k_B3Ur.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.2rem,6vw,3.75rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:460px;border-radius:var(--radius);margin:0;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.CE_a4KFw.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/blog-ai-qa-rag-auto-sync/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/blog-ai-qa-rag-auto-sync/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/blog-ai-qa-rag-auto-sync/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/blog-ai-qa-rag-auto-sync/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/cover.CbdpRc0l_Z1BMsuD.webp" alt="Giving a Static Content Site an AI Brain: RAG Q&#38;A with Automatic GitHub Actions Sync" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>Giving a Static Content Site an AI Brain: RAG Q&amp;A with Automatic GitHub Actions Sync</h1> <p class="description" data-astro-cid-v3cnrnum>A reusable AI Q&amp;A architecture for bilingual content sites, combining Cloudflare Workers AI, D1, Vectorize, and automatic GitHub Actions synchronization.</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2026-07-18T00:00:00.000Z" data-astro-cid-v3cnrnum>7/18/2026</time> <a href="/en/categories/AI Practice/" data-astro-cid-v3cnrnum>AI Practice</a> <a href="/en/tags/AI/" data-astro-cid-v3cnrnum>#AI</a><a href="/en/tags/RAG/" data-astro-cid-v3cnrnum>#RAG</a><a href="/en/tags/Cloudflare Workers/" data-astro-cid-v3cnrnum>#Cloudflare Workers</a><a href="/en/tags/Vectorize/" data-astro-cid-v3cnrnum>#Vectorize</a><a href="/en/tags/GitHub Actions/" data-astro-cid-v3cnrnum>#GitHub Actions</a><a href="/en/tags/Astro/" data-astro-cid-v3cnrnum>#Astro</a> </div> </header> <p>A bilingual content site can be generated statically with Astro. Static sites are inexpensive, stable, and easy to cache, but they naturally know how to display articles—not understand them or answer questions about them.</p>
+<p>To let readers ask questions such as “Which AI programming lessons are covered here?” or “Which deployment approach did that article recommend?”, the system adds RAG (Retrieval-Augmented Generation) question answering. Instead of asking a model to answer from memory, it first retrieves relevant passages from the content index, then requires the model to answer only from that evidence and return its sources.</p>
+<p>The difficult part was not connecting a chat model. It was keeping the knowledge base aligned with a changing blog. If a new post is not indexed, the AI cannot know about it. If an edited or deleted post leaves old vectors behind, the AI can cite stale information. The resulting design therefore solves two problems together: <strong>reliable answers at query time and automatic consistency at publishing time.</strong></p>
+<h2 id="1-overall-architecture-static-experience-independent-rag-service">1. Overall Architecture: Static Experience, Independent RAG Service</h2>
+<p><img src="/_astro/01-framework-rag-architecture.8z7sEpS4_Z7MrzA.webp" alt="Overall architecture of the Astro static blog and Cloudflare RAG backend" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>The system is deliberately split into two independent layers:</p>
+<ul>
+<li>the content layer contains English and Chinese MDX posts, the static question UI, and the GitHub Actions workflow;</li>
+<li>the RAG layer runs on Cloudflare Workers and handles retrieval, question answering, and protected index management.</li>
+</ul>
+<p>The frontend remains completely static. Its question page collects input and sends a structured request to an independent RAG service:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;lang&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;en&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;question&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;What have I written about AI programming?&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;topK&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>The browser never accesses a database directly and never receives a write credential. Embedding, retrieval, database reads, and model inference all happen on the service side.</p>
+<p>The service combines three Cloudflare capabilities:</p>
+<ol>
+<li><strong>Workers AI</strong> generates embeddings for questions and article chunks, then produces the final answer;</li>
+<li><strong>Vectorize</strong> stores 768-dimensional vectors and performs cosine-similarity retrieval;</li>
+<li><strong>D1</strong> stores readable chunk text, titles, URLs, language, tags, and other metadata.</li>
+</ol>
+<p>Vectorize answers “Which chunks are semantically closest?” while D1 answers “What original text and URL belong to those IDs?” Keeping vectors and source text separate reduces vector metadata and makes debugging and citations straightforward.</p>
+<h2 id="2-how-articles-enter-the-knowledge-base">2. How Articles Enter the Knowledge Base</h2>
+<p>The synchronization script scans <code>src/content/blog/{lang}/{slug}/index.mdx</code> and processes each post as follows:</p>
+<ol>
+<li>Read title, description, date, tags, and categories;</li>
+<li>remove MDX imports, code blocks, image links, HTML tags, and Markdown syntax;</li>
+<li>split cleaned text into roughly 1,800-character chunks with 200 characters of overlap;</li>
+<li>hash <code>contentId + chunk index + chunk text</code> with SHA-256;</li>
+<li>combine the language prefix and first 24 hash characters into a stable chunk ID;</li>
+<li>write batches of 32 chunks through a protected management channel.</li>
+</ol>
+<p>Overlap matters because a complete idea may cross a chunk boundary. Without overlap, both neighboring chunks can contain only half a sentence. A small shared context makes either chunk more useful when retrieved.</p>
+<p>The service uses <code>@cf/google/embeddinggemma-300m</code> by default to create a 768-dimensional embedding, then:</p>
+<ul>
+<li>upserts source text and metadata into D1;</li>
+<li>upserts the vector plus <code>lang</code>, <code>source</code>, and <code>content_id</code> metadata into Vectorize.</li>
+</ul>
+<p>The management channel accepts at most 64 chunks per request and requires an administrator credential. The client intentionally sends 32 at a time to keep embedding requests and edge execution pressure moderate.</p>
+<h2 id="3-how-one-ai-answer-is-produced">3. How One AI Answer Is Produced</h2>
+<p><img src="/_astro/02-flowchart-question-answer.B6oJGscP_ZYbmIo.webp" alt="Runtime RAG flow from a reader question to an answer with sources" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>A question moves through six stages.</p>
+<h3 id="1-validate-the-request">1. Validate the request</h3>
+<p>The service accepts <code>question</code>, <code>lang</code>, and <code>topK</code>. Questions are limited to 1,000 characters. <code>topK</code> defaults to 5 and is clamped between 1 and 10.</p>
+<h3 id="2-embed-the-query">2. Embed the query</h3>
+<p>The question is formatted as a question-answering query and embedded with the same model used for documents. Queries and documents must share one vector space for their semantic distance to be meaningful.</p>
+<h3 id="3-search-vectorize-with-a-language-filter">3. Search Vectorize with a language filter</h3>
+<p>The service runs cosine-similarity search with <code>filter: { lang }</code>. Chinese questions search Chinese posts and English questions search English posts. This prevents translations from competing and keeps source links consistent with the reader’s current language.</p>
+<h3 id="4-hydrate-matches-from-d1">4. Hydrate matches from D1</h3>
+<p>Vectorize returns IDs and similarity scores. The service then loads titles, URLs, original chunk text, and metadata from D1 in one batch. In other words, vectors select candidates; the relational database restores the context the model can read.</p>
+<h3 id="5-apply-a-confidence-gate">5. Apply a confidence gate</h3>
+<p>The default minimum score is <code>0.45</code>. When no result exists or the top score is below that threshold, the system does not invite the model to improvise. It explicitly tells the reader that the indexed blog does not contain enough reliable evidence.</p>
+<p>This gate is more effective than merely prompting “do not hallucinate,” because irrelevant context can itself encourage a model to assemble a plausible but unsupported answer.</p>
+<h3 id="6-generate-from-context-and-return-sources">6. Generate from context and return sources</h3>
+<p>When retrieval passes the threshold, the service combines matched titles, URLs, and text into a Context and instructs <code>@cf/meta/llama-3.1-8b-instruct-fast</code> to:</p>
+<ul>
+<li>use only the supplied blog context;</li>
+<li>say when the context is insufficient;</li>
+<li>add citation markers such as <code>[1]</code> and <code>[2]</code>;</li>
+<li>never invent facts, links, or opinions.</li>
+</ul>
+<p>Generation is deliberately conservative: temperature <code>0.2</code>, with at most 900 tokens. Sources are deduplicated by URL, and the response includes the answer, titles, links, and similarity scores. The query and matched chunk IDs are also written asynchronously to <code>ask_events</code>, providing a record of what real readers want to know.</p>
+<h3 id="the-complete-answer-loop-in-the-interface">The complete answer loop in the interface</h3>
+<p><img src="/_astro/04-scene-live-qa.B4qISRPy_4VN3c.webp" alt="Chinese RAG question page showing the question, answer, and retrieved source" loading="lazy" decoding="async" fetchpriority="auto" width="1400" height="1123"></p>
+<p>This live Chinese-interface screenshot turns the backend sequence into three reader-visible areas: a question input at the top, a grounded answer in the middle, and the matched source article with its relevance score at the bottom. The site identity in the screenshot has been anonymized.</p>
+<p>The answer and source panels are intentionally separate. Readers can get the conclusion quickly, then use the article title and relevance score to decide whether to inspect the original material. This reinforces an important idea: the answer is backed by traceable content evidence rather than generated from the model alone.</p>
+<h2 id="4-automatic-article-sync-with-github-actions">4. Automatic Article Sync with GitHub Actions</h2>
+<p><img src="/_astro/03-flowchart-auto-sync.Bw-QdcjL_197Bms.webp" alt="GitHub Actions incremental synchronization and full reconciliation for added, edited, and deleted posts" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>The first version had a working upsert script, but it had to be run manually. Publishing and indexing were separate workflows, so it was easy to forget the second one and end up with content visible on the site but unknown to the AI.</p>
+<p>Synchronization now runs inside the content project’s deployment workflow:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>push main → build Astro → deploy GitHub Pages → sync knowledge base</span></span></code></pre>
+<p>The sync job declares <code>needs: build-and-deploy</code>, so it runs only after the website deploy succeeds. A failed build cannot index content that was never published. Checkout uses <code>fetch-depth: 0</code> because incremental synchronization needs complete Git history.</p>
+<h3 id="added-posts">Added posts</h3>
+<p>The script reads each new file, cleans and chunks it, generates IDs, and upserts the chunks. Repeating the same upsert is idempotent, so reruns do not create duplicates.</p>
+<h3 id="edited-posts">Edited posts</h3>
+<p>The script reads the post at both the <code>before SHA</code> and <code>HEAD</code>, then calculates the old and new chunk sets:</p>
+<ul>
+<li>every new chunk is upserted;</li>
+<li>IDs present only in the old set are stale and deleted.</li>
+</ul>
+<p>The order is deliberately <strong>upsert first, delete second</strong>. If synchronization stops halfway through, the index may temporarily retain old content, but it will not delete an entire article before only half of its replacement has been written.</p>
+<h3 id="deleted-posts">Deleted posts</h3>
+<p>The deleted file no longer exists in the working tree, but it remains in Git history. The script reads it with <code>git show &lt;before SHA&gt;:&lt;path&gt;</code>, reconstructs its previous chunk IDs, and uses the protected management channel to remove records from both D1 and Vectorize.</p>
+<h3 id="retries-and-visible-failure">Retries and visible failure</h3>
+<p>Every administration request has a 60-second timeout and retries up to three times. When the synchronization credential is missing, the Actions job fails clearly instead of silently skipping synchronization. A visible red build is safer than a knowledge base that remains stale for months.</p>
+<h2 id="5-why-full-reconciliation-still-matters">5. Why Full Reconciliation Still Matters</h2>
+<p>Incremental synchronization compares two adjacent revisions. If one Actions run fails completely and the next run processes only a newer diff, the missed changes could remain absent indefinitely.</p>
+<p>A manually triggered workflow therefore performs full reconciliation:</p>
+<ol>
+<li>scan and upsert every current article;</li>
+<li>use a protected paginated query to retrieve remote content IDs;</li>
+<li>compare repository IDs with remote IDs;</li>
+<li>delete orphan IDs that exist only remotely.</li>
+</ol>
+<p>Incremental sync keeps normal publishing efficient. Full reconciliation provides eventual consistency and self-healing. It should be run during initial activation, after changing chunking rules or embedding models, or whenever missing data is suspected.</p>
+<h2 id="6-security-boundaries">6. Security Boundaries</h2>
+<p>Public and administrative capabilities are intentionally separated:</p>
+<ul>
+<li>question answering and search can be public, with input limits and CORS controls;</li>
+<li>write, delete, and index-listing capabilities require an administrator credential;</li>
+<li>the credential is stored as a deployment-platform Secret;</li>
+<li>GitHub Actions uses the same credential for automatic synchronization;</li>
+<li>the token is never included in frontend output or committed to Git.</li>
+</ul>
+<p>Readers may access the public question interface, but they can only ask questions—not modify the knowledge base.</p>
+<h2 id="7-current-trade-offs">7. Current Trade-offs</h2>
+<p>This implementation is sufficient for a personal blog, but its limitations are explicit:</p>
+<ul>
+<li>character-based chunking could evolve into heading-, paragraph-, and token-aware semantic chunking;</li>
+<li>code blocks are currently removed, so technical code questions would benefit from a separate code index or preservation strategy;</li>
+<li>Vectorize mutations are asynchronous, creating a short delay before newly published content becomes searchable;</li>
+<li>full reconciliation regenerates every embedding, making it reliable but more expensive than incremental sync;</li>
+<li>index versions, synchronization run records, and per-article checksums would improve observability.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The valuable part of adding AI Q&amp;A to a content site is not the new text box. It is the reliable knowledge pipeline behind it: articles remain the source of truth, GitHub Actions detects changes, the RAG service handles embedding and retrieval, D1 and Vectorize each serve a focused role, and the language model answers only when reliable evidence has been found.</p>
+<p>Once additions, edits, and deletions propagate automatically—and failed runs can be repaired through full reconciliation—the AI feature stops being a demo and becomes a genuine part of the publishing system.</p> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  

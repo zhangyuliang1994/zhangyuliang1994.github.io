@@ -1,0 +1,196 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="zh-CN"> <head><meta charset="UTF-8"><title>给静态内容站装上 AI 大脑：RAG 问答与 GitHub Actions 自动同步实战 - xiaofeng.show</title><meta name="description" content="拆解一套适用于双语内容站的 AI 问答方案：Cloudflare Workers AI、D1、Vectorize 如何组成 RAG，以及 GitHub Actions 如何自动同步内容变化。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/zh-cn/blog/blog-ai-qa-rag-auto-sync/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/blog-ai-qa-rag-auto-sync/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/blog-ai-qa-rag-auto-sync/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/blog-ai-qa-rag-auto-sync/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="给静态内容站装上 AI 大脑：RAG 问答与 GitHub Actions 自动同步实战 - xiaofeng.show"><meta property="og:site_name" content="xiaofeng.show"><meta property="og:description" content="拆解一套适用于双语内容站的 AI 问答方案：Cloudflare Workers AI、D1、Vectorize 如何组成 RAG，以及 GitHub Actions 如何自动同步内容变化。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/blog/blog-ai-qa-rag-auto-sync/"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B4k_B3Ur.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.2rem,6vw,3.75rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:460px;border-radius:var(--radius);margin:0;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.CE_a4KFw.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="关闭语言建议" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "zh-cn";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "切换至";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/zh-cn/" aria-label="首页" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>xiaofeng.show</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> 博客 </a><a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a><a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a><a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a><a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a><a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/blog-ai-qa-rag-auto-sync/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/blog-ai-qa-rag-auto-sync/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="切换颜色主题" title="切换颜色主题" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="打开导航" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> 博客 </a><a href="/zh-cn/tags/" data-astro-cid-3ef6ksr2> 标签 </a><a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a><a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a><a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a><a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/blog-ai-qa-rag-auto-sync/" data-lang="en" data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/blog-ai-qa-rag-auto-sync/" data-lang="zh-cn" selected data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/cover.CbdpRc0l_Z1BMsuD.webp" alt="给静态内容站装上 AI 大脑：RAG 问答与 GitHub Actions 自动同步实战" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>给静态内容站装上 AI 大脑：RAG 问答与 GitHub Actions 自动同步实战</h1> <p class="description" data-astro-cid-v3cnrnum>拆解一套适用于双语内容站的 AI 问答方案：Cloudflare Workers AI、D1、Vectorize 如何组成 RAG，以及 GitHub Actions 如何自动同步内容变化。</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2026-07-18T00:00:00.000Z" data-astro-cid-v3cnrnum>2026/7/18</time> <a href="/zh-cn/categories/AI 实战/" data-astro-cid-v3cnrnum>AI 实战</a> <a href="/zh-cn/tags/AI/" data-astro-cid-v3cnrnum>#AI</a><a href="/zh-cn/tags/RAG/" data-astro-cid-v3cnrnum>#RAG</a><a href="/zh-cn/tags/Cloudflare Workers/" data-astro-cid-v3cnrnum>#Cloudflare Workers</a><a href="/zh-cn/tags/Vectorize/" data-astro-cid-v3cnrnum>#Vectorize</a><a href="/zh-cn/tags/GitHub Actions/" data-astro-cid-v3cnrnum>#GitHub Actions</a><a href="/zh-cn/tags/Astro/" data-astro-cid-v3cnrnum>#Astro</a> </div> </header> <p>一个双语内容站采用 Astro 静态生成。静态站便宜、稳定、容易缓存，但它天然只会“展示文章”，不会理解文章，更不会回答读者的问题。</p>
+<p>为了让读者能够直接问“站内整理过哪些 AI 编程经验”“某篇文章里提到的部署方案是什么”，系统增加了一套 RAG（Retrieval-Augmented Generation，检索增强生成）问答能力。它不是让大模型凭记忆回答，而是先从内容向量库中找出相关原文，再要求模型只根据这些原文作答并返回来源。</p>
+<p>真正困难的部分并不是接一个聊天模型，而是让知识库持续跟上博客变化。如果新增文章没有进入向量库，AI 就不知道它；如果文章修改或删除后旧向量还在，AI 又会引用过期内容。因此，这套系统同时解决了两个问题：<strong>运行时如何可靠回答，以及发布时如何自动保持索引一致。</strong></p>
+<h2 id="一整体架构静态站负责体验worker-负责智能">一、整体架构：静态站负责体验，Worker 负责智能</h2>
+<p><img src="/_astro/01-framework-rag-architecture.8z7sEpS4_Z7MrzA.webp" alt="Astro 静态博客与 Cloudflare RAG 后端的整体架构" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>系统被刻意拆成两个独立层次：</p>
+<ul>
+<li>内容展示层：存放中英文 MDX 文章、静态问答页面和 GitHub Actions；</li>
+<li>RAG 服务层：运行在 Cloudflare Workers，负责检索、问答和受保护的索引管理。</li>
+</ul>
+<p>前端仍然是纯静态页面。问答页面只负责收集问题，并向独立的 RAG 服务发送结构化请求：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;lang&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;zh-cn&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;question&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;我对 AI 编程有什么看法？&quot;</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  &quot;topK&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>浏览器不会直接访问数据库，也拿不到任何写入密钥。所有 embedding、检索、数据库读取和模型调用都在服务端完成。</p>
+<p>服务端组合了三项 Cloudflare 能力：</p>
+<ol>
+<li><strong>Workers AI</strong>：生成查询和文章分块的 embedding，并生成最终回答；</li>
+<li><strong>Vectorize</strong>：保存 768 维向量，负责余弦相似度检索；</li>
+<li><strong>D1</strong>：保存分块原文、标题、URL、语言、标签等可读数据。</li>
+</ol>
+<p>Vectorize 适合回答“哪些分块最相似”，D1 适合回答“这些 ID 对应的原文和链接是什么”。把向量与正文分开保存，既降低了向量元数据负担，也方便调试和返回引用来源。</p>
+<h2 id="二文章是怎么进入知识库的">二、文章是怎么进入知识库的</h2>
+<p>同步脚本扫描 <code>src/content/blog/{lang}/{slug}/index.mdx</code>，并对每篇文章执行以下处理：</p>
+<ol>
+<li>读取 title、description、date、tags 和 categories；</li>
+<li>清理 MDX import、代码块、图片链接、HTML 标签和 Markdown 标记；</li>
+<li>按约 1800 个字符切分，相邻分块保留 200 个字符重叠；</li>
+<li>使用 <code>contentId + 分块序号 + 分块正文</code> 计算 SHA-256；</li>
+<li>取哈希前 24 位，加语言前缀，生成稳定的 chunk ID；</li>
+<li>通过受保护的管理通道，每批写入 32 个分块。</li>
+</ol>
+<p>重叠区域很重要。一段完整观点可能刚好跨越切分边界，没有 overlap 时，两边都只剩半句话；保留少量上下文后，检索命中任何一边都更容易得到完整语义。</p>
+<p>服务端收到分块后，用默认模型 <code>@cf/google/embeddinggemma-300m</code> 生成 768 维 embedding，然后：</p>
+<ul>
+<li>将原文及元数据 upsert 到 D1；</li>
+<li>将向量和 <code>lang</code>、<code>source</code>、<code>content_id</code> 写入 Vectorize。</li>
+</ul>
+<p>管理通道单次最多接收 64 个分块，并要求管理员凭据。同步脚本实际使用每批 32 个，以控制单次 embedding 请求和边缘服务的执行压力。</p>
+<h2 id="三一次-ai-问答是怎么发生的">三、一次 AI 问答是怎么发生的</h2>
+<p><img src="/_astro/02-flowchart-question-answer.B6oJGscP_ZYbmIo.webp" alt="博客 RAG 从问题到带来源答案的运行时流程" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>一次问答经过六个阶段。</p>
+<h3 id="1-校验问题">1. 校验问题</h3>
+<p>服务端接收 <code>question</code>、<code>lang</code> 和 <code>topK</code>。问题最长 1000 个字符，<code>topK</code> 默认取 5，并限制在 1 到 10 之间。</p>
+<h3 id="2-生成查询向量">2. 生成查询向量</h3>
+<p>问题会被格式化为 question-answering 查询，再通过同一个 embedding 模型生成向量。查询和文档使用一致的向量空间，才能比较语义距离。</p>
+<h3 id="3-按语言检索-vectorize">3. 按语言检索 Vectorize</h3>
+<p>服务端使用余弦相似度搜索，并设置 <code>filter: { lang }</code>。中文问题只查中文文章，英文问题只查英文文章，避免翻译版本互相竞争，也让返回链接和读者当前语言保持一致。</p>
+<h3 id="4-从-d1-补齐正文">4. 从 D1 补齐正文</h3>
+<p>Vectorize 返回匹配 ID 和分数，服务端再批量从 D1 读取标题、URL、正文及其他元数据。这个过程可以理解为先用向量找到候选，再用关系数据库“补齐”可供模型阅读的上下文。</p>
+<h3 id="5-置信度闸门">5. 置信度闸门</h3>
+<p>默认最低分数是 <code>0.45</code>。如果没有结果，或者最高分低于阈值，系统不会强行让大模型发挥，而是明确告诉读者：索引中没有足够可靠的证据。</p>
+<p>这道闸门比一句“不要编造”更有用，因为无关上下文本身就可能诱导模型拼凑答案。</p>
+<h3 id="6-基于上下文生成并返回来源">6. 基于上下文生成并返回来源</h3>
+<p>通过阈值后，服务端将命中的标题、URL 和正文组成 Context，要求 <code>@cf/meta/llama-3.1-8b-instruct-fast</code>：</p>
+<ul>
+<li>只能使用提供的博客上下文；</li>
+<li>上下文不足时明确说不知道；</li>
+<li>使用 <code>[1]</code>、<code>[2]</code> 标记引用；</li>
+<li>不编造事实、链接或观点。</li>
+</ul>
+<p>生成参数保持克制：temperature 为 <code>0.2</code>，最多 900 tokens。最后按 URL 去重来源，返回答案、标题、链接和相似度。查询及命中分块 ID 还会异步写入 <code>ask_events</code>，用于后续观察真实用户在问什么。</p>
+<h3 id="从界面看完整问答闭环">从界面看完整问答闭环</h3>
+<p><img src="/_astro/04-scene-live-qa.B4qISRPy_4VN3c.webp" alt="中文 RAG 问答页面展示问题、回答与来源" loading="lazy" decoding="async" fetchpriority="auto" width="1400" height="1123"></p>
+<p>这张实际运行截图把后端流程变成了读者能够感知的三个区域：顶部输入问题，中间展示基于检索内容生成的回答，底部列出命中的原始文章和相关度。截图中的站点标识已做匿名化处理。</p>
+<p>回答区与来源区刻意分开。读者可以先快速获取结论，再根据文章标题和相关度判断是否继续阅读原文。这不仅提升了问答体验，也提醒使用者：答案来自可追溯的内容证据，而不是模型凭空生成。</p>
+<h2 id="四github-actions-如何自动同步文章">四、GitHub Actions 如何自动同步文章</h2>
+<p><img src="/_astro/03-flowchart-auto-sync.Bw-QdcjL_197Bms.webp" alt="GitHub Actions 对新增、修改、删除文章的增量同步与全量对账" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941"></p>
+<p>早期版本已经有 upsert 脚本，但必须手工执行。博客发布和知识库更新是两条独立流程，人很容易忘记，最终就会出现“网站上看得到，AI 却不知道”的断层。</p>
+<p>现在，同步被放进内容项目的部署工作流：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>push main → 构建 Astro → 部署 GitHub Pages → 同步知识库</span></span></code></pre>
+<p>同步任务通过 <code>needs: build-and-deploy</code> 等待网站部署成功；失败的构建不会把未上线内容提前写进知识库。checkout 使用 <code>fetch-depth: 0</code>，因为增量计算必须读取完整 Git 历史。</p>
+<h3 id="新增文章">新增文章</h3>
+<p>脚本读取新文件，清理、切分、生成 ID，然后批量 upsert。相同 ID 再次写入是幂等的，因此重跑不会产生重复记录。</p>
+<h3 id="修改文章">修改文章</h3>
+<p>脚本同时读取 <code>before SHA</code> 和 <code>HEAD</code> 中的文章，分别计算旧、新分块集合：</p>
+<ul>
+<li>新集合全部 upsert；</li>
+<li>只存在于旧集合的 ID 视为 stale chunks，并删除。</li>
+</ul>
+<p>执行顺序是 <strong>先 upsert、后 delete</strong>。如果同步中途失败，最多暂时保留旧内容，而不会先删掉整篇文章后只写入一半。</p>
+<h3 id="删除文章">删除文章</h3>
+<p>工作区里已经没有被删除的文件，但 Git 历史仍然有。脚本通过 <code>git show &lt;before SHA&gt;:&lt;path&gt;</code> 读取旧内容，重新算出所有旧 chunk ID，再通过受保护的管理通道同时清理 D1 和 Vectorize。</p>
+<h3 id="重试与故障可见性">重试与故障可见性</h3>
+<p>每次管理请求设置 60 秒超时，失败最多重试 3 次。Actions 中如果没有配置同步凭据，任务会明确失败，而不是悄悄跳过。对知识库来说，“红灯报警”比长期静默过期更安全。</p>
+<h2 id="五为什么还需要全量对账">五、为什么还需要全量对账</h2>
+<p>增量同步只比较相邻两次提交。如果某次 Actions 彻底失败，而下一次只处理新的 diff，中间那次变更就可能永远漏掉。</p>
+<p>因此手动运行 workflow 时，系统会执行全量对账：</p>
+<ol>
+<li>重新扫描并 upsert 当前仓库的全部文章；</li>
+<li>通过受保护的分页查询读取远端内容 ID；</li>
+<li>对比当前 ID 与远端 ID；</li>
+<li>删除只存在于远端的 orphan IDs。</li>
+</ol>
+<p>增量同步解决日常效率，全量对账解决最终一致性和自愈。首次启用、同步规则变化、embedding 模型变更或怀疑漏数据时，都应该手动跑一次全量任务。</p>
+<h2 id="六安全边界">六、安全边界</h2>
+<p>这套系统把公开能力与管理能力分开：</p>
+<ul>
+<li>问答和检索能力可以公开访问，但受输入长度和 CORS 限制；</li>
+<li>写入、删除和索引清单能力必须携带管理员凭据；</li>
+<li>管理员凭据保存在部署平台的 Secret 中；</li>
+<li>GitHub Actions 使用同一凭据完成自动同步；</li>
+<li>Token 不进入前端构建产物，也不提交到 Git。</li>
+</ul>
+<p>即使读者能够访问公开问答入口，也只能提问，不能篡改知识库。</p>
+<h2 id="七当前方案的取舍">七、当前方案的取舍</h2>
+<p>这套实现已经足够支撑个人博客，但仍有清晰的改进空间：</p>
+<ul>
+<li>当前按字符切分，可以升级为按标题、段落和 token 的语义切分；</li>
+<li>清理逻辑会移除代码块，技术文章若要回答具体代码问题，需要保留或单独索引代码；</li>
+<li>Vectorize 写入是异步的，发布完成后可能需要几秒才能检索到新向量；</li>
+<li>全量对账会重新生成全部 embedding，可靠但比增量同步更耗资源；</li>
+<li>可以增加索引版本、同步运行记录和文章级校验和，让可观测性更完整。</li>
+</ul>
+<h2 id="结语">结语</h2>
+<p>给内容站增加 AI 问答，真正有价值的不是页面上多了一个输入框，而是形成了一条可靠的知识流水线：文章是唯一事实源，GitHub Actions 负责发现变化，RAG 服务负责 embedding 与检索，D1 和 Vectorize 各司其职，大模型只在找到可靠证据后回答。</p>
+<p>当新增、修改和删除都能自动传播，失败还能通过全量对账恢复时，这套 AI 问答才不只是一个演示功能，而是博客内容系统真正的一部分。</p> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ 记录灵感，沉淀思考 </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By xiaofeng </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/zh-cn/ask/" aria-label="打开 AI 问答" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! 有什么可以帮你的吗？</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  
