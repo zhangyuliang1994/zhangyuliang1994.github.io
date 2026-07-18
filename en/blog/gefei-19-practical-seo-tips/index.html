@@ -1,0 +1,428 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>19 Practical SEO Lessons from Gefei - frency.me</title><meta name="description" content="Nineteen field-tested lessons covering keyword research, search intent, content structure, indexing, backlinks, site authority, and sustainable SEO growth."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/blog/gefei-19-practical-seo-tips/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/gefei-19-practical-seo-tips/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/gefei-19-practical-seo-tips/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/gefei-19-practical-seo-tips/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="19 Practical SEO Lessons from Gefei - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="Nineteen field-tested lessons covering keyword research, search intent, content structure, indexing, backlinks, site authority, and sustainable SEO growth."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/gefei-19-practical-seo-tips/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B4k_B3Ur.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.2rem,6vw,3.75rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:460px;border-radius:var(--radius);margin:0;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.CE_a4KFw.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gefei-19-practical-seo-tips/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gefei-19-practical-seo-tips/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gefei-19-practical-seo-tips/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gefei-19-practical-seo-tips/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/01-%E6%96%B0%E8%AF%8D%E6%BA%90%E5%A4%B4-%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%9E%8BAI%E7%8E%A9%E6%B3%95.CpncVGST_Z1mGMoQ.webp" alt="19 Practical SEO Lessons from Gefei" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1231" height="563" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>19 Practical SEO Lessons from Gefei</h1> <p class="description" data-astro-cid-v3cnrnum>Nineteen field-tested lessons covering keyword research, search intent, content structure, indexing, backlinks, site authority, and sustainable SEO growth.</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2026-07-04T00:00:00.000Z" data-astro-cid-v3cnrnum>7/4/2026</time> <a href="/en/categories/Offline Events/" data-astro-cid-v3cnrnum>Offline Events</a> <a href="/en/tags/SEO/" data-astro-cid-v3cnrnum>#SEO</a><a href="/en/tags/Keyword Research/" data-astro-cid-v3cnrnum>#Keyword Research</a><a href="/en/tags/On-Page SEO/" data-astro-cid-v3cnrnum>#On-Page SEO</a><a href="/en/tags/Backlinks/" data-astro-cid-v3cnrnum>#Backlinks</a><a href="/en/tags/Indie Hacking/" data-astro-cid-v3cnrnum>#Indie Hacking</a> </div> </header> <h1 id="19-practical-seo-lessons-from-gefei">19 Practical SEO Lessons from Gefei</h1>
+<blockquote>
+<p>At “<strong>Gefei’s Friends, Mid-Year Sharing Meeting Shenzhen Station</strong>”, the founder of the Gefei’s community**, as the last guest of the day, brought together an axle of the theme “<strong>SEO ’ s Guide to the Landing of Fields of War Techniques</strong>”.</p>
+<blockquote>
+</blockquote>
+<p>No theory, no chicken soup, straight-through skills — from finding emerging keyword, how to judge value is not worth it, how to see the competition earn money, how to go to the page SEO, how to send backlinks, how to use user behavioral data, how to price them, <strong>19 direct replicating techniques</strong>, every one of which comes from the actual proofs of Gefei himself and his friends.</p>
+</blockquote>
+<hr/>
+<h2 id="i-looking-for-emerging-keyword-emerging-keyword-is-a-new-opportunity-the-key-is-to-find-the-source">I. Looking for emerging keyword: emerging keyword is a new opportunity, the key is to find the source.</h2>
+<h3 id="skills-1-different-types-of-emerging-keyword-with-different-sources">Skills 1: Different types of emerging keyword with different sources</h3>
+<p>And I started by saying that everyone knew that finding emerging keyword — emerging keyword is a new opportunity to make money. But **Google trend is not the first scene of emerging keyword.**One word must have been set on fire somewhere else, discussed first, led to interest, Google searches, Google trends starting to heat up. When you get it in Google, it may be a day, a day, a day, a day, a day, a day.</p>
+<p>How do we find more source information?<strong>Different types of words, different sources.</strong></p>
+<p><img src="/_astro/01-%E6%96%B0%E8%AF%8D%E6%BA%90%E5%A4%B4-%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%9E%8BAI%E7%8E%A9%E6%B3%95.CpncVGST_Z1mGMoQ.webp" alt="Emerging Keyword Source: Game emerging keyword in information websites and anchor videos; AI model emerging keyword in tech network officials, blogs, Twitter; AI emerging keyword in screen-screened Twitter and self-starting websites" loading="lazy" decoding="async" fetchpriority="auto" width="1231" height="563"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Emerging keyword type</th><th>Where’s the source?</th><th>How?</th></tr></thead><tbody><tr><td><strong>Emerging keyword</strong></td><td>Game information website, game discussion community, game anchor video</td><td>Use the game that used to burn back, find out which anchors/web sites are recommended earlier, and watch them.</td></tr><tr><td><strong>AI Model emerging keyword</strong></td><td>AI Science and Technology Network, Blog, Official Twitter, YouTube channel</td><td>Focus on the official accounts of Models. They’re sometimes pre-advertised.</td></tr><tr><td><strong>AI playing keyword</strong></td><td>Screenshots of Twitter, Higgsfield and others that can create their own games</td><td>Look at the tweets of bloggers like Boyu and see how they share the latest game.</td></tr></tbody></table>
+<p>**Core approach: push the source with “known answers.”**We know what happened in the last year or two — take this answer, search the entire web, see which hosts, which websites were recommended earlier, and look at them. That’s how you get dozens of pairs or even hundreds of eyes.<strong>Helping you find emerging Keyword.</strong></p>
+<p>**Procedure keyword research:**Gefei also mentioned that he wrote an article in the community on how to use Twitter API to pick on time - filtering tweets with links that have been praised for more than a certain number of the last six months, and calling on the traffic interface of the website and the date of registration of domain names,**to run automatically every other hour,**to find a popular, brand new, trafficable web page.</p>
+<blockquote>
+<p>What if Similarweb API can only check the flow last month? Gefei’s proposal is to have AI make you a browser plugin, send domain names to the front of the plugin from the back, automatically open Similarweb to see the traffic over the last 28 days.<strong>All thresholds actually have solutions.</strong></p>
+</blockquote>
+<h3 id="skills-2-brushing-the-media-and-maintaining-your-sensitivity---you-should-be-launch-a-spot-while-someone-else-is-painting">Skills 2: brushing the media and maintaining your sensitivity - you should be launch a spot while someone else is painting.</h3>
+<p><img src="/_astro/02-%E5%A4%9A%E5%88%B7%E7%A4%BE%E5%AA%92%E4%BF%9D%E6%8C%81%E6%95%8F%E9%94%90.CSpH8h0G_ZXCdUo.webp" alt="More media, keep sharp. You know when people do screens, you know what happens. Go study heat, go ahead, go ahead, and not follow the screens." loading="lazy" decoding="async" fetchpriority="auto" width="1258" height="565"></p>
+<p>Gefei gave a live example: yesterday, there was a web fire — someone opened a GitHub warehouse to provide a multi-dimensional way to detect whether current visitors are Chinese, and then someone packed a play<strong>called “F</strong>*Cloud” on that basis, adding fun velocities and cartoon images, which were distributed all over the Internet.</p>
+<blockquote>
+<p><strong>You see a warehouse that’s useful, it’s not very powerful to spread it, but you wrap it up into an interesting game, and everyone on the Internet will spread it for you.</strong></p>
+</blockquote>
+<p>The central point of Cobble is: **When someone else does the screen, you know the opportunity.<strong>You should study the heat, go to the site, not follow the others and forward it.</strong></p>
+<hr/>
+<h2 id="ii-judicials-emeging-keyword-and-established-keyword-separate">II. JUDICIALS: EMEGING Keyword and established Keyword separate</h2>
+<h3 id="tactic-3-a-brand-new-word--no-matter-how-hot-it-is-do-it-first">Tactic 3: A brand-new word — no matter how hot it is, do it first.</h3>
+<p><img src="/_astro/03-%E6%8A%80%E5%B7%A7%E4%BA%8C-%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E6%96%B0%E8%AF%8D%E6%98%AF%E5%90%A6%E5%80%BC%E5%BE%97%E5%81%9A.BB9IClpE_ZuJ0pG.webp" alt="Trick two: How do you judge whether it's worth doing? Look at Google trends, if they're all new words, do it without the heat. Don't worry about someone getting on the line before you do it." loading="lazy" decoding="async" fetchpriority="auto" width="1238" height="558"></p>
+<p>If you see an all-emerging <strong>Keyword</strong>in Google trend, whether it appears for two months, two weeks or yesterday <strong>directly, not on his mind.</strong></p>
+<ul>
+<li>It doesn’t matter if anyone else is already on the stand.</li>
+<li>It doesn’t matter whether the domain names are registered – you always find the domain names that you can register.</li>
+<li>For two months or three, there are opportunities — because many people just register domain names or go to the web page, but SEO is not good, backlinks are not enough, and experience is poor.</li>
+</ul>
+<blockquote>
+<p>**Don’t worry about someone getting on the line before you do. **</p>
+</blockquote>
+<h3 id="skills-4-established-keyword--see-if-anyone-earns-money-from-this-word">Skills 4: established keyword — see if anyone earns money from this word</h3>
+<p><img src="/_astro/04-%E6%8A%80%E5%B7%A7%E4%B8%89-%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E8%80%81%E8%AF%8D%E6%98%AF%E5%90%A6%E5%80%BC%E5%BE%97%E5%81%9A.Bv8FikYO_1DmyGN.webp" alt="Skill three: How do you figure out whether it's worth doing? See if anyone can make money from this word and see if the top-ranked website is going to come true. See if anyone spends money to advertise this word." loading="lazy" decoding="async" fetchpriority="auto" width="1296" height="573"></p>
+<p>For stablished keyword, the key is to verify whether the market/demand**has been certified **to earn money:</p>
+<ul>
+<li><strong>See if the top-ranked website has been liquidated</strong>— what to pay for and what to sell for the package;</li>
+<li><strong>See if anyone’s long-term ad for the keyword</strong>– If someone keeps paying for a word, the probability is that they’ll get money from it. Even if they don’t cash through the website, there must be a more backward realization logic.</li>
+</ul>
+<blockquote>
+<p>“Or else it’s impossible to just throw money, huh?”</p>
+</blockquote>
+<hr/>
+<h2 id="iii-looking-at-the-competition-from-pricing-page-to-revenue-estimate">III. Looking at the competition: from pricing page to revenue estimate</h2>
+<h3 id="skills-5-how-do-we-figure-the-site-will-be-turned-off">Skills 5: How do we figure the site will be turned off?</h3>
+<p><img src="/_astro/05-%E6%8A%80%E5%B7%A7%E5%9B%9B-%E6%80%8E%E4%B9%88%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E5%90%A6%E5%8F%98%E7%8E%B0%E4%BA%86.BOKjKiWV_2wzNy0.webp" alt="Option four: How do you see the site's current? See if the functionality is restricted and the fee is paid for more advanced functions. Look at the collection channel of the site, from Similarweb, and see the volume of traffic imported into the collection channel. See if the site has access to advertising boards like Adsense." loading="lazy" decoding="async" fetchpriority="auto" width="1175" height="452"></p>
+<p>Three dimensions of judgement:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Deciding dimensions</th><th>Specific methodology</th></tr></thead><tbody><tr><td><strong>Functional limitations</strong></td><td>See if there’s a limit to the functionality. Pay for advanced functionality.</td></tr><tr><td><strong>Receiving channel</strong></td><td>See which payments are connected (Stripe, Paddle, etc.) and the traffic that is imported to the collection page from Similarweb.</td></tr><tr><td><strong>Advertising Union</strong></td><td>See if you can access advertising codes like Adsense — some stations don’t cash on members, others on advertising.</td></tr></tbody></table>
+<h3 id="-technology-6-look-at-the-pricing-page--look-at-the-core-selling-point">-Technology 6: Look at the pricing page = look at the core selling point</h3>
+<p><img src="/_astro/06-%E6%8A%80%E5%B7%A7%E4%BA%94-%E6%80%8E%E4%B9%88%E7%9C%8B%E7%BD%91%E7%AB%99%E6%A0%B8%E5%BF%83%E5%8D%96%E7%82%B9.BWsGv__J_Z1NMiKl.webp" alt="Skills five: How do you see the core of a website? Read Pricing, listing all the core points, especially the benefits of a high-level package. There must be a feature that other users are willing to spend more money and want." loading="lazy" decoding="async" fetchpriority="auto" width="1084" height="367"></p>
+<p>In particular, Gefei stressed:<strong>Every fee-paying website, every top-ranked website, every website in the advertising process — other pages can be ignored and pricing pages must be viewed.</strong></p>
+<ul>
+<li>Look at it. The ABC three packages give each one of their rights.</li>
+<li><strong>The function of the advanced package is the core selling point where users are willing to spend more and buy it;</strong></li>
+<li>Take out the two core sales points and make a single website only this point and do better than it — **This method is feasible **and has been logged and tested by Coffi himself and a few other friends.</li>
+</ul>
+<h3 id="skills-7-calculating-web-income---a-very-simple-formula">Skills 7: Calculating web income - a very simple formula</h3>
+<p><img src="/_astro/07-%E6%8A%80%E5%B7%A7%E5%85%AD-%E6%80%8E%E4%B9%88%E4%BC%B0%E7%AE%97%E7%BD%91%E7%AB%99%E6%94%B6%E5%85%A5.ScKWUbJK_Z16EGVv.webp" alt="Option 6: How do you estimate the income of a website? It can be estimated on Similarweb data. Advertising is realized at $5 per thousand. User fees are calculated at $100 per thousand." loading="lazy" decoding="async" fetchpriority="auto" width="1128" height="402"></p>
+<p>Ko Fei gave an estimate of “specially simple and violent”:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Disbursement Mode</th><th>Estimation formula</th><th>Annotations</th></tr></thead><tbody><tr><td><strong>Advertising liquidation</strong></td><td>Similarweb monthly visits 1000 x $5</td><td>About $5 per 1,000 visits</td></tr><tr><td><strong>User fees</strong></td><td>Similarweb monthly visits 1000 x $100</td><td>Average contribution per visit US$ 0.1</td></tr></tbody></table>
+<blockquote>
+<p>He has validated both the websites of his friends and those of his own,**and the actual income is often higher than estimated **— because there are uncollectible income such as long-term subscriptions.</p>
+</blockquote>
+<hr/>
+<h2 id="iv-competition-keyword">IV. COMPETITION: KEYWORD?</h2>
+<h3 id="skills-8-determine-the-level-of-the-keyword-competition">Skills 8: Determine the level of the keyword competition</h3>
+<p><img src="/_astro/08-%E6%8A%80%E5%B7%A7%E4%B8%83-%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E5%85%B3%E9%94%AE%E8%AF%8D%E7%AB%9E%E4%BA%89%E7%A8%8B%E5%BA%A6.CzZvcQaJ_ZdlN9R.webp" alt="Skills 7: How do you judge the level of the keyword competition? Look at the ratio of the front page to the inner pages, the proportion of large traffic stations, the number of backlinks that can be ranked on the first page, and the number of intile pages. Use seo.web.cafe/kd/ to calculate the number of pages." loading="lazy" decoding="async" fetchpriority="auto" width="1330" height="554"></p>
+<p>Taken together, four indicators:</p>
+<ol>
+<li>Percentage of the top ten searches<strong>of the front page of vs inner pages</strong>;</li>
+<li><strong>Ratio of large flow stations</strong>;</li>
+<li>The number of web sites ranked on the first page<strong>backlinks</strong>;</li>
+<li><strong>Initle page</strong>.</li>
+</ol>
+<blockquote>
+<p>Gefei recommended its own tool, `seo.web.cafe/kd/ ’, which has been combined to help you estimate automatically — 500 times a day for friends and 100 times a day for non-group friends.</p>
+</blockquote>
+<hr/>
+<h2 id="v-making-pages-on-page-seo-core-principles">V. Making pages: On-Page SEO core principles</h2>
+<h3 id="skill-9-users-want-whatever-you-want">Skill 9: Users want whatever you want.</h3>
+<p><img src="/_astro/09-%E6%8A%80%E5%B7%A7%E5%85%AB-%E6%80%8E%E4%B9%88%E5%9F%BA%E4%BA%8E%E5%85%B3%E9%94%AE%E8%AF%8D%E5%81%9A%E5%A5%BD%E9%A1%B5%E9%9D%A2.D1WWVQOt_fwQ3y.webp" alt="Sight 8: How to build a page based on the keyword. You give the user what you want. You give the function, you give the function, you give the video, you give the video, you take the goods, you give the goods, you play, you give the game, you give the information, you give the information. In addition, you have to write the text around the keyword theme." loading="lazy" decoding="async" fetchpriority="auto" width="1135" height="400"></p>
+<p>First principle for making pages:<strong>Understand the intent of the user to search, and give whatever the user wants.</strong></p>
+<ul>
+<li>function, function; video, video; game, game; information, information;</li>
+<li><strong>Can’t ignore the need for a headline for a landing page</strong>;</li>
+<li>The page contains not fewer text files, but must be written around the theme of the keyword.</li>
+</ul>
+<h3 id="skills-10-the-fastest-way-to-judge-keywords-intent---ask-ai">Skills 10: The fastest way to judge Keyword’s intent - Ask AI</h3>
+<p><img src="/_astro/10-%E6%8A%80%E5%B7%A7%E4%B9%9D-%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E5%85%B3%E9%94%AE%E8%AF%8D%E6%84%8F%E5%9B%BE.DPIkjrn-_Z1i5mRP.webp" alt="Sight nine: How do you judge the keyword intent? Ask AI the fastest way, see the search results as a way to be effective." loading="lazy" decoding="async" fetchpriority="auto" width="802" height="338"></p>
+<p>He shares two things he does most often every day:</p>
+<ol>
+<li>Seeing a strange website, opening it up, Claude asked it: <strong>What’s this site for?</strong></li>
+<li>After that, I asked: <strong>On what basis is the site realized? What are the main sources of traffic?</strong></li>
+</ol>
+<blockquote>
+<p>“By and large, after these questions, you’ve got an idea of a website. And you can do it in parallel — you can ask a number of N websites.”</p>
+</blockquote>
+<p>He even suggested that a browser plugin could be made, that each site would be asked these questions automatically and that the analysis would be displayed directly on the right panel.</p>
+<h3 id="skill-11-keyword-development--not-to-build-up-to-focus">Skill 11: Keyword development — not to build up, to focus.</h3>
+<p><img src="/_astro/11-%E6%8A%80%E5%B7%A7%E5%8D%81-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%9C%8B%E5%85%B3%E9%94%AE%E8%AF%8D%E5%AF%86%E5%BA%A6.B4XRuxZn_Z283euy.webp" alt="Script 10: Why do you look at the keyword development? Not so you can build up the keyword, so you can write something that doesn't get out of hand. One page, a keyword group, goes around the keyword to write the entire page, and the keyword development is done." loading="lazy" decoding="async" fetchpriority="auto" width="1074" height="243"></p>
+<p>A lot of people ask, “Why do you watch density when Google says don’t build up Keyword?”</p>
+<p>Coffi explained that<strong>density is intended to indirectly ensure that your page content is focused on the core keyword</strong>to prevent AI editing issues from becoming irrelevant or dissipating.</p>
+<ul>
+<li><strong>Core principles: one page, one keyword group</strong>;</li>
+<li>Just write the entire page around the keyword, and the density will naturally reach the target.</li>
+</ul>
+<h3 id="skills-12-on-page-seo-key-indicators">Skills 12: On-Page SEO Key Indicators</h3>
+<p><img src="/_astro/12-%E6%8A%80%E5%B7%A7%E5%8D%81%E4%B8%80-OnPageSEO%E6%80%8E%E4%B9%88%E6%89%8D%E7%AE%97%E5%A5%BD.BG7GxpR__aLzhu.webp" alt="Trick 11: On Page SEO? Title, Description, Heatings all need to cover Keyword, Keyword as much as possible in front of the sentence. The number of page words is around 1200 ~ 1800. The word in front of the density ranking must be core Keyword" loading="lazy" decoding="async" fetchpriority="auto" width="1124" height="344"></p>
+<p>Whether it’s a web page or an analysis of the competition:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Indicators</th><th>Request</th></tr></thead><tbody><tr><td><strong>Title / Description / Heatings</strong></td><td>You have to cover Keyword, Keyword, the closer you go in the sentence, the better.</td></tr><tr><td><strong>Number of page words</strong></td><td>1200 ~ 1800 or so</td></tr><tr><td><strong>Next word for density ranking</strong></td><td>It has to be the core, Keyword.</td></tr><tr><td><strong>Heatings</strong></td><td>Mainly H1 and H2</td></tr></tbody></table>
+<h3 id="skills-13-remove-meaningless-repetitions-with-css-content">Skills 13: Remove meaningless repetitions with CSS Content</h3>
+<p><img src="/_astro/13-%E6%8A%80%E5%B7%A7%E5%8D%81%E4%BA%8C-CSS-Content%E5%8E%BB%E9%99%A4%E6%97%A0%E6%84%8F%E4%B9%89%E5%8D%95%E8%AF%8D.CZe1cB3L_Z2lNaj0.webp" alt="Str. 12: How do you remove a lot of repetitive meaning words? Use CSS Content to move words from html to CSS" loading="lazy" decoding="async" fetchpriority="auto" width="1067" height="207"></p>
+<p>A practical little trick: 50 “copy” files appear if there are 50 tipcards on the page, each with a “copy” button — this is not related to the core theme of the current page, and it dilutes the keyword understanding.</p>
+<p>**Solution: **Show the words “Copy” with CSS ‘s ‘content ’ attribute instead of in HTML. So Google reptiles will not include these meaningless repeat words in the text analysis.</p>
+<hr/>
+<h2 id="vi-backlinks-comments-backlinks-are-still-useful-but-smart">VI. Backlinks: comments backlinks are still useful but smart</h2>
+<h3 id="skills-14-blog-reviews-are-still-useful">Skills 14: Blog reviews are still useful</h3>
+<p><img src="/_astro/14-%E6%8A%80%E5%B7%A7%E5%8D%81%E4%B8%89-%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E5%A4%96%E9%93%BE%E8%BF%98%E6%98%AF%E6%9C%89%E7%94%A8%E7%9A%84.BfgiugL0_Z1RrW5I.webp" alt="Skills XIII: Blog reviews are useful. Different backlinks can bring about different upgrades, different keywords have different levels of competition, different levels of competition require different levels of competitiveness" loading="lazy" decoding="async" fetchpriority="auto" width="877" height="204"></p>
+<p>Gefei admitted that the comment was “it’s true that he’s making garbage on the Internet”, but he wrote articles in the community that argued —<strong>it worked.</strong></p>
+<p>The logic is simple: different backlinks bring different upgrades to the system, different keywords compete differently, and different needs to the system. Commenting backlinks may not be useful in terms of competitive terms; but they are still valid in the fields of emerging keyword, playstations, etc.</p>
+<p><strong>Step-up techniques — looking for the least commented page:</strong></p>
+<ul>
+<li>The more people send out the same article, the lower each of the returns gets;</li>
+<li>To get a list of the articles from the entire blog and find out **the lowest number of articles commented **to send;</li>
+<li>Further: looking for the most connected pages of the web site**(especially those that contain links to the first page) is the most valuable page of the entire site, where backlinks work best.</li>
+</ul>
+<blockquote>
+<p>“You don’t have to just listen to it. When everyone does it, you should think about it one more time.”</p>
+</blockquote>
+<h3 id="skills-15-backlinks-look-at-both-quality-and-quantity---priority-when-budget-is-low">Skills 15: Backlinks look at both quality and quantity - priority when budget is low</h3>
+<p><img src="/_astro/15-%E6%8A%80%E5%B7%A7%E5%8D%81%E5%9B%9B-%E5%A4%96%E9%93%BE%E7%9C%8B%E8%B4%A8%E9%87%8F%E4%B9%9F%E7%9C%8B%E6%95%B0%E9%87%8F.D3pWwN7c_ZVG0M0.webp" alt="Skills 14: A high-quality backlinks can't hit many normal backlinks. Backlinks depend on quality and quantity. When budgets are low, priority is given to raising backlinks. Cheap backlinks must not be needed, not cheap, not lazy" loading="lazy" decoding="async" fetchpriority="auto" width="1041" height="226"></p>
+<p>The experience of Gefei is different from the dominant expression of “must be demanding”:</p>
+<ul>
+<li>Not to buy except for the lowest-end garbage.</li>
+<li>The rest<strong>is self-generated, whether it be navigation, commentary or elsewhere, and will be effective as long as it is sent</strong>;</li>
+<li><strong>When the budget is limited, priority is given to raising the number of backlinks rather than the quality.</strong></li>
+</ul>
+<blockquote>
+<p>**Example: **US$ 2000 budget, A is 4 files x $500, and B is 60 days x US$ 30 per day backlinks.<strong>B-60 backlinks domain names must be greater than 4.</strong></p>
+</blockquote>
+<hr/>
+<h2 id="vii-strategies-corrections-languages-business-statistics-freedoms-and-institutions">VII. STRATEGIES: CORRECTIONS, LANGUAGES, BUSINESS STATISTICS, FREEDOMS AND INSTITUTIONS</h2>
+<h3 id="skills-16-scripting-is-still-a-useful-method">Skills 16: Scripting is still a useful method.</h3>
+<p><img src="/_astro/16-%E6%8A%80%E5%B7%A7%E5%8D%81%E4%BA%94-%E6%8A%84%E4%BD%9C%E4%B8%9A%E4%BE%9D%E7%84%B6%E6%9C%89%E7%94%A8.DNJR2Bel_vyOWv.webp" alt="Skills 15: Copying is still a useful method. Copying other people's keywords, copying other people's UI interactions and functionality, copying people's web contents, copying others' pricing strategies, copying others' backlinks strategies" loading="lazy" decoding="async" fetchpriority="auto" width="840" height="278"></p>
+<p><strong>It’s a front-line website, every operation, every detail worth studying:</strong></p>
+<ul>
+<li>Keyword Policy</li>
+<li>UI Interactivity and Functional Achievement</li>
+<li>Thinking of content development on the web site</li>
+<li>Pricing policy</li>
+<li>Backlinks Policy</li>
+<li>Advertising (what words are cast, which countries, what pages are written)</li>
+<li>Social media operations</li>
+</ul>
+<blockquote>
+<p>**Please note, however, that it is a copy of thought, thought, not a lazy copy.**Repeating Google pages is not a good idea.</p>
+</blockquote>
+<h3 id="skills-17-multilingual-remains-a-big-pit--dont-translate-blindly">Skills 17: Multilingual remains a big pit — don’t translate blindly</h3>
+<p><img src="/_astro/17-%E6%8A%80%E5%B7%A7%E5%8D%81%E5%85%AD-%E5%A4%9A%E8%AF%AD%E8%A8%80%E4%BE%9D%E7%84%B6%E6%98%AF%E4%B8%AA%E5%A4%A7%E5%9D%91.dvNQJuz2_DmhMe.webp" alt="Skills 16: Multilingualism remains a mass pit. Do not go blindly in lots of pages in multiple languages, but rather in quantitative terms. Do other languages by making English pages instead of translation." loading="lazy" decoding="async" fetchpriority="auto" width="1082" height="204"></p>
+<p>I’m not sure if I’m going to be able to do this.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Phase</th><th>Approach</th><th>Problem</th></tr></thead><tbody><tr><td><strong>Primary</strong></td><td>One web page + JS Translation Plugin, same web site in different languages</td><td>The reptiles can only climb to one language, SEO.</td></tr><tr><td><strong>Intermediate</strong></td><td>One page per language, with subdirectories or subdomain names</td><td>One-key translation leads to unlocalization of content</td></tr><tr><td><strong>Advanced</strong></td><td>Independent station per language/state (non-English language)</td><td>It’s more expensive, but it’s the best.</td></tr></tbody></table>
+<blockquote>
+<p>Ko Fei revealed that he began to hear the good news from his friends in 2025 -<strong>the English-language Keyword, dedicated to Korean, Japanese-language stations, and received traffic</strong>. He hid this information for six months, and decided in June 2026 to invite Ping to share it with the community.</p>
+</blockquote>
+<p><strong>Core principles: use of English pages to do other languages - separate research on keyword, individual writing, local UI style - rather than one-key translation.</strong></p>
+<h3 id="skills-18-user-behavioral-data-is-a-winning-method-for-the-weak-and-the-strong">Skills 18: User behavioral data is a winning method for the weak and the strong.</h3>
+<p><img src="/_astro/18-%E6%8A%80%E5%B7%A7%E5%8D%81%E4%B8%83-%E7%94%A8%E6%88%B7%E8%A1%8C%E4%B8%BA%E6%95%B0%E6%8D%AE%E6%98%AF%E5%88%B6%E8%83%9C%E6%B3%95%E5%AE%9D.GYqfvuAY_Z1QzQTt.webp" alt="Skills 17: User behavioral data is the winning asset. The lower the bounce age, the longer the average stay, the better the number of page views per person. Good behavioral data allows you to be weak and strong." loading="lazy" decoding="async" fetchpriority="auto" width="782" height="246"></p>
+<p>According to Gefei, some websites have few backlinks, but they are ahead of many backlinks —<strong>because user behavioral data are better.</strong></p>
+<p>Three core indicators:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Indicators</th><th>Objective</th></tr></thead><tbody><tr><td>**boomce rue **</td><td>The lower the better.</td></tr><tr><td><strong>Average length of stay</strong></td><td>The longer, the better.</td></tr><tr><td><strong>Number of page views per person</strong></td><td>The more, the better.</td></tr></tbody></table>
+<p><strong>Technology to increase the number of page views per person:</strong></p>
+<ul>
+<li>The image generated by the generator shows only small maps and jumps to the new page when the large one is taken;</li>
+<li>Specialized in a `Generating Results’ page to display all historical results in the form of a list (a small chart list);</li>
+<li>When clicking on a chart, the URL changes (using `pushstate ’ ) and pops up the large chart layer;</li>
+<li>Turning off the layers, you see all the historical photo lists — better experience, access to pages.</li>
+</ul>
+<p>**Core assumption of Gefei: **Each keyword has a “better user behavioral data threshold” — for example, 1,000 good behavioral data to get to the front page. Only the natural flow from SEO accumulates too slowly, but **it can accelerate through free dissemination, advertising, etc. **</p>
+<blockquote>
+<p>And that explains why “advertisement brings up natural flows” — not Google favors the advertiser, but precision users produce excellent behavioral data on your website, helping you to cross that threshold faster.</p>
+</blockquote>
+<h3 id="skills-19-free-is-a-good-strategy-plus-the-price-increases-are-the-fastest-way-to-make-money">Skills 19: Free is a good strategy, plus the price increases are the fastest way to make money.</h3>
+<p><img src="/_astro/19-%E6%8A%80%E5%B7%A7%E5%8D%81%E5%85%AB-%E5%85%8D%E8%B4%B9%E6%98%AF%E4%B8%AA%E5%A5%BD%E7%AD%96%E7%95%A5.DWuhhIKG_1Ks84i.webp" alt="Skills 18: Free is a good strategy. Free diffusion is available, free user behavioral data is promoted." loading="lazy" decoding="async" fetchpriority="auto" width="718" height="193"></p>
+<p><img src="/_astro/20-%E6%8A%80%E5%B7%A7%E5%8D%81%E4%B9%9D-%E6%B6%A8%E4%BB%B7%E6%98%AF%E6%9C%80%E5%BF%AB%E5%A4%9A%E8%B5%9A%E9%92%B1%E7%9A%84%E6%96%B9%E6%B3%95.abTYMuWE_2eBNTe.webp" alt="Trick 19: Price increases are the fastest way to make money. Rational pricing increases the price per passenger, and reasonable pricing does not lower the price." loading="lazy" decoding="async" fetchpriority="auto" width="683" height="168"></p>
+<p><strong>The two values of free:</strong></p>
+<ol>
+<li>(b) Spreading out;</li>
+<li>Accumulation of user behavioral data from which Google will judge whether your web page better meets user needs.</li>
+</ol>
+<p>“The best way to make money is to raise the price.” After the price rise:</p>
+<ul>
+<li>The original subscriptions are not lost on a large scale - very few are downgraded and most continue to use them;</li>
+<li><strong>Rational pricing increases the unit price without lowering the payration rate</strong>.</li>
+</ul>
+<blockquote>
+<p>I’ve also overpaid several websites, “It really works.”</p>
+</blockquote>
+<hr/>
+<h2 id="viii-conclusion-more-technology-to-talk-to-gefeiai">VIII. CONCLUSION: MORE TECHNOLOGY TO TALK TO GEFEI.ai</h2>
+<p><img src="/_astro/21-%E7%BB%93%E8%AF%AD-%E6%9B%B4%E5%A4%9A%E6%8A%80%E5%B7%A7%E8%B7%9FGeFei.ai%E8%81%8A.r3srqPUi_Z22sMdh.webp" alt="More skills. Talk to Gefei.ai." loading="lazy" decoding="async" fetchpriority="auto" width="1090" height="406"></p>
+<p>At the end of the sharing, Ko Fei recommended the community’s exclusive AI assistant <strong>Gefei.ai</strong>— which trained the community in all the community’s conversations over the past few years, in the public course articles, in the community course articles, and in all the “Fly Classrooms” that were used in the group conversations.</p>
+<blockquote>
+<p>He also specifically mentions that API costs are borne by him personally, that members of the community are free of charge, and that they will not be charged in the future.</p>
+</blockquote>
+<p>19 The technique seems simple, but each one was validated by Gofie and his friends in the field. As he said at the beginning,<strong>everyone learned the same information, but the experience that they understood, practiced and learned varied - not to be better than the strongest today than yesterday.</strong></p>
+<hr/>
+<blockquote>
+<p>This paper is based on the sharing of SEO skills in combat, a guide to the landing of Shanghai, which is based on the sharing of ideas in the field and is intended for cross-reference exchanges between Gefei’s Friends and Global Expansion colleagues, and does not represent platform positions.</p>
+</blockquote> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  
