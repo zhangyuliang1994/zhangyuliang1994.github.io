@@ -1,0 +1,237 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>How I Made a Year-End Presentation with Gemini and Nano Banana Pro - frency.me</title><meta name="description" content="A hands-on comparison of NotebookLM, Gamma, and a Gemini Gem plus Nano Banana Pro workflow for turning Markdown notes into a polished year-end presentation and exporting it to PPTX."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/blog/gemini-nano-banana-year-end-presentation/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/gemini-nano-banana-year-end-presentation/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/gemini-nano-banana-year-end-presentation/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/gemini-nano-banana-year-end-presentation/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="How I Made a Year-End Presentation with Gemini and Nano Banana Pro - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="A hands-on comparison of NotebookLM, Gamma, and a Gemini Gem plus Nano Banana Pro workflow for turning Markdown notes into a polished year-end presentation and exporting it to PPTX."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/gemini-nano-banana-year-end-presentation/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B4k_B3Ur.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.2rem,6vw,3.75rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:460px;border-radius:var(--radius);margin:0;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.CE_a4KFw.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gemini-nano-banana-year-end-presentation/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gemini-nano-banana-year-end-presentation/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/gemini-nano-banana-year-end-presentation/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/gemini-nano-banana-year-end-presentation/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/final-result.CWL-AOUu_Z1tP7GN.webp" alt="How I Made a Year-End Presentation with Gemini and Nano Banana Pro" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="2880" height="1646" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>How I Made a Year-End Presentation with Gemini and Nano Banana Pro</h1> <p class="description" data-astro-cid-v3cnrnum>A hands-on comparison of NotebookLM, Gamma, and a Gemini Gem plus Nano Banana Pro workflow for turning Markdown notes into a polished year-end presentation and exporting it to PPTX.</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2025-12-28T00:00:00.000Z" data-astro-cid-v3cnrnum>12/28/2025</time> <a href="/en/categories/AI Practice/" data-astro-cid-v3cnrnum>AI Practice</a> <a href="/en/tags/Gemini/" data-astro-cid-v3cnrnum>#Gemini</a><a href="/en/tags/Nano Banana Pro/" data-astro-cid-v3cnrnum>#Nano Banana Pro</a><a href="/en/tags/NotebookLM/" data-astro-cid-v3cnrnum>#NotebookLM</a><a href="/en/tags/Gamma/" data-astro-cid-v3cnrnum>#Gamma</a><a href="/en/tags/Presentation/" data-astro-cid-v3cnrnum>#Presentation</a> </div> </header> <blockquote>
+<p>Year-end review season is here again. Building the presentation is a headache every year, so this time I tried using AI to do it.</p>
+</blockquote>
+<h2 id="1-preparing-the-content">1. Preparing the Content</h2>
+<p>Before asking AI to generate slides, you still need to prepare the content.</p>
+<p>I wrote mine in Markdown because its structure is clear and easy for an AI model to understand. Starting with NotebookLM, I created a new notebook and imported both the company’s presentation template and my Markdown notes.</p>
+<p><img src="/_astro/notebooklm-sources.6ZBnnZpL_1RAq4v.webp" alt="Importing a presentation template and Markdown notes into a NotebookLM year-end review notebook" loading="lazy" decoding="async" fetchpriority="auto" width="718" height="922"></p>
+<h2 id="2-generating-slides-with-notebooklm-and-gamma">2. Generating Slides with NotebookLM and Gamma</h2>
+<h3 id="21-notebooklm">2.1 NotebookLM</h3>
+<p>Click the edit button next to “Slide Deck,” then enter a custom prompt. Generation takes roughly five minutes.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Target audience: Company executives</span></span>
+<span class="line"><span>Purpose: Year-end review</span></span>
+<span class="line"><span>Length: 15–20 slides</span></span>
+<span class="line"><span>Style:</span></span>
+<span class="line"><span>Professional, accurate, logical, and rigorous, with a strong framework-driven</span></span>
+<span class="line"><span>structure suitable for corporate reporting, strategic communication, and</span></span>
+<span class="line"><span>technical performance reviews.</span></span></code></pre>
+<p><img src="/_astro/notebooklm-custom-prompt.DaxBNZyQ_ZIs1Na.webp" alt="Defining the audience, length, and professional tone for a NotebookLM year-end presentation" loading="lazy" decoding="async" fetchpriority="auto" width="2838" height="1348"></p>
+<p>Here is the result:</p>
+<p><img src="/_astro/notebooklm-pdf.B_ddxRPx_27WNaU.webp" alt="The year-end performance review PDF generated by NotebookLM" loading="lazy" decoding="async" fetchpriority="auto" width="2880" height="1646"></p>
+<p>NotebookLM could only export a PDF, so I used Canva to convert it to PPTX.</p>
+<p><img src="/_astro/canva-pptx.DTWNy73W_Z1tfXLA.webp" alt="The Canva-converted PPTX opened in WPS" loading="lazy" decoding="async" fetchpriority="auto" width="2880" height="1646"></p>
+<p>The problem is that every converted slide is just an image. Its text and design elements cannot be edited directly. Canva Pro reportedly offers OCR extraction, but the normal conversion workflow does not.</p>
+<p>The visual quality was quite good, but editing individual slides was too cumbersome, so I abandoned this route.</p>
+<h3 id="22-gamma">2.2 Gamma</h3>
+<p>Gamma was one of the year’s breakout products. Gefei also used it for his year-end offline presentation.</p>
+<p>The first step is still importing your content. Gamma did not accept my Markdown file directly, so I copied and pasted the text.</p>
+<p><img src="/_astro/gamma-paste.Br6K4Q_I_7Kp89.webp" alt="Pasting year-end review content into Gamma's generation page" loading="lazy" decoding="async" fetchpriority="auto" width="2604" height="1542"></p>
+<p>You can then configure text length, tone, theme, image source, image-generation model, and the number of cards.</p>
+<p><img src="/_astro/gamma-config.DclU-gS7_ZfYVeU.webp" alt="Gamma's prompt editor and Nano Banana Pro image-generation settings" loading="lazy" decoding="async" fetchpriority="auto" width="2852" height="4426"></p>
+<p>After clicking Generate, the result appears within a few minutes. Gamma can export to PDF, PowerPoint, Google Slides, or PNG.</p>
+<p><img src="/_astro/gamma-export.BQh3eOYd_Z16UMYG.webp" alt="Gamma's PDF, PowerPoint, Google Slides, and PNG export options" loading="lazy" decoding="async" fetchpriority="auto" width="2856" height="1554"></p>
+<p>The result looked polished and used Nano Banana Pro for its illustrations.</p>
+<p><img src="/_astro/gamma-result.DRzpKSy0_Z19OqIm.webp" alt="The year-end presentation generated by Gamma" loading="lazy" decoding="async" fetchpriority="auto" width="2880" height="1646"></p>
+<p>Gamma still has a learning curve, though. I was not fully satisfied with this result, and refining it would take time. The free plan also limited the deck to ten cards.</p>
+<h3 id="23-other-tools">2.3 Other Tools</h3>
+<p>I tried a few other third-party presentation generators as well. Most simply forced the content into generic templates, and their results fell well short of NotebookLM and Gamma.</p>
+<h2 id="3-gemini--nano-banana-pro">3. Gemini + Nano Banana Pro</h2>
+<p>Just as I was becoming disappointed with these options, I remembered an article by Jim Liu (Baoyu) that I had bookmarked on X. After trying his workflow, I found the result much more promising.</p>
+<h3 id="step-1-prepare-the-gemini-gem">Step 1: Prepare the Gemini Gem</h3>
+<p>Open Baoyu’s ready-made <a href="https://gemini.google.com/gem/1CAXgfXqYNsVhKA7_KYlftskYcZfb2P_8?usp=sharing">Slide Deck Gem</a>. You can also copy its original prompt into a ChatGPT or Claude project.</p>
+<p><img src="/_astro/step-1.CFr3kLFz_Z4n2wD.webp" alt="Step 1: Prepare the Gemini Gem containing the planner logic" loading="lazy" decoding="async" fetchpriority="auto" width="2752" height="1536"></p>
+<details><summary>View the complete original prompt</summary><pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>--- Full Prompt ---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>name: Slide Deck</span></span>
+<span class="line"><span>description: Generates professional slide deck outlines and visual prompts optimized for Nano Banana Pro. It transforms your content into a structured narrative with ready-to-use design cues, allowing you to instantly generate high-quality slide images. The output is organized for flexibility, making it easy to tweak prompts or adjust text before rendering your final slides.</span></span>
+<span class="line"><span>author: Jim Liu (Baoyu), X @dotey</span></span>
+<span class="line"><span>version: 1.0</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are a world-class presentation designer and storyteller. You create visually stunning and highly polished slide decks that effectively communicate complex information. Think mastery over design with a flair for storytelling.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The slide decks you produce adapt to the source material and intended audience. There is always a story and you find the best way to tell it. You combine the expertise of the creativity of the best designers.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The slide deck will be primarily designed for reading and sharing. The structure should be self-explanatory and easy to follow without a presenter. The narrative and all the useful data should be contained within the text and visuals on the slides. The slides should contain enough context for any visuals to be understood on their own. Feel free to add certain slides with more dense information (extracted from the sources) if it will help with the narrative.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are now writing an _outline_ for this slide deck described below.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>We will supply this outline to an expert designer to make the actual final deck.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The slide content should be in {language, user&#39;s prefer language, default to English}. The placeholders should be left in {language}.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>FIRST, before writing the slide outline, you must generate a global STYLE INSTRUCTIONS block based on the content topic and user request. This should be wrapped in XML tags inside a code block.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;STYLE_INSTRUCTION_EXAMPLE&gt;</span></span>
+<span class="line"><span>Design Aesthetic: A clean, sophisticated, and minimalist editorial style inspired by architectural blueprints and high-end technical journals. The overall feel is one of precision, clarity, and intellectual elegance.</span></span>
+<span class="line"><span>Background Color: A subtle, textured off-white with the hex code #F8F7F5, reminiscent of high-quality drafting paper.</span></span>
+<span class="line"><span>Primary Font: Neue Haas Grotesk Display Pro. Used for all slide titles and major headings. It should be rendered in a bold weight for impact and clarity.</span></span>
+<span class="line"><span>Secondary Font: Tiempos Text. Used for all body copy, subtitles, and annotations. Its high readability and classic feel provide a professional contrast to the clean sans-serif headlines.</span></span>
+<span class="line"><span>Color Palette:</span></span>
+<span class="line"><span>Primary Text Color: A dark slate grey, #2F3542.</span></span>
+<span class="line"><span>Primary Accent Color: A vibrant, intelligent blue, #007AFF.</span></span>
+<span class="line"><span>Visual Elements:</span></span>
+<span class="line"><span>Consistent use of thin, precise line work, schematic diagrams, and clean vector graphics. Visuals are conceptual and abstract, designed to illustrate ideas rather than depict literal scenes. Layouts are spacious and structured, prioritizing information hierarchy and readability. There are no slide numbers, footers, logos, or running headers.</span></span>
+<span class="line"><span>&lt;/STYLE_INSTRUCTION_EXAMPLE&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Use the following structure as a template, but dynamically adapt the aesthetic, fonts, and colors to fit the specific narrative:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>```markdown</span></span>
+<span class="line"><span>You are the Architect, a sophisticated AI designed to visualize instructions as high-end blueprint-style data exhibits. Your outputs are precise, analytical, and aesthetically polished.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>**CORE DIRECTIVES:**</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. Analyze user prompts for structure, intent, and key elements.</span></span>
+<span class="line"><span>2. Translate instructions into clean, structured visual metaphors (blueprints, exhibits, schematics).</span></span>
+<span class="line"><span>3. Utilize a specific, restrained color palette and font family for maximum clarity and professional impact.</span></span>
+<span class="line"><span>4. Maintain a strict 16:9 aspect ratio for all visual outputs.</span></span>
+<span class="line"><span>5. Present information in a triptych or grid-based layout with balanced text and visuals.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>**STYLE INSTRUCTIONS:**</span></span>
+<span class="line"><span>Design Aesthetic: [Describe the overall style]</span></span>
+<span class="line"><span>Background Color: [Description and Hex Code]</span></span>
+<span class="line"><span>Primary Font: [Font name for Headlines]</span></span>
+<span class="line"><span>Secondary Font: [Font name for Body copy]</span></span>
+<span class="line"><span>Color Palette:</span></span>
+<span class="line"><span>Primary Text Color: [Hex Code]</span></span>
+<span class="line"><span>Primary Accent Color: [Hex Code]</span></span>
+<span class="line"><span>Visual Elements: [Describe use of lines, shapes, imagery style, photography vs vectors, etc.]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>**CONTENT TO DRAW:**</span></span>
+<span class="line"><span>```</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>For this particular slide deck, we want the content to focus on:</span></span>
+<span class="line"><span>{Custom Prompt, Describe the slide deck you want to create, default to: &quot;Create a deck for beginners using a bold and playful style with a focus on step-by-step instructions.&quot;}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>We have also attached some producer notes below for this slide deck which will help guide the overall structure and narrative of the deck.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Remember the following rules for outlines:</span></span>
+<span class="line"><span>- Focus on the outline of the deck and what content should be covered in each slide.</span></span>
+<span class="line"><span>- The descriptions for each slide should be comprehensive and structured strictly.</span></span>
+<span class="line"><span>- Slide 1 must be a Cover Slide and the final slide must be a Back Cover Slide. Their visual style and layout should be distinct from internal slides.</span></span>
+<span class="line"><span>- For every slide, output these four sections exactly:</span></span>
+<span class="line"><span>  - // NARRATIVE GOAL</span></span>
+<span class="line"><span>  - // KEY CONTENT</span></span>
+<span class="line"><span>  - // VISUAL</span></span>
+<span class="line"><span>  - // LAYOUT</span></span>
+<span class="line"><span>- Preserve key elements from the source material.</span></span>
+<span class="line"><span>- Every specific data point must be directly traceable to the source material.</span></span>
+<span class="line"><span>- Include all details because the designer will not have access to the source content later.</span></span>
+<span class="line"><span>- Always err on the side of the audience having more expertise, interest, and smarts than you might think.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>CRITICAL:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- Never generate more than 20 slides.</span></span>
+<span class="line"><span>- Avoid “Title: Subtitle” heading formats; they appear very AI-generated. Prefer narrative topic sentences that tie the deck together.</span></span>
+<span class="line"><span>- Avoid cliché “AI slop” patterns. Never use phrases like “It wasn&#39;t just [X], it was [Y].”</span></span>
+<span class="line"><span>- Use direct, confident, active human language.</span></span>
+<span class="line"><span>- Never include slides with placeholders for the author to insert their name or date.</span></span>
+<span class="line"><span>- Never call for photorealistic images of prominent individuals.</span></span>
+<span class="line"><span>- Never end with a generic “Any Questions?” or “Thank You” slide. Use a designed closing statement, meaningful reference, or powerful visual takeaway.</span></span></code></pre></details>
+<h3 id="step-2-upload-the-source-and-generate-an-outline">Step 2: Upload the Source and Generate an Outline</h3>
+<p>Select a NotebookLM source or upload files directly, then enter your request.</p>
+<p><img src="/_astro/select-notebooklm-and-prompt.CMwFdByb_Z1DvJK.webp" alt="Selecting the NotebookLM year-end review source and entering a prompt in the Gemini Gem" loading="lazy" decoding="async" fetchpriority="auto" width="2244" height="764"></p>
+<p>Here is the prompt I used:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Language: Simple Chinese</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Custom Prompt: Create a modern and impactful year-end review presentation.</span></span>
+<span class="line"><span>Highlight growth metrics, team success, and strategic vision.</span></span>
+<span class="line"><span>Inspiring and data-driven.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Visual Style: Modern, sleek, high-contrast, infographic style, tech-forward.</span></span></code></pre>
+<p>The Gem first generates shared style instructions, then produces a narrative goal, key content, visual description, and layout specification for every slide.</p>
+<p><img src="/_astro/step-2.BzbNS_Sp_Z25DCz9.webp" alt="The Gem generating a structured presentation outline and image prompts from the source material" loading="lazy" decoding="async" fetchpriority="auto" width="1019" height="1727"></p>
+<h3 id="step-3-render-each-slide-with-nano-banana-pro">Step 3: Render Each Slide with Nano Banana Pro</h3>
+<p>Send each slide’s visual prompt to Nano Banana Pro one by one.</p>
+<p><img src="/_astro/nano-banana-generate.BPAKhk1b_OdFHV.webp" alt="Generating a project roadmap slide with Nano Banana Pro in Gemini Enterprise" loading="lazy" decoding="async" fetchpriority="auto" width="2338" height="1388"></p>
+<p>The core idea is to separate planning from rendering: the Gem designs the narrative, copy, and visual requirements, while Nano Banana Pro turns each page specification into an image.</p>
+<p><img src="/_astro/step-3.BHLWWnFT_Q3buA.webp" alt="Step 3: Turning the Gem's structured prompts into Nano Banana Pro slide images" loading="lazy" decoding="async" fetchpriority="auto" width="2048" height="1513"></p>
+<h3 id="step-4-refine-the-results">Step 4: Refine the Results</h3>
+<p>If a slide is not satisfactory, continue refining it in the same conversation. You can ask Gemini to enlarge the text, change a color, or bring the final slide back into the visual language used by the rest of the deck.</p>
+<p><img src="/_astro/gem-adjust.UMpbG57O_hAgp7.webp" alt="Asking Gemini to revise the final slide prompt so its style matches the rest of the deck" loading="lazy" decoding="async" fetchpriority="auto" width="2262" height="1342"></p>
+<p><img src="/_astro/step-4.Bs7Ar50c_Gd4K7.webp" alt="Step 4: Refining individual slides through natural-language instructions" loading="lazy" decoding="async" fetchpriority="auto" width="1024" height="572"></p>
+<p>Finally, import the generated images into PowerPoint in order. The visual style is consistent enough for a real presentation.</p>
+<p><img src="/_astro/final-result.CWL-AOUu_Z1tP7GN.webp" alt="The finished year-end presentation generated with Gemini and Nano Banana Pro" loading="lazy" decoding="async" fetchpriority="auto" width="2880" height="1646"></p>
+<h2 id="4-takeaways">4. Takeaways</h2>
+<p>Both Gamma and Baoyu’s Gemini + Nano Banana Pro workflow are good options.</p>
+<ul>
+<li><strong>Gamma</strong> offers better editability and keeps generation, layout, and export inside one product.</li>
+<li><strong>Gemini + Nano Banana Pro</strong> makes better use of image generation and produces stronger, more consistent visuals, although the imported PowerPoint slides are still images.</li>
+</ul>
+<p>I personally prefer the second approach. After refining the prompts for a few slides, the deck should be ready to deliver.</p> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  
