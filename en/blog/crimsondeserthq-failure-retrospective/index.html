@@ -1,0 +1,789 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>After 390,000 Search Impressions, Why I Still Call This Project a Failure - frency.me</title><meta name="description" content="I built a game guide site with AI in a few days and earned 390,000 Google impressions in 134 days, only for AdSense to reject it as low-value content. This is a complete failure retrospective that discloses the domain, keyword, Git history, traffic, competitors, and flawed decisions."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/blog/crimsondeserthq-failure-retrospective/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/crimsondeserthq-failure-retrospective/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/crimsondeserthq-failure-retrospective/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/crimsondeserthq-failure-retrospective/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="After 390,000 Search Impressions, Why I Still Call This Project a Failure - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="I built a game guide site with AI in a few days and earned 390,000 Google impressions in 134 days, only for AdSense to reject it as low-value content. This is a complete failure retrospective that discloses the domain, keyword, Git history, traffic, competitors, and flawed decisions."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/crimsondeserthq-failure-retrospective/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.B4k_B3Ur.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.2rem,6vw,3.75rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:460px;border-radius:var(--radius);margin:0;object-fit:cover}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.CE_a4KFw.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/crimsondeserthq-failure-retrospective/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/crimsondeserthq-failure-retrospective/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/crimsondeserthq-failure-retrospective/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/crimsondeserthq-failure-retrospective/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/personal-blog-cover.DsbBhaQy_Z2dLDWi.webp" alt="After 390,000 Search Impressions, Why I Still Call This Project a Failure" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1672" height="941" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>After 390,000 Search Impressions, Why I Still Call This Project a Failure</h1> <p class="description" data-astro-cid-v3cnrnum>I built a game guide site with AI in a few days and earned 390,000 Google impressions in 134 days, only for AdSense to reject it as low-value content. This is a complete failure retrospective that discloses the domain, keyword, Git history, traffic, competitors, and flawed decisions.</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2026-08-22T00:00:00.000Z" data-astro-cid-v3cnrnum>8/22/2026</time> <a href="/en/categories/Project Retrospective/" data-astro-cid-v3cnrnum>Project Retrospective</a> <a href="/en/tags/AI/" data-astro-cid-v3cnrnum>#AI</a><a href="/en/tags/SEO/" data-astro-cid-v3cnrnum>#SEO</a><a href="/en/tags/Indie Hacking/" data-astro-cid-v3cnrnum>#Indie Hacking</a><a href="/en/tags/Content Business/" data-astro-cid-v3cnrnum>#Content Business</a><a href="/en/tags/Project Retrospective/" data-astro-cid-v3cnrnum>#Project Retrospective</a> </div> </header> <blockquote>
+<p>A retrospective on CrimsonDesertHQ. The core data runs through August 1, 2026, and the article was compiled on August 22, 2026. The analysis draws on Git history, site content, GSC, GA, Bing, Similarweb, Semrush, Ahrefs, the AdSense review result, and competitor pages.</p>
+</blockquote>
+<p><strong>Estimated reading time: 20–25 minutes. The article includes 38 original screenshots and evidence images.</strong></p>
+<p>This is not a growth tutorial about “getting 390,000 impressions in 134 days with an AI-built site,” and there is no SEO secret hidden at the end.</p>
+<p>I am going to disclose the keyword <code>crimson desert</code>, the domain <code>crimsondeserthq.com</code>, the main competitors, third-party traffic estimates, dirty data in the repository, content I later removed, and the exact ways I fooled myself. The reason is simple: this was my project, this is my blog, and the experiment has already missed its window. Hiding the names would only make the retrospective less useful.</p>
+<p>If you only want the conclusion, remember this:</p>
+<blockquote>
+<p><strong>I validated search traffic. I did not validate that the content was trustworthy, the product was useful, users would return, or any of it could become a business.</strong></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Validation layer</th><th>Signal I had at the time</th><th>Retrospective conclusion</th></tr></thead><tbody><tr><td>Traffic</td><td>390,614 Google impressions and 5,700 clicks</td><td>Passed: genuine search demand existed</td></tr><tr><td>Content</td><td>59 of 245 articles were later permanently redirected</td><td>Failed: scale grew faster than evidence and editorial capacity</td></tr><tr><td>Product</td><td>354 of 379 structured records were <code>legacy-unverified</code></td><td>Failed: the database had a shape, but no trustworthy data asset behind it</td></tr><tr><td>Business</td><td>AdSense rejected the site for “low-value content”</td><td>Failed: the site created no durable value the market would recognize</td></tr></tbody></table>
+<p>Of those four validation layers, I completed only the first. Every chart that follows merely explains why.</p>
+<h2 id="start-with-the-most-discouraging-data">Start With the Most Discouraging Data</h2>
+<p>If someone asked me today, “Is the keyword <code>crimson desert</code> still worth pursuing?” I would not lead with 390,000 impressions. I would start with the next four charts.</p>
+<h3 id="the-keyword-is-no-longer-cheap-to-enter">The keyword is no longer cheap to enter</h3>
+<p>On August 1, Semrush estimated about 550,000 monthly searches in the United States and 1.9 million worldwide, with a keyword difficulty of 65—“Hard.”</p>
+<p><img src="/_astro/semrush-keyword-overview.KGC1nFk1_mFpY9.webp" alt="Semrush keyword difficulty and search volume in August" loading="lazy" decoding="async" fetchpriority="auto" width="1584" height="950"></p>
+<p><em>Semrush snapshot from August: roughly 550,000 monthly US searches, 1.9 million worldwide, and KD 65.</em></p>
+<p>Ahrefs did not produce the same number, but its conclusion was hardly encouraging: KD 39, rated Hard, with an estimate that reaching the top ten would require followed links from roughly 53 websites.</p>
+<p><img src="/_astro/ahrefs-keyword-difficulty.CRQP1mFQ_ZDYKEL.webp" alt="Ahrefs keyword difficulty in August" loading="lazy" decoding="async" fetchpriority="auto" width="958" height="839"></p>
+<p><em>Ahrefs snapshot from August: KD 39, with an estimate of roughly 53 websites providing followed links to rank in the top ten. KD values from different platforms are not directly comparable.</em></p>
+<p>Both screenshots were taken around August 1. They do not reflect the difficulty I saw when choosing the keyword in March. I put them at the beginning to make one reality clear: at least today, a beginner without a brand, backlinks, or product capability cannot simply repeat what I did with a similar domain.</p>
+<h3 id="competition-is-rising-while-search-interest-keeps-falling">Competition is rising while search interest keeps falling</h3>
+<p>The US Google Trends data is even more discouraging. <code>crimson desert</code> reached 100 around the late-March launch window, then declined steadily.</p>
+<p>To avoid an ungrounded argument over whether “100 is really hot,” I later compared it with <code>steam</code>, a term with stable year-round demand. During launch week, March 22–29, the relative interest for <code>crimson desert</code> reached 77, briefly exceeding <code>steam</code> at 65. By late July, the former had fallen to roughly 5 while the latter remained around 60.</p>
+<p><img src="/_astro/google-trends-crimson-desert-vs-steam-one-year.BZoMWdpL_ZyKj9p.webp" alt="Google Trends comparison of crimson desert and steam over the past year" loading="lazy" decoding="async" fetchpriority="auto" width="2934" height="1240"></p>
+<p><em>Google Trends comparison for US web search. It shows both the strength of the launch event and how quickly event-driven demand faded. The two terms are jointly normalized when shown together, so the chart is useful for relative movement, not as a measure of search volume.</em></p>
+<p><img src="/_astro/google-trends-one-year.D4Lvv5jA_VrUzi.webp" alt="Google Trends over the past year" loading="lazy" decoding="async" fetchpriority="auto" width="1828" height="758"></p>
+<p>Looking only at the most recent three months, small periodic peaks still appear, but the baseline fell from nearly 100 in early May to roughly 15–20 by the end of July.</p>
+<p><img src="/_astro/google-trends-three-months.CkPYIllj_1bw4RE.webp" alt="Google Trends over the past three months" loading="lazy" decoding="async" fetchpriority="auto" width="1840" height="746"></p>
+<p>Google Trends values from 0 to 100 are a normalized index, not actual search counts. Semrush monthly volume is also a model-based estimate. A large apparent search total and steadily declining interest are therefore not contradictory. The trend that actually matters is this:</p>
+<blockquote>
+<p>The cost of competition is rising while incremental demand is shrinking.</p>
+</blockquote>
+<p>For a late entrant, that is harder than merely targeting a “difficult keyword.” You must invest in more content, build more links, and offer a better product to fight over a shrinking pool of new demand.</p>
+<hr/>
+<p>This also explains why I can openly name <code>crimson desert</code> and <code>crimsondeserthq.com</code>. It is not generosity; there is no arbitrage left to protect. The best timing window has closed, the competitive landscape has settled, an exact-match domain is not a moat, and AdSense classified the existing site as low-value content. I am not revealing a blue-ocean keyword. I am showing you an expired ticket. The same reason is why the 390,000 impressions later in this article are not a trophy: they happened inside a window that has passed and did not compound into a product moat.</p>
+<hr/>
+<h2 id="1-entering-in-march-the-launch-window-and-a-low-difficulty-keyword">1. Entering in March: The Launch Window and a Low-Difficulty Keyword</h2>
+<p>After March 15, I started checking game-related terms in Google Trends every day and screening ideas with suggestions from Claude and ChatGPT. I eventually chose <code>crimson desert</code>.</p>
+<p>My reasoning had three parts:</p>
+<ul>
+<li>The game was scheduled for release on March 20, so demand was about to surge.</li>
+<li>The third-party keyword difficulty I saw in mid-March was generally low, and the search results had not yet solidified.</li>
+<li>General guide sites had subpaths and platform sites had subdomains, but few people had built an independent root domain around the whole game.</li>
+</ul>
+<p>Unfortunately, I did not save Semrush or Ahrefs screenshots from the March selection process, so I cannot provide the exact KD from that time. All I can confirm is that the difficulty I saw was generally low. The KD 65 and KD 39 shown above describe the market more than four months later.</p>
+<p>On March 20, 2026, I registered <code>crimsondeserthq.com</code>, generated the design in Google Stitch, and used Claude Code to build the site on the MkSaaS template. The next day, I submitted it to Google Search Console, Google Analytics, and Bing Webmaster Tools.</p>
+<p>The production pipeline was very “2026”:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Find demand with Google Trends</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Use Claude / ChatGPT for keyword selection and research</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Generate the product visuals with Google Stitch</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Implement with Claude Code + MkSaaS</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Deploy on Cloudflare and connect GSC / GA / Bing</span></span></code></pre>
+<p>The pipeline’s greatest strength was speed. Its greatest danger was also speed. In a traditional development process, the cost of design, development, editing, and testing slows mistakes down. Once AI removed that friction, I could manufacture a site that “looked complete” before validating the data sources, understanding the game, or finding a product wedge.</p>
+<p>None of the tools were innocent or guilty. Claude, ChatGPT, Stitch, Claude Code, and MkSaaS all did what I asked. The real problem was that I confused “can be shipped” with “deserves to be shipped.”</p>
+<p>After 134 days, Google Search Console had recorded 390,614 impressions and 5,700 clicks. Google Analytics showed 9,133 active users. Bing contributed another 1,055 clicks.</p>
+<p>Those figures make a convincing headline for an “AI site + SEO cold start” success story. But Google AdSense called the site low-value content. Competitors had built maps, databases, calculators, progress tracking, and community distribution networks. Many pages and records in my repository lacked first-hand verification.</p>
+<p>Under a stricter standard, this was a failed experiment that caught a demand window without building lasting value.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Data source</th><th>Date range</th><th>Result</th><th>What it proves</th><th>What it does not prove</th></tr></thead><tbody><tr><td>Google Search Console</td><td>Mar 20–Jul 31</td><td>5,700 clicks, 390,614 impressions, 1.46% CTR</td><td>Genuine demand existed in search results</td><td>Content accuracy, user satisfaction, or brand formation</td></tr><tr><td>Google Analytics</td><td>Mar 20–Aug 1</td><td>9,133 active users, 35s average engagement</td><td>Users genuinely entered the site</td><td>They solved their problem or wanted to return</td></tr><tr><td>Bing Webmaster</td><td>Mar 24–Jul 28</td><td>1,055 clicks, 40,725 impressions, 2.59% CTR</td><td>Search traffic existed outside Google</td><td>A multi-channel distribution capability had been built</td></tr><tr><td>Similarweb</td><td>Apr–Jun estimate</td><td>17,589 visits, 5,863 per month</td><td>A rough indication of scale and the gap from competitors</td><td>Precise traffic</td></tr><tr><td>Semrush</td><td>Aug 1 snapshot</td><td>400 organic keywords, 23 referring domains, 38 backlinks</td><td>Coverage was growing while authority and links remained weak</td><td>First-party traffic</td></tr><tr><td>AdSense</td><td>Before Aug 1</td><td>Review rejected for low-value content</td><td>Site value and traffic are not the same thing</td><td>Which specific page caused the rejection</td></tr></tbody></table>
+<p>In one sentence: I validated traffic, while content, product, and business validation all failed.</p>
+<p><img src="/_astro/google-adsense-low-value-content.BlGZ0Ero_OVu4o.webp" alt="Google AdSense rejection for low-value content" loading="lazy" decoding="async" fetchpriority="auto" width="794" height="489"></p>
+<p><em>Site ownership was verified, but AdSense still rejected it for “low-value content.” This is the most important counter-signal in the retrospective.</em></p>
+<h2 id="2-the-real-timeline-in-git">2. The Real Timeline in Git</h2>
+<p>The repository includes earlier upstream commits from the MkSaaS template, so the oldest commit cannot be treated as the project’s start. The continuous sequence of changes that genuinely belongs to CrimsonDesertHQ begins on March 20.</p>
+<p>The first major project-specific change was <code>6301e1b1</code>. That commit modified 145 files, adding 6,740 lines and deleting 8,511. The template identity, homepage, navigation, content categories, bosses, mounts, weapons, author information, and deployment configuration were almost all replaced in one day. The diff looked impressive. Four months later, it also exposed the problem: before establishing any fact-checking process, I had already opened three fronts at once—a content site, a database, and a tool product.</p>
+<p>From March 20 through July 26, the repository accumulated 106 commits. The first five days alone produced 23, and March 27 produced 10 in one day. Git history cannot measure useful work, but it can show where my attention went with brutal honesty. Early commits centered on adding entries, adding pages, changing images, fixing descriptions, and supplementing SEO—not on player jobs, evidence, or reasons to return.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Phase</th><th>Key commits</th><th>What happened in Git</th><th>Thinking at the time</th><th>Problem revealed later</th></tr></thead><tbody><tr><td>Mar 20–24</td><td><code>6301e1b1</code>–<code>da928df6</code></td><td>Rebranded the site, added a sitemap, launched boss/mount/weapon data and the first guides</td><td>Catch the launch window first</td><td>Verification could not keep up with delivery speed</td></tr><tr><td>Mar 28–Apr 16</td><td><code>cce8fe36</code>–<code>018ed781</code></td><td>Repeatedly added weapons, bosses, and mounts while correcting images and descriptions</td><td>Build a “complete database” quickly</td><td>Frequent corrections showed the source data was unstable</td></tr><tr><td>May 10</td><td><code>58778c30</code></td><td>Added a 291-line <code>All Pailune Bosses</code> topic hub</td><td>Capture a long-tail cluster with one complete page</td><td>The direction was sound, but still depended on secondary-source aggregation</td></tr><tr><td>May 11</td><td><code>c491daa7</code></td><td>Removed <code>/ja/</code> and <code>/ko/</code>, returned 410 for old pages, redirected <code>/regions</code>, and unified canonicals</td><td>Fix index bloat</td><td>Early multilingual expansion had prioritized scale over quality</td></tr><tr><td>Jun 6–20</td><td><code>a4bc35b0</code>–<code>a1b2d1d5</code></td><td>Published content in batches almost every day</td><td>Cover more queries with volume</td><td>Created many tiny articles, overlapping topics, and verification debt</td></tr><tr><td>Jul 15</td><td><code>e92c45ec</code></td><td>Optimized high-impression Pailune, Camp, and other guides based on GSC</td><td>Improve CTR with data</td><td>Optimized entrances without solving the lack of original evidence</td></tr><tr><td>Jul 26</td><td><code>515afe0c</code></td><td>Launched editorial publication logic and permanently redirected 59 thin articles</td><td>Start contracting deliberately</td><td>Proved the early URL count was a liability, not an asset</td></tr></tbody></table>
+<p>By July 26, the repository contained 245 content files: 181 remained public, 59 had permanent redirects, and 5 remained unpublished. In other words, almost one quarter of the content was later judged unworthy of remaining as a standalone page.</p>
+<p>The structured database was worse. The repository contained 259 weapons, 92 bosses, and 28 mounts—a total of 379 records. Grouped by the verification status in the code:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Status</th><th style="text-align:right">Records</th><th style="text-align:right">Share</th></tr></thead><tbody><tr><td><code>legacy-unverified</code></td><td style="text-align:right">354</td><td style="text-align:right">93.4%</td></tr><tr><td><code>partial</code></td><td style="text-align:right">23</td><td style="text-align:right">6.1%</td></tr><tr><td><code>verified-external</code></td><td style="text-align:right">2</td><td style="text-align:right">0.5%</td></tr></tbody></table>
+<p>These figures may define the project more truthfully than GSC does: <strong>the site looked like a database, but our own code labeled 93.4% of its core data as unverified legacy records.</strong></p>
+<p>The two ratios look even worse side by side:</p>
+<ul>
+<li>Of 245 articles, 59 were later removed or merged: <strong>24.1%</strong>.</li>
+<li>Of 379 database records, 354 were unverified: <strong>93.4%</strong>.</li>
+</ul>
+<p>This was not a normal amount of late-stage optimization. The production system itself did not treat evidence as an admission requirement. The publish button existed before the verification workflow, so all that speed eventually became rework.</p>
+<h2 id="3-it-looked-like-a-product-but-it-was-only-a-shell">3. It Looked Like a Product, but It Was Only a Shell</h2>
+<p>Stitch’s direction was actually reasonable: a unified brand, prominent search, boss filters, a weapon database, a guide hub, and actionable card metadata. Visually, it packaged the site as a game knowledge product.</p>
+<p><img src="/_astro/stitch-design.Bal-rNNC_1yyzcH.webp" alt="Google Stitch design" loading="lazy" decoding="async" fetchpriority="auto" width="1914" height="857"></p>
+<p>The current homepage is genuinely close to the design: the dark visual style, game hero, search box, category entrances, and knowledge hub all shipped.</p>
+<p><img src="/_astro/site-crimsondeserthq-home.SgNPvMeq_kC781.webp" alt="Current CrimsonDesertHQ homepage" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1000"></p>
+<p>For a direct comparison, the next image places the design promise, the live homepage, and the evidence inside an article side by side. It captures the project’s mismatch better than anything else: the visual language says “database and tools,” while users mostly land on a collection of articles.</p>
+<p><img src="/_astro/slide13-design-site-evidence-pair.BUVpNAfO_iprUk.webp" alt="Design, live homepage, and content evidence compared" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="700"></p>
+<p>The problem was that visual completeness hid product incompleteness.</p>
+<p>The most valuable ideas in the design were the database and tools: filterable bosses, weapon stats, regions, drops, routes, and status. Yet the live <code>/weapons</code>, <code>/bosses</code>, <code>/mounts</code>, and <code>/regions</code> routes now permanently redirect to blog category pages. The database components and JSON remain in the code, but users ultimately receive article indexes.</p>
+<p>In retrospect, this was product regression:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Stitch concept: searchable, filterable, reusable structured tools</span></span>
+<span class="line"><span>                    ↓</span></span>
+<span class="line"><span>Early implementation: database pages + guides at scale</span></span>
+<span class="line"><span>                    ↓</span></span>
+<span class="line"><span>Current live site: database entrances redirect to blog categories</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Design promise</th><th>Actual delivery</th><th>Why it was insufficient</th></tr></thead><tbody><tr><td>Boss filters and strategy index</td><td>Boss article category</td><td>Users can browse titles but cannot complete tasks by region, weakness, or game version</td></tr><tr><td>Weapon database</td><td>Weapon article category</td><td>No reliable stats, acquisition methods, or comparable data</td></tr><tr><td>Regions and routes</td><td>Guide articles</td><td>No coordinate maps, route diagrams, or process screenshots</td></tr><tr><td>Site-wide search</td><td>Blog search</td><td>Finding a page is not the same as finding an answer</td></tr><tr><td>Structured cards</td><td>Large amounts of unverified JSON</td><td>The form was structured, but the facts lacked stable sources and a responsible maintainer</td></tr></tbody></table>
+<p>I used to call this “ship an MVP and fill in the data later.” Now I would call it <strong>borrowing visual credibility</strong>: the pages borrowed the trustworthy appearance of a mature product before delivering the data, verification, and maintenance that a mature product requires.</p>
+<p>The highest-traffic Pailune page is representative. It has a polished hero image, an author, and editorial standards added later, but no public source list, route map, coordinate map, or step-by-step screenshots. The repository file still contains three “needs review” comments.</p>
+<p><img src="/_astro/site-crimsondeserthq-pailune-guide.DGDlQb4h_qJlL.webp" alt="CrimsonDesertHQ Pailune guide" loading="lazy" decoding="async" fetchpriority="auto" width="1280" height="720"></p>
+<p>A repository scan of the 245 content files reveals several more problems:</p>
+<ul>
+<li>101 articles contain traces such as <code>SOURCES</code>, <code>SOURCE</code>, or <code>FACT CHECK</code>, but many are only code comments rather than citations visible to readers.</li>
+<li>7 articles still contain 35 “needs review” markers.</li>
+<li>No standard Markdown image references were found in article bodies. This does not prove that every article had no images, but it does show that “use original process screenshots to prove the conclusion” never became a consistent editorial rule.</li>
+<li>Many pages depended on AI searching, summarizing, and rewriting official explanations and other guides rather than on my own gameplay, measurements, recordings, and reproducible tests.</li>
+</ul>
+<p>AI dramatically increased my page-production speed, but it concealed a risk: content can read coherently without deserving trust.</p>
+<h2 id="4-my-site-data-the-traffic-was-real-but-traffic-cannot-substitute-for-value">4. My Site Data: The Traffic Was Real, but Traffic Cannot Substitute for Value</h2>
+<h3 id="41-gsc-clicks-entered-a-second-growth-phase-while-overall-interest-declined">4.1 GSC: clicks entered a second growth phase while overall interest declined</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Month</th><th style="text-align:right">Clicks</th><th style="text-align:right">Impressions</th><th style="text-align:right">CTR</th><th style="text-align:right">Weighted average position (approx.)</th></tr></thead><tbody><tr><td>Mar 20–31</td><td style="text-align:right">1,183</td><td style="text-align:right">57,756</td><td style="text-align:right">2.05%</td><td style="text-align:right">7.94</td></tr><tr><td>April</td><td style="text-align:right">865</td><td style="text-align:right">48,492</td><td style="text-align:right">1.78%</td><td style="text-align:right">9.19</td></tr><tr><td>May</td><td style="text-align:right">560</td><td style="text-align:right">44,812</td><td style="text-align:right">1.25%</td><td style="text-align:right">10.75</td></tr><tr><td>June</td><td style="text-align:right">1,429</td><td style="text-align:right">121,446</td><td style="text-align:right">1.18%</td><td style="text-align:right">8.74</td></tr><tr><td>July</td><td style="text-align:right">1,663</td><td style="text-align:right">118,108</td><td style="text-align:right">1.41%</td><td style="text-align:right">8.23</td></tr></tbody></table>
+<p>March contains only 12 days and coincides with the launch peak, so it cannot be compared directly with full months. But the second wave of growth in June and July was real: even as interest in the game declined, more long-tail pages entered the search results.</p>
+<p><img src="/_astro/gsc-daily-performance.B8xv-7Pi_ZaPwFH.webp" alt="GSC daily performance and seven-day moving average" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="1000"></p>
+<p>Compared with the preceding 28 days, the most recent 28 days saw impressions decline by about 4.0% while clicks rose by about 13.8%, with CTR improving from 1.19% to 1.41%. Titles, rankings, and page-query fit had improved.</p>
+<p>But the conclusion must remain within what the data truly proves: GSC shows that users were willing to click. It does not show that the answer was accurate or that they completed their task.</p>
+<h3 id="42-the-traffic-came-from-a-cluster-of-questions-not-the-head-term">4.2 The traffic came from a cluster of questions, not the head term</h3>
+<p>Among GSC’s top 1,000 queries, 145 Pailune/Pauline variants contributed 487 clicks, while 137 Camp-related queries contributed 205.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Query</th><th style="text-align:right">Clicks</th><th style="text-align:right">Impressions</th><th style="text-align:right">CTR</th><th style="text-align:right">Avg. position</th></tr></thead><tbody><tr><td><code>pailune bosses</code></td><td style="text-align:right">68</td><td style="text-align:right">790</td><td style="text-align:right">8.61%</td><td style="text-align:right">6.04</td></tr><tr><td><code>crimson desert classic vs default controls</code></td><td style="text-align:right">44</td><td style="text-align:right">610</td><td style="text-align:right">7.21%</td><td style="text-align:right">3.09</td></tr><tr><td><code>pauline bosses crimson desert</code></td><td style="text-align:right">34</td><td style="text-align:right">296</td><td style="text-align:right">11.49%</td><td style="text-align:right">6.11</td></tr><tr><td><code>crimson desert cloudcart failed to summon</code></td><td style="text-align:right">21</td><td style="text-align:right">1,326</td><td style="text-align:right">1.58%</td><td style="text-align:right">8.89</td></tr><tr><td><code>crimson desert camp upgrades</code></td><td style="text-align:right">21</td><td style="text-align:right">561</td><td style="text-align:right">3.74%</td><td style="text-align:right">8.84</td></tr></tbody></table>
+<p>The long-tail strategy itself was not wrong. The mistake was expanding “one page covers a cluster of questions” into “every question deserves a rapidly generated page.” The former is a topic hub; the latter easily becomes a second-hand summary of the search results.</p>
+<h3 id="43-ga-users-arrived-but-did-they-complete-the-task">4.3 GA: users arrived, but did they complete the task?</h3>
+<p>GA recorded 9,133 active users, 9,141 new users, roughly 44,000 events, and 35 seconds of average engagement per active user.</p>
+<p>Google Organic contributed 4,254 active users; Direct, 3,169; Bing Organic, 926; DuckDuckGo, 346; and Yahoo, 90. GA recorded 5,506 <code>google / organic</code> sessions, only about 3.4% fewer than the 5,700 clicks in GSC. The two first-party datasets agree directionally.</p>
+<p><img src="/_astro/ga-overview-top-content.ChRg7ept_rfAN9.webp" alt="GA users, engagement, top content, and sources" loading="lazy" decoding="async" fetchpriority="auto" width="2805" height="960"></p>
+<p><img src="/_astro/ga-acquisition-sessions.DsvqtH3P_77W6t.webp" alt="GA session sources and new-versus-returning user trend" loading="lazy" decoding="async" fetchpriority="auto" width="1345" height="865"></p>
+<p>GA also recorded referral traffic from ChatGPT. But the tracking did not consistently capture guide completion, successful on-site searches, related-guide clicks, scroll depth, or reasons for returning. Thirty-five seconds could mean “the answer solved my problem quickly” or “I glanced at it and realized it was useless.”</p>
+<h3 id="44-bing-and-third-party-tools-additional-perspectives">4.4 Bing and third-party tools: additional perspectives</h3>
+<p>From March 24 through July 28, Bing delivered 1,055 clicks from 40,725 impressions, for a 2.59% CTR.</p>
+<p><img src="/_astro/bing-webmaster-six-months.CjKIDJCq_Z2okr2y.webp" alt="Six-month Bing Webmaster performance" loading="lazy" decoding="async" fetchpriority="auto" width="1489" height="464"></p>
+<p>Bing’s scale was far smaller than Google’s and the integration cost was low. Its data still exposes a weakness: growth remained overwhelmingly dependent on search engines. We did not create stable return traffic through communities, video, or partnerships.</p>
+<p>Now consider third-party estimation tools. Similarweb estimated 17,589 visits from April through June, averaging 5,863 per month, with 1.79 pages per visit, a 21-second average duration, and a 42.74% bounce rate.</p>
+<p><img src="/_astro/similarweb-overview-metrics.C8jvTJIs_Z1MUUur.webp" alt="Similarweb overview for CrimsonDesertHQ" loading="lazy" decoding="async" fetchpriority="auto" width="1123" height="930"></p>
+<p><img src="/_astro/similarweb-monthly-visits.DIU5SLOP_ZW670i.webp" alt="Similarweb monthly visit trend for CrimsonDesertHQ" loading="lazy" decoding="async" fetchpriority="auto" width="1123" height="610"></p>
+<p><img src="/_astro/similarweb-geography.Bs_Rzq7L_Kh4vS.webp" alt="Similarweb geographic distribution for CrimsonDesertHQ" loading="lazy" decoding="async" fetchpriority="auto" width="1123" height="465"></p>
+<p>The Semrush snapshot from August 1 showed an Authority Score of 8, estimated organic traffic of 88, 400 organic keywords, 23 referring domains, and 38 backlinks.</p>
+<p><img src="/_astro/semrush-site-overview.afErHAeE_4vYGd.webp" alt="Semrush overview for CrimsonDesertHQ" loading="lazy" decoding="async" fetchpriority="auto" width="1567" height="953"></p>
+<p>Third-party estimates commonly understate absolute traffic, but they remain useful for understanding relative positions in keyword growth, authority, and link profiles.</p>
+<h2 id="5-the-competitors-were-not-one-kind-of-business-but-three-entirely-different-ones">5. The Competitors Were Not One Kind of Business, but Three Entirely Different Ones</h2>
+<p>First, a note on comparability: the Similarweb reports for Method and Questlog cover their entire root domains, including other games, so they cannot be compared directly with CrimsonDesertHQ. <code>crimsondesert.gaming.tools</code> and <code>crimsondesert.th.gl</code> are target-specific subdomains. <code>crimsondesert.app</code> and <code>crimsoncompanionapp.us</code>, like us, are independent domains.</p>
+<h3 id="51-start-with-scale-this-was-not-a-narrow-loss-but-a-two-order-of-magnitude-gap">5.1 Start with scale: this was not a narrow loss, but a two-order-of-magnitude gap</h3>
+<p>First compare only the independent domains and target subdomains that can be aligned directly. Similarweb’s estimated total visits from April through June were 17,589 for us and 5.239 million for <code>crimsondesert.gaming.tools</code>—about <strong>298 times</strong> ours. In Semrush’s August 1 snapshot, its estimated organic traffic was 9.1K and it ranked for 17.2K organic keywords, about <strong>103 times</strong> and <strong>43 times</strong> our figures respectively.</p>
+<p><img src="/_astro/semrush-competitor-scale-composite.DDrnhnHv_2760Q8.webp" alt="Semrush scale snapshots for four directly comparable sites" loading="lazy" decoding="async" fetchpriority="auto" width="1568" height="940"></p>
+<p><em>A composite of four original Semrush screenshots for a quick sense of scale. Refer to each site’s original screenshot and the table below for specific figures.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Site</th><th style="text-align:right">Total visits, Apr–Jun</th><th style="text-align:right">Monthly avg.</th><th style="text-align:right">Avg. duration</th><th style="text-align:right">Authority</th><th style="text-align:right">Organic traffic</th><th style="text-align:right">Organic keywords</th><th style="text-align:right">Referring domains</th><th style="text-align:right">Backlinks</th></tr></thead><tbody><tr><td>CrimsonDesertHQ</td><td style="text-align:right">17,589</td><td style="text-align:right">5,863</td><td style="text-align:right">0:21</td><td style="text-align:right">8</td><td style="text-align:right">88</td><td style="text-align:right">400</td><td style="text-align:right">23</td><td style="text-align:right">38</td></tr><tr><td>crimsoncompanionapp.us</td><td style="text-align:right">18,620</td><td style="text-align:right">6,207</td><td style="text-align:right">0:16</td><td style="text-align:right">6</td><td style="text-align:right">4</td><td style="text-align:right">71</td><td style="text-align:right">21</td><td style="text-align:right">26</td></tr><tr><td>crimsondesert.app</td><td style="text-align:right">655,247</td><td style="text-align:right">218,416</td><td style="text-align:right">0:54</td><td style="text-align:right">8</td><td style="text-align:right">210</td><td style="text-align:right">1.7K</td><td style="text-align:right">29</td><td style="text-align:right">54</td></tr><tr><td>crimsondesert.th.gl</td><td style="text-align:right">372,825</td><td style="text-align:right">124,275</td><td style="text-align:right">1:56</td><td style="text-align:right">39</td><td style="text-align:right">4.8K</td><td style="text-align:right">2.7K</td><td style="text-align:right">42</td><td style="text-align:right">157.7K</td></tr><tr><td>crimsondesert.gaming.tools</td><td style="text-align:right">5.239M</td><td style="text-align:right">1.746M</td><td style="text-align:right">4:29</td><td style="text-align:right">36</td><td style="text-align:right">9.1K</td><td style="text-align:right">17.2K</td><td style="text-align:right">72</td><td style="text-align:right">85.7K</td></tr></tbody></table>
+<p>Three reminders are necessary here: Similarweb and Semrush are both third-party estimates; their “traffic” metrics are not the same; and the absolute values may be far off. The point of placing them together is not to calculate revenue but to see the relative direction. When visit depth, session duration, organic keywords, and channel structure all diverge at once, “the tool sites offer more reusable value than ours” is no longer merely a subjective impression.</p>
+<p><code>crimsoncompanionapp.us</code> is a valuable counterexample. It offers more feature entrances than we did, yet third-party estimates place it at roughly our scale. That shows that turning a site into a dashboard is not itself the answer. Without real data, a complete task loop, and distribution, a tool interface can be just another kind of shell.</p>
+<h3 id="52-mature-content-platforms-method-and-questlog">5.2 Mature content platforms: Method and Questlog</h3>
+<p><a href="https://www.method.gg/crimson-desert">Method’s Crimson Desert section</a> remains primarily editorial, but it has clear categories, real gameplay screenshots, publication dates, and the audience, social accounts, author system, and internal distribution of the established Method brand.</p>
+<p><img src="/_astro/site-method-guides.BqtKdff3_Z2igojT.webp" alt="Method's Crimson Desert guide hub" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1000"></p>
+<p>Similarweb estimated 10.46 million total visits across Method’s entire domain from April through June, averaging 3.488 million per month, with 2.09 pages per visit and an average duration of 1 minute 17 seconds. Organic search accounted for 63.47%, direct for 22.84%, referrals for 6.59%, and social for 6.13%. Crimson Desert did not generate all that traffic, but the figures show that Method launches a new game section from the foundation of a mature platform.</p>
+<p><img src="/_astro/similarweb-method-overview.Crv6r0oG_1xrOUN.webp" alt="Similarweb overview for the full Method domain" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="850"></p>
+<p><a href="https://questlog.gg/crimson-desert/en">Questlog’s Crimson Desert section</a> is closer to a tool-based wiki. Its homepage places Database, Items, Equipment, Character Builder, Knowledge, and Map directly in the main navigation. Search is not blog retrieval; it is a primary product entrance.</p>
+<p><img src="/_astro/site-questlog-wiki.D4kOneja_Z1ov2ez.webp" alt="Questlog's Crimson Desert wiki" loading="lazy" decoding="async" fetchpriority="auto" width="1272" height="716"></p>
+<p>Similarweb estimated 7.951 million total visits across Questlog’s entire domain from April through June, averaging 2.650 million per month, with 6.23 pages per visit and an average duration of 3 minutes 55 seconds. Its channel mix was also more balanced than a search-only site: 42.42% organic search, 37.22% direct, 12.60% social, and 7.04% referrals.</p>
+<p><img src="/_astro/similarweb-questlog-overview.CCnDdDJf_XHV5a.webp" alt="Similarweb overview for the full Questlog domain" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="850"></p>
+<p>The lessons from these two businesses are entirely different. Method supports content quality with a brand and a complete editorial operation. Questlog treats search content as an entrance to a tool product.</p>
+<h3 id="53-tool-ecosystems-gamingtools-and-thgl">5.3 Tool ecosystems: gaming.tools and th.gl</h3>
+<p><a href="https://crimsondesert.gaming.tools">crimsondesert.gaming.tools</a> is not a batch of guide articles. It is a structured game database. Items, Characters, Quests, World, and Game Info are browsable entities, and its Interactive Map links directly to <code>crimsondesert.th.gl</code>.</p>
+<p><img src="/_astro/site-gaming-tools-database.CrJJFRn3_Z1I8sCi.webp" alt="The Crimson Desert database on gaming.tools" loading="lazy" decoding="async" fetchpriority="auto" width="1265" height="712"></p>
+<p>Similarweb estimated 5.239 million visits to the subdomain from April through June, averaging 1.746 million per month, with 4.24 pages per visit and an average duration of 4 minutes 29 seconds. Organic search accounted for 67.20%, but search was not its only channel: referrals contributed 7.84% and social 6.93%.</p>
+<p><img src="/_astro/similarweb-gaming-tools-overview.CuvXDee1_1llcLK.webp" alt="Similarweb overview for the gaming.tools subdomain" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="850"></p>
+<p>Semrush’s snapshot from the same day showed an Authority Score of 36, estimated organic traffic of 9.1K, 17.2K organic keywords, 72 referring domains, and 85.7K backlinks. Its keyword count was roughly 43 times ours. The entities, relationships, and query entrances in its database continually generate indexable pages without requiring an editor to decide what to write next every day.</p>
+<p><img src="/_astro/semrush-gaming-tools.BGcjUAUR_2bvRmX.webp" alt="Semrush competitor snapshot for gaming.tools" loading="lazy" decoding="async" fetchpriority="auto" width="1567" height="939"></p>
+<p>The core of <a href="https://crimsondesert.th.gl">crimsondesert.th.gl</a>, meanwhile, is an interactive map: 2 maps, 102,665 locations, category filters, player tracking, automatic discovery, and a changelog. Users do not open it to read an article. They use it repeatedly while playing.</p>
+<p><img src="/_astro/site-th-gl-home.CHoJcRD4_Z1pGWbe.webp" alt="Crimson Desert interactive map on th.gl" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1000"></p>
+<p>Similarweb estimated 372,825 visits over three months for the th.gl subdomain, averaging 124,275 per month, with 2.62 pages per visit and an average duration of 1 minute 56 seconds. Organic search accounted for only 33.31%, while direct traffic contributed 27.37%, social 22.44%, and referrals 15.75%. That is far healthier than our almost total dependence on search.</p>
+<p><img src="/_astro/similarweb-th-gl-overview.fRsZDw1-_Z2obmJq.webp" alt="Similarweb overview for the th.gl subdomain" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="850"></p>
+<p>The two products form a natural network. The database explains “what is this?” and the map answers “where is it?” Those links arise from real player workflows and are much healthier than links stacked manually to increase DR.</p>
+<p><img src="/_astro/similarweb-gaming-tools-referrals.BaxStBq__ZvWXLL.webp" alt="Similarweb referral and outgoing network for gaming.tools" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="1060"></p>
+<p><img src="/_astro/similarweb-th-gl-referrals.DqPF4g15_QtkNT.webp" alt="Similarweb referral and outgoing network for th.gl" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="1060"></p>
+<p>The Semrush snapshot magnifies the difference: th.gl had an Authority Score of 39, estimated organic traffic of 4.8K, 2.7K keywords, 42 referring domains, 157.7K backlinks, and 765 pages cited by AI systems. The platform’s root-domain strength and cross-site network clearly contribute, so the 157.7K links should not be interpreted as 157.7K independent high-quality recommendations. Still, the figures show that we were not competing with an isolated small site, but with a tool ecosystem that already had authority and internal linking power.</p>
+<p><img src="/_astro/semrush-th-gl.DKTMc8D5_Z286AmU.webp" alt="Semrush competitor snapshot for th.gl" loading="lazy" decoding="async" fetchpriority="auto" width="1577" height="955"></p>
+<h3 id="54-independent-tool-sites-crimsondesertapp-and-crimsoncompanionappus">5.4 Independent tool sites: crimsondesert.app and crimsoncompanionapp.us</h3>
+<p>Like us, <a href="https://crimsondesert.app">crimsondesert.app</a> uses an independent domain. Unlike us, its homepage centers its value on an interactive map, wiki, crafting calculator, and progress tracking. The live map displays 9,323 markers with region and category filters.</p>
+<p><img src="/_astro/site-crimsondesert-app-home.Dy9cP2Dq_1ydBNM.webp" alt="crimsondesert.app homepage" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1000"></p>
+<p><img src="/_astro/site-crimsondesert-app-map.DS7zjunv_1WUe6v.webp" alt="crimsondesert.app interactive map" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1000"></p>
+<p>Similarweb estimated 655,247 visits over three months, averaging 218,416 per month, with 3.15 pages per visit and an average duration of 54 seconds. Organic search accounted for 64.92%, direct for 20.45%, referrals for 7.06%, and social for 6.94%.</p>
+<p><img src="/_astro/similarweb-app-overview.CeEofXy9_Z1bzOP3.webp" alt="Similarweb overview for crimsondesert.app" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="850"></p>
+<p>Semrush gave it the same Authority Score as ours—8—but estimated 1.7K organic keywords, 210 organic traffic, 29 referring domains, and 54 backlinks. Its keyword coverage was roughly 4.25 times ours. Even without a large gap in link volume, structured tools can naturally generate more indexable entities and search entrances.</p>
+<p><img src="/_astro/semrush-crimsondesert-app.C0xMgVsA_Z12Ot49.webp" alt="Semrush snapshot for crimsondesert.app" loading="lazy" decoding="async" fetchpriority="auto" width="1559" height="933"></p>
+<p><a href="https://crimsoncompanionapp.us">crimsoncompanionapp.us</a> looks even more like a back-office product, with separate entrances for a world map, characters, mounts, camp, skill tree, collectibles, quest log, bosses, codex, weapons, crafting, notes, and a Build Planner.</p>
+<p><img src="/_astro/site-crimsoncompanionapp-dashboard.C6JmI2C1_Z2nGXok.webp" alt="crimsoncompanionapp.us dashboard" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="1000"></p>
+<p>But “looks feature-rich” does not equal success. Similarweb estimated only 18,620 visits over three months, or 6,207 per month—almost the same order of magnitude as our 5,863—with 2.16 pages per visit and an average duration of just 16 seconds. Semrush estimated only 71 organic keywords and 4 organic traffic.</p>
+<p><img src="/_astro/similarweb-companion-overview.BHcgEQdH_2d5uBR.webp" alt="Similarweb overview for crimsoncompanionapp.us" loading="lazy" decoding="async" fetchpriority="auto" width="994" height="850"></p>
+<p><img src="/_astro/semrush-crimsoncompanionapp-us.BmdbdzSU_Z983oQ.webp" alt="Semrush snapshot for crimsoncompanionapp.us" loading="lazy" decoding="async" fetchpriority="auto" width="1580" height="935"></p>
+<p>This competitor matters just as much to my conclusion. Building many interfaces, statistic cards, and feature entrances can still produce a “more product-like shell.” If the data is not trustworthy, the features do not complete real tasks, and users have no reason to return, even a comprehensive dashboard will not earn distribution automatically.</p>
+<h2 id="6-what-the-competitors-truly-had-was-more-than-traffic">6. What the Competitors Truly Had Was More Than Traffic</h2>
+<p>If you look only at visits, it is easy to conclude, “Their domains are stronger and they have more resources, so I could never win.” That statement is not wrong, but it offers almost no actionable insight. The questions worth answering are why users open them a second time and why peers choose to link to them.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Site</th><th>Task the user completes</th><th>Why they might return</th><th>Why others might cite it</th></tr></thead><tbody><tr><td>Method</td><td>Read editorially verified guides</td><td>Stable authors, brand, and update process</td><td>Established media identity and citable editorial content</td></tr><tr><td>Questlog</td><td>Look up items, equipment, characters, builds, and maps</td><td>Player profiles and databases accumulate over time</td><td>Data entities and tool entrances fit into other workflows</td></tr><tr><td>gaming.tools</td><td>Search quests, items, characters, and world data</td><td>Players repeatedly query it during gameplay</td><td>Database pages are natural factual nodes</td></tr><tr><td>th.gl</td><td>Find coordinates, filter markers, and track map progress</td><td>Map state and player progress persist</td><td>Coordinates and maps are infrastructure for other guides</td></tr><tr><td>crimsondesert.app</td><td>Use maps, a wiki, calculators, and progress tracking</td><td>Multiple tasks connect inside one product</td><td>Structured markers and computed results can be shared</td></tr><tr><td>CrimsonDesertHQ</td><td>Enter an article from a search result</td><td>No persistent state or clear second task</td><td>Most information came from the same public sources, with little new evidence</td></tr></tbody></table>
+<p>Our flow was basically a straight line:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>Search result → article → leave</span></span></code></pre>
+<p>Mature tool sites create a loop:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="text"><code><span class="line"><span>The database explains “what is this?”</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>The map answers “where is it?”</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>The tracker records “have I completed it?”</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Communities and guides keep citing the data</span></span>
+<span class="line"><span>        ↺</span></span></code></pre>
+<p>The backlink gap did not exist merely because I failed to send outreach emails. More fundamentally, we never created an object embedded in someone else’s workflow. An AI-aggregated article can answer a question once. A map, dataset, or calculator can become infrastructure for other products, videos, and discussions.</p>
+<h2 id="7-four-core-mistakes">7. Four Core Mistakes</h2>
+<h3 id="71-i-mistook-ais-search-and-synthesis-ability-for-content-capability">7.1 I mistook AI’s search and synthesis ability for content capability</h3>
+<p>AI excels at searching, summarizing, rewriting, and adding structure quickly. It cannot automatically supply proof that comes from playing, testing, and capturing the evidence yourself. Much of the project’s content reorganized official patches, other guides, and search results through AI, leaving its sources highly overlapping with competitors.</p>
+<p>Even if the prose contained no obvious errors, users had little reason to choose our second-hand summary over the original source, an established publication, or an interactive tool. That is the aspect of “low-value content” most worth examining. Low value does not necessarily mean too few words or an ugly page. It often means we added no new information.</p>
+<h3 id="72-i-treated-rows-of-data-and-numbers-of-pages-as-assets">7.2 I treated rows of data and numbers of pages as assets</h3>
+<p>379 records sound like an asset, but 354 were labeled <code>legacy-unverified</code>. If weapon locations, boss weaknesses, drop rates, or mount attributes cannot be reproduced, every additional record increases maintenance and trust risk. In June, we also published content in batches almost every day. That did expand impressions in the short term. But by July, we had removed 59 articles, and many URLs had become liabilities instead. Every thin page consumed crawl budget and maintenance attention.</p>
+<p>In retrospect, a true asset should become more trustworthy over time. If adding pages makes you more afraid to update them, they are simply liabilities.</p>
+<h3 id="73-i-completed-the-visual-delivery-without-finding-a-product-wedge">7.3 I completed the visual delivery without finding a product wedge</h3>
+<p>The Stitch design, homepage, and dashboard made it easy to believe that “the product was finished.” But users needed to complete a specific job: find an item, plan a route, evaluate a build, or record collection progress.</p>
+<p>Our positioning kept drifting among wiki, database, guides, news, and troubleshooting. In the end, none became irreplaceable. The contrast with each competitor’s clear product wedge could not have been sharper.</p>
+<h3 id="74-i-did-not-build-backlinksor-create-anything-worth-linking-to">7.4 I did not build backlinks—or create anything worth linking to</h3>
+<p>Semrush recognized only 23 referring domains and 38 backlinks. The project had no systematic community distribution, but the deeper problem was that we created nothing people had reason to cite. Original maps, public datasets, and embeddable calculators can attract links naturally. AI-aggregated articles rarely do.</p>
+<p>The 390,000 impressions made us believe we were progressing and encouraged us to treat search clicks as the success metric. But search impressions only signal demand. The missing metrics were task completion, voluntary returns, branded search, and non-search traffic. Had we watched those numbers, we would have stopped piling up pages sooner and focused on the data and product.</p>
+<h3 id="ai-was-not-the-root-cause-the-missing-verification-loop-was">AI was not the root cause; the missing verification loop was</h3>
+<p>It would also be convenient to blame everything on AI: “The content failed because AI generated it.” But replacing Claude and ChatGPT with a group of outsourced editors who had never played the game and only knew how to search and rewrite would probably have produced the same result.</p>
+<p>The production system was missing four gates:</p>
+<ol>
+<li><strong>Source gate:</strong> Where did this fact come from, and what game version and date does it apply to?</li>
+<li><strong>Reproduction gate:</strong> Can I or a trusted person reproduce the same result in the game?</li>
+<li><strong>Product gate:</strong> Does this solve a real task, or merely create one more URL?</li>
+<li><strong>Distribution gate:</strong> Apart from a search engine, who will actively pass it to the next user?</li>
+</ol>
+<p>AI accelerated a pipeline with no gates. It was not the only cause, but it allowed the problem to expand to 245 articles and 379 records in 134 days.</p>
+<h2 id="8-what-actually-went-right">8. What Actually Went Right</h2>
+<p>A failure retrospective that lists only mistakes can easily become hindsight theater. The following actions were valid in themselves; I simply extrapolated them too far.</p>
+<h3 id="81-i-found-a-real-event-window">8.1 I found a real event window</h3>
+<p>A genuine opening for a new site existed around March 20. The Trends peak during launch week, 1,183 GSC clicks in 12 days, and the many question-shaped queries that followed all prove the topic was not imaginary. The mistake was not choosing a term no one searched. It was treating short-term event demand as a long-term asset.</p>
+<h3 id="82-the-launch-was-fast-enough">8.2 The launch was fast enough</h3>
+<p>Keyword selection, domain purchase, design, and search-engine submission took only a few days. Speed has real value in trend-driven projects. Next time I will still move quickly, but “launch quickly” will mean launching one verifiable wedge—not opening an entire wiki, database, and content matrix at once.</p>
+<h3 id="83-long-tail-topic-hubs-worked-better-than-fighting-for-the-head-term">8.3 Long-tail topic hubs worked better than fighting for the head term</h3>
+<p>The clicks did not come from forcing the homepage to rank for <code>crimson desert</code>. They came from specific problems involving Pailune, Camp, control schemes, and summon failures. A topic hub such as <code>All Pailune Bosses</code> was the right direction. The mistake was later fragmenting those hubs into many small articles with no independent value.</p>
+<h3 id="84-i-connected-first-party-analytics-early-enough">8.4 I connected first-party analytics early enough</h3>
+<p>Connecting GSC, GA, and Bing on the second day gave me the evidence to overturn my optimistic interpretation. The tracking lacked task completion, successful internal searches, and reasons for returning, but at least the project did not remain at “I feel like the SEO is working.”</p>
+<p>These correct actions are worth keeping. They improve the efficiency of an experiment, but they cannot replace product value.</p>
+<h2 id="9-three-things-i-would-do-next-time">9. Three Things I Would Do Next Time</h2>
+<h3 id="91-stop-expanding-and-clean-up-trustworthiness">9.1 Stop expanding and clean up trustworthiness</h3>
+<p>First, I would pause AI batch publishing and stop treating URL growth as a goal. I would remove or merge thin pages that have no standalone value. Then I would add the game version, source, verifier, and confidence level to every database record and establish a strict evidence standard—for example, requiring my own video screenshots, explicit cross-verification, or an official source. Updated dates and known uncertainties would be public, and “needs review” content would actually come offline instead of hiding in the code.</p>
+<h3 id="92-choose-one-tool-wedge">9.2 Choose one tool wedge</h3>
+<p>I would stop trying to cover a complete map, wiki, database, and guide site. I would select one task that competitors have not solved well and that I can verify myself. Examples might be a searchable database of mechanics before and after each patch, or an evidence-backed log of changes to boss moves. The tool need not be large, but it must give users a reason to open it a second time.</p>
+<h3 id="93-treat-distribution-as-part-of-the-product">9.3 Treat distribution as part of the product</h3>
+<p>Distribution must be designed up front: publish original findings on Reddit or Discord instead of dropping article links; give creators citable chart components; connect with external tools through workflow-based links. Until the content has first-hand evidence, the tool has reusable value, users return, and non-search traffic forms, do not touch AdSense. It merely adds ads awkwardly to a low-retention product.</p>
+<h2 id="10-how-i-would-rebuild-it-if-i-could-return-to-march-20">10. How I Would Rebuild It If I Could Return to March 20</h2>
+<p>I would not abandon the opportunity. I would reduce the scope to one tenth of the original.</p>
+<h3 id="days-02-validate-one-task-before-building-a-complete-site">Days 0–2: validate one task before building a “complete site”</h3>
+<ul>
+<li>Collect 30 verbatim player problems from Reddit, Discord, Steam communities, and search suggestions instead of asking AI to generate categories first.</li>
+<li>Choose one question I can verify personally, such as changes to boss moves, differences in mechanics before and after a patch, or a collectible route through one region.</li>
+<li>Define the fields: source, game version, collection date, screenshot, verifier, confidence level, and known disputes.</li>
+<li>Promise only that one thing on the homepage. Do not show entrances for a map, wiki, database, Build Planner, or anything else not yet delivered.</li>
+</ul>
+<h3 id="days-37-build-a-wedge-worth-opening-twice">Days 3–7: build a wedge worth opening twice</h3>
+<ul>
+<li>Publish 10–20 high-confidence records instead of 100 AI-completed ones.</li>
+<li>Require a first-hand screenshot or a verifiable official source for every record.</li>
+<li>Let users filter, save, compare, or inspect version changes, so at least one useful state survives after the article has been read.</li>
+<li>Track more than page views: record successful searches, filter usage, copying, saving, related-task navigation, and seven-day returns.</li>
+</ul>
+<h3 id="week-2-test-distribution-before-expanding-content">Week 2: test distribution before expanding content</h3>
+<ul>
+<li>Publish the raw findings in communities and see whether people discuss the data itself or merely the article title.</li>
+<li>Invite guide writers and video creators to identify errors, and allow them to cite the charts or data.</li>
+<li>If no one saves, cites, or returns voluntarily, keep improving the product rather than adding 50 pages to conceal the problem.</li>
+</ul>
+<h3 id="three-stop-conditions">Three stop conditions</h3>
+<p>Before the first line of scale-oriented code, the first batch of articles, or the first AdSense application, I would require the project to pass three gates:</p>
+<ol>
+<li><strong>Users must return:</strong> at least some users come back without a new search.</li>
+<li><strong>Peers choose to cite it:</strong> a real creator, community post, or tool site voluntarily references the data.</li>
+<li><strong>I am willing to stand behind the data:</strong> every key record has a source, version, evidence, and a clearly responsible maintainer.</li>
+</ol>
+<p>If none of the three gates opens, then higher search impressions should be a stronger warning: I may be standing at a traffic entrance, but I have not built a product.</p>
+<h2 id="11-if-you-still-want-to-repeat-this">11. If You Still Want to Repeat This</h2>
+<p>The keyword and domain are now fully public. I am not worried about copycats. But disclosure is not a recommendation.</p>
+<ul>
+<li>Do not use August’s KD to reverse-engineer my March decision. The third-party difficulty was generally low at the time, but I did not save screenshots. That is an evidence gap this retrospective cannot repair.</li>
+<li>Do not treat 1.9 million global monthly searches as a traffic pool waiting to be distributed to a new site. Brand sites, Steam, Wikipedia, PlayStation, publishers, and established tools already occupy the results.</li>
+<li>Do not assume another exact-match domain will reproduce the outcome. A domain does not solve authority, content evidence, tool data, or distribution.</li>
+<li>Do not treat AI-generated volume as a competitive advantage. Competitors can use AI too. First-hand data, maintenance capability, and user relationships are the scarce resources.</li>
+<li>Do not assume that adding features guarantees success merely because <code>crimsoncompanionapp.us</code> has a more complete interface than ours. Task completion and distribution remain hard gates.</li>
+</ul>
+<p>If you still want to build something, a better opportunity may be a small task that existing Crimson Desert sites still handle poorly, completed exceptionally well with verifiable data—not another complete site.</p>
+<hr/>
+<p>In retrospect, the experiment was not worthless. It validated that new-site windows genuinely exist around major game launches, that long-tail queries are better than head terms for a cold start, and that AI can dramatically compress design and development time. It also proved something more costly: shipping speed is not content credibility, page count is not a data asset, and search visibility is not a product moat.</p>
+<p><strong>Failure did not mean getting no traffic. It meant that even after the traffic arrived, I still had not built a product users had to revisit, peers wanted to cite, and I was willing to hold myself accountable for.</strong></p>
+<h2 id="data-definitions-and-sources">Data Definitions and Sources</h2>
+<ul>
+<li>Google Search Console: <code>crimsondeserthq.com-Performance-on-Search-2026-08-01</code>, web search, 2026-03-20 through 2026-07-31.</li>
+<li>Google Analytics: <code>GA-用户行为.pdf</code>, 2026-03-20 through 2026-08-01.</li>
+<li>Bing Webmaster: <code>crimsondeserthq.com_SearchPerformanceOverview_All_2026_8_1.csv</code> and <code>bing数据.png</code>, 2026-03-24 through 2026-07-28.</li>
+<li>Similarweb: seven <code>网站分析与洞见.Apr_2026_-_Jun_2026</code> PDFs, all covering April through June 2026 and all based on third-party model estimates.</li>
+<li>Semrush and Ahrefs: screenshot snapshots from around 2026-08-01; both are third-party estimates.</li>
+<li>Google Trends: US web search over the past year and the past three months; values are normalized indexes.</li>
+<li>Site screenshots: captured while visiting each website on 2026-08-01. Item counts and marketing language shown on those pages are analyzed as product communication and have not been independently verified here.</li>
+<li>Git and repository statistics: based on the local repository as of 2026-08-01. Article counts come from content files in <code>content/blog</code>; structured-data counts come from <code>verification.status</code> in <code>data/weapons.json</code>, <code>data/bosses.json</code>, and <code>data/mounts.json</code>.</li>
+<li>“Weighted average position” is an approximation calculated from daily GSC impressions and daily average position. It is not the official aggregate position reported by GSC.</li>
+</ul> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  
