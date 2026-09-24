@@ -1,0 +1,103 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>A System Upgrade for an Indonesian Client Got Stuck at File Transfer - frency.me</title><meta name="description" content="Sunlogin file transfers disconnected, then Google Drive restricted sharing of an archive. Wormhole finally got the files across. A small lesson from a remote system upgrade."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/blog/remote-file-transfer-wormhole/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/blog/remote-file-transfer-wormhole/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/blog/remote-file-transfer-wormhole/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/blog/remote-file-transfer-wormhole/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="A System Upgrade for an Indonesian Client Got Stuck at File Transfer - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="Sunlogin file transfers disconnected, then Google Drive restricted sharing of an archive. Wormhole finally got the files across. A small lesson from a remote system upgrade."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/blog/remote-file-transfer-wormhole/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.DatK_8tg.css">
+<style>header[data-astro-cid-v3cnrnum]{margin-top:28px;padding-block-end:32px;border-block-end:1px solid var(--color-border);text-align:start;h1{color:var(--color-main);font-size:clamp(2.1rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-.05em;line-height:1.08}}.description[data-astro-cid-v3cnrnum]{margin-top:18px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}.article-meta[data-astro-cid-v3cnrnum]{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:20px;font-family:var(--font-mono);font-size:.75rem}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]{color:var(--color-muted);text-decoration:none}.article-meta[data-astro-cid-v3cnrnum] a[data-astro-cid-v3cnrnum]:hover{color:var(--color-theme)}.cover[data-astro-cid-v3cnrnum]{width:100%;max-height:520px;border-radius:var(--radius);margin:0;object-fit:cover}@media(max-width:640px){header[data-astro-cid-v3cnrnum]{margin-top:22px;padding-block-end:26px}header[data-astro-cid-v3cnrnum] h1[data-astro-cid-v3cnrnum]{font-size:clamp(1.85rem,9vw,2.35rem);line-height:1.12}.description[data-astro-cid-v3cnrnum]{margin-top:14px;font-size:1rem}.article-meta[data-astro-cid-v3cnrnum]{gap:7px 12px;margin-top:16px}.cover[data-astro-cid-v3cnrnum]{max-height:none;border-radius:var(--radius-small)}}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.D9822WaT.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/remote-file-transfer-wormhole/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/remote-file-transfer-wormhole/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/blog/remote-file-transfer-wormhole/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/blog/remote-file-transfer-wormhole/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <article class="article-shell" data-astro-cid-uwv4mmhs><img src="/_astro/wormhole.DxpGNWRG_2toa3K.webp" alt="A System Upgrade for an Indonesian Client Got Stuck at File Transfer" data-astro-cid-v3cnrnum="true" loading="lazy" decoding="async" fetchpriority="auto" width="1835" height="857" class="cover"><header data-astro-cid-v3cnrnum> <h1 data-astro-cid-v3cnrnum>A System Upgrade for an Indonesian Client Got Stuck at File Transfer</h1> <p class="description" data-astro-cid-v3cnrnum>Sunlogin file transfers disconnected, then Google Drive restricted sharing of an archive. Wormhole finally got the files across. A small lesson from a remote system upgrade.</p> <div class="article-meta" data-astro-cid-v3cnrnum> <time datetime="2026-09-24T00:00:00.000Z" data-astro-cid-v3cnrnum>9/24/2026</time> <a href="/en/categories/Developer Notes/" data-astro-cid-v3cnrnum>Developer Notes</a> <a href="/en/tags/Remote Collaboration/" data-astro-cid-v3cnrnum>#Remote Collaboration</a><a href="/en/tags/File Transfer/" data-astro-cid-v3cnrnum>#File Transfer</a><a href="/en/tags/Google Drive/" data-astro-cid-v3cnrnum>#Google Drive</a><a href="/en/tags/Wormhole/" data-astro-cid-v3cnrnum>#Wormhole</a> </div> </header> <p>I was recently upgrading a system in an Indonesian client’s environment. The plan was straightforward: send over the upgrade packages, then continue with deployment. Instead, I got stuck at the file transfer step.</p>
+<p>A working remote desktop connection does not guarantee a successful file transfer. And a successful upload does not necessarily mean the recipient can download the file. This experience made both points very concrete.</p>
+<h2 id="sunlogin-the-desktop-worked-but-the-file-transfer-disconnected">Sunlogin: The Desktop Worked, but the File Transfer Disconnected</h2>
+<p>I started with the international version of Sunlogin. Remote desktop access worked fine, but large file transfers could fail when the connection fluctuated.</p>
+<p><img src="/_astro/remote-disconnected.5ZOOE3v7_2lxaME.webp" alt="Sunlogin remote file window showing a disconnected session with error code 57448" loading="lazy" decoding="async" fetchpriority="auto" width="1336" height="950"></p>
+<p>The screenshot shows a disconnected session with error code <code>57448</code>. The interface lists possible causes, including the other party ending remote control, unlinking the host, or signing out. That message alone does not establish the actual cause. The immediate problem was simpler: the file had not made it across.</p>
+<p>Since transferring through the remote access tool was not working out, I tried cloud storage.</p>
+<h2 id="google-drive-uploaded-but-not-shareable">Google Drive: Uploaded, but Not Shareable</h2>
+<p>I had previously bought a Google One subscription on Xianyu for a little over ten yuan, so I used Google Drive to upload the files.</p>
+<p>Some files transferred without trouble. The upgrade included small ZIP files as well as larger image archives, one of which was close to 900 MB.</p>
+<p><img src="/_astro/drive-upload.Dcsd1HMa_ZsfY8m.webp" alt="Google Drive file list and upload progress, with project filenames and the folder URL redacted" loading="lazy" decoding="async" fetchpriority="auto" width="1691" height="930"></p>
+<p>Then the large archive ran into another problem: it was flagged, preventing me from sharing it normally. Opening it displayed a warning that translates as:</p>
+<blockquote>
+<p>This file looks suspicious. Only the owner can view it.</p>
+</blockquote>
+<p><img src="/_astro/drive-warning.Ba2_PQOO_Z1FjGpk.webp" alt="Google Drive warning stating that the file looks suspicious and only its owner can view it" loading="lazy" decoding="async" fetchpriority="auto" width="2170" height="725"></p>
+<p>The warning tells me that access was restricted at that point. It does not establish that file size or a particular archive format caused the restriction. For this delivery, the practical result was clear: I could see the file, but the client could not get it.</p>
+<h2 id="wormhole-slower-this-time-but-the-transfer-finished">Wormhole: Slower This Time, but the Transfer Finished</h2>
+<p>I eventually tried <a href="https://wormhole.app/">Wormhole</a>, which ChatGPT had suggested.</p>
+<p>The basic workflow is straightforward: select a file, generate a sharing link, and have the recipient open it to download. Its <a href="https://wormhole.app/">official website</a> describes end-to-end encryption and automatically expiring sharing links.</p>
+<p><img src="/_astro/wormhole.DxpGNWRG_2toa3K.webp" alt="Wormhole sharing page showing 30% progress, with the filename and sharing link redacted" loading="lazy" decoding="async" fetchpriority="auto" width="1835" height="857"></p>
+<p>On the connection I was using, Wormhole felt somewhat slower than Google Drive. But the file eventually transferred successfully, and I could finally move on with the upgrade.</p>
+<p>The screenshot captures the transfer in progress at 30%. The successful completion came afterward, during my actual use of the tool.</p>
+<h2 id="keep-another-option-ready-for-remote-delivery">Keep Another Option Ready for Remote Delivery</h2>
+<p>This was not a controlled speed test or an exhaustive feature comparison. I simply needed to get the files to the client.</p>
+<p>My takeaway is to keep options available across remote desktop software, cloud storage, and temporary file sharing. When one route fails, switching tools can sometimes save more time than repeatedly trying the same thing.</p>
+<p>If large remote file transfers keep disconnecting, or an uploaded cloud file is unavailable to the recipient, <a href="https://wormhole.app/">Wormhole</a> is an option to try. It solved my problem on this occasion; speed and reliability will still depend on the network conditions at both ends.</p>
+<p><em>Project filenames and sharing addresses have been redacted in the screenshots.</em></p> </article> <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button aria-label="Back to top" data-astro-cid-wlspcwf4> <span class="material-icons-sharp" data-astro-cid-wlspcwf4>arrow_upward</span> </button> </back-to-top>  <script type="module">class i extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=document.querySelector("article");if(!t||t.innerText.length<500)return;const e=()=>{window.scrollY>300?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",e,{passive:!0}),o?.addEventListener("click",s),e()}}customElements.define("back-to-top",i);</script>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html>  
