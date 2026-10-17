@@ -1,0 +1,83 @@
+<!DOCTYPE html><!--
+
+  Source Code:
+  https://github.com/psephopaiktes/astro-i18n-starter
+
+--><html lang="en"> <head><meta charset="UTF-8"><title>Reading Notes - frency.me</title><meta name="description" content="Curated reading notes, key takeaways, and mental models from books that shaped my thinking."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/en/books/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/books/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/books/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/books/"><!-- icon --><link rel="icon" type="image/png" href="/favicon.png"><link rel="icon alternate" type="image/svg+xml" href="/favicon.svg"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="Reading Notes - frency.me"><meta property="og:site_name" content="frency.me"><meta property="og:description" content="Curated reading notes, key takeaways, and mental models from books that shaped my thinking."><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/en/books/"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@psephopaiktes"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@500;600;700;800&family=Noto+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><style>body{ font-family: "Noto Sans", sans-serif; }</style><style>.page-headline[data-astro-cid-ql4jah75]{position:relative;max-width:1000px;padding-block:0 clamp(30px,4vw,44px);border-bottom:1px solid var(--color-border);text-align:start}.eyebrow[data-astro-cid-ql4jah75]{display:block;margin-bottom:12px;color:var(--color-theme);font-family:var(--font-mono);font-weight:700}h1[data-astro-cid-ql4jah75]{color:var(--color-main);font-size:clamp(2.6rem,5vw,4.4rem);font-weight:800;letter-spacing:-.055em;line-height:1}.page-headline[data-astro-cid-ql4jah75] p{max-width:680px;margin-top:20px;color:var(--color-muted);font-size:1.05rem;line-height:1.7}@media(max-width:640px){.page-headline[data-astro-cid-ql4jah75]{padding-block-end:28px}h1[data-astro-cid-ql4jah75]{font-size:clamp(2.2rem,10vw,3.1rem);line-height:1.05}.page-headline[data-astro-cid-ql4jah75] p{margin-top:16px;font-size:1rem}}
+</style>
+<link rel="stylesheet" href="/_astro/_id_.D9822WaT.css">
+<link rel="stylesheet" href="/_astro/index.D1NCRMIb.css"></head> <body> <div id="js-languageSuggest" data-astro-cid-onlux7ho> <a id="js-link" href="#" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>autorenew</span> <span id="js-linkText" data-astro-cid-onlux7ho></span> </a> <button id="js-close" type="button" aria-label="Dismiss language suggestion" data-astro-cid-onlux7ho> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-onlux7ho>close</span> </button> </div> <script>(function(){const currentLocale = "en";
+const LOCALES = {"en":{"label":"English","lang":"en"},"zh-cn":{"label":"简体中文","lang":"zh-CN"}};
+const suggestionPrefix = "View in";
+
+  const browserLang = navigator.language.toLowerCase();
+  const suggest = document.getElementById("js-languageSuggest");
+
+  const showSuggest = (lang) => {
+    const pathnames = location.pathname.split("/");
+    const link = document.getElementById("js-link");
+    const linkText = document.getElementById("js-linkText");
+
+    pathnames[1] = lang;
+    link.href = pathnames.join("/");
+    linkText.innerText = `${suggestionPrefix} ${LOCALES[lang].label}`;
+    suggest.style.display = "block";
+  };
+
+  if (
+    currentLocale === browserLang ||
+    currentLocale === browserLang.split("-")[0] ||
+    localStorage.languageSuggestDenied ||
+    localStorage.selectedLang
+  ) {
+    return;
+  } else if (Object.keys(LOCALES).includes(browserLang)) {
+    showSuggest(browserLang);
+  } else if (Object.keys(LOCALES).includes(browserLang.split("-")[0])) {
+    showSuggest(browserLang.split("-")[0]);
+  }
+
+  document.getElementById("js-close").addEventListener("click", () => {
+    suggest.style.display = "none";
+    localStorage.languageSuggestDenied = true;
+  });
+})();</script>  <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner l-content" data-astro-cid-3ef6ksr2> <a class="brand" href="/en/" aria-label="Home" data-astro-cid-3ef6ksr2> <span class="brand-mark" aria-hidden="true" data-astro-cid-3ef6ksr2>/</span> <span class="brand-name" data-astro-cid-3ef6ksr2>frency.me</span> </a> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <div class="header-tools" data-astro-cid-3ef6ksr2> <div class="desktop-locale" data-astro-cid-3ef6ksr2><label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/books/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/books/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script> </div> <button class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="Open navigation" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/en/blog/" data-astro-cid-3ef6ksr2> Blog </a><a href="/en/tags/" data-astro-cid-3ef6ksr2> Tags </a><a href="/en/categories/" data-astro-cid-3ef6ksr2> Categories </a><a href="/en/projects/" data-astro-cid-3ef6ksr2> Projects </a><a href="/en/about/" data-astro-cid-3ef6ksr2> About </a><a href="/en/friends/" data-astro-cid-3ef6ksr2> Friends </a> </nav> <label class="locale-select" data-astro-cid-opxux4jt> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-opxux4jt>language</span> <span class="sr-only" data-astro-cid-opxux4jt>Language</span> <select data-languageSelect aria-label="Language" data-astro-cid-opxux4jt> <option label="English" value="/en/books/" data-lang="en" selected data-astro-cid-opxux4jt></option><option label="简体中文" value="/zh-cn/books/" data-lang="zh-cn" data-astro-cid-opxux4jt></option> </select> <span class="material-icons-sharp chevron" aria-hidden="true" data-astro-cid-opxux4jt>expand_more</span> </label> <script>
+  document.querySelectorAll("[data-languageSelect]").forEach((select) => {
+    select.addEventListener("change", (event) => {
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>  </div> </details> </div> </div> </header>  <main class="l-main l-content">  <header class="page-headline" data-astro-cid-ql4jah75> <span class="eyebrow" aria-hidden="true" data-astro-cid-ql4jah75>/</span> <h1 data-astro-cid-ql4jah75>Reading Notes</h1>  </header>  <p class="page-description" data-astro-cid-aqetappd>Curated reading notes, key takeaways, and mental models from books that shaped my thinking.</p> <div class="filter-bar" role="tablist" aria-label="Book status filters" data-astro-cid-aqetappd> <button class="filter-btn active" data-filter="all" type="button" data-astro-cid-aqetappd> All (1)
+</button> <button class="filter-btn" data-filter="recommended" type="button" data-astro-cid-aqetappd>
+⭐ Recommended (1)
+</button> <button class="filter-btn" data-filter="reading" type="button" data-astro-cid-aqetappd>
+📖 Reading (0)
+</button> <button class="filter-btn" data-filter="finished" type="button" data-astro-cid-aqetappd>
+✓ Finished (0)
+</button> </div> <div class="books-grid" data-astro-cid-aqetappd> <article class="book-card" data-status="recommended" data-astro-cid-aqetappd> <a href="/en/books/becoming-steve-jobs/" class="book-card-link" data-astro-cid-aqetappd> <div class="book-cover-wrap" data-astro-cid-aqetappd> <img src="/_astro/cover.DE8jh5rl_Z24lYna.webp" alt="Becoming Steve Jobs" data-astro-cid-aqetappd="true" loading="lazy" decoding="async" fetchpriority="auto" width="400" height="600" class="book-cover-img"> <div class="book-spine-line" aria-hidden="true" data-astro-cid-aqetappd></div> <span class="book-status-badge status-recommended" data-astro-cid-aqetappd> ⭐ Recommended   <span class="rating-num" data-astro-cid-aqetappd>· 5.0</span> </span> </div> <div class="book-meta" data-astro-cid-aqetappd> <div class="book-header-line" data-astro-cid-aqetappd> <h2 class="book-title" data-astro-cid-aqetappd>Becoming Steve Jobs</h2> <span class="book-author" data-astro-cid-aqetappd>Brent Schlender &amp; Rick Tetzeli</span> </div> <p class="book-desc" data-astro-cid-aqetappd>The evolution of a reckless upstart into a visionary leader. Reflections on craftsmanship, product iteration, marketing, and managing one&#39;s flaws.</p> <div class="book-tags" data-astro-cid-aqetappd> <span class="book-tag" data-astro-cid-aqetappd>#Biography</span><span class="book-tag" data-astro-cid-aqetappd>#Management</span><span class="book-tag" data-astro-cid-aqetappd>#Product</span><span class="book-tag" data-astro-cid-aqetappd>#Growth</span> </div> <div class="book-footer" data-astro-cid-aqetappd> <time datetime="2026-10-02T00:00:00.000Z" data-astro-cid-aqetappd> Oct 2, 2026 </time> <span class="read-note-btn" data-astro-cid-aqetappd> Read Notes <span class="material-icons-sharp" data-astro-cid-aqetappd>arrow_forward</span> </span> </div> </div> </a> </article> </div>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-tagline" data-astro-cid-sz7xmlte> ✨ Capture inspiration, cultivate thoughts </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By frency </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <a class="ask-entry" href="/en/ask/" aria-label="Open AI question answering" data-astro-cid-us3nis3n><span class="ask-bubble" data-astro-cid-us3nis3n>Hi! How can I help?</span><span class="ask-avatar" aria-hidden="true" data-astro-cid-us3nis3n><img src="/_astro/about-avatar.D6bA7Hec_ZAosPY.webp" alt data-astro-cid-us3nis3n="true" loading="lazy" decoding="async" fetchpriority="auto" width="88" height="88"><span class="status-dot" data-astro-cid-us3nis3n></span></span></a>  </body> </html> <script type="module">function l(){const s=document.querySelectorAll(".filter-btn"),o=document.querySelectorAll(".book-card");s.forEach(t=>{t.addEventListener("click",()=>{s.forEach(e=>e.classList.remove("active")),t.classList.add("active");const a=t.dataset.filter;o.forEach(e=>{a==="all"||e.dataset.status===a?e.style.display="":e.style.display="none"})})})}l();document.addEventListener("astro:page-load",l);</script> 
