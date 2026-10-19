@@ -1,0 +1,1 @@
+import{m}from"./medium-zoom.esm.bWEtUbjf.js";const t=()=>{const e=document.documentElement.dataset.theme==="dark"||document.documentElement.classList.contains("dark");m(".prose-custom img, .article-shell img",{margin:24,background:e?"rgba(20, 20, 19, 0.94)":"rgba(250, 248, 245, 0.94)"})};t();document.addEventListener("astro:page-load",t);
