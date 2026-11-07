@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><title>源代码 - xiaofeng.show</title><meta name="description" content="比尔·盖茨的首部自传，讲述他的童年、青少年时期，以及走向计算机世界的成长故事。"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="canonical" href="https://zhangyuliang1994.github.io/zh-cn/books/source-code-bill-gates/"><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.16.6"><link rel="alternate" hreflang="en" href="https://zhangyuliang1994.github.io/en/books/source-code-bill-gates/"><link rel="alternate" hreflang="zh-CN" href="https://zhangyuliang1994.github.io/zh-cn/books/source-code-bill-gates/"><link rel="alternate" hreflang="x-default" href="https://zhangyuliang1994.github.io/en/books/source-code-bill-gates/"><!-- RSS feed auto-discovery --><link rel="alternate" type="application/rss+xml" title="源代码 - xiaofeng.show - RSS" href="/zh-cn/rss.xml"><!-- icon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" href="/favicon.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="icon" sizes="192x192" href="/android-icon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="color-scheme" content="light dark"><script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = saved === "dark" || (!saved && prefersDark);
+        if (isDark) {
+          document.documentElement.dataset.theme = "dark";
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script><!-- OGP --><meta property="og:type" content="website"><meta property="og:title" content="源代码 - xiaofeng.show"><meta property="og:site_name" content="xiaofeng.show"><meta property="og:description" content="比尔·盖茨的首部自传，讲述他的童年、青少年时期，以及走向计算机世界的成长故事。"><meta property="og:image" content="https://zhangyuliang1994.github.io/ogp.png"><meta property="og:url" content="https://zhangyuliang1994.github.io/zh-cn/books/source-code-bill-gates/"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@zhangyuliang1994"><!-- External Resource --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=LXGW+WenKai:wght@400;700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=LXGW+WenKai:wght@400;700&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp&display=swap" media="print" onload="this.media='all'"><link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;800&display=swap">
+    <style>body{ font-family: "Noto Sans SC", sans-serif; }</style><link rel="stylesheet" href="/_astro/_id_.BnH9hIB4.css">
+<link rel="stylesheet" href="/_astro/_id_.h1Djroea.css">
+<style>.book-detail-header[data-astro-cid-bemiyrbg]{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:start;padding-block:16px 36px;border-block-end:1px solid var(--color-border)}.book-cover-stage[data-astro-cid-bemiyrbg]{display:flex;justify-content:center}.book-detail-cover[data-astro-cid-bemiyrbg]{width:100%;max-width:220px;height:auto;aspect-ratio:2 / 3;-o-object-fit:cover;object-fit:cover;border-radius:4px 8px 8px 4px;box-shadow:-8px 12px 28px color-mix(in srgb,#000 35%,transparent),0 2px 4px color-mix(in srgb,#000 15%,transparent)}.book-detail-info[data-astro-cid-bemiyrbg]{display:flex;flex-direction:column;gap:12px}.book-status-row[data-astro-cid-bemiyrbg]{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.book-status-pill[data-astro-cid-bemiyrbg]{font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:var(--radius-small)}.book-rating-pill[data-astro-cid-bemiyrbg]{font-size:.8rem;font-weight:600;font-family:var(--font-mono);color:var(--color-theme);background:var(--color-code);padding:2px 8px;border-radius:var(--radius-small);border:1px solid var(--border)}.status-recommended[data-astro-cid-bemiyrbg]{background:var(--accent);color:#fff}.status-reading[data-astro-cid-bemiyrbg]{background:#0f766e;color:#fff}.status-unfinished[data-astro-cid-bemiyrbg]{background:#b45309;color:#fff}.status-finished[data-astro-cid-bemiyrbg]{background:var(--bg-muted);color:var(--text-secondary);border:1px solid var(--border)}.book-title[data-astro-cid-bemiyrbg]{color:var(--color-main);font-family:var(--font-title);font-size:clamp(1.8rem,3.2vw,2.3rem);font-weight:700;letter-spacing:.01em;line-height:1.25;margin:6px 0 0}.book-author[data-astro-cid-bemiyrbg]{font-size:1rem;color:var(--color-muted);margin:0}.book-author[data-astro-cid-bemiyrbg] .value[data-astro-cid-bemiyrbg]{color:var(--color-main);font-weight:600}.book-meta-row[data-astro-cid-bemiyrbg]{display:flex;align-items:center;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--color-faint);font-family:var(--font-mono);margin-top:4px}.book-tags[data-astro-cid-bemiyrbg]{display:flex;gap:6px;flex-wrap:wrap}.book-tag[data-astro-cid-bemiyrbg]{background:var(--color-code);padding:2px 8px;border-radius:4px;font-size:.75rem}.book-verdict[data-astro-cid-bemiyrbg]{margin-top:14px;padding:14px 18px;border-radius:var(--radius);background:var(--color-surface);border:1px solid var(--color-border)}.verdict-title[data-astro-cid-bemiyrbg]{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-theme);margin-bottom:6px;font-family:var(--font-mono)}.book-verdict[data-astro-cid-bemiyrbg] p[data-astro-cid-bemiyrbg]{font-size:.95rem;color:var(--color-muted);margin:0;line-height:1.6}.notes-divider[data-astro-cid-bemiyrbg]{display:flex;align-items:center;margin-block:40px 24px;text-align:center}.notes-divider[data-astro-cid-bemiyrbg]:before,.notes-divider[data-astro-cid-bemiyrbg]:after{content:"";flex:1;border-bottom:1px dashed var(--color-border)}.notes-divider[data-astro-cid-bemiyrbg] span[data-astro-cid-bemiyrbg]{padding:0 16px;font-size:.85rem;font-weight:700;color:var(--color-faint);text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-mono)}.book-detail-footer[data-astro-cid-bemiyrbg]{margin-top:48px;padding-top:24px;border-top:1px solid var(--color-border)}.back-link[data-astro-cid-bemiyrbg]{display:inline-flex;align-items:center;gap:6px;color:var(--color-theme);font-weight:600;text-decoration:none;font-size:.9rem;transition:opacity .2s ease}.back-link[data-astro-cid-bemiyrbg]:hover{opacity:.75}@media(max-width:680px){.book-detail-header[data-astro-cid-bemiyrbg]{grid-template-columns:1fr;gap:24px}.book-cover-stage[data-astro-cid-bemiyrbg]{justify-content:flex-start}.book-detail-cover[data-astro-cid-bemiyrbg]{max-width:160px}}
+</style></head> <body> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <!-- Brand --> <a class="brand" href="/zh-cn/" aria-label="xiaofeng.show" data-astro-cid-3ef6ksr2> <span class="brand-seal" aria-hidden="true" data-astro-cid-3ef6ksr2>晓风</span> <span class="brand-name" data-astro-cid-3ef6ksr2>xiaofeng.show</span> </a> <!-- Desktop Navigation --> <nav class="desktop-nav" aria-label="Primary navigation" data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a><a href="/zh-cn/books/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> 读书 </a><a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a><a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a><a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a><a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </nav> <!-- Header Tools: Language Switcher Capsule & Theme Toggle --> <div class="header-tools" data-astro-cid-3ef6ksr2> <a href="/en/books/source-code-bill-gates/" class="lang-pill" title="Switch to English" aria-label="Switch to English" data-astro-cid-3ef6ksr2> <span class="active" data-astro-cid-3ef6ksr2>中</span> <span class="sep" data-astro-cid-3ef6ksr2>/</span> <span data-astro-cid-3ef6ksr2>EN</span> </a> <button class="theme-toggle" type="button" aria-label="切换颜色主题" title="切换颜色主题" data-theme-toggle data-astro-cid-x3pjskd3> <span class="material-icons-sharp theme-light" aria-hidden="true" data-astro-cid-x3pjskd3>light_mode</span> <span class="material-icons-sharp theme-dark" aria-hidden="true" data-astro-cid-x3pjskd3>dark_mode</span> </button> <script>
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = current === "dark" ? "light" : "dark";
+      root.dataset.theme = next;
+      if (next === "dark") {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+      localStorage.setItem("theme", next);
+    });
+  });
+</script>  <!-- Mobile menu trigger --> <details class="mobile-menu" data-astro-cid-3ef6ksr2> <summary aria-label="打开导航" data-astro-cid-3ef6ksr2> <span class="material-icons-sharp" aria-hidden="true" data-astro-cid-3ef6ksr2>menu</span> </summary> <div class="mobile-panel" data-astro-cid-3ef6ksr2> <nav aria-label="Mobile navigation" data-astro-cid-3ef6ksr2> <a href="/zh-cn/blog/" data-astro-cid-3ef6ksr2> 博客 </a><a href="/zh-cn/books/" class="active" aria-current="page" data-astro-cid-3ef6ksr2> 读书 </a><a href="/zh-cn/projects/" data-astro-cid-3ef6ksr2> 项目 </a><a href="/zh-cn/categories/" data-astro-cid-3ef6ksr2> 分类 </a><a href="/zh-cn/friends/" data-astro-cid-3ef6ksr2> 友链 </a><a href="/zh-cn/about/" data-astro-cid-3ef6ksr2> 关于 </a> </nav> <div class="mobile-tools" data-astro-cid-3ef6ksr2> <a href="/en/books/source-code-bill-gates/" class="lang-pill mobile-lang-pill" title="Switch to English" data-astro-cid-3ef6ksr2> <span class="active" data-astro-cid-3ef6ksr2>中</span> <span class="sep" data-astro-cid-3ef6ksr2>/</span> <span data-astro-cid-3ef6ksr2>EN</span> </a> </div> </div> </details> </div> </div> </header>  <main class="l-main l-content-article">  <article class="article-shell" data-astro-cid-uwv4mmhs> <div class="book-detail-header" data-astro-cid-bemiyrbg> <div class="book-cover-stage" data-astro-cid-bemiyrbg> <div class="book-cover-3d overflow-hidden" data-astro-cid-bemiyrbg> <img src="/_astro/cover.BJI5w4Bj_Z1ywL7Q.webp" alt="源代码" data-astro-cid-bemiyrbg="true" loading="lazy" decoding="async" fetchpriority="auto" width="320" height="480" class="book-detail-cover"> </div> </div> <div class="book-detail-info" data-astro-cid-bemiyrbg> <div class="book-status-row" data-astro-cid-bemiyrbg> <span class="book-status-pill status-finished" data-astro-cid-bemiyrbg>   ✓ 已读完  </span>  </div> <h1 class="book-title" data-astro-cid-bemiyrbg>源代码</h1> <p class="book-author" data-astro-cid-bemiyrbg> <span class="label" data-astro-cid-bemiyrbg>作者：</span> <span class="value" data-astro-cid-bemiyrbg>[美] 比尔·盖茨 (Bill Gates)</span> </p> <div class="book-meta-row" data-astro-cid-bemiyrbg> <time datetime="2025-09-14T00:00:00.000Z" data-astro-cid-bemiyrbg> 笔记日期：   2025年9月14日 </time> <div class="book-tags" data-astro-cid-bemiyrbg> <span class="book-tag" data-astro-cid-bemiyrbg>#传记</span><span class="book-tag" data-astro-cid-bemiyrbg>#编程</span><span class="book-tag" data-astro-cid-bemiyrbg>#成长</span> </div> </div> <div class="book-verdict" data-astro-cid-bemiyrbg> <div class="verdict-title" data-astro-cid-bemiyrbg>核心感悟</div> <p data-astro-cid-bemiyrbg>比尔·盖茨的首部自传，讲述他的童年、青少年时期，以及走向计算机世界的成长故事。</p> </div> </div> </div> <div class="notes-divider" data-astro-cid-bemiyrbg> <span data-astro-cid-bemiyrbg>阅读笔记与深度思考</span> </div> <blockquote>
+<p>这本书是在读《有限与无限的游戏》时顺便读的，主要是那本书太晦涩了，读本个人传记会轻松很多。但是这本书的文笔较差，比不上《史蒂夫·乔布斯传》，而且因为是自传，难免会文过饰非，只讲对自己有利的部分。</p>
+</blockquote>
+<h2 id="一概述">一、概述</h2>
+<p>比尔·盖茨是当代富有影响力、引领变革的商业领袖和慈善家。这本书讲述的便是他的成长故事。</p>
+<p>比尔·盖茨在商业领域创造的辉煌早已广为人知。20岁的他离开哈佛大学，创办了一家日后成为行业巨头的软件公司，改变了整个世界的工作与生活方式。这位亿万富翁随即将注意力转向慈善事业，致力于应对气候变化、全球健康和美国教育领域的重重挑战。</p>
+<p>这本书并不是比尔·盖茨对微软公司光辉岁月的追忆，也无关盖茨基金会的诞生或技术的未来。这是一个传递着人性温度的个人故事，你将从中看到比尔·盖茨如何成长为今天的他，了解他在童年及青少年时期的激情与志向。</p>
+<p>出现在这个故事中的，有他严于律己的外祖母和胸怀大志的父母，有他最初的深厚友情和挚友的遽然离世，有他试图融入周遭社会的苦苦挣扎，有他在一个新时代即将到来时对代码和计算机世界的奇妙发现，也有他从少年时便开始的对人生之路的探索与追寻。走在这条路上的他，曾经半夜三更溜出家门，跑到附近的计算机中心，后来，在大学宿舍里，他引燃了即将改变世界的科技革命的导火线。</p>
+<p>在这本书中，比尔·盖茨第一次以充满智慧和温情的笔触，坦率地将自己的故事和盘托出，将其精彩绝伦的生活淋漓尽致地展现在了读者眼前。</p>
+<h2 id="二重点摘抄">二、重点摘抄</h2>
+<ul>
+<li>
+<p>表面看来，徒步旅行和编程之间差了十万八千里，但从感受上说，它们都是探险活动。</p>
+</li>
+<li>
+<p>一个人应当从精神世界而非物质世界中寻求真正的自我。</p>
+<p>这一点乔布斯做得更好。</p>
+</li>
+<li>
+<p>玩纸牌教会我：无论某些事情看起来多复杂、多神秘，我们通常都能最终琢磨出个究竟。这个世界是可以被理解的。</p>
+</li>
+<li>
+<p>技术意味着进步，运用得当将为人类带来和平。</p>
+<p>AI也是，所以对于AI，我始终是个乐观派。</p>
+</li>
+<li>
+<p>我们借来了一台便携式终端，把它装在我的卧室，试图拨号接入计算机。但每当我家里有人拿起电话，连接就会断开。</p>
+<p>十五年前，我家里的宽带拨号上网也是这样，导致我玩网络游戏的体验较差。</p>
+</li>
+<li>
+<p>合作者会将你所欠缺的东西带入这段关系，他们激励你提升自我。有个人站在你身边，和你一道迈出冒险的第一步，会让你更大胆地迈出下一步。</p>
+</li>
+<li>
+<p>我是那个搞计算机的家伙，而我不甘于这种狭隘的分类。</p>
+<p>不要自我设限，才能有更大的发展。</p>
+</li>
+<li>
+<p>即使隔着一段距离，我也能察觉出这个人身上那种独特的气场。我嘀咕着：“那家伙是谁？”就是在那一天，我见到了史蒂夫·乔布斯。</p>
+<p>PC时代的两大巨头，我个人更喜欢苹果的产品。</p>
+</li>
+<li>
+<p>每年一两次，我会开车或乘坐水上飞机去到那里，待上七天时间，在不被打扰的状态下专心读书，钻研报刊文章和学术论文，突击学习一些我认为最需要掌握的知识。</p>
+<p>比你优秀的人比你还努力。</p>
+</li>
+<li>
+<p>事实证明，将那些零散的记忆碎片拼在一起，能帮助我更好地了解自己。</p>
+<p>梳理、归纳、总结很重要，这个过程中我会思考，进而形成自己的观念。</p>
+</li>
+</ul>
+<h2 id="三总结">三、总结</h2>
+<p>比尔·盖茨是个聪明的家伙，很早就能将软件变现。这个概念推广下来，也让今天我等程序员有口饭吃了。</p>
+<p>最近在 X 上也看到有人在讨论这本书，有个观点很有意思，大概是说比尔·盖茨能成功，是因为当律师的爸和在IBM任高管的妈。我也很羡慕盖茨的家庭，能受到良好的教育。但是我更佩服盖茨的好读书，不自我设限，能够不断突破自己，这才是我们应该学习的地方！</p> <div class="book-detail-footer" data-astro-cid-bemiyrbg> <a href="/zh-cn/books/" class="back-link" data-astro-cid-bemiyrbg> <span class="material-icons-sharp" data-astro-cid-bemiyrbg>arrow_back</span> 返回读书笔记列表 </a> </div> </article>  </main> <footer class="site-footer" data-astro-cid-sz7xmlte> <div class="footer-inner l-content" data-astro-cid-sz7xmlte> <div class="footer-primary" data-astro-cid-sz7xmlte> <div class="footer-sign" data-astro-cid-sz7xmlte> <span class="footer-seal" aria-hidden="true" data-astro-cid-sz7xmlte>晓<br data-astro-cid-sz7xmlte>风</span> <span class="footer-colophon" data-astro-cid-sz7xmlte>金陵烟雨中，晓风 谨识</span> </div> <div class="footer-tagline" data-astro-cid-sz7xmlte> 记录灵感，沉淀思考 · 慢品烟雨与代码 </div> <div class="copy" data-astro-cid-sz7xmlte>
+©2024 - 2026 By xiaofeng </div> </div> <div class="footer-secondary" data-astro-cid-sz7xmlte> <ul class="locale-list" data-astro-cid-sz7xmlte><li><a href="/en/" onclick="localStorage.selectedLang = &#34;en&#34;" lang="en">English</a></li><li><a href="/zh-cn/" onclick="localStorage.selectedLang = &#34;zh-cn&#34;" lang="zh-cn">简体中文</a></li></ul> <div class="icp-info" data-astro-cid-sz7xmlte> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-astro-cid-sz7xmlte>苏ICP备2023046043号-3</a> </div> </div> </div> </footer>  <back-to-top class="back-to-top" hidden="true" data-astro-cid-wlspcwf4="true"> <button type="button" aria-label="Back to top" title="Back to top" data-astro-cid-wlspcwf4> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-astro-cid-wlspcwf4> <path d="m18 15-6-6-6 6" data-astro-cid-wlspcwf4></path> </svg> </button> </back-to-top>  <script type="module">class e extends HTMLElement{constructor(){super();const o=this.querySelector("button"),t=()=>{window.scrollY>350?(this.classList.add("show"),this.removeAttribute("hidden")):this.classList.remove("show")},s=()=>{window.scrollTo({top:0,behavior:"smooth"})};window.addEventListener("scroll",t,{passive:!0}),o?.addEventListener("click",s),t()}}customElements.get("back-to-top")||customElements.define("back-to-top",e);</script>  </body> </html> <script type="module" src="/_astro/Article.astro_astro_type_script_index_0_lang.Cn-BzHgf.js"></script>  
